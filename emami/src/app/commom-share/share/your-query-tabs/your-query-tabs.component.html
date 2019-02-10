@@ -1,0 +1,67 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 outer-box">
+  <div class="row">
+<div class="col-6 col-sm-6 col-md-6 col-lg-6 topdiv">
+    <div class="clear20"></div>
+<!-- <label class="title">&nbsp;&nbsp;&nbsp;&nbsp;YOUR QUERIES</label> -->
+</div>
+<div class="col-6 col-sm-6 col-md-6 col-lg-6 topdiv text-right">
+  <div class="clear20"></div>
+  <div class="float-right fontstyle"><app-displaydate></app-displaydate> </div>
+</div>
+
+<div class="tab">
+    <ng-container *ngFor="let tab of tabs;let i=index">
+
+    <div class="tablinks inner_div px-5 py-3 {{tab.active}}" (click)="openMsg(i)">
+            <div class="doc_info text-left green_text">
+               {{tab.name}}
+               </div>
+               <div class="doc_info text-right fent_font">
+                    {{tab.date}} 
+                 </div>
+                 <p class="page">{{tab.page}} Years</p>
+                 <p class="pmessage">{{tab.massage}}</p>
+                   <p *ngIf="tab.replies.length>0" class="green_text font-weight-bold text-right">+{{tab.replies.length}} replies</p>
+                   <div class="right_arrow">
+                      <img src="././assets/images/right-arrow1.png">
+                    </div>
+                  </div>
+
+    </ng-container>
+
+  </div>
+  
+  <div  class="p-4 text-left tabcontent {{msgContent.active}}">
+    <div class="chat_div">
+        <div class="doc_info text-left green_text">
+            {{msgContent.profile}}
+         </div>
+         <div class="doc_info text-right fent_font">
+                {{msgContent.date}}
+           </div>
+           <p class="page"> {{msgContent.age}} Years</p>
+           <p class="font-weight-bold">{{msgContent.diseas}}</p>
+     <div class="divider mb-3"></div>
+     <p class="pmessage">{{msgContent.massage}}</p>
+     <p *ngFor="let reply of msgContent.replies" class="{{reply.from}} pmessage">
+         {{reply.msg}}
+     </p>
+    </div>
+     
+  
+     <div class="chat_inpute col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="input-group mb-3">
+                <input type="text" (keydown.enter)="sendMessage();" class="form-control chatbox" [(ngModel)]="newMsg" placeholder="Write a reply...." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <span class="input-group-text nbg" (click)="sendMessage();" id="basic-addon2"><img src="././assets/images/sent-mail1.png"></span>
+                </div>
+              </div>
+          <span class="send-btn"></span>
+     </div>
+  
+       
+  </div>
+
+  </div>
+
+</div>

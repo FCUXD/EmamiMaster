@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-md bg-white fixed-top">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand NavBarLogo"  routerLink="../doctor_landingpage"><img src="././assets/images/newlogo.png"></a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" (click)="toggle()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbar }">
+      <ul class="navbar-nav ml-auto navspac NavbarHeader">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="../doctor_landingpage">My Consultations</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="../PatientList">Patient List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="../product">Products </a>
+        </li> -->
+        <li class="nav-item m-0">
+          <a class="nav-link" routerLink="../product"><img src="././assets/images/borderline.png"> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><img src="././assets/images/notification.png"></a>
+        </li>
+
+        <li class="nav-item">
+          <div class="row">
+            <div class="col">
+              <img class="float-left imgMarginTop" src="././assets/images//Pcopy_img.png">
+              <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary dropdownbox pl-0" id="dropdownBasic1" ngbDropdownToggle>{{string}}</button>
+                <img class="DropDownIcon" src="././assets/images/UpArrow.png">
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+                  <button (click)="clickDropDownButton(i)" *ngFor="let item of dropdown;let i=index;" class="dropdown-item">{{item.name}}</button>
+                  <!-- <button class="dropdown-item">Another Action</button>
+                          <button class="dropdown-item">Something else is here</button> -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="clear"></div>
+</nav>
+<div class="clear"></div>

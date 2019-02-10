@@ -1,0 +1,505 @@
+<app-navigation *ngIf="showHeader"></app-navigation> 
+<section class="home-top pt-5">
+  <div class="container ">
+    <h1 class="main_title">i am looking for</h1>
+    <div class="col-lg-8 pl-0">
+      <input [(ngModel)]="SearchString" (keydown)="updateFilter2($event);" (change)="search(); " type="text" class="form-control searchbg mobhidden" placeholder="products, doctors and health condition & more " onfocus="this.placeholder=''">
+      <input [(ngModel)]="SearchString" (keydown)="updateFilter2($event);" (change)="search(); " type="text" class="form-control searchbg webhidden" placeholder="Search.." onfocus="this.placeholder=''">
+      <div class="srchresult SearchIn  ">
+       <!--  <div class="d-block innersearch py-0 px-4 swidth bg-white rounded" *ngFor="let item of healthArea | search : querystring ">
+         <p (click)="querystring=item" >
+            {{item.name}}
+        </p> 
+      </div>-->
+      <div *ngIf="resultDis" class="InnerDiv">
+          <div class="d-block innersearch py-0  swidth bg-white rounded " *ngFor="let data of temp"> 
+              <p (click)="SearchString=data;" (click)=" selected(data)"> {{data}}</p> 
+              </div>
+      </div> 
+    </div>
+    </div>
+    <div class="clear40"></div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 buttonmedicine" id="RD">
+        <div class="row">
+          <div class="btnwid11 btnwid12">
+            <label (click)="filter(0)">
+              <input checked value="1" type="radio" name="radio1">
+              <span  class="checkmark btn-clicked-1  btn">All</span>
+            </label>&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="btnwid11">
+            <label (click)="filter(1)">
+              <input  value="2" type="radio" name="radio1">
+              <span class="checkmark btn-unclicked-1 pm-button btn">Products</span>
+            </label>&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="btnwid14">
+            <label (click)="filter(2)">
+              <input value="3" type="radio" name="radio1">
+              <span class="checkmark btn-unclicked-1  btn">Health Areas</span>
+            </label>&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="btnwid11 btnwid13">
+            <label (click)="filter(3)">
+              <input value="4" type="radio" name="radio1">
+              <span class="checkmark btn-unclicked-1 pm-button btn">Doctors</span>
+            </label>&nbsp;&nbsp;&nbsp;
+          </div>
+        </div>  
+    </div>
+    <div class="clearfix"></div>
+    <div class="clear20"></div>
+
+<div *ngIf="productFlag" class="mt-5">
+  <div class="clear10"></div>
+  <label class="total-product1"></label> <label class="total-product">Results for</label> <label class="total-product1"> &nbsp; {{SearchString}}</label>
+    <h2 class="pruduct_title"> Products</h2>
+  
+ </div>
+ <!-- <app-search-product-slider></app-search-product-slider>  -->
+
+
+ <!-- <div class="col-md-4 col-12">    
+ <div *ngFor="let item of product" class="card custom_card">
+  <img  src="{{item.imageUrl}}" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">{{item.name}}</h4>
+   
+    <div class="mt-2 mb-4">
+        <div class="product_info float-left">
+           <h4><img src="././assets/images/rupee.png"> {{item.selling}} </h4>
+           </div>
+        <div class="product_img float-right">
+        <div class="order-margin-top2">
+          <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+        <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+        <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+        </div>
+        </div>
+        </div>
+        <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+  </div>
+</div>
+ </div> -->
+
+ <div  class="col-md-12 col-12">
+  <div class="clear20"></div>
+  <!-- <h3 class="ImmunityHeader">{{category.name}}</h3> -->
+
+
+<!-- for desktop -->
+<div *ngIf="isDesktop">
+  <div *ngIf="visibleProds.length==0 && productFlag">
+        No Product Available
+      </div>
+  <div *ngIf="productFlag">
+    <ng-container  *ngIf="product.length>4">
+      <div class="float-right countpatch">
+          {{Qty}}/{{product.length}}
+      </div>
+     </ng-container>
+     <div class="float-right" *ngIf="product.length<=4">{{visibleProds.length}}/{{product.length}}</div>
+     <div class="clear10"></div>
+     <div class="clear20"></div>
+     <div class="row m-0" *ngIf="visibleProds.length>0">
+       <div *ngFor="let item of visibleProds" class="col-12 col-lg-3 mrgn15"  style="height: 380px;" >
+          
+         <div  class="WhiteBox cardbgcolor" >
+          <div >
+           <!-- <img src="{{item.imageUrl}}" height="140px" width="140px" (click)="addTocart(item)"/> -->
+           <img src="{{item.imageUrl}}" height="140px" width="140px"  />
+           <div class="clear10"></div>
+           <h5 class="product-title">  {{item.name}}</h5>
+         </div>
+           <div class="clear10"></div>
+           <div>
+             <div class="Rupees col-lg-5 padlrn">
+               <img src="././assets/images/rupee.png" /><span>{{item.mrp}}</span>
+             </div>
+          
+             <div  class="Spinner col-lg-7 padlrn">
+               <img class="SpinnerImg" src="././assets/images/SpinnerMinus.png" (click)="reduce(item)" />
+               <input type="text" class="form-control SpinnerInput text-center" [(ngModel)]="item.qty">
+               <img class="SpinnerImg2" src="././assets/images/SpinnerPluse.png" (click)="add(item)"/>
+             </div>
+           </div>
+        
+         
+           <div class="clear20"></div>
+           <button type="button" class="btn AddToCartBtn" (click)="addTocart(item)">add to cart</button>
+           <div class="clear"></div>
+         </div>
+       </div>
+       <div class="clear10"></div>
+       <div *ngIf="product.length>visibleProds.length" class="SliderArrow  slideres mrgt10 col-12 col-sm-12 col-md-12 col-lg-12">
+         <a class="mrgn-r50 mr-5" (click)="previous()"> <img src="././assets/images/product_left.png" /></a>
+         <a (click)="next()"> <img src="././assets/images/product_right.png" /></a>
+       </div>
+     </div>
+</div>
+  </div>
+  
+
+<!-- for mobile  -->
+<div *ngIf="isMobile">
+  <div *ngIf="mobProds.length==0">
+    No Product Available
+  </div>  
+  <div *ngIf="productFlag">
+    <ng-container *ngIf="product.length>1">
+        <div class="float-right countpatch">
+            {{QtyM}}/{{product.length}}
+        </div>
+       </ng-container> 
+  </div>
+       <div class="clear10"></div>
+    <div *ngFor="let item of mobProds" class="col-12 col-lg-3 mrgn15"  style="height: 380px;" >
+       
+      <div  class="WhiteBox" >
+       <div >
+        <!-- <img src="{{item.imageUrl}}" height="140px" width="140px" (click)="addTocart(item)"/> -->
+        <img src="{{item.imageUrl}}" height="140px" width="140px"  />
+        <div class="clear10"></div>
+        <h5 class="product-title">  {{item.name}}</h5>
+      </div>
+        <div class="clear10"></div>
+        <div>
+          <div class="Rupees col-lg-5 padlrn">
+            <img src="././assets/images/rupee.png" /><span>{{item.mrp}}</span>
+          </div>
+       
+          <div  class="Spinner col-lg-7 padlrn">
+            <img class="SpinnerImg" src="././assets/images/SpinnerMinus.png" (click)="reduce(item)" />
+            <input type="text" class="form-control SpinnerInput text-center" [(ngModel)]="item.qty">
+            <img class="SpinnerImg2" src="././assets/images/SpinnerPluse.png" (click)="add(item)"/>
+          </div>
+        </div>
+      
+      
+        <div class="clear20"></div>
+        <button type="button" class="btn AddToCartBtn" (click)="addTocart(item)">add to cart</button>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear20"></div>
+    
+    <div *ngIf="mobProds.length==0"  class="SliderArrow  slideres1">
+        <div class="mrgn-r50 mr-5 dib" (click)="previous()"> <img src="././assets/images/product_left.png" /></div>
+        <div (click)="next()" class="dib"> <img src="././assets/images/product_right.png" /></div>
+      </div>
+   </div>
+
+  
+
+
+  <div class="clear10"></div>
+  <div class="clear50"></div>
+<div class="clearfix"></div>
+
+<div *ngIf="health">
+  <div  class=" mb-4 mt-5">
+    <div class="clear10"></div>
+        <h2 class="pruduct_title">Health Areas</h2>
+        <div *ngIf="healthArea.length==0">
+          No Content Available
+        </div>
+   </div>
+   <div class="float-right countpatch">{{healthArea.length}}</div>
+  <!-- <h2 class="pruduct_title mb-4 mt-5">Health Areas</h2> -->
+  <div class="clear20"></div>
+ 
+  <div *ngIf="healthArea.length>0"  class="hArea ">
+      <div class="patchstyle col-lg-12" >
+          <div class="row">
+           
+              <div *ngFor="let item of healthArea" class="">
+                  <div class="clear20"></div>
+                  <span class="title txt1">{{item.name}}</span><br>
+                  <div class="clear20"></div>
+                  <img class="img-fluid" src="././assets/images/border_style.png">
+                  <div class="carousel-item active mt-2">
+                    <div class="text-on-image col-md-6 col-lg-6">
+                      <p class="mb-4 txt3">{{item.description}}</p>
+                      <!-- <label class="dates">AUGUEST 10,2018</label> -->
+                      <div class="clear20"></div>
+                      <button class="btn read_more" (click)="route(item.name)" routerLink="{{string}}">READ MORE</button>
+                    </div>
+                    <!-- <div class="image_div">
+                
+                    <img class="img-fluid" src="././assets/images/maternity-health.png" alt="">
+                    </div> -->
+                  </div>
+              </div>
+             
+          </div>
+          
+         
+        </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- <app-search-health-areas></app-search-health-areas>  
+<div class="clear40"></div> 
+ <div class="row">
+<div class="col-6 col-sm-6 col-md-6 col-lg-6">
+    <h2 class="pruduct_title">Doctors </h2>
+</div>
+<div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+    <div class="foutf float-right col-md-1 col-lg-1">
+      <label class="">4/4</label>
+    </div>
+</div>
+</div> -->
+<div class="clear20"></div>
+<!--<div class="col-12 col-sm-12 col-md-12 col-lg-12 dr-prof" *ngFor="let item of profile">
+ <div class="row">
+<div class="col-2 col-sm-2 col-md-2 col-lg-2">
+  <div class="clear20"></div>
+  <div class="">
+    <img class="dr-img" src="{{item.img}}">
+  </div>
+  <div class="clear20"></div>
+</div>
+<div class="col-6 col-sm-6 col-md-6 col-lg-6">
+  <div class="clear10"></div>
+  <label class="bamsmd">{{item.degree}}</label>
+  <div class="clear10"></div>
+  <label class="dr-name">{{item.drname}}</label>
+</div>
+<div class="col-3 col-sm-3 col-md-3 col-lg-3">
+  <div class="clear40"></div>
+    <button type="button" class="btn btn-brown-1">book appointment</button>
+</div>
+</div> 
+  </div>-->
+  </div>
+
+  </section>
+
+
+  <section *ngIf="doctors.length>0 && doctor"  class="succes_stories container">
+    <!-- <div class="bottom_bg">
+      <div class="small_wrapper small_width">
+      
+       
+        <div class="topping_spac2">
+          <div id="tps2" class="locatus">
+            <h5>locate us</h5>
+            <img class="img-fluid" src="././assets/images/border_style.png">
+          <h6>Find the nearest</h6>
+    
+          <label class="check_container mr-2">Ayurvedic <br>
+            Doctor
+            <input type="checkbox" checked="checked" >
+            <span class="checkmark bor-rad"></span>
+          </label>
+          <label class="check_container">Ayurvedic <br>
+            Store
+            <input type="checkbox" >
+            <span class="checkmark bor-rad"></span>
+          </label>
+          <div class="form-group">
+            <input type="text" class="form-control locate_input" placeholder="411045">
+          </div>
+          <div  class="addres" *ngFor="let item of doctors">
+            <div  class="km">
+            <span class="distance" >{{item.digit}}</span>
+            <span class="kmeter">{{item.km}}</span></div>
+            <div  class="location"><h4  >{{item.doctorName}}</h4>
+              <p  > {{item.doctorAddress}}</p>
+            </div><div class="timing">
+              <div  class="text-center">
+                <img class="mt-4" src="././assets/images/directions.png"></div></div></div>
+                <div class="text-right mt-4">
+                    <button  class="btn read_more" routerLink="/locator">view all</button>
+                </div>
+          </div>
+          <div class="map">
+              <agm-map [latitude]="lat" [longitude]="lng">
+                  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
+          </div>
+        </div>
+      </div>
+    </div> -->
+ 
+    <div *ngIf="doctors.length>0" id="#tps2"class="topping_spac2 small_width">
+        <div class="locatus">
+          <h2 class="pruduct_title">Doctors</h2>
+          <img class="img-fluid" src="././assets/images/border_style.png">
+          <div class="clear40"></div>
+          <!-- <h6>Find the nearest</h6>
+
+          <label class="check_container mr-2 Doctor">Ayurvedic <br>
+            Doctor
+            <input type="radio" (change)="handleChange(true)" name="radios" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="check_container Store">Ayurvedic <br>
+            Store
+            <input type="radio" (change)="handleChange(false)" name="radios">
+            <span class="checkmark"></span>
+          </label> 
+           <div class="form-group">
+            <input [(ngModel)]="address_serch" (keydown)="getlatlng($event,address_serch)" type="text" class="form-control locate_input"
+              placeholder="Enter Pincode">
+          </div> -->
+          <div  style="height: 200px; overflow-y: auto;">
+
+            <div class="addres" *ngFor="let item of doctors">
+              <div > 
+                <!-- <span class="distance">{{item.distance}}</span> -->
+                <!-- <span class="kmeter">KM</span>  -->
+              </div>
+              <div class="location">
+                <h4>{{item.doctorName}}</h4>
+                <p> {{item.locality}} {{item.city}} ({{item.pincode}})</p>
+              </div>
+              <div class="timing">
+                <div class="text-center">
+                  <!-- <img (click)="printOnMap(item.doctorLatitude,item.doctorLongitude)"
+                    class="mt-4" src="././assets/images/directions.png"> -->
+                </div>
+              </div>
+            </div>
+           
+          </div>
+
+
+          <!-- <div *ngIf="check" class="text-right mt-4">
+            <button class="btn read_more" data-toggle="modal" data-target="#myModal" (click)="model2()">view all</button>
+          </div> -->
+        </div>
+        <div class="map">
+          <!-- [latitude]="lat" [longitude]="lng" -->
+          <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+            <agm-marker *ngFor="let loc of location" [latitude]="loc.lat" [longitude]="loc.lng">
+              <agm-info-window 
+     
+      [latitude]="loc.lat" 
+      [longitude]="loc.lng">{{loc.name}}</agm-info-window>
+            </agm-marker>
+          </agm-map>
+
+          <!-- <button type="button" (click)="openWindow(5)">Open InfoWindow 5</button> -->
+        </div>
+      </div>
+
+  </section>
+
+  <div *ngIf="doctors.length==0 && doctor">
+      <section class="succes_stories">
+
+          <div class="bottom_bg">
+            <div class="small_wrapper small_width">
+              <!-- <app-topstories-slider></app-topstories-slider> -->
+             
+              <div class="topping_spac2">
+                <div class="locatus">
+                    <h2 class="pruduct_title">Doctors</h2>
+                  <img class="img-fluid" src="././assets/images/border_style.png">
+                  <h6>No Doctor Available, Find the nearest</h6>
+        
+                  <label class="check_container2 check_container mr-2 Doctor txt2">Ayurvedic <br>
+                    Doctor
+                    <input type="radio" (change)="handleChange(true)" name="radios" checked="checked">
+                    <span class="checkmark selectCheck"></span>
+                  </label>
+                  <label class="check_container2 check_container Store txt2">Ayurvedic <br>
+                    Store
+                    <input type="radio" (change)="handleChange(false)" name="radios">
+                    <span class="checkmark"></span> 
+
+                  </label> 
+                  <!-- <label class="check_container2 mr-2 Doctor">Ayurvedic <br>
+                    Doctor
+                    <input type="radio" (change)="handleChange(true)" name="radios" checked="checked" style="  position: absolute;opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="check_container2 Store">Ayurvedic <br>
+                    Store
+                    <input type="radio" (change)="handleChange(false)" name="radios">
+                    <span class="checkmark"></span>
+                  </label> -->
+
+
+
+                  <div class="form-group">
+                    <input [(ngModel)]="address_serch2" (keydown)="getlatlngOther($event,address_serch2)" type="text" class="form-control locate_input" onfocus="this.placeholder=''"
+                      placeholder="Enter Pincode, Area">
+                  </div>
+                  <div *ngIf="!isDoctor" style="height: 200px; overflow-y: auto;">
+        
+                    <div class="addres" *ngFor="let item of pharmaSearch">
+                      <div class="km">
+                        <span class="distance">{{item.distance}}</span>
+                        <span class="kmeter">KM</span>
+                      </div>
+                      <div class="location">
+                        <h4>{{item.PharmacyName}}</h4>
+                        <p> {{item.PharmacyAddress}} {{item.PharmacyTownCity}} ({{item.PharmacyPin}})</p>
+                      </div>
+                      <div class="timing">
+                        <div class="text-center">
+                          <!-- <img (click)="printOnMap(item.Latitude,item.Longitude)"
+                            class="mt-4" src="././assets/images/directions.png"> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                   <div *ngIf="isDoctor" style="height: 200px; overflow-y: auto;">
+        
+                    <div class="addres" *ngFor="let item of doctorSearch">
+                      <div class="km">
+                        <span class="distance">{{item.distance}}</span>
+                        <span class="kmeter">KM</span></div>
+                      <div class="location">
+                        <h4>{{item.DrName}}</h4>
+                        <p> {{item.DrClinicAddress}} {{item.DrTownCity}} ({{item.DrPin}})</p>
+                      </div>
+                      <div class="timing">
+                        <div class="text-center">
+                          <!-- <img (click)="printOnMap(item.Latitude,item.Longitude)" class="mt-4"
+                            src="././assets/images/directions.png"> -->
+                       </div>
+                      </div>
+                    </div>
+                  </div> 
+        
+                  <div *ngIf="check" class="text-right mt-4">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 vallbtn">
+                        <button class="btn read_more mrgbot" data-toggle="modal" data-target="#myModal" (click)="model2()">view all</button>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="map">
+                  <!-- [latitude]="lat" [longitude]="lng" -->
+                  <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+                    <agm-marker *ngFor="let loc of location" [latitude]="loc.lat" [longitude]="loc.lng">
+                      <agm-info-window [latitude]="loc.lat" [longitude]="loc.lng">{{loc.name}}</agm-info-window>
+                    </agm-marker>
+                  </agm-map>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </section>
+  </div>
+<div class="">
+  <app-main-footer></app-main-footer>
+</div>

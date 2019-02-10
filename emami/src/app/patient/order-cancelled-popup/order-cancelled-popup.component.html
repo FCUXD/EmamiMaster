@@ -1,0 +1,41 @@
+<button (click)="popup1()" data-toggle="modal" data-target="#myModal" type="button" class="btn GetStartedBtn CanselBtnCard mt-3 mb-3" >Cancel</button>  
+
+<div class="modal fade  {{custom}}" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-lg">
+<!-- The Modal -->
+  
+
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title Modlheading">Cancel Order : Order ID 00125</h4>
+            <button type="button" class="close" (click)="close1()">&times;</button> 
+          </div>
+          
+          <!-- Modal body -->
+          <div id="canpop" class="modal-body PopupBody">
+          <p>Are you sure you want to cancel your order? <br/>
+             
+  <div class="clear20"></div>
+  <div class="form-group mt-2">
+      <label class="float-left" for="comment">Enter your Reason!:</label>
+      <textarea class="form-control textinput" rows="5" id="comment" placeholder="Write here..."></textarea>
+    </div>
+
+
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+              <div class="footerbtn">
+              <button _ngcontent-c6="" class="btn GetStartedBtn CanselBtnCard mr-4 yesbtn"  type="button" (click)="close1()">no</button>
+              <button _ngcontent-c1="" class="btn btn-green-1 GetStartedBtn  yesbtn" type="button" (click)="close1()">Yes</button>
+            </div>
+            </div>
+    
+     
+      </div>
+  </div>
+  </div>
+ 

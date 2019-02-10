@@ -1,0 +1,102 @@
+  .dropdown {
+       position: relative;
+       display: inline-block;
+   }
+   
+   .dropdown-content {
+      /* display: none; */
+      position: fixed;
+      color: #fff9e5;
+      z-index: 999;
+     background-color: rgba(64, 41, 9, 0.91);
+   width: 100%;
+   float: left; 
+   padding: 7% 0%;
+   }
+   
+   .dropdown-content a {
+       color: black;
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+   }
+   .dropdown-content p{
+      cursor: pointer;
+   }
+   .dropdown-content a:hover {background-color: #ddd;}
+   
+   .dropdown:hover .dropdown-content {display: block;}
+    
+   /* --------DropDown Content End------------ */  
+   .healthAresLeft{
+       background: #fff9e5;
+       border-radius: 5px;
+       padding: 8%;
+       min-height: 300px;
+    }  
+    .healthAresLeft2{
+      padding: 4% 4%;
+    }
+    .healthAresLeft p {
+       color: #402909;
+       font-size: 16px;
+       font-family: 'TrajanPro-Bold';
+    } 
+    .diabetesImg{
+       width: 16%;
+    float: left;
+    } 
+    .right_arrowContent{
+       width: 9%;
+       float: left;
+    } 
+    .DiabetesText{
+       width: 73%;
+       float: left;
+    } 
+    .healthAresContent{
+       width: 100%;
+   float: left;
+   margin: 5px 0px;
+    } 
+    .Healtharesrightp p {
+   color: #333333;
+   font-size: 14px; 
+   font-family: 'TrajanPro-Regular';
+   margin-bottom: 30px;
+   cursor: pointer; 
+   margin-top: 5px;
+    } 
+    .RightArrowImg{
+       width: 14%;
+       float: left; 
+       margin-top: 29px;
+    }  
+    .BorderLR{
+      border-right: 1px solid #cc9966;
+      border-left: 1px solid #cc9966;
+      margin-left: -13px;
+      margin-right: 11px;
+      padding-left: 27px;
+    } 
+      .article{
+       width: 85%;
+       float: left;
+    } 
+    .article p{
+   font-size: 14px;
+   color: #fff9e5; 
+   font-family: 'TrajanPro-Regular'; 
+   margin-bottom: 2px;
+    } 
+    .article h6{
+       font-size: 16px; 
+       color: #fff9e5; 
+       font-family: 'PlayfairDisplay-Regular';
+   } 
+   .mostReadheading {
+       font-size: 18px;
+   color: #fff9e5;
+   font-family: 'PlayfairDisplay-Regular';
+   margin-bottom: 10px;
+   } 

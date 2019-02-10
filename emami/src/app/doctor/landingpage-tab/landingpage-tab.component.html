@@ -1,0 +1,20 @@
+<div class="tab BorderRadiusDiv">
+    <button class="tablinks {{tabs[0].active}}" (click)="openCity(0)">Today</button>
+    <button class="tablinks {{tabs[1].active}}" (click)="openCity(1)">Tomorrow</button>
+    <button class="tablinks {{tabs[2].active}}" (click)="openCity(2)">History</button> 
+    <app-datepickerimg></app-datepickerimg>
+  </div>
+  
+  <div id="London" class="{{tabs[0].tabcontent}} border-0 p-0 shadow MarginTop20 BorderRadiusDiv">
+    <app-doctor-table></app-doctor-table>
+  </div>
+  
+  <div id="Paris" class="{{tabs[1].tabcontent}} border-0 p-0 shadow MarginTop20 BorderRadiusDiv">
+      <app-doctor-table></app-doctor-table>
+  </div>
+  
+  <div id="Tokyo" class="{{tabs[2].tabcontent}} border-0 p-0 shadow MarginTop20 BorderRadiusDiv"> 
+      <app-doctor-table></app-doctor-table> 
+    </div> 
+  
+  

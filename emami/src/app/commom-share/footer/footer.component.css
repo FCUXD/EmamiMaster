@@ -1,0 +1,296 @@
+.footerDiv{
+    text-align: center;
+    width: 75%;
+    margin: 0 auto; 
+    padding: 6% 0% 0% 0%; 
+
+}  
+.webhidden{
+    display: none;
+}
+.clear8{
+    clear: both;
+    height: 8px;
+}
+
+.txtlc{
+    text-align: left !important;
+}
+/* .footerDiv h6{
+    color: #b5803c;
+    font-family: 'TrajanPro-Bold';
+    font-size: 18px;
+} */
+/* .bor-right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+} */
+input.form-control, .TextArea {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    color: rgba(64, 41, 9, 0.8);
+    border-radius: 5px;
+    border: none;
+    background-color: #f8eeda;
+    height: 47px;
+      
+} 
+.TextArea{
+    height: 81px; 
+    padding-left: 25px;
+}
+.outer-footer {
+    margin: auto;
+}
+.footerDiv p{
+    /* color: rgba(51, 51, 51, 0.7); */
+    /* font-family: 'PlayfairDisplay-Regular'; */
+    font-size: 14px;
+}
+.HorizontalLine {
+    border-bottom: 1px solid #cc9966;
+}
+.SecondDiv{
+    text-align: left;
+}
+.contactDis {
+    margin-left: 42px;
+}
+/* .SecondDiv1{
+    text-align: left;
+    margin-left: 40px;
+} */
+.footer-info {
+    text-align: right;
+}
+/* li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    object-fit: contain;
+    font-family: 'TrajanPro-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #333333;
+    cursor: pointer;
+} */
+/* .footerDiv span {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-align: center;
+    color: #000000;
+} */
+
+.input-group {
+    z-index: 0;
+}
+button.btn.btn-success {
+    font-family: 'TrajanPro-Bold';
+    font-size: 15.5px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    text-align: center;
+    color: #402909;
+    width: 190px;
+  height: 73px;
+  object-fit: contain;
+  box-shadow: 0px 9px 13px 0 rgba(0, 0, 0, 0.1);
+  background-color: #d6ad66;
+  border-color: #d6ad66
+}
+.bg{
+    background-image: url("src/assets/images/footerbg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active, .show > .btn-success.dropdown-toggle {
+    color: #402909;
+    background-color: #d6ad66;
+    border-color: #d6ad66;
+    outline: none
+
+}
+.DescalmerText {
+    font-family: 'TrajanPro-Regular';
+font-size: 14px;
+letter-spacing: 1.4px; 
+text-transform: uppercase; 
+color: #000000; 
+margin-bottom: 0px;
+} 
+ span, .DescalmerTextspan  {
+    font-family: 'PlayfairDisplay-Regular';
+font-size: 14px;
+color: #000000;
+} 
+.UserIcon{
+background: url("src/assets/images/footer_User.png") no-repeat 25px center; 
+padding-left: 50px; 
+} 
+.EmailIcon{
+    background: url("src/assets/images/FooterMail.png") no-repeat 25px center; 
+    padding-left: 50px; 
+    
+}  
+.UserEmailFormGroup{
+    width: 42%;
+    float: left; 
+    margin-right: 15px;
+} 
+.UserEmailFormGroup2 {
+    width: 53%;
+    float: left;
+} 
+.SubmitBtn{
+    color: #402909;
+    background: #d6ad66;
+    border: 1px solid #cfa15a; 
+    box-shadow: 0px 0px 0px 7px #d6ad66 ; 
+    font-size: 12px;
+    width: 130px;
+
+    height: 25px;
+    
+    padding: 0px;
+    
+    float: right;
+    border-radius: 1px;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    span, .DescalmerTextspan  {
+        font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    color: #000000 !important;
+    } 
+   
+}
+@media screen and (min-width: 1px) and (max-width: 768px) {
+    .contactDis {
+        margin-left: 0px;
+    }
+    .clear40{
+        clear: both;
+        height: 0px!important;
+    }
+    .clear30{
+        clear: both;
+        height: 0px !important;
+    }
+    .webhidden{
+        display: block;
+    }
+    .mobhidden{
+        display: none;
+    }
+    input.form-control {
+        font-size: 14px!important;
+        font-weight: bold;
+        letter-spacing: 1.8px;
+        height: 39px!important;
+        padding-left: 45px !important;
+    }
+    .topping_spac2 {
+        margin-top: 50px;
+    }
+    .txtlc{
+        text-align: center !important;
+    }
+    .zandstyle{
+        display: none;
+    }
+    .logostyle{
+        display: block;
+    }
+    .Ayurvedicdietholder{
+        width:200px;
+    }
+    .SignBtn, .SignBtn:active, .SignBtn:hover, .SignBtn:focus {
+        width: 225px;
+    }
+    .txtalligncenter{
+        text-align: center;
+    }
+    .AyurvedicDietRightText2 {
+        padding-left: 1% !important;
+    }
+    .padright122 {
+         padding-right:2px; 
+    }
+    .footerDiv[_ngcontent-c4] {
+        width: 92%;
+    }
+    input.form-control {
+        font-size: 14px!important;
+        font-weight: bold;
+        letter-spacing: 1.8px;
+        height: 39px!important;
+        padding-left: 6px;
+    }
+    /* button.btn.btn-success[_ngcontent-c4] {
+        font-size: 14px;
+        font-weight: bold;
+        width: 131px!important;
+        height: 39px!important;
+    } */
+
+width: 143px;
+
+height: 25px;
+
+padding: 0px;
+
+float: right;
+} 
+@media screen and (min-width: 1px) and (max-width: 576px) { 
+
+
+    .bg {
+        background: url("src/assets/images/resfoot-ban.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .UserEmailFormGroup{
+        width: 100%;
+        float: left; 
+        margin-right: 15px;
+    } 
+    .UserEmailFormGroup2 {
+        width: 100%;
+        float: left;
+    } 
+
+
+    .DescalmerText {
+            text-align: center;
+    } 
+    span, .DescalmerTextspan {
+            text-align: center;
+    } 
+    .SecondDiv{
+        padding-left: 0px !important;
+    } 
+    .img{
+        text-align: center;
+    } 
+    .wRes{
+        width: 80%;
+    }
+}

@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col">
+      <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary dropdownbox" id="dropdownBasic1" ngbDropdownToggle>{{string}}</button>
+          <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button (click)="string=item.name" id="one" *ngFor="let item of dropdown" class="dropdown-item">{{item.name}}</button>
+              <!-- <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button> -->
+
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+

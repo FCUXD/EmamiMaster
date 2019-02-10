@@ -1,0 +1,411 @@
+<app-navigation></app-navigation>
+<div class="container">
+<div class="card-deck" *ngIf="isDesktop">
+ 
+<div class="card tab_card mx-0 small_div">
+<div class="card-body  {{tabs[0].active}}"(click)="openCity(0,'IMMUNITY')">
+<div class="border_div border_div2">
+<span class="card-title">IMMUNITY</span>
+</div>
+</div>
+</div>
+<div class="card tab_card mx-0" >
+<div class="card-body {{tabs[1].active}}" (click)="openCity(1,'PAIN')">
+<div class="border_div border_div2">
+<span class="card-title">PAIN</span>
+</div>
+</div>
+</div>
+<div class="card tab_card mx-0" >
+<div class="card-body {{tabs[2].active}} " (click)="openCity(2,'DIABETES')">
+<div class="border_div border_div2">
+<span class="card-title">DIABETES</span>
+</div>
+</div>
+</div>
+<div class="card tab_card mx-0">
+<div class="card-body  {{tabs[3].active}}" (click)="openCity(3,'Digestive Health')">
+<div class="border_div border_div2">
+<span class="card-title">Digestive Health</span>
+</div>
+</div>
+</div> 
+<div class="card tab_card mx-0">
+  <div class="card-body  {{tabs[4].active}}" (click)="openCity(4,'General Wellness')">
+  <div class="border_div border_div2">
+  <span class="card-title">General Wellness</span>
+  </div>
+  </div>
+  </div> 
+
+</div>
+</div>
+<section class="deal_area mb-2 mt-4">
+  <div  class="container mb-4">
+    <div class="clear"></div>
+    <div *ngFor="let data of details " class="row mt-4">
+     
+      <div class="col-12 col-lg-6 pr-0">
+        <div class="ChvanprashImg">
+          <img class="imgDivDetails" src="{{data.imageUrl}}">
+        </div>
+      </div>
+     
+      <div class="col-12 col-lg-6 pl-0">
+          
+        <div class="ZandupancharistRight">
+            
+          <h3 class="text-center">{{data.productName}}</h3>
+          <div class="clear10"></div>
+          <div class="Rupees175left text-center">
+            <h4 class="PlayfairDisplayRegular">{{data.selling}}</h4>
+            <div class="clear10"></div>
+            <div class="order-margin-top2">
+                <ng-container *ngIf="qtyP==0">
+                    <i class="fa"><img src="././assets/images/SpinnerMinus.png"></i>
+                </ng-container>
+                
+                <i *ngIf="qtyP!=0" class="fa" (click)="qtyP=qtyP-1; add(qtyP, data.productId)"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                <input [(ngModel)]="qtyP" class="input-spinner">&nbsp;
+                <i class="fa" (click)="qtyP=qtyP+1; add(qtyP, data.productId)"><img src="././assets/images/SpinnerPluse.png"></i>
+               </div>
+          </div>
+          <div class="Rupees175left2">
+            <button class="btn w-100 mt-4 AddToCartBtn" (click)="addToCart(qtyP, data.productId)" type="button">add to cart</button>
+            <button class="btn SignBtn w-100 mt-2 AddToCartBtn" (click)="buyNow(qtyP, data.productId)" type="button">BUY NOW</button>
+          </div>
+          <div class="clear"></div>
+          <div class="borderbottom my-5"></div>
+          <div class="clear"></div>
+          <h4 class="DirectionAndBenifits"><img class="mr-3" src="././assets/images/DosageandDirection.png">Dosage and
+            Direction</h4>
+          <ul class="PlayfairDisplayRegular">
+            <!-- <li>2 Tablespoon twise a day</li> -->
+            <span *ngIf="data.dosageAndDirection!=''">
+                <li >{{data.dosageAndDirection}}</li>
+               </span>
+          
+            <span *ngIf="data.dosageAndDirection==''">
+                <!-- <li>No Data</li> -->
+               
+            </span>
+          </ul>
+          <div class="clear20"></div>
+          <h4 class="DirectionAndBenifits"><img class="mr-3" src="././assets/images/ProductBenefits.png">Benefits</h4>
+          <ul class="PlayfairDisplayRegular">
+            <li *ngIf="data.listBenefits!=''">{{data.benefits}}</li>
+            <span *ngIf="data.listBenefits==''">
+                <!-- <li>Boost Appetite</li>
+                <li>Relief from Digestive Problem</li> -->
+            </span>
+            
+          </ul>
+        </div>
+        
+      </div>
+     
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<section class="deal_area IngredientsTabContent p-0 mt-5">
+  <div class="container mb-4">
+    <div class="shadoo mx-0">
+      <div class="card tab_card mx-0 small_div BorderradiusLeft IngredientsTab BorderLeftTop IngredientTab1">
+        <div class=" BorderradiusLeft card-body {{tabs2[0].active}}" (click)="openTab2(0)">
+          <div class="border_div2">
+            <span> Ingredients</span>
+          </div>
+        </div>
+      </div>
+      <div class="card tab_card mx-0 IngredientsTab">
+        <div class="card-body {{tabs2[1].active}}" (click)="openTab2(1)">
+          <div class="border_div2">
+            <span> Precautions</span>
+          </div>
+        </div>
+      </div>
+      <div class="card tab_card mx-0 BorderradiusRight IngredientsTab BorderRightTop IngredientTab2">
+        <div class=" BorderradiusRight card-body  {{tabs2[2].active}} " (click)="openTab2(2)">
+          <div class="border_div2 HiddenBorder">
+            <span> Age Group</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{tabs2[0].tabcontent}} p-0 TabContentBox paddingTabContentDiv BorderRadiusDiv bordertop">
+      <div class="TriphalaContentBox" *ngFor="let data of details ">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="Triphala" (click)="triphala(0)"  *ngIf="data.listIngredients!=null">
+              <h6 class="TriphalaActive" *ngIf="data.listIngredients.length>0">
+                  <span *ngIf="data.listIngredients[0].ingredientsName!=''">
+                      <!-- <img class="mr-2" src="././assets/images/Product_..png">  -->
+                      <!-- Triphala -->
+                      <li > {{data.listIngredients[0].ingredientsName}}</li>
+                  </span>
+                  
+                  
+              </h6>
+              <!-- <span *ngIf="data.listIngredients[0].ingredientsName==''"> -->
+                  <!-- <span *ngIf="data.listIngredients!=0"> -->
+                  <!-- <li>Boost Appetite</li>
+                  <li>Relief from Digestive Problem</li> -->
+              <!-- </span> -->
+            </div>
+            <!-- <div class="Triphala" (click)="triphala(1)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png">
+                 Triputa
+                </h6>
+            </div>
+
+            <div class="Triphala" (click)="triphala(2)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Lamang</h6>
+            </div> -->
+          </div>
+          <div class="col-12 col-lg-8 p-0">
+            <div class="{{triphalaright[0].rightdiv}} RightDiv" *ngIf="data.listIngredients!=null">
+              <div class="TriphalaRightContentBox" *ngIf="data.listIngredients.length>0">
+                <h6 *ngIf="data.listIngredients[0].ingredientsName!=''">
+                    {{data.listIngredients[0].ingredientsName}} is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms
+                  <!-- , including  -->
+                  <!-- <br /> -->
+                  <!-- constipation and inflammation -->
+                  ....</h6>
+
+                  <h6 *ngIf="data.listIngredients[0].ingredientsName==''">
+                  Useful for traditional Ayurvedic medicine to <br />
+                    prevent disease and treat a number of symptoms
+                    <!-- , including  -->
+                    <!-- <br /> -->
+                    <!-- constipation and inflammation -->
+                    ....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2" *ngIf="data.listIngredients.length>0">
+                <!-- <img src="././assets/images/Triphala.png"> -->
+                <img src=" {{data.listIngredients[0].imageUrl}}" *ngIf="data.listIngredients[0].imageUrl!=''">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[1].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <!-- <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6> -->
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <!-- <img src="././assets/images/Triphala.png"> -->
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[2].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <!-- <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6> -->
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <!-- <img src="././assets/images/Triphala.png"> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="{{tabs2[1].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+      <div class="TriphalaContentBox" *ngFor="let data of details ">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="Triphala" (click)="triphala(3)" >
+              <h6  *ngIf="data.precaution!=''">
+                <!-- <img class="mr-2" src="././assets/images/Product_..png">  -->
+                <!-- Triphala -->
+                <span >
+                    <!-- <img class="mr-2" src="././assets/images/Product_..png">  -->
+                    <!-- Triphala -->
+                    {{data.precaution}}
+                </span>
+              </h6>
+              <span >
+                  <!-- <img class="mr-2" src="././assets/images/Product_..png">  -->
+                  <!-- Triphala -->
+                  
+              </span>
+            </div>
+            <!-- <div class="Triphala" (click)="triphala(4)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Triputa</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(5)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Lamang</h6>
+            </div> -->
+          </div>
+          <div class="col-12 col-lg-8 p-0">
+            <div class="{{triphalaright[3].rightdiv}} RightDiv">
+              <!-- <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div> -->
+              <!-- <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div> -->
+              
+            </div>
+            <div class="RightDiv {{triphalaright[4].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <!-- <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6> -->
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[5].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <!-- <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6> -->
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="{{tabs2[2].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+      <div class="TriphalaContentBox" *ngFor="let data of details ">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="Triphala" (click)="triphala(6)" >
+              <h6 *ngIf="data.ageGroup!=''">
+                <!-- <img class="mr-2" src="././assets/images/Product_..png">  -->
+                <!-- Triphala -->
+                <span >
+                   
+                    {{data.ageGroup}}
+                </span>
+              </h6>
+            </div>
+            <!-- <div class="Triphala" (click)="triphala(7)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Triputa</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(8)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Lamang</h6>
+            </div> -->
+          </div>
+          <div class="col-12 col-lg-8 p-0">
+            <!-- <div class="{{triphalaright[6].rightdiv}} RightDiv">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div> -->
+            <div class="RightDiv {{triphalaright[7].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <!-- <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6> -->
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <!-- <img src="././assets/images/Triphala.png"> -->
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[8].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <!-- <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6> -->
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <!-- <img src="././assets/images/Triphala.png"> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="frequentlyBoughttogether my-5 pt-3">
+  <div class="container">
+    <h4>frequently Bought together</h4>
+    <div class="clear10"></div>
+    <img src="././assets/images/SelectCatagoryBorder.png">
+    <div class="clear"></div>
+    <div class="row  mt-5">
+      <div class="col-12 col-lg-4">
+        <div class="FrequentBox">
+          <div class="LeftBox1">
+            <div class="FrequentBox1">
+              <img src="././assets/images/ProductImg1.png">
+            </div>
+            <div class="FrequentBox2">
+              <img src="././assets/images/ProductPluse.png">
+            </div>
+            <div class="FrequentBoxRight">
+              <img src="././assets/images/ProductImg2.png">
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="BothBuyText">
+            <h4>Both buy:<span>`300</span></h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="FrequentBox">
+          <div class="LeftBox1">
+            <div class="FrequentBox1">
+              <img src="././assets/images/ProductImg1.png">
+            </div>
+            <div class="FrequentBox2">
+              <img src="././assets/images/ProductPluse.png">
+            </div>
+            <div class="FrequentBoxRight">
+              <img src="././assets/images/ProductImg2.png">
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="BothBuyText">
+            <h4>Both buy:<span>`300</span></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="FrequentBox">
+          <div class="LeftBox1">
+            <div class="FrequentBox1">
+              <img src="././assets/images/ProductImg1.png">
+            </div>
+            <div class="FrequentBox2">
+              <img src="././assets/images/ProductPluse.png">
+            </div>
+            <div class="FrequentBoxRight">
+              <img src="././assets/images/ProductImg2.png">
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="BothBuyText">
+            <h4>Both buy:<span>`300</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<div class="bottom_footer">
+  <app-main-footer></app-main-footer>
+</div>

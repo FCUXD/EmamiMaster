@@ -1,0 +1,15 @@
+<div class="main">
+  
+    <!-- Actual search box -->
+    <div class="form-group has-search">
+     
+      <input type="text" class="form-control SearchInputBox" [(ngModel)]="string" placeholder="Search here for Patient, Medicines etc">  
+      <div *ngFor="let item of searchbox | search : string : 'product'">
+    <p (click)="string=item.product"> {{item.product}} </p>
+
+      </div>
+    </div>
+    
+    <!-- Another variation with a button -->
+        
+  </div>

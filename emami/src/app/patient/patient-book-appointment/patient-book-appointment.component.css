@@ -1,0 +1,391 @@
+.gryish2 {
+    background: #f9f4e4;
+    padding: 30px 0px 20px 50px;
+    width: 100%;
+    height: 102px;
+}
+.consult {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 7%;
+}
+.btn-book {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.swal2-popup .swal2-header {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-float{
+    float: right;
+}
+.book-appointment-font{
+    font-size: 24px;
+    font-family: 'TrajanPro-Regular';
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+.pastAppointments .btn-green-1, .pastAppointments .btn-trasnp-1{
+    padding-left:10px;
+    padding-right:10px;
+   }
+   
+
+.background-label{
+    width: 137px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: #fbf8ee;
+    cursor: pointer;
+}
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem;
+    top: 10px;
+    font-family: 'PlayfairDisplay-Bold';
+    font-size: 13.5px;
+}
+.form-check img {
+    vertical-align: text-top;
+}
+.time-slot{
+margin-top: 40px;
+}
+
+.fa-phone{
+    color:#33a15c;font-size:24px;font-weight: 600;
+}
+
+.fa-video-camera{
+    color:#33a15c;font-size:24px;
+}
+
+.phone-2{
+    color:#ffffff;font-weight: 600;font-size:24px!important;
+}
+
+.background-color-time{
+    padding: 21px 40px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: rgba(251, 248, 238,0.5);
+    font-family: 'PlayfairDisplay-Regular';
+    text-align: center
+} 
+.timeSlot-check{
+    margin-bottom: 0px;
+    width: 100%;
+}
+.green{background-color: #bccf60;}
+.button-subm{
+padding: 20px;
+text-align: center;
+}
+
+.btn-pad{
+    font-size: 20px;
+    font-weight: 600;
+padding: 15px 50px 15px 50px;
+}
+
+.time-zone{
+    margin-top: 20px;
+    padding-top: 11px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    width: 84px;
+    height: 47px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: rgb(245, 239, 223);
+}
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btn {
+    font-weight: normal;
+}
+.colorchanged{
+    background-color: #bccf60;
+    color: #000000;
+    font-weight: 700;
+}
+.book-by-call-font{
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #402909;
+    margin-left: 45px;
+    font-family: 'PlayfairDisplay-Bold';
+}
+.by_call{
+    font-family: 'PlayfairDisplay-Regular';
+}
+.fa-angle-left{
+    font-size:36px; font-weight:600; cursor: pointer;
+}
+.appointment-margin{
+    width: 80%;
+    margin: 0 auto;
+}
+.btn-success {
+    color: #fff;
+    border: none;
+    height: 35px;
+    border-radius: 7px;
+    background-color: #bccf60;
+}
+.btn-success2 {
+    color: #fff;
+    border: none;
+    height: 35px;
+    border-radius: 7px;
+    background-color: #bccf60;
+    width: 80%;
+    padding-top: 6px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.appoint-font{
+    object-fit: contain;
+    font-family: TrajanPro-Bold;
+    font-size: 13.5px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+
+.call-style{
+    font-size: 13.5px; font-weight: 800; 
+}
+.UpdateBtn, .UpdateBtn:active, .UpdateBtn:focus{
+    font-family: 'TrajanPro-Bold';
+    background: #bccf60;
+    border-radius: 15px;
+    height: 45px;
+    width: 180px; 
+    padding: 11px 58px; 
+    box-shadow: 0 0 0 7px #bccf60 !important;
+    }
+
+.notesbox {
+        background: #fdfbf6;
+        border: 1px solid #e4decf;
+        border-radius: 5px;
+    }
+
+.appon_card {
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.13);
+    width: 22%;
+    text-align: center;
+    margin: 1% 2% 1% 0%;
+    padding: 30px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.appon_card.product_card {
+    background-color: #ffffff;
+    width: 100%;
+    margin-left: 0px;
+    text-align: left
+}
+.btn-primary {
+    color: #fff;
+    background-color: #26cd85;
+    border-color: #26cd85;
+    width: 100%;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.btn-primary:hover {
+    background-color: #26cd85;
+    border-color: #26cd85;
+}
+#dropdownBasic1 {
+    color: #303030;
+    background-color: #f7f9f9;
+    background-image: none;
+    border-color: #f7f9f9;
+    width:100%;
+    text-align: left
+}
+#dropdownBasic1::after {
+    content: url("../../../assets/images/down-arrow.png");
+    border-top:0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    margin-right: 20px;
+    float: right;
+}
+.d-inline-block.my-drop.dropdown {
+    width: 100%;
+}
+.dropdown-menu.show {
+    display: block;
+    width: 100%;
+}
+
+.fem-size{
+    margin-left: -6px;
+}
+.mal-size{
+    margin-left:-10px
+}
+
+
+
+
+/* poor avg good excbtns */
+
+
+
+.btn-unclicked-1 {
+    background-color: #f7f0dd;
+}
+
+/* Hide the browser's default checkbox/radio */
+
+.timeSlot-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; 
+    margin-top: -13px;
+}
+
+
+/* When the checkbox is checked, change background */
+.timeSlot-check input:checked~.checkmark {
+    background-color: #bccf60!important;
+}
+
+.dropdownbox, .dropdownbox:hover, .dropdownbox:active, .dropdownbox:focus{
+    border: none;
+    color: #666 !important;
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    width: 118px;
+  } 
+
+  button, select {
+    text-transform: none;
+    width: 100%;
+    height: 46px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline-offset: none;
+    outline:none;
+}
+.padlrn{
+    padding: 0px;
+}
+
+
+
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /*/ IE10 + CSS styles go here /*/
+
+   
+}
+
+@media screen and (min-width: 1600px) and (max-width: 2400px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 1060px) {
+   
+}
+
+@media screen and (min-width: 1px) and (max-width: 1024px) {
+    .mrgnb151{
+        margin-bottom: 15px;
+    }
+    .book-by-call-font {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 768px) {
+
+    .time-zone {
+        margin-top: 20px;
+        padding-top: 11px;
+        font-size: 10px;
+        width: 52px;
+        height: 38px;
+        padding: 11px 0px;
+    }
+    .background-color-time {
+        padding: 21px 5px;
+    }
+    .appon_card {
+         padding: 0px; 
+    }
+    .padrn{
+        padding-right: 0px;
+    }
+    .btn-success2 {
+         height: auto; 
+         text-align: center;
+       
+    }
+    .gryish2 {
+     height: auto; 
+     text-align: center;
+    }
+    .btn-float {
+        float: none;
+    }
+    .mrgnb15{
+        margin-bottom: 15px;
+    }
+    .mrgnt15{
+        margin-top: 15px;
+    }
+    .book-by-call-font{
+        margin-left: 1px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 480px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) {
+    .call-style {
+        font-size: 8.5px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 380px) {
+}

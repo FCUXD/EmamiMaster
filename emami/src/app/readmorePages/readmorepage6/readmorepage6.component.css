@@ -1,0 +1,134 @@
+.bottom_footer {
+    background: url(src/assets/images/footer.png) no-repeat;
+background-position: center top;
+}
+.declaimer{margin-top: 80px}
+.maindiv {
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px 80px;
+}
+h3{
+    
+  font-family: TrajanPro-Regular;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #402909;
+  margin-top: 35px;
+    margin-bottom: 25px;
+
+}
+h1 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+p {    
+  font-family: PlayfairDisplay-Regular;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: justify;
+  color: #333333;
+   
+}
+.carbohydrate-border{
+    border: 1px solid #d6ad66;
+    padding: 25px 35px;
+    margin: 30px 20px 30px 20px;
+}
+.causes li{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 18px;
+}
+.causes p{
+    font-family: PlayfairDisplay-Regular;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #333333;
+  margin-bottom: 10px;
+}
+h5{
+    font-family: PlayfairDisplay-Bold; 
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #333333;
+}
+.treatment ul{
+    list-style:decimal; 
+}
+.treatment li{
+    font-family: PlayfairDisplay-Bold; 
+}
+.lifestyle span{
+    font-family: PlayfairDisplay-Bold; 
+}
+.yoga span{
+    font-family: PlayfairDisplay-Bold; 
+}
+.stage li {
+    font-family: PlayfairDisplay-bold !important;
+    list-style: none;
+}
+.stage-inner li {
+    font-family: PlayfairDisplay-regular !important;
+    list-style: disc;
+}
+.reference li{
+    font-family:PlayfairDisplay-Bold;
+}
+.reference ul {
+    list-style: none;
+}
+
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .reference li {
+        word-break: break-word;
+    }
+    .carbohydrate-border {
+        margin: 30px 0px 30px 0px;
+    }
+  
+} 
+
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    .maindiv {
+        padding: 30px 20px;
+    }
+    h3{    
+        word-break: break-word;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) { 
+
+}
+
+@media screen and (min-width: 1px) and (max-width: 380px) { 
+ 
+}
+ 

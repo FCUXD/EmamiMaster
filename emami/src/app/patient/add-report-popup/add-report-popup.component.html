@@ -1,0 +1,54 @@
+<button type="button" #p="popover" [popover]="myPopover" [popoverOnHover]="false" class="btn UpdateBtn GetStartedBtn" (click)="toggleBtnTextReport()" >{{reportButton}}</button>  
+
+<popover-content #myPopover placement="">
+      <div class="modal-body PopupBody"> 
+          <div class="dragHeight">
+            <div class="repDiv" (click)="p.toggle()"><img class="closeReport" src="././assets/images/x-button.png"></div>
+              <label class="w-100" for="upload-photo"><img src="././assets/images/move.png"></label>
+              <span>png, jpg, or Pdf format</span>
+              <table>
+                  <tbody>
+                    <tr>
+                      <td class="AddReportName" style="width: 165px;">
+                          <label class="" for="usr">ADD REPORT NAME:</label>
+                      </td>
+                      <td>
+                          <input [(ngModel)]="investigationName" type="text" class="form-control AddReportName AddReportInput">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td><div class="errorClassFile" style="color: red!important" *ngIf="fileName">Please enter file name</div></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 165px;">
+                          <label class="" for="usr">Upload File:</label>
+                      </td>
+                      <td>
+                        <input type="file" (change)="selectFile($event)">
+                      </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="errorClassFile" style="color: red!important" *ngIf="fileExtension">Please select the valid file</div></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <!-- <div class="form-group InputGroup">
+                  <label class="AddReportName" for="usr">ADD REPORT NAME:</label>
+                  <input [(ngModel)]="investigationName" type="text" class="form-control AddReportName AddReportInput">
+                  <div class="errorClassFile" style="color: red!important" *ngIf="fileName">Please enter file name</div>
+                </div> -->
+            </div>
+          <div class="clear20"></div>
+          <button class="btn uploadbtn ml-4" (click)="upload()">Upload</button>
+        <!-- <label class="btn btn-default">
+          <input type="file" (change)="selectFile($event)">
+          <div class="errorClassFile" style="color: red!important" *ngIf="fileExtension">Please select the valid file</div>
+        </label> 
+        <div class="text-center">
+          
+        </div> -->
+      </div>
+    </popover-content>
+ 

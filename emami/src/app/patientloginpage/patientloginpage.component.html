@@ -1,0 +1,382 @@
+<app-navigation></app-navigation>
+<div class="clear50"></div> 
+<div class="clear30"></div> 
+<div class="bgcolor bgcolor1 bgcolor2">
+  <div class="overlayBG">
+    <div class="clear50"></div>
+    <div class="container mt-4 mb-4 ContainerHeight">
+      <!-- <h1 class="text-center mt-4">Welcome To ZANDU</h1> -->
+
+      <div class="row">
+        <div class="LoginContentBox col-12 col-lg-10">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 RightContentBox2 Rcb2">
+              <div class="ContentTextBox" *ngIf="show2">
+                  <h6 class="AccountText mrgnt15">Don’t have an account yet</h6>
+                  <div class="clear"></div>
+                  <!-- <img src="../../assets/images/borderImg.png">
+                  <div class="clear20"></div> -->
+  
+                  <div class="clear"></div>
+                  <button type="button" class="btn btn-primary mb-2 mt-4 TransperentBtn" (click)="Changediv2()">SIGN UP</button>
+                  <div class="clear10"></div>
+                  <p class="ORTExt">
+                    <img class="mr-2 ORTextLineImg" src="././assets/images/line.png">
+                    OR
+                    <img class="ml-2 ORTextLineImg" src="././assets/images/line.png">
+                  </p>
+                  <p class="ConsultdrText2">Call us @</p>
+                  <h4 class="phNo">1800 572 8000</h4> 
+                  <div class="clear10"></div>
+                  <h3 class="ConsultdrText">TO Consult Ayurvedic Doctor</h3>
+              </div>
+            </div>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="col-12  col-sm-12 col-md-6 col-lg-6">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 RightContentBox">
+              <div class="ContentTextBox" *ngIf="show">
+                  <h6 class="AccountText mrgnt15">Already have an account?</h6>
+                  <div class="clear"></div>
+                  <!-- <img src="../../assets/images/borderImg.png">
+                  <div class="clear20"></div> -->
+              
+                <div class="clear"></div>
+                <button type="button" class="btn btn-primary mb-2 mt-4 TransperentBtn" (click)="Changediv()">LOG IN</button>
+                <div class="clear10"></div>
+                <p class="ORTExt">
+                    <img class="mr-2 ORTextLineImg" src="././assets/images/line.png">
+                    OR
+                    <img class="ml-2 ORTextLineImg" src="././assets/images/line.png">
+                  </p>
+                  <p class="ConsultdrText2">Call us @</p>
+                  <h4 class="phNo">1800 572 8000</h4> 
+                  <div class="clear10"></div>
+                  <h3 class="ConsultdrText">TO Consult Ayurvedic Doctor</h3>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card border-0 mt-4 m-top" *ngIf="show">
+        <div class="card-body">
+          <h2 class=" SignUpText">SIGN UP</h2>
+          <div class="clear"></div>
+          <img src="././assets/images/borderImg.png">
+          <div class="clear20"></div>
+
+          <form class="form-horizontal" [formGroup]="patientRegister">
+            <div class="form-group col-sm-12">
+              <input type="text" #user class="form-control FormText form-control1 form-control11 mb-2 mr-sm-2 border-0"
+                formControlName="firstName" placeholder="NAME" (keypress)="restrictNumeric($event)">
+              <div *ngIf="patientRegister.controls['firstName'].hasError('required') && patientRegister.controls['firstName']?.touched"
+                class="alert">
+                Please Enter your Name
+              </div>
+            </div>
+
+            <!-- <div class="form-group col-sm-12">
+              <input type="text" #healthArea class="form-control FormText form-control1 form-control11 mb-2 mr-sm-2 border-0"
+                formControlName="HealthArea" placeholder="Health Area">
+                <div *ngIf="patientRegister.controls['HealthArea'].hasError('required') && patientRegister.controls['HealthArea']?.touched" class="alert alert-danger">
+                Please Enter a Primary Health Issue
+              </div>  
+            </div> -->
+
+            <!-- Health Issue DropDown -->
+            <!-- <div class="form-group col-sm-12">
+              <select (change)="isOther($event.target.value)" name="primaryHealthIssue" class="form-control FormText form-control1 form-control11 mb-2 mr-sm-2 border-0"
+                [(ngModel)]="userProfileForm.pHealthIssue">
+                <option *ngFor="let obj of healthdropdown" [selected]="obj.storingValue" [ngValue]="obj.storingValue">
+                  {{obj.storingValue}} </option>
+              </select>
+
+              <div class="clear10"></div>
+              <input *ngIf="isOtherFlag == true" name="otherHealthIssue" type="text" class="form-control" [(ngModel)]="userProfileForm.pHealthIssueOther"
+                placeholder="Other Health Issue" />
+            </div> -->
+
+            <div class="col-sm-12">
+              <input #patientEmail type="email" class="FormText form-control2 form-control form-control11 mb-2 mr-sm-2 border-0"
+                formControlName="emailId" placeholder="EMAIL">
+              <!-- <div *ngIf="patientRegister.controls['emailId'].hasError('required')&& patientRegister.controls['emailId']?.touched"
+                class="alert">
+                Please Enter your Email ID
+              </div> -->
+              <!-- <span  *ngIf="patientRegister.hasError('emailId', 'emailId').touched" style="color:red;">
+                Please enter the correct email or valid email.
+            </span> -->
+            </div>
+
+            <div (capsLock)="capsOn=$event" class="col-sm-12">
+              <input #patientPassword (keydown.space)="$event.preventDefault();" type="password" class="FormText form-control3 form-control form-control11 mb-2 mr-sm-2 border-0"
+                formControlName="password" placeholder="PASSWORD">
+              <div *ngIf="patientRegister.controls['password'].hasError('required') && patientRegister.controls['password']?.touched"
+                class="alert">
+                Please Enter your Password
+              </div>
+              <label *ngIf="capsOn">Caps Lock is On</label>
+            </div>
+
+            <div class="col-sm-12">
+              <input #phone type="text" class="FormText phoneno form-control form-control11 mb-2 mr-sm-2 border-0"
+                formControlName="mobileNumber" placeholder="PHONE NUMBER" minlength=10 maxlength=10>
+              <div *ngIf="patientRegister.controls['mobileNumber'].hasError('required') && patientRegister.controls['mobileNumber']?.touched"
+                class="alert">
+                Please Enter your Phone Number
+              </div>
+              <!-- <div *ngIf="patientRegister.controls['mobileNumber'].hasError('required') && patientRegister.controls['mobileNumber']?.touched"
+                class="alert">
+                Please Enter 10 digits mobile Number
+              </div> -->
+            </div>
+
+            <P class="OTPWILLBETExt">An OTP will be sent to you via SMS to verify your mobile number</P>
+
+            <!-- Captcha -->
+
+            <!-- <div class="col-md-12 text-center">
+              <div class="capthchadiv">
+                 <re-captcha (resolved)="resolved($event)" siteKey="6LdZtnIUAAAAAKIIppIvkTBro1nq_EjRFz8UgiAy"></re-captcha>
+              </div>
+           </div> -->
+
+            <!-- terms and condition -->
+
+            <!-- <div class="col-md-12 text-center termcondi">
+               <input #termsandcondition type="checkbox" class="captchaa" value='' formControlName='termsandcondition' required> I agree to the <span class="termspointer colored" data-toggle="modal" (click)="openmodal();">terms and conditions</span> 
+           <div *ngIf="patientRegister.controls['termsandcondition'].hasError('required') && patientRegister.controls['termsandcondition']?.touched" class="alert alert-danger">
+                Please Enter terms and condition
+           </div>
+           </div> -->
+           
+            <button type="submit" [disabled]="!patientRegister.valid"  (click)="Register(patientRegister.value,user.value)" class="btn btn-primary mb-2 mt-4 SignBtn">PROCEED</button>
+
+          </form>
+
+          <div class="row">
+            <div class="col-md-12 mt-4">
+              <a class="ConnectWithText"><img class="LineImg mr-2" src="././assets/images/line.png"> OR connect with
+                <img class="LineImg ml-2" src="././assets/images/line.png">
+              </a>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="SocialIconContentBox mt-4">
+            <div class="SocialIcon">
+              <img src="././assets/images/fb.png" (click)="socialSignIn('facebook')">
+            </div>
+            <div class="SocialIcon">
+              <img src="././assets/images/G+.png" (click)="socialSignIn('google')">
+            </div>
+            <!-- <div class="SocialIcon">
+
+              <img src="././assets/images/linked.png" (click)="socialSignIn('linkedin')">
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card card2 border-0 mt-4 m-top" *ngIf="show2">
+        <div class="card-body">
+          <h2 class=" SignUpText">LOG IN</h2>
+          <div class="clear"></div>
+          <img src="././assets/images/borderImg.png">
+          <div class="clear20"></div>
+          <form class="form-horizontal">
+            <div class="warning" *ngIf="responseCheck">{{redcolor}}{{loginResp.RESPONSE_MSG}}
+            
+            </div>
+            <div class="col-sm-12">
+              <input type="text" #textInput class="form-control" name="email" (input)="textInput.value.length > 10 && mobNum(textInput.value)" minlength=10 maxlength=10 placeholder="ENTER MOBILE NUMBER" class="FormText form-control22 form-control form-control11 mb-2 mr-sm-2 border-0"
+                required #patientemail>
+                
+            </div>
+
+            <div (capsLock)="capsOn=$event" class="col-sm-12">
+
+              <input (keydown.space)="$event.preventDefault();" type="password" name="password" placeholder="PASSWORD" class="FormText form-control3 form-control form-control11 mb-2 mr-sm-2 border-0"
+                required #patientpassword (keyup.enter)="login(patientemail.value,patientpassword.value)" > 
+                <!-- onkeypress="return AvoidSpace(event)" -->
+                <label *ngIf="capsOn">Caps Lock is On</label>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 txtaligncenter mrgnr10">
+                <a  routerLink="../forgotpassword" class="ForgetText">Forgot Password?</a>
+              </div>
+            </div>
+            <div class="clear20"></div>
+            <div class="clear10"></div>
+            <button type="button" class="btn btn-primary mb-2 mt-4  SignBtn" (click)='login(patientemail.value,patientpassword.value)'>LOG IN</button>
+
+          </form>
+
+          <div class="row">
+            <div class="col-md-12 mt-4">
+              <a class="ConnectWithText"><img class="LineImg mr-2" src="././assets/images/line.png"> OR connect with
+                <img class="LineImg ml-2" src="././assets/images/line.png">
+              </a>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="SocialIconContentBox mt-4">
+            <div class="SocialIcon">
+              <img src="././assets/images/fb.png" (click)="socialSignIn('facebook')">
+            </div>
+            <div class="SocialIcon">
+              <img src="././assets/images/G+.png" (click)="socialSignIn('google')">
+            </div>
+            <!-- <div class="SocialIcon">
+
+              <img src="././assets/images/linked.png" (click)="socialSignIn('linkedin')">
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+
+
+<!--Terms & Condition Modal Popup -->
+<div class="{{modal}} custom_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title colored text-center">Terms and Conditions</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="closemodal()">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+
+
+      <div class="container scroll">
+        <p>(a) Emami is the owner/ proprietor of the Website. </p>
+        <p>(b) The information on the Website (including but not limited to video consult, live chat, e-mails, phone
+          support) is provided for general informational purposes only and should not be relied upon as a substitute
+          for sound professional medical advice, evaluation or care from your physician or other qualified healthcare
+          provider. Nothing on the Website should be used for treating or diagnosing a medical or health condition or
+          for replacing any relationship with your physician or other qualified healthcare provider. The health
+          information furnished on the Website and the interactive responses (if any) furnished by or through the
+          Website are not intended to or implied to be professional medical advice. User shall consult other sources
+          and confirm the information contained within the Website. Further, User shall never disregard medical advice
+          or delay in seeking it because of the information available on the Website (including but not limited to
+          video consult, live chat, e-mails, phone support). </p>
+        <p>(c) No medications, diet supplements or treatments as may be described on the Website shall be taken or
+          begun without first consulting a physician or other healthcare provider. </p>
+        <p>(d) Information or advice provided on the Website by professionals should be used merely as a guide rather
+          than a definitive recommendation to adopt any specific action or treatment. Nothing transmitted to or from
+          the Website constitutes the establishment of a doctor-patient relationship between You and any professional
+          providing information or advice through the Website. </p>
+        <p>(e) Website is not intended to be used to: </p>
+        <p>(i) treat or give diagnosis of a medical emergency or medical condition; or </p>
+        <p>(ii) advise or resolve medical issues which are outside the scope of what has been specifically agreed. </p>
+        <p>(f) User absolves professionals, engaged and / or contracted by Emami who offer services through the
+          Website, from any responsibility or liability whatsoever, for any medical, legal or financial events or
+          outcomes related to services attained using online video consultation or any form of communication. </p>
+        <p>(g) Emami does not regularly review the posts on the Website and the views expressed therein are those of
+          the posters and do not necessarily reflect those of Emami, its officers, managers, directors, employees,
+          agents, partners, advertisers, consultants or affiliates. Emami assumes no responsibility for the posts or
+          the information contained therein, nor does it make any claims, promises or guarantees about the accuracy,
+          suitability or completeness of any of the information on the said posts. </p>
+        <p>(h) Emami is solely entitled to the trade marks, names, logos and service marks, copyrights and all other
+          intellectual property rights including but not limited to the software, application, graphics, text and other
+          materials used therein (collectively, the “Content”). Nothing contained on the Website should be construed as
+          granting any license or right to use Content without the prior written permission of Emami. Any other
+          material displayed on the Website that is capable of being protected as intellectual property shall be the
+          property of Emami and nothing contained on the Website should be construed as granting any license or right
+          to use any such material without the prior written permission of Emami. </p>
+        <p>(i) Emami makes no claim that the Content is appropriate or may be downloaded in a particular jurisdiction.
+          The access to Website and Content may not be legal by certain persons or in certain states or countries. If
+          You access the Website from outside India, You do so at your own risk and are responsible for compliance with
+          the laws of your jurisdiction. </p>
+        <p>(j) The Content is for informational purposes only. The Content is not intended to be a substitute for
+          face-to-face professional advice, diagnosis, or treatment. </p>
+        <p>(k) The information on the Website may become outdated and efforts will be made to correct the errors and
+          keep the Content updated. The information and materials on the Website are provided on an “as is” basis. </p>
+        <p>(l) User shall provide full and complete information pertaining to the ailment (including but not limited to
+          the User’s medical history). </p>
+        <p>(m) No warranty or representation of any kind, express or implied, is given by or on behalf of Emami that
+          the responses to the queries, shall be appropriate, secure, reliable and free from error. </p>
+        <p>(n) Emami shall not be liable for any negligence (including gross negligence), loss, injury or damage
+          (including without limitation direct, indirect, consequential, special,
+          exemplary or punitive loss) suffered by You on account of the use/performance of the information, response,
+          advice furnished to You, any action or lack of action by User and/ or medicines prescribed/ sold to the User.
+        </p>
+        <p>(o) User agrees to defend, indemnify, compensate and hold Emami, its officers, directors, employees, agents,
+          licensors, and suppliers, harmless from and against all claims, actions or demands, liabilities and
+          settlements including without limitation, reasonable legal and accounting fees, resulting from, or alleged to
+          result from, User’s violation of these terms and conditions or any claims based upon the User’s
+          posts/submissions on the Website. </p>
+        <p>(p) Emami shall not be liable to indemnify the User under any event. </p>
+        <p>(q) For damages (including without limitation liability arising out of tort, strict liability, negligence,
+          contract or patent or copyright infringement), if any, the liability of Emami shall not exceed the lesser of:
+          (i) the fees paid, if any, to Emami for the information or service provided on this Website; or (ii) INR 200
+          (Indian Rupees Two Hundred). </p>
+        <p>(r) These terms and conditions and the privacy policy constitute the entire understanding and agreement
+          between the User and Emami. There are no understandings, representations or warranties (whether written or
+          oral) except as expressly referred to herein. </p>
+        <p>(s) If any dispute, difference, claim or question, shall at any time, arises between Emami and You, in
+          relation to the use of the Website (in any manner whatsoever) such dispute, difference, claim or question
+          shall be referred to arbitration. Emami and You shall mutually appoint a sole arbitrator. Such arbitration
+          shall be held in accordance with the provisions of the Arbitration and Conciliation Act, 1996. The venue and
+          seat of arbitration shall be [Kolkata, West Bengal] and the proceedings shall be in the English language. </p>
+        <p>(t) User warrants that he/ she has completed eighteen (18) years of age as on date of this agreement and has
+          fully read and understood these terms and conditions without any impairment in judgment resulting,
+          inter-alia, from mental illness, mental handicap, intoxication, medication, or any other health problem. </p>
+
+      </div>
+
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="closemodal()">Close</button>
+      </div>
+
+
+    </div>
+  </div>
+</div>  
+      <!-- The Modal -->
+      <div class="modal fade  {{custom}}" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Error</h4>
+              <button type="button" class="close" (click)="close()">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body"> 
+              <img src="././assets/images/Alert.png">
+              <br/> 
+              <div class="clear20"></div>
+                {{signupvalidationmessage}}
+               <div class="clear20"></div>
+            
+            </div>
+            
+            <!-- Modal footer -->
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="close()" data-dismiss="modal">Close</button>
+            </div> -->
+            
+          </div>
+        </div>
+      </div>
+   
+         <!-- The Modal -->
+         

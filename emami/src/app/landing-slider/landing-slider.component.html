@@ -1,0 +1,90 @@
+<div class="text-center mt-5">
+
+  <div class="row mx-auto my-auto">
+  <div id="recipeCarousel" class="carousel slide w-100 mt-3" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+  
+  <div class="carousel-item active">
+  
+  <div class="row" *ngIf="isDesktop">
+  
+  <div class="col-md-12 col-lg-4 col-sm-12 col-12 cursor">     
+  <div class="card custom_card" routerLink="../healtharea">
+    <div class="card-body custom_body">
+    <img class="margingleft"   src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+      <p class="card-title mb-0">Know more about<br/> 
+        your health
+      </p>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-12 col-lg-4 col-sm-12 col-12 cursor">     
+  <div class="card custom_card padtop15" routerLink="../patientloginpage">
+      <div class="card-body custom_body pb-0">
+    <img class="margingleft"   src="././assets/images/{{carouselarr2[cImageIndex+1].imageURL}}" alt="Card image">
+   <p class="card-title mb-0">Consult Expert Ayurvedic<br/>
+    Doctors For free
+     </p>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-md-12 col-lg-4 col-sm-12 col-12 cursor">       
+  <div class="card custom_card" routerLink="../mainproductpage">
+    <div class="card-body custom_body custom_body2">
+    <img class="margingleft"   src="././assets/images/{{carouselarr2[cImageIndex+2].imageURL}}" alt="Card image">
+     <p class="card-title mb-0">Buy Products and get<br/>
+      free Home Delivery
+       </p>
+    </div>
+  </div>
+  </div>
+  
+
+  </div>
+  
+  <div class="row" *ngIf="isMobile">
+  
+    <div class="col-md-12 col-lg-4 col-sm-12 col-12">     
+      <div class="card custom_card">
+        <div class="card-body custom_body">
+        <img class="margingleft"   src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+          <p class="card-title mb-0" routerLink="../healtharea">Know more about<br/> 
+            your health</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-12 col-lg-4 col-sm-12 col-12">     
+      <div class="card custom_card padtop15">
+          <div class="card-body custom_body pb-0">
+        <img class="margingleft"   src="././assets/images/{{carouselarr2[cImageIndex+1].imageURL}}" alt="Card image">
+       <p class="card-title mb-0" routerLink="../patientloginpage">Consult Expert Ayurvedic<br/>
+        Doctors For free </p>
+        </div>
+      </div>
+      </div>
+      
+      <div class="col-md-12 col-lg-4 col-sm-12 col-12">       
+      <div class="card custom_card">
+        <div class="card-body custom_body custom_body2">
+        <img class="margingleft"   src="././assets/images/{{carouselarr2[cImageIndex+2].imageURL}}" alt="Card image">
+         <p class="card-title mb-0" routerLink="../mainproductpage">Buy Products and get<br/>
+          free Home Delivery </p>
+        </div>
+      </div>
+      </div>
+    </div>
+   </div>
+   </div>
+        </div>
+
+    
+        <ol class="carousel-indicators carousel-indicators-numbers">
+          <li data-target="#carousel-example-generic" (click)="selectSlide(0)" class="{{default}}" data-slide-to="0" ></li>
+          <li data-target="#carousel-example-generic" (click)="selectSlide(1)" data-slide-to="1" class="{{default2}}" ></li>
+          <li data-target="#carousel-example-generic" (click)="selectSlide(2)" data-slide-to="2" class="{{default3}}"></li>
+        </ol>
+    </div>
+  </div>
+  
+  

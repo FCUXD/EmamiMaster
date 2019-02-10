@@ -1,0 +1,101 @@
+
+
+.searchbg  {
+    background-image: url("src/assets/images/search_bg.png");
+    cursor: pointer;
+    background-position: 96% 30px;
+    background-repeat: no-repeat;
+    height: 73px;
+    padding: 5px 0px 0px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    outline: none;
+    box-shadow: none;
+    border-radius: 10px;
+    box-shadow: 0px 9px 13px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.41);
+    font-family: TrajanPro-Bold;
+    font-size: 18px;
+    background-image: url("../../../../assets/images/search_bg.png");
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    color: rgba(62, 40, 8, 0.7); 
+    cursor: pointer;
+} 
+/* .backgrounfImg{
+   
+} */
+.swidth {
+      border-radius: 0px !important;
+}
+.innersearch p {
+    padding-bottom: 16px;
+    margin-bottom: 0px;
+    padding-top: 16px; 
+    text-transform: uppercase; 
+    color: #333333; 
+    font-size: 18px; 
+    padding-left: 4%;
+}  
+.innersearch :active, .innersearch :focus, .innersearch :hover {
+    background: #fff9e5;
+}
+.InnerDiv{
+    height: 435px;
+    overflow-y: auto;
+    position: absolute;
+   z-index: 9999;
+    width: 98%;
+    border-radius: 0px 0px 10px 10px;
+}
+.srchresult .SearchIn {
+    position: absolute;
+    width: 98%;
+    z-index: 1;  
+ box-shadow: none;
+}
+.bg-white {
+    background-color: #ffffff !important;
+color: #ffffff;
+}
+.searchbg::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+ 
+    color: #3e2808;
+}
+
+.searchbg:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    
+    color: #3e2808;
+}
+
+.searchbg::-ms-input-placeholder { /* Microsoft Edge */
+   
+    color: #3e2808;
+}
+.webhidden{
+    display: none;
+}
+
+
+@media screen and (min-width: 1px) and (max-width: 768px) {
+    .webhidden{
+        display: block;
+    }
+    .mobhidden{
+        display: none
+    }
+    .searchbg {
+        padding: 5px 0px 0px 8px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 480px) {
+    .searchbg {
+        padding: 5px 0px 0px 8px;
+        font-size: 12px !important;
+    }
+}

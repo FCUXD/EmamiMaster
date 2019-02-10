@@ -1,0 +1,474 @@
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+     }
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 16px 12px 16px;
+    font-size: 17px; 
+    border: 1px solid #35a961;
+}
+.ResTextLink p{
+    font-size: 12px;
+} 
+.GoNextBtn{
+    text-align: center;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ffffff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ffffff;
+    color: #35a961;
+   
+}
+.tab1{
+    width: 32%;
+    float: left; 
+    border-radius: 5px;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+} 
+.BtnMargin15px{
+    margin: 0px 22px;
+} 
+.PatientProfileHeader{
+    padding: 2% 3%; 
+    border-bottom: 1px solid #333;
+}  
+.PatientHistoryBtnDiv{
+    text-align: center;
+}
+.PatientHistory{
+    padding: 2% 3%;
+    box-shadow: 0px 0px 4px #ccc;
+    margin: 3%;
+    border: 1px solid #ccc;
+}  
+#comment{
+   height: 90px; 
+   overflow-y: scroll;
+   border-radius: 0px;
+   background-color: transparent;
+}
+.bordertop{
+    border-top: 1px solid #ccc;
+  } 
+  .PatientHistoryBtn{
+    padding: 2% 16%;
+  } 
+.SymptomsContentBox{
+    width: 46%;
+    float: left; 
+    min-height: 210px; 
+    margin-top: 0px;
+} 
+.SymptomsContentBoxmargin{
+    margin-right: 11px;
+} 
+.SymptomsContentBoxmargin1{
+    margin-right: 0px; 
+    margin-left: 10px;
+} 
+.SymptomsBtn{
+    margin-top: 7%;
+} 
+.DiagnosisInput{
+    border-bottom: 1px solid #333 !important;
+    border-radius: 0px; 
+    border: none;
+    background-color: transparent;
+    
+}   
+
+.DiagnosisInput1{
+   
+    background: url("../../../assets/images/add.png") no-repeat right center;
+}  
+.OrderSummeryAddressContent{
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 0px; 
+    margin: 4% 0%; 
+    margin-left: 16px;
+    cursor: pointer;
+}
+.ContentDiv{
+    margin: 8px;
+    padding: 14px 14px;
+    border: 1px solid #ccc;
+} 
+.RemoveBtn{
+    background-color: #ffffff;
+    border-bottom: 1px solid #333;
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 14px;
+} 
+.MarginLeftDiv{
+    margin-left: -25px;
+} 
+.AddAdressDiv h3{
+    margin-top: 22%;
+} 
+.ConfirmPaymentLeftCard {
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 6% 3%;
+    border-radius: 10px; 
+    width: 23%;
+    float: left;
+    margin-right: 28px;
+    } 
+    .ConfirmPaymentLeftCard4{
+    margin-right: 0px;
+    }
+  
+.RoundImgDiv{
+    width: 88px;
+    height: 88px;
+    float: left; 
+    border: 1px solid #333;
+border-radius: 50px;
+padding: 13px; 
+margin-top: -18px;
+} 
+.RoundImgDiv img{
+    width: 100%;
+    height: 100%;
+  
+} 
+.card{
+    padding: 35px 15px 15px 15px;
+    box-shadow: 0px 0px 8px #ccc;
+}  
+.TabContentBox{
+    margin-top: 3% !important;
+} 
+.BoxMinHeight{
+    min-height: 300px;
+} 
+.SubmitBtnDiv{
+    text-align: center;
+    padding: 1% 2% 4% 2%;
+} 
+.btn-primary{
+
+    background-color: #35a961;
+} 
+.table tbody tr td{
+    font-size: 12px;
+} 
+.subtotalPaddingLeft{
+    padding-left: 11px;
+}  
+/*----animation input box-----*/ 
+/* form {
+    margin: 100px;
+  } */
+ .AnimationInputBox .input-field {
+    position: relative;
+    /* width: 250px;
+    height: 44px; */
+    /* line-height: 44px; */
+  }
+  .AnimationInputBox label {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #000;
+    transition: 0.2s all;
+    left: 0;
+  }
+ .AnimationInputBox  input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    border-bottom: 2px solid #d3d3d3;
+  }
+ .AnimationInputBox input:focus,
+ .AnimationInputBox input:valid {
+    border-color: #000;
+  }
+  .AnimationInputBox input:focus~label,
+ .AnimationInputBox  input:valid~label {
+    top: -24px;
+    color: #000;
+  }
+  
+  /*-----------*/ 
+  .btn-add{
+    background-color: transparent;
+    padding: 6px;
+    margin-left: -10px;
+    margin-top: -17px;
+      } 
+      .AnimationInputBox2 .input-field{
+       
+        width: 75%;
+    }
+  .cardbodydiv{
+    box-shadow: 0px 0px 10px #f1f1f1;
+    border: none;
+    padding: 2%; 
+    background-color: #f4f4f4;
+} 
+.Righttext{
+    font-size: 18px; 
+    color: #666;
+}
+
+/* / You can add global styles to this file, and also import other style files / */
+.bg-color{
+    background-color:#F7F9F9;
+}
+.MarginTB{
+    margin: 20px 0px 20px 0px;
+}
+.MarginTop20{
+margin-top: 20px;
+} 
+.MarginBottom10px{
+    margin-bottom: 10px;
+} 
+.MarginBottom20px{
+    margin-bottom: 20px;
+}   
+.MarginLeft{
+margin-left: 18px;
+}
+.borderdiv{
+    border: 1px solid #cccccc;
+}
+
+
+
+.add-report-float{
+    text-align:right;
+}
+
+.report-font{
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+.filter-by{
+    font-size: 18px;
+    font-weight: 800;
+    }
+
+.float-filter-by{
+    text-align: right;
+}
+
+.bg-cyan{
+    background: #85929E;
+}   
+
+.fa-size{
+  font-size:24px
+}
+
+.fa-calendar2{
+    font-size:24px;color:green;
+    cursor: pointer;
+}
+
+.img-size{
+    cursor: pointer;
+}
+
+.custom_modal {
+    position: fixed !important ;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    background: rgba(0,0,0,0.5);
+    z-index: 1 !important;
+  }
+
+.modal-dialog {
+    top: 20% !important;
+    }
+
+@media only screen and (max-width: 768px) {
+    .add-report-float{
+        text-align:center;
+    }
+    .report-font{
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+    }
+    .float-filter-by{
+        text-align: center;
+    }
+    .Righttext{
+        font-size: 16px; 
+        color: #666;
+    }
+    
+    .MarginLeft{
+        margin-left: 10px;
+        }
+        
+    .img-size{
+        width:24%;
+        cursor: pointer;
+    }            
+} 
+@media screen and (min-width: 1px) and (max-width: 1350px) { 
+    .ConfirmPaymentLeftCard {
+    width: 22%;
+    }
+    
+    }
+@media screen and (min-width: 1px) and (max-width: 1300px) { 
+   
+    .tab1 {
+        width: 30%;
+          } 
+     }  
+     @media screen and (min-width: 1px) and (max-width: 992px) { 
+        .ConfirmPaymentLeftCard {
+            width: 44%;
+            margin: 3%;
+        }
+        .MarginLeftDiv, .OrderSummeryAddressContent {
+            margin-left: 0px;
+        }  
+        .AddAdressDiv h3{
+            margin: 12%;
+        }
+    }
+@media screen and (min-width: 1px) and (max-width: 768px) {  
+    .SymptomsContentBox {
+        width: 94%;
+            } 
+            .SymptomsContentBoxmargin1 {
+                margin-right: 3%;
+                margin-left: 3%;
+            } 
+            .ResMarginTop{
+             margin-top: 0px !important;
+            } 
+            .SymptomsBtn {
+                margin: 0 auto;
+            } 
+            .ConfirmPaymentLeftCard1 {
+                margin: 0% 0%;
+            } 
+            .ConfirmPaymentLeftCard {
+                margin: 0 auto; 
+                margin-bottom: 15px;
+            } 
+            .ZanduPaddingleft{
+                padding-left: 2%; 
+                text-align: center;
+                margin: 4% 0%;
+            } 
+            .RoundImgDiv{
+                margin: 0 auto;
+                float: none;
+            } 
+            .ZanduPaddingleft1{
+                text-align: center;
+            } 
+            .SpinerRes{
+                text-align: center;
+            } 
+            .ResText{
+                float: none !important;
+                text-align: center !important;
+                margin: 4% 0% !important;
+            } 
+            .ResTextLink{
+                text-align: center;
+                padding: 4%;
+            } 
+            .ResTextLink1{
+                padding-left: 4% !important;
+            }
+ }
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    .ConfirmPaymentLeftCard {
+        width: 86%;
+    }
+    .tab1 {
+        width: 100%;
+        margin-bottom: 20px;
+          } 
+          .BtnMargin15px {
+            margin-right: 0px;
+            margin-left: 0px;       
+        } 
+        .ResTextLink ,ResTextLink1{
+            padding-left: 12% !important;
+        } 
+      }
+
+
+
+
+
+
+
+
+
+
+
+      .dropdownbox, .dropdownbox:hover, .dropdownbox:active, .dropdownbox:focus{
+        border: none;
+        color: #666 !important;
+        background-color: transparent !important;
+        box-shadow: none !important; 
+        border-bottom: 1px solid #333;
+        border-radius: 0px; 
+        width: 100%;
+    float: left;
+    text-align: left;
+      } 
+      .d-inline-block {
+        width: 100%;
+        float: left;
+    } 
+    
+    .dropdown-toggle::after {
+      width: 0;
+      height: 0;
+      content: url("../../../assets/images/down-arrow.png");
+      border-top: none;
+      border-right: none;
+      border-bottom: 0;
+      border-left: none; 
+      float: right;
+      margin-top: 6px;
+    
+    } 
+    @media screen and (min-width: 1px) and (max-width: 992px) { 
+      #dropdownBasic1 {
+          margin-bottom: 15px;
+      }
+    } 

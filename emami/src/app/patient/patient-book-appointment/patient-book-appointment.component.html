@@ -1,0 +1,238 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header>
+<app-innerfloating></app-innerfloating>
+<div class="clear80"></div>
+<div class="gryish2 mrgnb15">
+    <div class="row">
+    <div class="consult col-12 col-sm-12 col-md-6 col-lg-6">
+        <p class="book-appointment-font"><i class="fa fa-angle-left" routerLink="../patient-dashbord-details"></i>
+            &nbsp;&nbsp;  Consult Ayurvedic Doctor</p>
+    </div>
+    <div class="btn-book col-12 col-sm-12 col-md-6 col-lg-6">
+
+        <div class="btn-success2 btn-float">
+            <span class="book-by-call-font"> <span class="by_call">Book by call</span> &nbsp;&nbsp;&nbsp;<img src="././assets/images/phone.png">
+                Toll-free 1800 572 8000</span>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="container">
+    <div class="appon_card product_card">
+        <div class="appointment-margin">
+            <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mrgnb15">
+                            <div class="row">
+                                <p class="appoint-font mrgnt15">1. Enter your Health Issue</p>
+                                <br />
+                                <div class="col-9">
+                                    <div class="row">
+                                        <div class="col">
+    
+                                            <div class="styled-select">
+                                                <select id="firstName" ngModel required #selIssue="ngModel" [(ngModel)]="bookAppointmentForm.healthIssue">
+                                                    <option [ngValue]="null" disabled>Enter your health issue or symptom</option>
+                                                    <option *ngFor="let item of singleCheck.PRIMARY_HEALTH_ISSUE_LIST"
+                                                        [ngValue]="item.displayValue">{{item.displayValue}}</option>
+    
+                                                </select>
+                                            </div>
+                                            <div class="alert alert-danger" *ngIf="selIssue.invalid && selIssue.touched">Please
+                                                Select Health Issue</div>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 mrgnb15">
+                    <p class="appoint-font">2. Preferred mode of Appointment</p>
+                    <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                                <div class="background-label col-10 col-sm-10 col-md-10 col-lg-10 padlrn {{call}}" (click)="audio_call()">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="radio1">
+                                            <input type="radio" [(ngModel)]="bookAppointmentForm.modeOfonsultation" class="form-check-input"
+                                                id="radio11" name="optradio" value="Audio"> &nbsp;
+                                            <img src="././assets/images/phone-new.png">&nbsp; <span class="call-style">Call</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                                <div class="background-label col-10 col-sm-10 col-md-10 col-lg-10 padlrn {{video}}" (click)="video_call()">
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="radio2">
+                                            <input type="radio" [(ngModel)]="bookAppointmentForm.modeOfonsultation" class="form-check-input"
+                                                id="radio12" name="optradio" value="Video"> &nbsp;
+                                            <img src="././assets/images/video.png">&nbsp; <span class="call-style">Video</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+
+    
+            </div>
+            <div class="clear40"></div>
+
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 mrgnb15">
+            <div class="">
+                    <div class="row">
+                        <div class="col-9">
+
+                            <p class="appoint-font">3. Select preferred Date</p>
+                            <app-datepicker3 (selectedDate)="bookAppointmentForm.appointmentDate=$event"></app-datepicker3>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 mrgnb15">
+            <div class="">
+                    <p class="appoint-font">4. Select preferred Time Slot</p>
+                    <div class="background-color-time">
+                        <div class="row">
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 padrn">
+                                <img src="././assets/images/bulb.png" alt="morning" />
+                                <label class="timeSlot-check">
+                                    <input value="09:00am" (change)="time(9)" [(ngModel)]="bookAppointmentForm.appointmentTime" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">09-10 am</span>
+                                </label>
+
+                                <label class="timeSlot-check">
+                                    <input value="10:00am" (change)="time(10)" [(ngModel)]="bookAppointmentForm.appointmentTime" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">10-11 am</span>
+                                </label>
+
+                                <label class="timeSlot-check">
+                                    <input value="11:00am" (change)="time(11)" [(ngModel)]="bookAppointmentForm.appointmentTime" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">11-12 am</span>
+                                </label>
+
+                            </div>
+
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                                <img src="././assets/images/sun-new.png" alt="afternoon" />
+                                <label class="timeSlot-check">
+                                    <input value="12:00pm" (change)="time(12)" [(ngModel)]="bookAppointmentForm.appointmentTime" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">12-01 pm</span>
+                                </label>
+                                <label class="timeSlot-check">
+                                    <input value="01:00pm" (change)="time(13)" [(ngModel)]="bookAppointmentForm.appointmentTime" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">01-02 pm</span>
+                                </label>
+                                <label class="timeSlot-check">
+                                    <input value="02:00pm" (change)="time(14)" [(ngModel)]="bookAppointmentForm.appointmentTime" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">02-03 pm</span>
+                                </label> 
+                                <label class="timeSlot-check">
+                                    <input value="03:00pm" (change)="time(15)" [(ngModel)]="bookAppointmentForm.appointmentTime" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">03-04 pm</span>
+                                </label>
+                            </div>
+
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                                <img src="././assets/images/chand.png" alt="night" />
+
+                                <label class="timeSlot-check">
+                                    <input (change)="time(16)" [(ngModel)]="bookAppointmentForm.appointmentTime" value="04:00pm" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">04-05 pm</span>
+                                </label>
+                                <label class="timeSlot-check">
+                                    <input (change)="time(17)" [(ngModel)]="bookAppointmentForm.appointmentTime" value="05:00pm" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">05-06 pm</span>
+                                </label>
+                                <label class="timeSlot-check">
+                                    <input (change)="time(18)" [(ngModel)]="bookAppointmentForm.appointmentTime" value="06:00pm" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">06-07 pm</span>
+                                </label> 
+                                <label class="timeSlot-check">
+                                    <input (change)="time(19)" [(ngModel)]="bookAppointmentForm.appointmentTime" value="07:00pm" type="radio"
+                                        name="timeSlot">
+                                    <span class="checkmark btn-unclicked-1 btn time-zone">07-08 pm</span>
+                                </label>
+                            </div>
+                            <span *ngIf="Time">Select other time of day</span>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+
+
+<div class="clear40"></div>  
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 mrgnb15">
+                    <p class="appoint-font">5. Doctor Preferrence</p>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-4  text-center mrgnb151">
+                            <div class="background-label {{male}}" (click)="males()">
+                                <div class="form-check">
+                                    <label class="form-check-label" for="radio2">
+                                        <input [(ngModel)]="bookAppointmentForm.drPref" type="radio" class="form-check-input"
+                                            id="radio3" name="optradio2" value="M"> &nbsp;
+                                        <img src="././assets/images/male-new.png">&nbsp; <span class="call-style">Male</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 mrgnb151 text-center">
+                            <div class="background-label {{female}}" (click)="females()">
+                                <div class="form-check">
+                                    <label class="form-check-label" for="radio2">
+                                        <input [(ngModel)]="bookAppointmentForm.drPref" type="radio" class="form-check-input"
+                                            id="radio4" name="optradio2" value="F"> &nbsp;
+                                        <img src="././assets/images/female-new.png">&nbsp; <span class="call-style">Female</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 mrgnb151 text-center">
+                            <div class="background-label {{other}}" (click)="others()">
+                                <div class="form-check">
+                                    <label class="form-check-label" for="radio2">
+                                        <input [(ngModel)]="bookAppointmentForm.drPref" type="radio" class="form-check-input"
+                                            id="radio5" name="optradio2" value="A">&nbsp;
+                                        <img src="././assets/images/male-new.png" class="mal-size"><img src="././assets/images/any-new.png"
+                                            class="fem-size">&nbsp; <span class="call-style">Any</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 mrgnb15">
+                    <p class="appoint-font">6. Add Notes(If any):</p>
+                    <div class="form-group">
+                        <textarea [(ngModel)]="bookAppointmentForm.note" class="form-control notesbox" rows="5"></textarea>
+                    </div> 
+                    <div class="clear20"></div>
+                    <div class="form-group text-right">
+                        <button (click)="bookAppointment()" type="button" class="btn UpdateBtn">SUBMIT</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clear20"></div>
+
+<app-footer></app-footer>

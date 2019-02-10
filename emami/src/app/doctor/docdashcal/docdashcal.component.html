@@ -1,0 +1,75 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 outer padlrn">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 title text-center padlrn">
+      <div class="clear20"></div>
+      <label class="dcc">DAYWISE CONSULTATION & CONVERSION</label>
+    </div>
+      <div class="cursor outer-style box-min-height" style="cursor: pointer;">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn btnhold">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-4 calendar-header">
+          <div class="" class="bgcolor">
+         
+              <div class="bgitem" style="float: left; width: 97px" (click)="goToLastMonth()"><img src="././assets/images/left-arrow1.png"></div>
+              <div style="color: white; width: 117px" class="bgitem1" (click)="dropmonth()">{{currentMonth}} {{currentYear}}</div>
+              <div class="bgitem" style="float: right;" (click)="goToNextMonth()"><img src="././assets/images/right-arrowcal.png" class="right"></div>
+  
+          </div>
+          </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+              <div class="col-12 col-sm-12 cool-md-12 col-lg-12 radio-holder">
+                  <div class="form-check">
+                      <label class="form-check-label bttext">
+                        <input type="radio" class="form-check-input m-top-2" name="optradio"> Consultation
+                      </label>
+                    </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+              <div class="col-12 col-sm-12 cool-md-12 col-lg-12 radio-holder">
+                  <div class="form-check">
+                      <label class="form-check-label bttext">
+                        <input type="radio" class="form-check-input m-top-2" name="optradio"> CONVERSION
+                      </label>
+                    </div>
+              </div>
+            </div>
+            </div>
+        </div>
+            
+            <div class="gridhead">
+            
+              <div class="item">SUN</div>
+              <div class="item">MON</div>
+              <div class="item">TUE</div>
+              <div class="item">WEN</div>
+              <div class="item">THU</div>
+              <div class="item">FRI</div>
+              <div class="item">SAT</div>
+            
+            </div>
+             
+            
+            <div style="   padding-top: 0px;" class="grid-container mydiv">
+            <div class="grid-item" *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</div>
+            <!-- <div style="height: 1px; background-color: yellow"></div> -->
+            <!-- <div class="grid-item" *ngFor="let day of daysInThisMonth" (click)="p.toggle()"  (click)="selectDate(day)">{{day}}</div> -->
+            <div class="cal calfield" *ngFor="let day of daysInThisMonth" (click)="p.toggle()" (click)="selectDate(day)">
+              <span class="grid-item currentDate" *ngIf="currentDate === day; else otherDate" >{{day}}
+                <span class="event-span" *ngIf="day<=currentDate">
+                  45
+                </span>
+              </span>
+              <ng-template #otherDate class="otherDate">
+              {{day}}
+              <span class="event-span" *ngIf="day<=currentDate">
+                  56
+                </span>
+              </ng-template>
+              </div>
+        
+            <div class="grid-item" *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</div>  
+            
+            </div>
+      </div>
+      </div>
+     

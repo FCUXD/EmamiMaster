@@ -1,0 +1,86 @@
+<div class="text-center my-4">
+
+  <div class="row mx-auto my-auto">
+    <div id="recipeCarousel" class="carousel slide w-100 mt-3" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+
+        <div class="carousel-item active">
+
+          <div class="row" *ngIf="isDesktop">
+
+            <div class="col-md-4 col-12 mrgnt15" *ngFor="let item of visibleProducts;let i=index">
+              <!-- <div class="card custom_card" routerLink="../productPageNew"> -->
+                <!-- <div class="card custom_card" routerLink="../productDetails"> -->
+                  <div class="card custom_card" >
+                <div (click)="getProductDetails(item.id)" class="imgstyle text-center">
+                  <img class="img-fluid pimg" src="{{item.imageUrl}}" alt="Card image">
+                <div class="clear30"></div><h4 class="card-title">  {{item.name}}</h4>
+                  
+                </div>
+
+                <div class="card-body">
+                
+                  <!-- <p class="card-text">{{item.cardText}}</p> -->
+                  <!-- <span>{{item.offer}}</span> -->
+                  <div class="mt-2 mb-4">
+                    <div class="row">
+                    <div class="product_info col-5 col-sm-6 col-lg-6 col-md-12">
+                      <h4><img class="" src="././assets/images/rupee.png"> {{item.selling}}
+                      </h4>
+                    </div>
+                    <div class="product_img col-7 col-sm-6 col-lg-6 col-md-12 p-0">
+                      <div class="order-margin-top2">
+                        <img src="././assets/images/minus.png" (click)="reduce(item)">&nbsp;&nbsp;
+                        <input [(ngModel)]="item.qty" class="input-spinner">&nbsp;&nbsp;
+                        <img src="././assets/images/plus_small.png" (click)="add(item)">
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <button class="btn SignBtn w-100 mt-0" type="button" (click)="addTocart(item)">add to cart</button>
+                </div>
+              </div>
+            </div>
+           
+             
+          </div>
+
+         <div class="row" *ngIf="isMobile">
+
+            <div class="col-12" *ngFor="let item of mobProds">
+              <div class="card custom_card">
+                <img class="img" src="{{item.imageUrl}}" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">{{item.name}}</h4>
+                  <!-- <p class="card-text">{{item.cardText}}</p> -->
+                  <span>{{item.offer}}</span>
+                  <div class="mt-2 mb-4">
+                    <div class="product_info float-left">
+                      <h4><img src="././assets/images/rupee.png"> {{item.selling}} </h4>
+                    </div>
+                    <div class="product_img float-right">
+                        <div class="Spinner">
+                            <img class="SpinnerImg" src="././assets/images/SpinnerMinus.png" (click)="reduce(item)" />
+                            <input type="text" class="form-control SpinnerInput text-center" [(ngModel)]="item.qty" >
+                            <img class="SpinnerImg2" src="././assets/images/SpinnerPluse.png" (click)="add(item)" />
+                          </div>
+                    </div>
+                  </div>
+                  <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" (click)="previous()">
+        <img src="././assets/images/slide_left.png">
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" (click)="next()">
+        <img src="././assets/images/slide_right.png">
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>

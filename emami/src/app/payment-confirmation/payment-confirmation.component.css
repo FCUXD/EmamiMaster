@@ -1,0 +1,45 @@
+.m-top{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff9e5;
+    margin-top: 110px;
+}
+.txt1{
+    font-family: TrajanPro-Bold;
+    font-size: 24px;
+    color: #402909;
+}
+.txt2{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 24px;
+    color: #402909;
+}
+.signnew, .signnew:active, .signnew:hover, .signnew:focus {
+
+    font-family: TrajanPro-Bold;
+    font-size: 15.5px;
+    letter-spacing: 1.6px;
+    color: #402909;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: solid 1px #c29a5d!important;
+    background-color: #cfa15a!important;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 7px #cfa15a!important;
+    width: 250px;
+    height: 40px;
+    margin-top: 5px;
+    outline: none!important;
+}
+.signnew1, .signnew1:active, .signnew1:hover, .signnew1:focus{
+    border-radius: 15px;
+    border: 1px solid #cc9966;
+    font-family: TrajanPro-Bold;
+  font-size: 15.5px;
+  letter-spacing: 1.6px;
+  background-color: #ffffff;
+  height: 50px;
+  color: #402909;
+  width: 250px;
+  outline: none!important;
+}

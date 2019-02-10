@@ -1,0 +1,24 @@
+.CommingSoon {
+    width: 50%;
+margin: 0 auto;
+  margin-top: 132px; 
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+padding: 6%;
+border-radius: 10px;
+}
+h1{
+    font-family: 'TrajanPro-Bold'; 
+    text-align: center;  
+    margin-top: 0px; 
+} 
+.header{
+    width: 100%;
+    float: left;
+    padding: 1% 3%;
+    box-shadow: 0px 11px 40.8px 10.2px rgba(0, 0, 0, 0.05);
+}
+.header p{
+font-size: 14px;
+font-family: 'TrajanPro-Bold'; 
+padding-left: 4%;
+}

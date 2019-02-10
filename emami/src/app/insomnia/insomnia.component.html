@@ -1,0 +1,936 @@
+<app-navigation *ngIf="showHeader"></app-navigation>
+<section class="home-top pt-5">
+  <app-floating></app-floating>
+  <div class="container ">
+    <h1 class="main_title">Insomnia</h1>
+    <h1 class="main_title2">“a common sleep disorder”</h1>
+
+    <div class="clear10"></div>
+    <div class="HedingMapContentBox col-12 col-lg-6">
+      <div class="MapLeft">
+        <img src="././assets/images/PilesMap.png">
+
+      </div>
+      <div class="MapLeft2">
+        <div class="Around50Text">
+          <p>Around </p>
+          <h1>50%</h1>
+
+        </div>
+        <div class="Around50Text2 Around50Text">
+          <p>of the population are affected
+            by Piles, atleast once during
+            their entire lifespan. </p>
+
+
+        </div>
+        <div class="clear10"></div>
+        <div class="BorderBotton"></div>
+        <div class="clear30"></div>
+      </div>
+    </div>
+
+
+    <div class="clear"></div>
+
+    <div class="DibetectSection">
+      <div class="DibeticLeft" (click)="scrollTo('Overview')">
+        <img src="././assets/images/noun-health.png">
+        <p class="m-0">Overview</p>
+      </div>
+      <div class="DibeticLeft" (click)="scrollTo('SymptomsCauses')">
+        <img src="././assets/images/noun-medical.png">
+        <p class="m-0">Symptoms &amp; Causes </p>
+      </div>
+      <div class="DibeticLeft" (click)="scrollTo('PreventionDiagnosis')">
+        <img src="././assets/images/noun-bacteria.png">
+        <p class="m-0"> Prevention &amp; Diagnosis </p>
+      </div>
+      <div class="DibeticLeft" (click)="scrollTo('AyurvedaApproach')">
+        <img src="././assets/images/noun-herbal-medicine.png">
+        <p class="m-0"> Ayurveda Approach </p>
+      </div>
+      <div class="DibeticLeft" (click)="scrollTo('Complications')">
+        <img src="././assets/images/noun-healt.png">
+        <p class="m-0"> Complications </p>
+      </div>
+      <div class="DibeticLeft" (click)="scrollTo('RelatedProducts')">
+        <img src="././assets/images/noun-medicine10.png">
+        <p class="m-0"> Related Products </p>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
+<section class="Yoga_AurvedaSection" id="Overview">
+  <div class="container">
+    <h1>What is Insomnia</h1>
+    <div class="clear"></div>
+    <div class="text-center">
+      <img src="././assets/images/big_border.png">
+    </div>
+    <div class="row m-0">
+      <div class="Yoga_Ayurveda_RightDiv col-md-6 hideimg">
+        <img class="w-100" src="././assets/images/WhatInsomnia.png">
+      </div>
+      <div class="Yoga_Ayurveda_RightDiv col-md-6 txtaligncenter">
+        <h5>Insomnia can be considered both as a disorder and a symptom of a health problem. </h5>
+        <div class="clear10"></div>
+        <p class="hideimg">Insomnia for a long time may lead to various health
+          issues like depression, high blood pressure, diabetes,
+          and other psychiatric disorders. </p>
+
+
+        <div class="clear10"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 txtaligncenter padlrn">
+          <button class="btn btn-primary mb-2 mt-4 ml-2 SignBtn" type="button" routerLink="../PillsRead">read more</button>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+
+  </div>
+</section>
+<section id="SymptomsCauses" class="Yoga_AurvedaSection Yoga_AurvedaSymptoms">
+  <div class="container">
+    <h1>Symptoms of Insomnia</h1>
+    <div class="clear"></div>
+    <div class="text-center">
+      <img src="././assets/images/big_border.png">
+    </div>
+    <p class="text-center HeadingTextSmall">The symptoms of sleeplessness may vary according to the dosha involved. </p>
+    <div class="row m-0">
+
+      <div class="Yoga_Ayurveda_RightDiv Symptopsofpilestext col-12 col-sm-4 col-lg-4">
+        <h5>- Vata </h5>
+        <div class="clear10"></div>
+        <ul>
+          <li>Restless sleep with tossing and turning</li>
+          <li>No sleep at all
+          </li>
+          <li>Waking up between 2 to 4 am
+          </li>
+          <li>Difficulty to go back to sleep till 6 am
+
+          </li>
+
+        </ul>
+        <div class="clear10"></div>
+      </div>
+      <div class="Yoga_Ayurveda_RightDiv Symptopsofpilestext col-12 col-sm-4 col-lg-4">
+        <h5>- Pita </h5>
+        <div class="clear10"></div>
+        <ul>
+          <li>Inability to sleep within 10pm to 2 am
+          </li>
+          <li>High cortisol levels in the body
+          </li>
+          <li>Always irritable
+          </li>
+          <li>Has disturbed dreams of fights
+
+          </li>
+
+        </ul>
+        <div class="clear10"></div>
+      </div>
+      <div class="Yoga_Ayurveda_RightDiv Symptopsofpilestext col-12 col-sm-4 col-lg-4">
+        <h5>- Kapha </h5>
+        <div class="clear10"></div>
+        <ul>
+          <li>Sleep apnea (breathlessness while sleeping)
+          </li>
+          <li>Waking up early in the morning around 6 am
+          </li>
+          <li>Feeling lazy after a full night’s sleep
+
+        </ul>
+        <div class="clear10"></div>
+      </div>
+
+    </div>
+    <div class="Symptopsofpilestext col-12  col-lg-12">
+      <div class="clear10"></div>
+      <ul class="list-unstyled InSOmniaSymptons">
+        <li>The following are some of the common symptoms of insomnia</li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="row">
+      <div class=" Symptopsofpilestext col-12 col-sm-6 col-lg-6">
+        <ul class="float-right">
+          <li>Roughness and coldness
+
+          </li>
+          <li>Instability
+
+          </li>
+          <li>Non-sliminess, motion and formlessness
+          </li>
+          <li>Not feeling fresh in the morning
+          </li>
+        </ul>
+        <div class="clear10"></div>
+      </div>
+      <div class="Symptopsofpilestext col-12 col-sm-6 col-lg-6">
+        <ul>
+          <li>Feeling tired but unable to sleep
+
+          </li>
+          <li>Lethargy and decreased ability to work
+
+          </li>
+          <li>Body heaviness and body ache
+          </li>
+
+        </ul>
+        <div class="clear10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="PreventionDiagnosis" class="Yoga_AurvedaSection Yoga_AurvedaSymptoms ActuallyCausesPiles">
+  <div class="container">
+    <h1>Do you know what actually<br />
+      causes Insomnia</h1>
+    <div class="clear"></div>
+    <div class="text-center">
+      <img src="././assets/images/big_border.png">
+    </div>
+    <p class="text-center HeadingTextSmall">The causative factors associated with obesity are broadly classified into four groups which include:</p>
+
+    <div class="clear"></div>
+    <div class="row m-0 mt-5">
+      <div class="col-12 col-lg-12 Margin0_auto">
+
+
+        <div class="row m-0">
+          <div class="div1 text-center">
+            <img src="././assets/images/CausesInsomina_1.png">
+            <div class="clear20"></div>
+            <span>Fasting
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/CausesInsomina_2.png">
+            <div class="clear20"></div>
+            <span>Excessive<br/>
+              Exercise
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/CausesInsomina_3.png">
+            <div class="clear20"></div>
+            <span>Anxiety, fear,<br/>
+              or anger
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/CausesInsomina_4.png">
+            <div class="clear20"></div>
+            <span>Hunger
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/CausesInsomina_5.png">
+            <div class="clear20"></div>
+            <span>Trauma/<br/>
+              Major Injuries
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="topping_spac">
+      <div class="all_benefits pt-3">
+        <p>Want to get all the Benefits of <br>
+          Ayurveda? Get a Free consultation!</p>
+        <span>Book Your Appointment now in 3 Easy Steps</span>
+      </div>
+
+      <div class="all_benefits all_benefits2 text-center">
+        <button class="btn btn-primary mb-2 SignBtn" type="button" routerLink="../patientloginpage">Consult ayurvedic
+          doctor</button>
+        <p class="ORTExt">Or </p>
+        <p>call 1800 572 8000</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clear"></div>
+<section class="Yoga_AurvedaSection  artcle text-center doshas">
+  <div class="container">
+    <div class="small_wrapper mb-4">
+      <h1>Piles & the Doshas </h1>
+      <div class="clear"></div>
+      <div class="text-center">
+        <img src="././assets/images/big_border.png">
+      </div>
+      <p class="text-center HeadingTextSmall">The causes or nidanas, as mentioned above, leads to derangements in the
+        digestive
+        fire(jatharagni) which leads to tridosha imbalances, especially vata dosha. </p>
+
+      <div class="clear mt-5"></div>
+      <div class="text-center">
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/Kapha.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+            <span>Kapha</span>
+            <div class="clear10"></div>
+            <p>On the basis of the character of bleed-<br /> ing, piles is classified as Non-bleeding <br /> Piles :
+              Occur due to impairment of Vata <br /> and Kapha Dosha</p>
+          </div>
+          <div class="clear10"></div>
+          <div class="clear5"></div>
+          <button class="btn read_more" routerLink="../PillsRead" (click)="setNav('Kapha')">READ MORE</button>
+        </div>
+
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/Pita.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+            <span>Pita</span>
+            <div class="clear10"></div>
+            <p>On the basis of the character of <br />
+              bleeding, piles is classified as Bleeding <br /> Piles : Occur due to impairment of <br />
+              Rakta(blood) and Pita Dosha</p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn read_more" routerLink="../PillsRead" (click)="setNav('Kapha')">READ MORE</button>
+        </div>
+
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/Vata.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+            <span> Vata</span>
+            <div class="clear10"></div>
+            <p>On the basis of the character of bleeding, <br /> piles is classified as Non-bleeding Piles :<br />
+              Occur
+              due to impairment of Vata and Kapha<br /> Dosha</p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn read_more" routerLink="../PillsRead" (click)="setNav('Kapha')">READ MORE</button>
+        </div>
+      </div>
+    </div>
+    <div class="clear mt-4"></div>
+    <!-- <div class="dosham_Piles mt-5">
+      <h5>Take our 3 Minute Dosha Test</h5>
+
+      <div class="clear10"></div>
+      <button class="btn btn-primary mb-2 SignBtn" type="button" data-toggle="modal" data-target="#myModal" (click)="model()">calculate
+        now</button>
+
+    </div> -->
+    <div class="clear"></div>
+    <div class="topping_spac">
+      <div class="all_benefits callToGetInTouch pt-3">
+        <p><span> Call 1800 572 8000</span> to get in touch with our
+          Health Experts & resolve your Health Queries</p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="Complications" class="Yoga_AurvedaSection Yoga_AurvedaSymptoms ActuallyCausesPiles ComplicationsSection">
+  <div class="container">
+    <h1>Complications in Piles</h1>
+    <div class="clear"></div>
+    <div class="text-center">
+      <img src="././assets/images/big_border.png">
+    </div>
+    <p class="text-center HeadingTextSmall">The following are the compication of piles:</p>
+    <div class="row m-0">
+      <div class="Yoga_Ayurveda_RightDiv col-sm-6 text-center hideimg">
+        <img class="img-fluid" src="././assets/images/complicationsPiles.png">
+      </div>
+      <div class="Yoga_Ayurveda_RightDiv col-sm-6">
+
+        <div class="clear10"></div>
+        <ul class="AnaemiaBG">
+          <li>Anaemia: It is rare, but excess blood loss <br />
+            from bleeding piles may lead to anemia.
+          </li>
+          <li>Thrombosed strangulated piles: Sometimes, a clot may form in the hemorrhoids which may <br />
+            further cut off the blood supply to the <br />
+            hemorrhoid. This causes intense pain.
+
+
+          </li>
+
+        </ul>
+        <div class="clear10"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+</section>
+<section id="AyurvedaApproach" class="Yoga_AurvedaSection Yoga_AurvedaSymptoms ActuallyCausesPiles AyurvedicApproach">
+  <div class="container">
+    <h1>Ayurvedic Approach to Manage Piles</h1>
+    <div class="clear"></div>
+    <div class="text-center">
+      <img src="././assets/images/big_border.png">
+    </div>
+    <p class="text-center HeadingTextSmall">Ayurveda follows a holistic approach in the treatment of piles. Not only
+      does it help to
+      remove the piles, <br />
+      but also eliminates the pathophysiological process of piles from the grassroot level.
+
+    </p>
+
+    <div class="clear mt-5"></div>
+    <div class="row m-0">
+      <div class="col-sm-6 col-lg-3 text-center">
+        <img src="././assets/images/Ayurvedicdrugtherapy.png">
+        <div class="clear20"></div>
+        <span>Ayurvedic drug
+          <br />
+          therapy
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-3 text-center">
+        <img src="././assets/images/ChemicalCauterization.png">
+        <div class="clear20"></div>
+        <span>Chemical
+          <br />
+          Cauterization
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-3 text-center">
+        <img src="././assets/images/Cauterization.png">
+        <div class="clear20"></div>
+        <span>Cauterization
+
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-3 text-center">
+        <img src="././assets/images/SurgicalTherapy.png">
+        <div class="clear20"></div>
+        <span>Surgical
+          <br />
+          Therapy
+        </span>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="topping_spac panchkarmaTretment">
+
+      <p>Panchakarma treatment for Piles</p>
+
+    </div>
+    <div class="row m-0">
+      <div class="col-sm-6 col-lg-2 text-center">
+        <img src="././assets/images/oilMassage.png">
+        <div class="clear20"></div>
+        <span>Oil
+
+          <br />
+          Massage
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-2 text-center">
+        <img src="././assets/images/steamTherapy.png">
+        <div class="clear20"></div>
+        <span>Steam
+
+          <br />
+          Therapy
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-2 text-center">
+        <img src="././assets/images/immerssionTherapy.png">
+        <div class="clear20"></div>
+        <span>Immersion <br />
+          Therapy
+
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-2 text-center">
+        <img src="././assets/images/rectalEnema.png">
+        <div class="clear20"></div>
+        <span>Rectal enema
+
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-2 text-center">
+        <img src="././assets/images/pastes.png">
+        <div class="clear20"></div>
+        <span>Pastes for <br />
+          local application
+        </span>
+      </div>
+      <div class="col-sm-6 col-lg-2 text-center">
+        <img src="././assets/images/fumigation.png">
+        <div class="clear20"></div>
+        <span>Fumigation <br />
+          therapy
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="dosha mt-5">
+  <div class="dosham">
+
+    <p>The mild form of piles can be cured by medicines alone,
+      and further does not need any surgical treatment. Diet
+      plays an important role in the prevention of piles as
+      piles occur due to impairment of digestive function.
+      Ayurveda follows a holistic approach in the treatment
+      of piles. Not only does it help to remove the piles, but
+      also eliminates the pathophysiological process of piles
+      from the grassroot level. </p>
+    <ul class="DrugUl mt-4">
+      <li>
+        -&nbsp;&nbsp;&nbsp; Drug therapy (Bheshaja Karma) </li>
+      <li> -&nbsp;&nbsp;&nbsp; Surgical therapy (Shastra Karma)</li>
+      <li> -&nbsp;&nbsp;&nbsp; Chemical cauterization (Kshara Karma)</li>
+      <li> -&nbsp;&nbsp;&nbsp; Cauterization (Agni Karma)</li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+
+</section> -->
+<section  class="Yoga_AurvedaSection Yoga_AurvedaSymptoms HomeRemedies HomeDisplayNone">
+  <div class="container">
+
+    <div class="mb-4">
+      <h1>Home Remedies </h1>
+      <div class="clear"></div>
+      <div class="text-center">
+        <img src="././assets/images/big_border.png">
+      </div>
+      <div class="shadoo mx-0 mt-5">
+        <div class="card tab_card mx-0 small_div BorderradiusLeft">
+          <div class=" BorderradiusLeft card-body {{tabs[0].active}}" (click)="openCity(0)">
+            <div class="border_div">
+              <span> Dietary measures</span>
+            </div>
+          </div>
+        </div>
+        <div class="card tab_card mx-0">
+          <div class="card-body {{tabs[1].active}}" (click)="openCity(1)">
+            <div class="border_div">
+              <span> yoga</span>
+            </div>
+          </div>
+        </div>
+        <div class="card tab_card mx-0">
+          <div class=" BorderradiusRight card-body  {{tabs[2].active}} " (click)="openCity(2)">
+            <div class="border_div">
+              <span> fluid intake</span>
+            </div>
+          </div>
+        </div>
+        <div class="card tab_card mx-0 BorderradiusRight">
+          <div class=" BorderradiusRight card-body  {{tabs[3].active}} " (click)="openCity(3)">
+            <div class="border_div HiddenBorder">
+              <span> healthy lifestyle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="{{tabs[0].tabcontent}} p-0 TabContentBox paddingTabContentDiv BorderRadiusDiv bordertop">
+
+      <div class="tab1ContentBox">
+        <div class="row">
+          <div class="col-12 col-lg-6 mt-4">
+            <p class="herbof_text herbof_text3 mt-5">Diet plays an important role in the prevention of piles as piles
+              occur due to impairment of digestive function (Agni). To maintain the proper digestive function of the
+              body, high fiber diet should be taken.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="w-100" src="././assets/images/HomeRedmisRight.png">
+          </div>
+        </div>
+
+
+        <div class="clear20"></div>
+
+      </div>
+
+    </div>
+
+    <div class="{{tabs[1].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+
+      <div class="tab1ContentBox">
+        <div class="row">
+          <div class="col-12 col-lg-6 mt-4">
+            <p class="herbof_text herbof_text3 mt-5">Diet plays an important role in the prevention of piles as piles
+              occur due to impairment of digestive function (Agni). To maintain the proper digestive function of the
+              body, high fiber diet should be taken.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="w-100" src="././assets/images/HomeRedmisRight.png">
+          </div>
+        </div>
+
+
+        <div class="clear20"></div>
+
+      </div>
+
+    </div>
+
+    <div class="{{tabs[2].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+
+      <div class="tab1ContentBox">
+        <div class="row">
+          <div class="col-12 col-lg-6 mt-4">
+            <p class="herbof_text herbof_text3 mt-5">Diet plays an important role in the prevention of piles as piles
+              occur due to impairment of digestive function (Agni). To maintain the proper digestive function of the
+              body, high fiber diet should be taken.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="w-100" src="././assets/images/HomeRedmisRight.png">
+          </div>
+        </div>
+
+
+        <div class="clear20"></div>
+
+      </div>
+
+    </div>
+
+    <div class="{{tabs[3].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+
+      <div class="tab1ContentBox">
+        <div class="row">
+          <div class="col-12 col-lg-6 mt-4">
+            <p class="herbof_text herbof_text3 mt-5">Diet plays an important role in the prevention of piles as piles
+              occur due to impairment of digestive function (Agni). To maintain the proper digestive function of the
+              body, high fiber diet should be taken.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="w-100" src="././assets/images/HomeRedmisRight.png">
+          </div>
+        </div>
+
+
+        <div class="clear20"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section id="RelatedProducts" class="Yoga_AurvedaSection Yoga_AurvedaSymptoms ActuallyCausesPiles ">
+  <div class="deal_area container">
+    <div class=" mb-4">
+      <h1>Related Products </h1>
+      <div class="clear"></div>
+      <div class="text-center">
+        <img src="././assets/images/big_border.png">
+
+      </div>
+      <div class="clear"></div>
+      <div class="row mt-5" *ngIf="visibleCategory">
+        <div class="col-6 col-sm-4 col-md-4 col-lg-4 " *ngFor="let data of visibleCategory">
+          <div class="col-6 col-sm-12 col-md-12 col-lg-12 Product_div tab-h text-center padlrn" *ngIf="visibleCategory.length!=0">
+            <div class="clear20"></div>
+            <div class="WhiteBox">
+              <div (click)="getProductDetails(data.id)">
+                <img src="{{data.imageUrl}}" width="199" height="194">
+                <div class="clear10"></div>
+                <label class="zl-text cursor">{{data.name}}</label>
+              </div>
+            </div>
+            <br>
+
+
+            <div class="row">
+              <div class="text-center col-6 col-sm-6 col-md-6 col-lg-6 ">
+                <label class="">
+                  <label class="zl-text1">&#8377;</label>
+                  <label class="zl-text12">{{data.selling}}</label>
+                </label>
+              </div>
+              <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                <div class="product_img">
+                  <div class="clear10"></div>
+                  <div class="order-margin-top2">
+
+                    <i *ngIf="qtyP!=0" class="fa" (click)="reduce(data)"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                    <input [(ngModel)]="data.qty" class="input-spinner">&nbsp;
+                    <i class="fa" (click)=" add(data)"><img src="././assets/images/SpinnerPluse.png"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-6 col-lg-12 text-center rmpositionnew">
+                <div class="clear20"></div>
+                <button class="btn  read_morerp AddToCartBtn" (click)="addToCart(data)" type="button">add
+                  to cart</button>
+
+              </div>
+            </div>
+            <div class="clear20"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row " *ngIf="visibleCategory.length==0">
+        <div class="col-12 col-lg-12 text-center">
+          <div class="clear20"></div>
+          <h6>No Products Found...</h6>
+        </div>
+
+      </div>
+    </div>
+    <div class="clear20"></div>
+    <div class="row" *ngIf="visibleCategory.length!=0">
+      <div class="col-6 col-lg-12 text-center">
+        <div class="clear20"></div>
+
+        <button class="btn read_morerp" routerLink="../mainproductpage">explore all products</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clear"></div>
+<section class="artcle text-center Yoga_AurvedaSection Yoga_AurvedaSymptoms InspectionSectionDiv ActuallyCausesPiles IdentifiedSection">
+  <div class="container">
+    <div class="small_wrapper mb-4">
+      <h1>How Piles is Identified<br />
+        in the Human Body </h1>
+      <div class="clear"></div>
+      <div class="text-center">
+        <img src="././assets/images/big_border.png">
+      </div>
+      <p class="text-center HeadingTextSmall hideimg">The causes or nidanas, as mentioned above, leads to derangements
+        in the digestive
+        fire(jatharagni) which leads to tridosha imbalances, especially vata dosha. </p>
+
+      <div class="clear"></div>
+      <div class="text-center mt-4">
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/inspection.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+            <span>Inspection</span>
+            <div class="clear10"></div>
+            <p>Visual inspection of the anorectal region<br /> helps in detecting the presence of an ad<br />vance case
+              of I and II degree can only be<br /> diagnosed. The presence of internal haem<br />orrhoids and
+              thrombotic
+              pile masses may<br /> also be diagnosed. </p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn rmposition read_more" routerLink="../PillsRead" (click)="setNav('Identified')">READ MORE</button>
+        </div>
+
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/pulpation.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+            <span>Palpation</span>
+            <div class="clear10"></div>
+            <p>Palpation helps in detecting the<br /> piles which are not evident on<br /> visual inspection. </p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn rmposition read_more" routerLink="../PillsRead" (click)="setNav('Identified')">READ MORE</button>
+        </div>
+
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/interrogation.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+            <span> Interrogation</span>
+            <div class="clear10"></div>
+            <p>It is important to get information from the<br /> person about the symptoms,type of pain<br /> and the
+              lifestyle habits. The pain description<br /> given by the patient helps to <br />determine the exact
+              cause
+              of anorectal pain. </p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn rmposition read_more" routerLink="../PillsRead" (click)="setNav('Identified')">READ MORE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clear"></div>
+<section class="Yoga_AurvedaSection Yoga_AurvedaSymptoms ActuallyCausesPiles PreventionsSection">
+  <div class="container">
+    <h1>Preventions for Piles</h1>
+    <div class="clear"></div>
+    <div class="text-center">
+      <img src="././assets/images/big_border.png">
+    </div>
+    <div class="clear"></div>
+    <div class="row m-0 mt-5">
+      <div class="col-12 col-lg-5 Margin0_auto">
+
+
+        <div class="row m-0">
+          <div class="col-sm-6 col-lg-6 text-center">
+            <img src="././assets/images/EatHighFibercontentsFood.png">
+            <div class="clear20"></div>
+            <span>Eat High Fiber<br />
+              contents Food
+
+            </span>
+          </div>
+          <div class="col-sm-6 col-lg-6 text-center">
+            <img src="././assets/images/Sufficientintakefluids.png">
+            <div class="clear20"></div>
+            <span>Sufficient intake <br />
+              of Fluids
+
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="Yoga_AurvedaSection Yoga_AurvedaSymptoms ActuallyCausesPiles PreventionsSection">
+  <div class="container">
+    <h1>Yoga for Piles</h1>
+    <div class="clear"></div>
+    <div class="text-center">
+      <img src="././assets/images/big_border.png">
+    </div>
+    <div class="clear"></div>
+    <div class="row m-0 mt-5">
+      <div class="col-12 col-lg-12 Margin0_auto">
+
+
+        <div class="row m-0">
+          <div class="div1 text-center">
+            <img src="././assets/images/tadsana.png">
+            <div class="clear20"></div>
+            <span>Tadasana
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/vipartika.png">
+            <div class="clear20"></div>
+            <span>Vipartika karini
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/sarvangasana.png">
+            <div class="clear20"></div>
+            <span>Sarvangasana
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/shirshashna.png">
+            <div class="clear20"></div>
+            <span>Shirshasana
+            </span>
+          </div>
+          <div class="div1 text-center">
+            <img src="././assets/images/pavanmuktasana.png">
+            <div class="clear20"></div>
+            <span>Pavanmukthasana
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+
+<section class="artcle text-center Yoga_AurvedaSection Yoga_AurvedaSymptoms ActuallyCausesPiles">
+  <div class="container">
+    <div class="small_wrapper mb-4">
+      <h1>Articles </h1>
+      <div class="clear"></div>
+      <div class="text-center">
+        <img src="././assets/images/big_border.png">
+      </div>
+      <div class="clear"></div>
+      <div class="text-center">
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/piles1.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+
+            <div class="clear10"></div>
+            <p class="smallTextArticles m-0">Piles</p>
+            <p class="SaffronText">9 Habits to<br /> Inculcate If...
+            </p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn read_more" routerLink="../PilesHabitArticles">READ MORE</button>
+        </div>
+
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/piles2.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+
+            <div class="clear10"></div>
+            <p class="smallTextArticles m-0">suran</p>
+            <p class="SaffronText">Amorphophallus<br />
+              paeoniifolius...</p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn read_more" routerLink="../PilesSuranArticles">READ MORE</button>
+        </div>
+        <!-- 
+        <div class="article_div">
+          <img class="mx-auto d-block img-fluid" src="././assets/images/health.png">
+          <div class="clear10"></div>
+          <div class="infor">
+            <div class="clear10"></div>
+
+            <div class="clear10"></div>
+            <p class="smallTextArticles m-0">PRANAYAMA</p>
+            <p class="SaffronText">14 best & worst<br /> foods for your ...</p>
+          </div>
+          <div class="clear10"></div>
+          <button class="btn read_more" routerLink="../PillsRead">READ MORE</button>
+        </div> -->
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="topping_spac">
+      <div class="all_benefits pt-3">
+        <p>Want to get all the Benefits of <br>
+          Ayurveda? Get a Free consultation!</p>
+        <span>Book Your Appointment now in 3 Easy Steps</span>
+      </div>
+
+      <div class="all_benefits all_benefits2 text-center">
+        <button class="btn btn-primary mb-2 SignBtn" type="button" routerLink="../patientloginpage">Consult ayurvedic
+          doctor</button>
+        <p class="ORTExt">Or </p>
+        <p>call 1800 572 8000</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="">
+  <app-main-footer></app-main-footer>
+</div>

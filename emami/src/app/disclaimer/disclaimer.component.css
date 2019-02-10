@@ -1,0 +1,41 @@
+.bottom_footer {
+    background: url(src/assets/images/footer.png) no-repeat;
+background-position: center top;
+}
+.declaimer{margin-top: 80px}
+.maindiv {
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px;
+}
+h1 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: 0.7px;
+    text-align: left;
+    color: #333333;
+}
+span.more {
+    color: #ddb86f;
+}
+span.small {
+    font-size: 12px;
+    color: #333333;
+    font-weight: 700;
+    padding-left: 20px;
+}

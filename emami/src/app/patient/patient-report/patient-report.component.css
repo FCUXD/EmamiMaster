@@ -1,0 +1,157 @@
+.cardbodydiv{
+    box-shadow: 0px 0px 10px #f1f1f1;
+border: none;
+padding: 1%;
+background: #f9f4e4;
+}  
+.PaddingTextX{
+    padding: 0% 9%;
+}
+.Righttext{
+    font-size: 12px; 
+    color: #402909; 
+    font-family: 'TrajanPro-Regular';
+} 
+.card.cardbodydiv.shadow-sm.mb-3:hover {
+
+    background: #ffffff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.23);
+    transform: scaleX(1.1);
+    transition: 0.3s;
+
+}
+.xrayheading{
+    font-size: 14px;
+    font-family: 'TrajanPro-Bold';
+}  
+.pdfname{
+    font-size: 14px;
+    font-family: 'PlayfairDisplay-Regular';
+    text-decoration: underline;
+}
+.ReportMainDiv{
+    border-radius: 5px;
+    padding: 5%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}  
+.ReportMainDiv h2{
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+}
+/* You can add global styles to this file, and also import other style files */
+.bg-color{
+    background-color:#F7F9F9;
+}
+.clear {
+    clear: both;
+}
+
+.clear10 {
+    clear: both;
+    height: 10px;
+}
+
+.clear20 {
+    clear: both;
+    height: 20px;
+}
+
+.clear30 {
+    clear: both;
+    height: 30px;
+}
+
+.clear50 {
+    clear: both;
+    height: 50px;
+}
+
+.clear100 {
+    clear: both;
+    height: 100px;
+}
+.MarginTB{
+    margin: 20px 0px 20px 0px;
+}
+.MarginTop20{
+margin-top: 20px;
+} 
+.MarginBottom10px{
+    margin-bottom: 10px;
+} 
+.MarginBottom20px{
+    margin-bottom: 20px;
+}   
+.MarginLeft{
+margin-left: 18px;
+}
+.borderdiv{
+    border: 1px solid #d9b065;
+    opacity: 0.23;
+}
+
+
+
+.add-report-float{
+    text-align:right;
+}
+
+.report-font{
+    font-size: 28px;
+    font-weight: 800;
+}
+.date_cursor{
+    cursor: pointer;
+}
+
+.filter-by{
+    font-size: 18px;
+    font-weight: 800;
+    }
+
+.float-filter-by{
+    text-align: right;
+}
+
+.bg-cyan{
+    background: #85929E;
+}   
+
+.fa-size{
+  font-size:24px
+}
+
+.fa-calendar2{
+    font-size:24px;color:#008000;
+    cursor: pointer;
+}
+
+.img-size{
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+    .add-report-float{
+        text-align:center;
+    }
+    .report-font{
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+    }
+    .float-filter-by{
+        text-align: center;
+    }
+    .Righttext{
+        font-size: 16px; 
+        color: #666;
+    }
+    
+    .MarginLeft{
+        margin-left: 10px;
+        }
+        
+    .img-size{
+        width:24%;
+        cursor: pointer;
+    }            
+}

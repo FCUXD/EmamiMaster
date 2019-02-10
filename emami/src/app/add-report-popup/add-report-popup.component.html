@@ -1,0 +1,41 @@
+<button type="button"  [popover]="myPopover" [popoverOnHover]="false" class="btn UpdateBtn GetStartedBtn" >add report</button>  
+
+<popover-content #myPopover
+placement="">
+<!-- The Modal -->
+  
+
+
+          <!-- Modal Header -->
+          <!-- <div class="modal-header">
+            <h4 class="modal-title Modlheading">Cancel Appointment</h4> -->
+            <!-- <button type="button" class="close" (click)="close()">&times;</button> -->
+          <!-- </div> -->
+          
+          <!-- Modal body -->
+          <div class="modal-body PopupBody">
+        <h6>Report date : 
+         &nbsp;&nbsp;{{selecteddate}} <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker>
+        </h6>
+        <h6 class="fileuploadcomponunth6">Report Name :  </h6> 
+        <div class="fileuploadcomponunt">
+          <app-fileupload></app-fileupload>
+        </div>
+          </div>
+          <div class="clear"></div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+              <div class="footerbtn">
+              <button class="btn GetStartedBtn CanselBtnCard mr-4 yesbtn"  type="button">cancel</button>
+              <button class="btn UpdateBtn GetStartedBtn yesbtn" type="button">upload</button>
+            </div>
+            </div>
+    
+     
+  
+
+
+    
+   
+</popover-content>
+ 

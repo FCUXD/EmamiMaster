@@ -1,0 +1,294 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 rowstyle text-center">
+  <span>Personal Information >> Verification</span>
+</div>
+
+<form [formGroup]="deliveryAddressForm">
+ 
+  <div class="container">
+  <div class="margin_20"></div>
+  <div class="row rowstyle">
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+      <div class="margin_20"></div>
+      <div id="wrapper" class="col-12 col-sm-12 col-md-12 col-lg-12 prof">
+        <img class="profimg" src="././assets/images/profile-pic-large.jpg">
+      <!--  <input class="fupload" placeholder="Upload photo" type="file" (change)="onFileChanged($event)"> -->
+        <p class="text">Upload Photo</p>
+      </div>
+
+    </div>
+    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+      <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="margin_20"></div>
+              <input type="text" formControlName="firstName" required class="form-control bdr" id="usr" placeholder="First Name*">
+              <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+              class="alert alert-danger">First Name is required</div>
+         
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="margin_20"></div>
+              <input type="text" formControlName="lastName" required class="form-control bdr" id="usr" placeholder="Last Name*">
+              <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+              class="alert alert-danger">Last Name is required</div>
+         
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="margin_20"></div>
+                <div class="form-group">
+                    <select class="form-control" formControlName="gender" required id="sel1" name="sellist1">
+                      <option>{{Gender}}</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                    </div>
+                    <div *ngIf="gender.invalid && (gender.dirty || gender.touched)"
+                    class="alert alert-danger">Please Select Gender</div>
+               
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="margin_20"></div>
+                <input type="text" formControlName="dateOfBirth" required class="form-control inputstyle" id="usr" placeholder="Date of Birth*">
+                <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)"
+                class="alert alert-danger">Please Select Date Of Birth</div>
+           
+              </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                  <div class="margin_20"></div>
+                  <input type="text" formControlName="mobileNumber" required minlength="10" class="form-control" id="usr" placeholder="Mobile Number*">
+                  <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)"
+                  class="alert alert-danger">Please Enter Mobile Number</div>
+             
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="margin_20"></div>
+                    <input type="text" class="form-control" id="usr" placeholder="Alternate Number">
+            
+                  </div>
+                </div>
+          </div>
+
+      </div>
+      <div class="row">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            
+                <div class="margin_5"></div>
+                  <input type="text" class="form-control" id="usr" placeholder="Email ID*">
+              
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="margin_5"></div>
+            <div class="form-group">
+                <select class="form-control" id="sel1" formControlName="healthIssue" required name="sellist1">
+                  <option>{{Primary_Health_Issue}}</option>
+                  <option>Diabetis care</option>
+                  <option>Heart care</option>
+                  <option>Pain relief care</option>
+                  <option>Stress care</option>
+                </select>
+                </div>
+                <div *ngIf="healthIssue.invalid && (healthIssue.dirty || healthIssue.touched)"
+                class="alert alert-danger">Please Select Date Of Birth</div>
+           
+        </div>
+      </div>
+
+    </div>
+   
+   
+
+
+  </div>
+<div class="margin_20"></div>
+  <div class="row rowstyle">
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 text-right">
+      <div class="margin_20"></div>
+      <label class="lstyle">Login Credentials</label>
+      <p>You can either register here or you can use your social media login</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+      <div class="margin_20"></div>
+      <div class="row">
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">Email as username
+                </label>
+              </div>
+              <div class="margin_20"></div>
+        </div>
+        
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">Mobile as username
+                </label>
+              </div>
+              <div class="margin_20"></div>
+        </div>
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">Create new username
+                </label>
+              </div>
+        </div>
+        <div class="margin_30"></div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <input type="text" class="form-control" id="usr" placeholder="Type a password*">
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <input type="text" class="form-control" id="usr" placeholder="Confirm password*">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="margin_20"></div>
+  <div class="row rowstyle">
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 text-right">
+      <div class="margin_20"></div>
+      <label class="lstyle">Postal Addres</label>
+      <p>we would need your complete postal address with your pincode for accurate location of the clinics nearby</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+      <div class="margin_20"></div>
+      <div class="row">
+       
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <input type="text" class="form-control" id="usr" formControlName="address" required placeholder="Address Line 1*">
+            <div *ngIf="address.invalid && (address.dirty || address.touched)"
+            class="alert alert-danger">Please Enter Address</div>
+ 
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <input type="text" class="form-control" id="usr" placeholder="Address Line 2">
+        </div>
+        <div class="margin_20"></div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="margin_20"></div>
+            <div class="form-group">
+                <select class="form-control" id="sel1" formControlName="state" required name="sellist1">
+                  <option>{{State}}</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Telangana</option>
+                </select>
+                </div>
+                <div *ngIf="state.invalid && (state.dirty || state.touched)"
+                class="alert alert-danger">Please Enter State Name</div>
+      
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="margin_20"></div>
+            <div class="form-group">
+                <select class="form-control" id="sel1" formControlName="city" required name="sellist1">
+                  <option>{{City}}</option>
+                  <option>Pune</option>
+                  <option>Mumbai</option>
+                </select>
+                </div>
+                <div *ngIf="city.invalid && (city.dirty || city.touched)"
+                class="alert alert-danger">Please Enter City Name</div>
+          
+        </div>
+        <div class="margin_20"></div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+          
+            <div class="form-group">
+                <select class="form-control" id="sel1" formControlName="locality" required name="sellist1">
+                  <option>{{Locality}}</option>
+                  <option>Pune</option>
+                  <option>Mumbai</option>
+                </select>
+                </div>
+                <div *ngIf="locality.invalid && (locality.dirty || locality.touched)"
+                class="alert alert-danger">Please Enter Locality</div>
+      
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <input type="text" class="form-control" id="usr" formControlName="zipcode" required placeholder="Zip Code*">
+            <div *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)"
+            class="alert alert-danger">Please Enter Zip Code</div>
+ 
+        </div>
+       
+        
+
+        
+       
+      </div>
+    </div>
+  </div>
+  <div class="margin_20"></div>
+
+  
+      <hr class="padlrn">
+  
+  
+  <div class="margin_20"></div>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 bgrnd ">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 robotstyle">
+         
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 robotstyle1">
+            <div class="row">
+              
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8">
+                <div class="margin_20"></div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input chkstyle" value=""><span class="istyle">I am not robot</span> 
+                    </label>
+                  </div>
+              </div>
+              <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                  <div class="margin_20"></div>
+                <img class="recstyle" src="././assets/images/reCAPTCHA.png">
+              </div>
+              <div class="margin_20"></div>
+          </div>
+            </div>
+           
+            <div class="margin_20"></div>
+        <hr class="hrstyle">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="form-check-inline">
+                <label class="form-check-label labefont">
+                  <input type="checkbox" class="form-check-input" value="">I agree to the <a>Terms and condition</a>
+                </label>
+              </div>
+        </div>
+        <div class="margin_40"></div>
+        </div> 
+
+        <hr>
+       
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="margin_120"></div>
+  <div class="clearfix"></div>
+  <hr>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 bgrnd ">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 robotstyle text-center">
+          <button type="button" class="btn btnstyle">Cancel</button>&nbsp;&nbsp;<button type="button" class="btn btnstyle">Proceed</button>
+          <div class="margin_40"></div>
+        </div>
+     
+  </div>
+ 
+  
+</div>
+</form>

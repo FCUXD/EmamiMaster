@@ -1,0 +1,102 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+
+  <ng-template #popcal2>
+    <div class="main_div">
+      <button type="button" class="close" (click)="p.toggle()">&times;</button>
+      <div class="clear20"></div>
+      <div class="calender">
+        <div class="cursor">
+          <div class="calendar-header" class="bgcolor">
+
+            <div class="bgitem" (click)="goToLastMonth()"><img src="././assets/images/left-arrow.png"></div>
+            <div class="bgitem text-center" (click)="dropmonth()">{{currentMonth}} {{currentYear}}</div>
+            <div class="bgitem text-right" (click)="goToNextMonth()"><img src="././assets/images/right-arrow.png"></div>
+
+          </div>
+
+          <div class="gridhead">
+
+            <div class="item">S</div>
+            <div class="item">M</div>
+            <div class="item">T</div>
+            <div class="item">W</div>
+            <div class="item">TH</div>
+            <div class="item">F</div>
+            <div class="item">S</div>
+
+          </div>
+
+
+          <div class="grid-container mydiv">
+            <div class="grid-item" *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</div>
+            <!-- <div style="height: 1px; background-color: yellow"></div> -->
+            <div class="current-day" *ngFor="let day of daysInThisMonth" (click)="selectDate(day)">
+              <span class="grid-item currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+              <ng-template #otherDate class="otherDate">
+                {{day}}<br>
+              </ng-template>
+            </div>
+            <div class="grid-item" *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</div>
+
+          </div>
+        </div>
+      </div>
+      <div class="timepick">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="row rowclass">
+              <div class="rowcol rowcolmargin">
+                <img class="ArrowUpDown" src="././assets/images/arrow-up1.png" (click)="up()">
+                <div class="divhr">{{ hr }} </div>
+                <div class="line1"></div>
+                <img class="ArrowUpDown" src="././assets/images/down-arrow12.png" (click)="down()">
+              </div>
+              <span class="DotColon">:</span>
+              <div class="rowcol">
+                <img src="././assets/images/arrow-up1.png" (click)="up1()">
+                <div class="divmin"> {{min}} </div>
+                <div class="line1"></div>
+
+                <img src="././assets/images/down-arrow12.png" (click)="down1()">
+
+              </div>
+              <span class="DotColon">:</span>
+              <div class="ampm p-0">
+
+                <img src="././assets/images/arrow-up1.png" (click)="up2()">
+                <div class="divtime"> {{day}}</div>
+                <div class="line1 line1InCenter"></div>
+                <img src="././assets/images/down-arrow12.png" (click)="down2()">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <ngb-timepicker  class="btn-outline-primary" style="color:#000000" id="btn-link1" [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker> -->
+
+        <div class="foot">
+          <!-- <div>Selected time: {{ hr }}: {{min}} {{day}}</div> -->
+          <p class="ReshouldLabel"> reason for reschedule</p>
+          <textarea class="textarea12" placeholder="" style="width: 88% !important;"></textarea><br>
+          <div class="clear20"></div>
+          <a (click)="p.toggle()" routerLink="../consultpage" class="btn btn-green-1 mt-3">SEND MESSAGE</a>
+        </div>
+        <!-- (clcik)="p.toggle()" -->
+      </div>
+    </div>
+  </ng-template>
+  <button #p="ngbPopover" [ngbPopover]="popcal2" type="button" placement="auto" [autoClose]="false" class="btn    btn-trasnp-1">
+    RESCHEDULE</button>
+  <div class="clear"></div>
+</body>
+
+</html>

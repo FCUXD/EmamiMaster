@@ -1,0 +1,39 @@
+<div class="cursor" style="cursor: pointer;">
+  <div class="calendar-header" class="bgcolor">
+ 
+      <div class="bgitem" (click)="goToLastMonth()"><img src="././assets/images/left-arrow.png"></div>
+      <div class="bgitem" (click)="dropmonth()">{{currentMonth}} {{currentYear}}</div>
+      <div class="bgitem" (click)="goToNextMonth()"><img src="././assets/images/right-arrow.png"></div>
+     
+    </div>
+    
+<div class="pinkbg">
+  <div class="gridhead">
+    
+    <div class="item">S</div>
+    <div class="item">M</div>
+    <div class="item">T</div>
+    <div class="item">W</div>
+    <div class="item">TH</div>
+    <div class="item">F</div>
+    <div class="item">S</div>
+  
+  </div>
+   
+  
+  <div class="grid-container mydiv">
+  <div class="grid-item" *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</div>
+  <!-- <div style="height: 1px; background-color: yellow"></div> -->
+  <!-- <div class="grid-item" *ngFor="let day of daysInThisMonth" (click)="p.toggle()"  (click)="selectDate(day)">{{day}}</div> -->
+ 
+  <div class="cal" *ngFor="let day of daysInThisMonth" (click)="selectDate(day)">
+    <span class="grid-item currentDate" *ngIf="currentDate === day; else otherDate" >{{day}}</span>
+    <ng-template #otherDate class="otherDate">
+    {{day}}<br>
+    </ng-template>
+    </div>
+  <div class="grid-item" *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</div>  
+  
+  </div>
+</div>
+</div>

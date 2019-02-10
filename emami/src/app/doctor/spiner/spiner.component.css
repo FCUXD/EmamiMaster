@@ -1,0 +1,21 @@
+.Spinner1{
+    border: none;
+    color: #000;
+     cursor: pointer; 
+     background-color: transparent;
+      font-size: 25px; 
+      outline-color: none;
+} 
+.Spinner1Input{
+    width: 37px;
+    height: 24px;
+    text-align: center;
+    border-radius: 5px;
+} 
+.Spinner1InputClick{
+    border: none;
+    color: #000;
+     cursor: pointer;
+      background-color: transparent; 
+      font-size: 25px;
+} 

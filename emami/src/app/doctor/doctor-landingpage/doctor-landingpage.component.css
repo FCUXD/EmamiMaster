@@ -1,0 +1,87 @@
+.IndexTabContentBox{
+    padding-right: 0px; 
+    padding-left: 0;
+}
+.IndexCardRightContentBox{ 
+    padding-left: 20px;
+}
+.dr{
+    font-family: TrajanPro-Bold;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+}
+:host >>> .date_cursor2 .popover{
+    max-width: 50% !important;
+    left: 72%!important;
+}
+:host >>> .date_cursor2 .gridhead{
+    width: auto!important;
+}
+:host >>> .date_cursor2 .bgcolor{
+    width: auto!important;
+}:host >>> .btn-green-1{
+    padding: 3px 1px !important;
+}
+:host >>> .btn-trasnp-1{
+    padding: 5px 1px !important;
+}
+:host >>> .GetStartedBtn.CanselBtnCard{
+    padding: 5px 15px !important;
+}   
+:host >>> .PatientTable body{
+text-align: center !important;
+}
+:host >>> .UrjentCardHeaderPadding{
+    padding: 10px 26px!important;
+}
+:host >>> .UrjentCardHeaderPadding h4{
+    font-size: 20px !important;
+}
+:host >>> .bgcolor .bgitem:first-of-type img{
+    margin-left: 15px !important;
+}
+:host >>> .bgcolor .bgitem:nth-of-type(2){
+   text-align: right !important;
+}
+:host >>> .doct-pie-chart .popover{
+    max-width: none !important;
+    }
+
+
+
+    @media screen and (min-width: 1600px) and (max-width: 2400px) {
+
+    }
+    @media screen and (min-width: 1px) and (max-width: 1220px) {
+    
+    }
+    @media screen and (min-width: 1px) and (max-width: 1200px) { 
+    
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 1060px) {
+
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 992px) { 
+
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 768px) { 
+                  
+    } 
+    
+    @media screen and (min-width: 1px) and (max-width: 480px) { 
+    
+
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 420px) { 
+    
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 380px) { 
+
+    }
+         

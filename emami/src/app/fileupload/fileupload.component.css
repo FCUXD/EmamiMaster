@@ -1,0 +1,48 @@
+body {
+    background: #9b59b6;
+    color: #ecf0f1;
+    font-family: lato,sans-serif;
+    text-align: center;
+    margin: 10% auto;
+    display: table;
+  }
+  
+  form {
+    text-align: left;
+  }
+  
+  #file-upload {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  label[for="file-upload"] {
+    padding: 0.5em;
+    display: inline-block;
+    background: #bccf60;
+    cursor: pointer;
+    font-size: 12px;
+    width: 31%;
+  height: 25px; 
+  font-family: 'TrajanPro-Bold';
+  border-radius: 5px;
+  text-align: center;
+  }
+  label[for="file-upload"]:hover {
+      background: #bccf60;
+  }
+  
+  #filename {
+      padding: 2px 15px;
+    float: left;
+  
+    white-space: nowrap;
+    overflow: hidden;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'PlayfairDisplay-Regular';
+    width: 65%;
+  height: 25px;
+  }
+  
