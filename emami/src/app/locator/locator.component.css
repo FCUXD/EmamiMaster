@@ -1,0 +1,302 @@
+.topper {
+    padding: 20px 50px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.map_div {
+    width: 44%;
+    display: inline-block;
+    vertical-align: top;
+}
+.quicksearch {
+    width: 56%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 30px;
+    padding-bottom: 0px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fbf8ee;
+}
+agm-map {
+    height:580px;
+  }
+  .radio_container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.main_div {
+    height: 260px;
+    overflow-y: scroll;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 1px solid #333333;
+}
+
+
+/* When the radio button is checked, add a blue background */
+.radio_container input:checked ~ .checkmark {
+    background-color: #ffffff;
+    border:1px solid #333333;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio_container .checkmark:after {
+     top: 5px;
+    left: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: black;
+}
+.locate{
+    padding: 30px;
+    border: none;
+    background-color: #dddddd;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 9px 13px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #402909;
+    background-color: transparent;
+    background-image: url('../../assets/images/gps.png');
+    background-repeat: no-repeat;
+    background-position: 92%;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 32.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+    padding-top: 22px;
+}
+    .addres {
+        border: 1px solid #cccccc;
+        margin: 0px 0px 20px 0px;
+        background: #ffffff;
+    }
+    .addres p,h1,h4,h2{margin-bottom: 0px}
+    .km {
+        /* display: inline-block;
+    width: 18%;
+    vertical-align: top;
+    text-align: center;
+    background: #dddddd; */
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    text-align: center;
+    padding: 26px 18px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #b5803c;
+    }
+    .location {
+        width: 52%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+    }
+    .timing {
+        width: 30%;
+        display: inline-block;
+        vertical-align: text-bottom;
+        text-align: right;
+        padding: 10px 0px;
+        padding-right: 10px;
+    }
+    .input-group.inpute_box {
+        width: 70%;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .loca {
+        width: 35%;
+        float: right;
+        vertical-align: top;
+    }
+    .route {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background: #ababab;
+        width: 60px;
+    }
+    .topper span {
+        font-family: 'TrajanPro-Regular';
+        font-size: 20px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+    }
+    .quicksearch h3 {
+        font-family: 'TrajanPro-Regular';
+        font-size: 36px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+    }
+    .quicksearch h5 {
+        font-family: 'PlayfairDisplay-Regular';
+        font-size: 30px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #333333;
+    }
+    /* The container */
+.check_container,.result {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+.result{padding-left: 0px;
+margin-bottom: 10px;}
+/* Hide the browser's default checkbox */
+.check_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+
+/* On mouse-over, add a grey background color */
+.check_container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check_container input:checked ~ .checkmark {
+    background-color: #42b550;
+    border: 2px solid #42b550;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.anter h5 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fbf4da;
+}
+.anter h6, .location h4,.timing p {
+    object-fit: contain;
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fbf4da;
+}
+.location h4{color: #333333}
+.location h4 small,.timing p{font-size: 14px;color: #333333;text-align: center} 
+.anter {
+    padding: 10px 20px;
+    background: #d6ad66;
+}
+.direction {
+    padding: 20px;
+    background: #b5803c;
+}
+.botom_spac {
+    margin-bottom: 7px;
+}
+:host >>>  .agm-map-container-inner{
+    border-radius: 0
+      }
+

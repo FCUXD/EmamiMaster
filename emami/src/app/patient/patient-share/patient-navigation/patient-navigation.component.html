@@ -1,0 +1,175 @@
+<nav class="navbar navbar-expand-md bg-white fixed-top Hide766">
+  <div class="container">
+    <!-- Brand -->
+
+    <a class="navbar-brand NavBarLogo" (click)="clickfun(4)" routerLink="/patient-dashboard/patient-dashbord-details"><img src="././assets/images/newlogo.png"></a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler collapsnavbar" type="button" (click)="toggleNavbar()" data-toggle="collapse"
+      data-target="#collapsibleNavbar"> 
+      <span [hidden]="collapse=='open'" class="fa fa-bars fa-lg"></span>
+      <span [hidden]="collapse=='closed'" class="fa fa-times fa-lg"></span>
+      <!-- <span class="navbar-toggler-icon"></span> -->
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse " id="collapsibleNavbar" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav  navspac navspac2  HeaderMenu"> 
+          <div class="CollapseProfile">
+
+              <div class="clear"></div>
+              <img src="././assets/images/user-profile-pic-blank.png"> 
+              <div class="clear20"></div>
+              <h4>guest user</h4>
+            </div>
+        <li class="nav-item" (mouseenter)="mouseHovering2()">
+          <a class="nav-link" routerLink="/patient-dashboard/patient-ayurveda" [ngClass]="ayurvedicMenu ? 'menubar' : 'navlink'" (click)="clickfun(0)" >Ayurveda<br/>
+            & You</a> 
+            <div class="triangle-down triangle-down2 DisplayNoneHeader" *ngIf="isHovering2" ></div>
+        </li>
+        <li class="nav-item" (mouseenter)="mouseHovering()">
+          <a class="nav-link" routerLink="/patient-dashboard/patient-healtharea" [ngClass]="healthMenu ? 'menubar' : 'navlink'" (click)="clickfun(1)">Health<br/>
+            Conditions</a> 
+            <div class="triangle-down" *ngIf="isHovering"></div>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="consultDoctorMenu ? 'menubar' : 'navlink'" (click)="clickfun(3)"
+            routerLink="/patient-dashboard/patient-book-appointment">Consult Ayurvedic<br/>Doctor  </a>
+        </li>
+        <li class="nav-item" (mouseenter)="mouseHovering3()">
+          <a class="nav-link" routerLink="/patient-dashboard/patient-mainproductpage" [ngClass]="buyAuyurvedic ? 'menubar' : 'navlink'" (click)="clickfun(2)">Buy Ayurvedic<br/>Products</a>
+          <div class="triangle-down triangle-down3 DisplayNoneHeader" *ngIf="isHovering3" ></div>
+        </li>
+      </ul>
+      <ul class="navbar-nav displayNoneRes">
+        <li class="nav-item SearchIconDiv iconPadding">
+          <a class="nav-link" routerLink="/patient-dashboard/mainsearch"><img src="././assets/images/search.png"></a>
+        </li>
+        <li class="nav-item iconPadding">
+          <a class="nav-link"><img src="././assets/images/notification.png"></a>
+        </li>
+        <li class="nav-item  iconPadding iconPadding2">
+          <a class="nav-link" routerLink="/patientCart"><img src="././assets/images/shopping-cart.png"></a>
+        </li>
+        <!-- <li class="nav-item">
+              <a routerLink="PatientDashboard" class="btn btn-info" role="button">Link Button</a>
+          </li>  -->
+
+        <li class="nav-item" (input)="onKeydownHandler($event)">
+          <a class="nav-link">
+            <div class="dropdown {{custom}}" >
+              <button type="button" class="btn btn-primary dropdown-toggle" (click)="drop()" data-toggle="dropdown">
+                {{userDetails}}
+              </button>
+              <div  class="dropdown-menu {{custom}}">
+                <ng-container>
+                  <a class="dropdown-item" (click)="closed()" routerLink="/User-Profile">My Profile</a>
+                  <a class="dropdown-item" routerLink="/myVitals" (click)="closed()">My Vitals</a>
+                  <a class="dropdown-item" routerLink="" (click)="closed()">Log Out</a>
+                </ng-container>
+              </div>  
+            </div>
+
+
+          </a>
+        </li>
+      </ul> 
+      <ul class="navbar-nav HeaderMenu displayNone">
+        <li routerLink="/PatientDashboard" class="nav-item pl-0">
+          <a class="nav-link" [ngClass]=" whichNav[4] ? 'menubar' : 'navlink'" (click)="clickfun(4)"><img class="FrontImg float-left"
+              src="././assets/images/dashboard.png"> <img class="FrontImg1 float-left" src="././assets/images/DashboardActive.png">
+            Dashboard</a> </li>
+
+        <li routerLink="/patientAppointment" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[5] ? 'menubar' : 'navlink'" (click)="clickfun(5)"> <img class="FrontImg float-left"
+              src="././assets/images/appoinment.png"><img class="FrontImg1 float-left" src="././assets/images/AppoinmentsActive.png">
+            Appointments </a> </li>
+
+        <li routerLink="/patientReport" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[6] ? 'menubar' : 'navlink'" (click)="clickfun(6)"> <img class="FrontImg float-left"
+              src="././assets/images/Report.png"> <img class="FrontImg1 float-left" src="././assets/images/ReportActive.png">Reports
+          </a> </li>
+
+        <li routerLink="/Orders" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[7] ? 'menubar' : 'navlink'" (click)="clickfun(7)"> <img class="FrontImg float-left"
+              src="././assets/images/Order.png"><img class="FrontImg1 float-left" src="././assets/images/ordersActive.png">
+            Orders </a> </li>
+
+        <li routerLink="/patientQueries" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[8] ? 'menubar' : 'navlink'" (click)="clickfun(8)"> <img class="FrontImg float-left"
+              src="././assets/images/Quries.png"><img class="FrontImg1 float-left" src="././assets/images/QueryActive.png">
+            Queries</a> </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="clear50 Header2"></div>
+<div class="borderbottom Header2 Hide766"></div>
+<nav class="header-bottom navbar navbar-expand-sm HeaderBG navbar-dark m-0  row Header2 Hide766">
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar" [ngClass]="{ 'show': navbarOpen }">
+    <div class="col-lg-12">
+
+
+      <ul class="navbar-nav HeaderMenu">
+        <li routerLink="/patient-dashboard/patient-dashbord-details" class="nav-item pl-0">
+          <a class="nav-link" [ngClass]=" whichNav[4] ? 'menubar' : 'navlink'" (click)="clickfun(4)"><img class="FrontImg float-left"
+              src="././assets/images/dashboard.png"> <img class="FrontImg1 float-left" src="././assets/images/DashboardActive.png">
+            Dashboard</a> </li>
+
+        <li routerLink="/patient-dashboard/patient-appointment" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[5] ? 'menubar' : 'navlink'" (click)="clickfun(5)"> <img class="FrontImg float-left"
+              src="././assets/images/appoinment.png"><img class="FrontImg1 float-left" src="././assets/images/AppoinmentsActive.png">
+            Appointments </a> </li>
+
+        <li routerLink="/patient-dashboard/patient-reports" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[6] ? 'menubar' : 'navlink'" (click)="clickfun(6)"> <img class="FrontImg float-left"
+              src="././assets/images/Report.png"> <img class="FrontImg1 float-left" src="././assets/images/ReportActive.png">Reports
+          </a> </li>
+
+        <li routerLink="/patient-dashboard/patient-order" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[7] ? 'menubar' : 'navlink'" (click)="clickfun(7)"> <img class="FrontImg float-left"
+              src="././assets/images/Order.png"><img class="FrontImg1 float-left" src="././assets/images/ordersActive.png">
+            Orders </a> </li>
+
+        <li routerLink="/patient-dashboard/patient-queries" class="nav-item">
+          <a class="nav-link" [ngClass]=" whichNav[8] ? 'menubar' : 'navlink'" (click)="clickfun(8)"> <img class="FrontImg float-left"
+              src="././assets/images/Quries.png"><img class="FrontImg1 float-left" src="././assets/images/QueryActive.png">
+            Queries</a> </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="clear"></div> 
+<div class="HealthAreaDropdown Hide766" *ngIf="isHovering" (mouseleave)="mouseLeft()"> 
+    <div class="clear"></div>  
+    <!-- <div class="clear20"></div>  -->
+    <app-healthareadropdown></app-healthareadropdown>
+    </div>
+    
+     
+    <!-- --------Second dropdown------------  -->  
+    <div class="AyurvedaYouDropdown DisplayNoneHeader Hide766" *ngIf="isHovering2" (mouseleave)="mouseLeft2()"> 
+        <div class="clear20"></div>  
+        <div class="clear20"></div> 
+    <app-ayurveda-you-dropdown></app-ayurveda-you-dropdown> 
+    </div>
+     
+    <!-- --------Third dropdown------------  -->  
+    <div class="ProductDropdown DisplayNoneHeader Hide766" *ngIf="isHovering3" (mouseleave)="mouseLeft3()"> 
+        <div class="clear20"></div>  
+        <div class="clear20"></div> 
+        <app-productdropdown></app-productdropdown> 
+        </div>
+        <div class="clear20"></div>  
+<div class="MobileMenu">
+        <app-patient-navbar-responsive></app-patient-navbar-responsive> 
+      </div>

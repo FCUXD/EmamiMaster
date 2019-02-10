@@ -1,0 +1,688 @@
+<div class="tab BorderRadiusDiv TabContentBox">
+  <button class="col-12 tab1 tablinks {{tabs[0].active}}" (click)="openCity(0)">Patient Profile</button>
+  <button class="col-12 tab1 BtnMargin15px tablinks {{tabs[1].active}}"  (click)="openCity(1)">Create Prescription</button>
+  <button class="col-12 tab1 tablinks {{tabs[2].active}}"  (click)="openCity(2)">Order Summary</button>
+
+</div>
+<!--**************************-->
+<div id="London" class="{{tabs[0].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+
+  <div class="PatientProfileHeader m-0">
+    <h2>
+      <img src="././assets/images/User_profile.png"> Patient Profile</h2>
+  </div>
+  <div class="PatientHistory">
+    <h3>Patient History</h3>
+    <div class="row">
+      <div class="col-12 col-lg-3  mt-4">
+        <h6>Present Condition</h6>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+        <div class="row" >
+          <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary dropdownbox" id="dropdownBasic1" ngbDropdownToggle>{{string}}</button>
+                  <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <!-- <button class="dropdown-item">Another Action</button>
+                      <button class="dropdown-item">Something else is here</button> -->
+                      <button (click)="string=item.name" id="two" *ngFor="let item of dropdown1" class="dropdown-item">{{item.name}}</button>
+        
+                  </div>
+              </div>
+          </div>
+        
+        </div>      </div>
+      <div class="col-12 col-lg-2 mt-2">
+        <div class="row" >
+          <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary dropdownbox" id="dropdownBasic1" ngbDropdownToggle>{{string}}</button>
+                  <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <!-- <button class="dropdown-item">Another Action</button>
+                      <button class="dropdown-item">Something else is here</button> -->
+                      <button (click)="string=item.name" id="two" *ngFor="let item of dropdown2" class="dropdown-item">{{item.name}}</button>
+        
+                  </div>
+              </div>
+          </div>
+        
+        </div>      </div>
+      <div class="col-12 col-lg-4 PatientHistoryBtnDiv mt-2">
+        <button type="button" class="btn PatientHistoryBtn"><img src="././assets/images/save.png"> Save</button>
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Allergies</h6>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+        <div class="row" >
+          <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary dropdownbox" id="dropdownBasic1" ngbDropdownToggle>{{string}}</button>
+                  <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <!-- <button class="dropdown-item">Another Action</button>
+                      <button class="dropdown-item">Something else is here</button> -->
+                      <button (click)="string=item.name" id="two" *ngFor="let item of dropdown3" class="dropdown-item">{{item.name}}</button>
+        
+                  </div>
+              </div>
+          </div>
+        
+        </div>      </div>
+      <div class="col-12 col-lg-2 mt-2">
+        <div class="row" >
+          <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary dropdownbox" id="dropdownBasic1" ngbDropdownToggle>{{string}}</button>
+                  <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <!-- <button class="dropdown-item">Another Action</button>
+                      <button class="dropdown-item">Something else is here</button> -->
+                      <button (click)="string=item.name" id="two" *ngFor="let item of dropdown4" class="dropdown-item">{{item.name}}</button>
+        
+                  </div>
+              </div>
+          </div>
+        
+        </div>      </div>
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+      <div class="clear"></div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Special Considerations</h6>
+      </div>
+
+      <div class="col-12 col-lg-5 mt-2">
+        <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Spots on skin due to sunlight"></textarea>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Current Medidcation</h6>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-2 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Past Illness/Surgeries</h6>
+      </div>
+      <div class="col-12 col-lg-5 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+    </div>
+  </div>
+
+  <!--**************************-->
+  <div class="PatientHistory">
+    <h3>Lifestyle Details</h3>
+    <div class="row">
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Habits</h6>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-2 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-4 PatientHistoryBtnDiv mt-2">
+        <button type="button" class="btn PatientHistoryBtn"><img src="././assets/images/save.png"> Save</button>
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Exercise Routine</h6>
+      </div>
+      <div class="col-12 col-lg-5 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Eating Preference</h6>
+      </div>
+      <div class="col-12 col-lg-5 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+      <div class="clear"></div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Working Hours</h6>
+      </div>
+      <div class="col-12 col-lg-5 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Night Sleep Time</h6>
+      </div>
+      <div class="col-12 col-lg-5 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Afternoon Sleep Time</h6>
+      </div>
+      <div class="col-12 col-lg-5 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+    </div>
+  </div>
+  <!--**************************-->
+
+  <div class="PatientHistory">
+    <h3>Family History</h3>
+    <div class="row">
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Relationship</h6>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-2 mt-2">
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Deceased</label>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4 mt-2 PatientHistoryBtnDiv">
+        <button type="button" class="btn"><img src="././assets/images/add.png"> Add Member</button>
+      </div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Diseases</h6>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-2 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+      <div class="clear"></div>
+      <div class="col-12 col-lg-3 mt-4">
+        <h6>Allergies</h6>
+      </div>
+      <div class="col-12 col-lg-3 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-2 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+      <div class="col-12 col-lg-4 mt-2">
+
+      </div>
+
+
+    </div>
+  </div>
+  <!--**************************-->
+  <div class="PatientHistory">
+    <h3>Health Reports</h3>
+    <div class="clear20"></div>
+    <ng-container *ngFor="let item of xreport">
+      <div class="card cardbodydiv  mb-3 col-12 col-lg-8 col-md-8 p-0">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-7">
+              <h3 class="m-0">{{item.report}}</h3>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-5">
+              <div class="CardRightContent Righttext pull-right m-0">
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+          <div class="borderdiv MarginTB"></div>
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-7">
+              <h6 class="m-0">{{item.pdf}}</h6>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-5" style="text-align:right">
+              <div class="CardRightContent pull-right m-0">
+                <!-- <img class="img-size" src="{{item.image}}"> -->
+                <img class="MarginLeft img-size" src="{{item.image2}}">
+                <img class="MarginLeft img-size" src="{{item.image3}}">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </ng-container>
+    <p class="col-12 col-lg-8 col-md-8 text-center">click here to view more reports.
+      <br/>
+      <img src="././assets/images/down-arrow.png">
+
+    </p> 
+    <div class="GoNextBtn">
+    <button class="btn"  (click)="openCity(1);" >
+      Go Next <img src="././assets/images/right_arrow.png"> </button> 
+  </div>
+  </div>
+
+</div>
+<!--**************************-->
+<div id="Paris" class="{{tabs[1].tabcontent}} p-0  TabContentBox MarginTop20 BorderRadiusDiv bordertop">
+  <div class="PatientProfileHeader m-0" >
+    <h2>
+      <img src="././assets/images/User_profile.png"> Create Prescription</h2>
+  </div>
+  <div class="PatientHistory">
+    <h3>Health Issue</h3>
+    <div class="row">
+      <div class="col-12 col-lg-5 mt-2">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+
+    </div>
+  </div>
+  <!--**************************-->
+
+  <div class="PatientHistory  SymptomsContentBox SymptomsContentBoxmargin col-12">
+    <h3>Symptoms</h3>
+    <div class="row AnimationInputBox AnimationInputBox2 mt-4">
+      <div class="col-12 col-lg-12">
+          <div class="entry input-group mb-3">
+              <div class="input-field mb-2">
+                  <input class="DiagnosisInput" type="text" id="name5" required />
+                  <label for="name5">Enter Symptoms</label>
+                </div>
+            <span class="input-group-btn">
+                  <button class="btn  btn-add" type="button" (click)="addMore()">
+                    <img src="././assets/images/add.png">
+                  </button>
+              </span>
+          </div>
+          <div class="entry input-group mb-4" *ngFor="let item of Symptoms; let i = index">
+              <div class="input-field">
+                  <input class="DiagnosisInput" type="text" id="name6" required />
+                  <label for="name6">Enter Diagnosis</label>
+              </div>
+              <span class="input-group-btn ">
+                  <button class="btn btn-add " type="button" (click)="removeThis(i)">
+                    <img src="././assets/images/substract.png">
+                  </button>
+              </span>
+          </div>
+        <!-- <div class="form-group">
+
+          <input type="text" class="form-control DiagnosisInput DiagnosisInput1" id="usr" placeholder="Enter Diagnosis">
+
+        </div> -->
+      </div>
+
+      <button type="button" class="btn SymptomsBtn">Add more Symptoms</button>
+
+    </div>  
+
+
+  
+
+  </div>
+  <!--**************************-->
+
+  <div class="PatientHistory SymptomsContentBox SymptomsContentBoxmargin1 col-12 ">
+    <h3>Diagnosis</h3>
+    <div class="row AnimationInputBox">
+      <div class="col-12 col-lg-8 col-md-8 mt-4">
+        <!-- <div class="form-group">
+
+          <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter Diagnosis">
+        </div> --> 
+        <form action="">
+            <div class="input-field">
+              <input class="DiagnosisInput" type="text" id="name" required />
+              <label for="name">Enter Diagnosis</label>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  <!--**************************-->
+  <div class="clear"></div>
+  <div class="PatientHistory  SymptomsContentBox SymptomsContentBoxmargin BoxMinHeight">
+    <h3>Investigations</h3>
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <div class="form-check-inline row">
+          <label class="form-check-label col-12 col-lg-4 col-md-4" for="check1">
+            <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>Blood Pressure
+          </label>
+          <label class="form-check-label col-12 col-lg-4 col-md-4" for="check2">
+            <input type="checkbox" class="form-check-input" id="check2" name="vehicle2" value="something" checked>Blood Sugar
+          </label>
+          <label class="form-check-label col-12 col-lg-4 col-md-4" for="check3">
+            <input type="checkbox" class="form-check-input" id="check3" name="vehicle3" value="something" checked>Emami report
+          </label>
+          <label class="form-check-label col-12 col-lg-6 col-md-6 mt-2 ResMarginTop" for="check4">
+            <input type="checkbox" class="form-check-input" id="check4" name="vehicle4" value="something" checked>Oral Glucose Tolerance
+          </label>
+        </div>
+        <div class="row AnimationInputBox">
+            <div class="col-12 col-lg-8 col-md-8 mt-4">
+              <!-- <div class="form-group">
+      
+                <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter Diagnosis">
+              </div> --> 
+              <form action="">
+                  <div class="input-field">
+                    <input class="DiagnosisInput" type="text" id="name2" required />
+                    <label for="name2">Enter Diagnosis</label>
+                  </div>
+                </form>
+            </div>
+          </div>
+      </div>
+
+      <button type="button" class="btn SymptomsBtn">Add more Symptoms</button>
+
+    </div>
+  </div>
+  <!--**************************-->
+
+  <div class="PatientHistory SymptomsContentBox SymptomsContentBoxmargin1 BoxMinHeight">
+    <h3>Prescribe</h3>
+    <div class="row AnimationInputBox">
+        <div class="col-12 col-lg-8 col-md-8 mt-4">
+          <!-- <div class="form-group">
+  
+            <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter Diagnosis">
+          </div> --> 
+          <form action="">
+              <div class="input-field">
+                <input class="DiagnosisInput" type="text" id="name1" required />
+                <label for="name1">Enter Notes</label>
+              </div>
+            </form>
+        </div>
+      </div>
+  </div>
+  <!--**************************-->
+  <div class="clear"></div>
+  <div class="PatientHistory mt-0">
+    <h3>Prescribe Medicine</h3>
+    <div class="clear20"></div>
+    <app-prescribemedicine></app-prescribemedicine>
+
+    <div class="clear"></div>
+  </div>
+  <div class="SubmitBtnDiv">
+    <button type="button" class="btn text-center" (click)="openCity(2)"> Submit <img src="././assets/images/right_arrow.png"></button>
+  </div>
+</div>
+<!--**************************-->
+<div id="Tokyo" class="{{tabs[2].tabcontent}}  p-0 TabContentBox MarginTop20 BorderRadiusDiv bordertop">
+  <div class="PatientProfileHeader m-0">
+    <h2>
+      <img src="././assets/images/User_profile.png"> Order Summary</h2>
+  </div>
+  <div class="PatientHistory">
+    <h3>Confirm Delivery Address and Phone Number</h3>
+    <div class="row">
+      <div class="col-12 col-lg-5 OrderSummeryAddressContent">
+
+        <div class="ContentDiv">
+          <div class="float-right">
+            <button type="button" class="btn RemoveBtn">Remove</button>
+            <button type="button" class="btn RemoveBtn ml-2">Edit</button>
+
+          </div>
+          <div class="clear"></div>
+          <h3>Address</h3>
+          <p>921, Church St, Aundh, Pune
+            <br/> Maharashtra (411007)
+          </p>
+          <div class="clear10"></div>
+          <h3>Phone Number</h3>
+          <p>869-847-6151
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-1 p-0"></div>
+      <div class="col-12 col-lg-5 OrderSummeryAddressContent MarginLeftDiv text-center AddAdressDiv" data-toggle="modal" (click)="openmodal();">
+        <h3>
+          <img class="mr-2" src="././assets/images/plus.png"> Add Address
+        </h3>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <!--**************************-->
+  <div class="clear"></div>
+  <div class="PatientHistory">
+    <h3>Order Details</h3>
+    <div class="clear10"></div>
+    <h3 class="mt-4 mb-4" (click)="AddProduct()" *ngIf="hidediv" > 
+    
+      <img class="mr-2" src="././assets/images/plus.png" > Add Product</h3>
+      <div class="row mb-4" *ngIf="showdiv">
+          <div class="col-12 col-lg-3 mt-2">
+            <app-consultpagedropdown></app-consultpagedropdown>
+          </div>
+          <div class="col-12 col-lg-2 mt-2">
+              <app-consultpagedropdown></app-consultpagedropdown>
+            </div>
+        </div> 
+      
+    <div class="clear20"></div>
+    <div class="row">
+      <div class="col-12 col-lg-9 col-md-12 col-sm-12 p-0 pr-4">
+        <div class="row ">
+          <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+            <div class="row">
+
+              <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                <div class="RoundImgDiv">
+                  <img src="././assets/images/roundimg.png">
+
+                </div>
+              </div>
+              <div class="col-12 col-lg-8 col-md-8 col-sm-12">
+                <h5 class="ZanduPaddingleft">Zandu Pancharitsth </h5>
+                <p class="ZanduPaddingleft1">500ml</p>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-12 col-lg-2 p-0 col-md-2 col-sm-12 SpinerRes">
+            <app-spiner></app-spiner>
+          </div>
+          <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+            <h3 class="float-right mt-2 ResText">190</h3>
+          </div>
+          <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+            <img class="float-right mt-2" src="././assets/images/cancel.png">
+          </div>
+        </div>
+        <div class="borderdiv mt-4 mb-4"></div>
+        <div class="clear10"></div>
+        <div class="row">
+          <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+            <div class="row">
+
+              <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                <div class="RoundImgDiv">
+                  <img src="././assets/images/roundimg.png">
+
+                </div>
+              </div>
+              <div class="col-12 col-lg-8 col-md-8 col-sm-12">
+                <h5 class="ZanduPaddingleft">Zandu Pancharitsth </h5>
+                <p class="ZanduPaddingleft1">500ml</p>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-12 col-lg-2 p-0 col-md-2 col-sm-12 SpinerRes">
+            <app-spiner></app-spiner>
+          </div>
+          <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+            <h3 class="float-right mt-2 ResText">190</h3>
+          </div>
+          <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+            <img class="float-right mt-2" src="././assets/images/cancel.png">
+          </div>
+        </div>
+        <div class="borderdiv mt-4 mb-4"></div>
+        <div class="clear20"></div>
+        <div class="row">
+          <div class="col-12 col-lg-8 col-md-8 col-sm-12 ResTextLink">
+            <h6>Please enter Zandu specific coupon code to avail discount </h6>
+            <p>Please check http://www.zigy.com for more details </p>
+
+
+          </div>
+          <div class="col-12 col-lg-4 col-md-4 col-sm-12 pl-0 ResTextLink1">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+
+                  <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter Coupon Code">
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <!--ORDER SUMMERY CARD-->
+      <div class="col-12 col-lg-3 p-0">
+        <div class="card">
+          <h2>Order Summary</h2>
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Qty</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Zandu pancharishta</td>
+                <td>1</td>
+                <td>190</td>
+              </tr>
+              <tr>
+                <td>Zandu Nityam</td>
+                <td>1</td>
+                <td>190</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <div class="clear"></div>
+          <div class="row">
+            <div class="col-6">
+              <p class="subtotalPaddingLeft">Sub Total</p>
+            </div>
+            <div class="col-6">
+              <p class="text-center">380</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <p class="subtotalPaddingLeft">Delivery Charges</p>
+            </div>
+            <div class="col-4 p-0">
+              <p class="pl-2">40</p>
+            </div>
+          </div>
+          <div class="borderdiv"></div>
+          <div class="clear20"></div>
+          <div class="row">
+            <div class="col-6">
+              <h3 class="subtotalPaddingLeft">Total</h3>
+            </div>
+            <div class="col-6">
+              <h3 class="text-center">480</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="clear20"></div>
+
+  </div>
+  <!--**************************-->
+  <div class="clear"></div>
+  <div class="PatientHistory">
+      <h3>Confirm Payment Mode</h3>
+      <div class="clear20"></div>
+      <div class="row">
+      <!-- <div class="col-12 col-lg-1 col-md-1 col-sm-12 p-0"></div> -->
+      <div class="ConfirmPaymentLeftCard text-center">
+      <img src="././assets/images/money.png">
+      <div class="clear20"></div>
+      <h5 class="">Cash On Delivery</h5>
+      
+      </div>
+      
+      <div class="ConfirmPaymentLeftCard ConfirmPaymentLeftCard1 text-center">
+      <img src="././assets/images/pay-per-click.png">
+      <div class="clear20"></div>
+      <h5 class="">Payment Link</h5>
+      
+      </div>
+      
+      <div class="ConfirmPaymentLeftCard text-center">
+      <img src="././assets/images/credit-card.png">
+      <div class="clear20"></div>
+      <h5 class="">Online Portal</h5>
+      
+      </div> 
+      <div class="ConfirmPaymentLeftCard text-center ConfirmPaymentLeftCard4">
+      <img src="././assets/images/buy.png">
+      <div class="clear20"></div>
+      <h5 class="">Buy Later</h5>
+      
+      </div>
+      <!-- <div class="col-12 col-lg-1 col-md-1 col-sm-12 p-0"></div> -->
+      </div>
+      <!-- <app-spiner></app-spiner> -->
+      <div class="clear20"></div>
+      <button type="button" class="btn btn-primary btn-lg float-right border-0 mt-4">Send Message</button>
+      <div class="clear"></div>
+      </div>
+</div>
+
+
+
+
+
+
+
+

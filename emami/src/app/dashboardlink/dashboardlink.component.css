@@ -1,0 +1,810 @@
+.WelcomeLeftContent h3{
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+   
+
+color: #3e2808;
+} 
+.Upcomingleftdiv{
+    width: 30%;
+    float: left;
+    margin: 0px 10px;
+} 
+.CardDateDiv{
+    color: #402909;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+} 
+.Upcomingleftdiv2{
+    margin: 0px 15px;
+}
+.CardDateDiv1{
+    font-size: 24px !important;
+    color: #333333;
+    font-family: 'TrajanPro-Bold' !important;
+
+margin-bottom: 18%;
+} 
+.CardDateDiv2{
+    font-family: 'TrajanPro-Regular';
+    color: #402909;
+    font-size: 14px;
+}
+.WelcomeLeftContent h4{
+    font-family: 'PlayfairDisplay-Bold'; 
+    font-size: 22px;
+
+}  
+.generalphytext{
+    font-size: 14px;
+    font-family: 'TrajanPro-Bold' !important;
+    margin-top: 20px;
+}
+.CanselBtnCard{
+    background-color: #ffffff;
+border: 1px solid #cfa15a;
+outline-offset: 0px;
+font-family: 'TrajanPro-Bold';
+box-shadow: none;
+box-shadow: none !important;
+
+padding: 8px 42px !important;
+}
+.WelcomeLeftContent{
+    background: #f9f4e4;
+    padding: 4%;
+    border-radius: 10px;
+}
+.ProgressBarContentBox{
+    background-color: #f7f0dd;
+    padding: 4%;
+    border-radius: 5px;
+    width: 70%;
+float: left;
+} 
+.ProgressBarContentBox p {
+    font-family: 'TrajanPro-Regular';
+    font-size: 14px;
+    width: 41%;
+
+float: left;
+}
+.ProgressBarContentBox h3 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    width: 16%;
+
+float: left;
+}
+.UpdateBtnRightBox{
+    text-align: center;
+}
+.UpdateBtn{
+    font-family: 'TrajanPro-Bold';
+    background: #bccf60;
+    border-radius: 15px;
+        outline: 1px solid #84b367;
+    outline-offset: -11px;
+    -moz-outline-radius: 10px;
+    padding: 18px 58px;
+}
+.ORText{
+    color: #a58658;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'TrajanPro-Bold';
+}
+.footerDiv{
+    padding: 2%;
+    text-align: center;
+} 
+.footerDiv h6{
+    color: #b5803c;
+    font-family: 'TrajanPro-Bold';
+    font-size: 18px;
+}
+.footerDiv p{
+    color: rgba(51, 51, 51, 0.7);
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 12px;
+}
+.appon_card  h5{
+    
+    font-family: 'TrajanPro-Regular';
+}
+.appon_card  p{
+    font-size: 16px;
+    font-family: 'PlayfairDisplay-Regular';
+}
+.appon_card {
+  
+    padding: 23px;
+    border-radius: 10px;
+    border: 1px solid #d6ad66;
+} 
+.appon_card a{
+    font-size: 12px;
+    font-family: 'TrajanPro-Bold';
+}
+.yourdoshaContentBox{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    padding: 6% 4% 13% 4%;
+    border-radius: 5px;
+} 
+.bl_pressure  h4{
+    font-family: 'TrajanPro-Bold';
+    font-size: 18px;
+}
+.HeadingText{
+    font-size: 20px;
+    font-family: 'TrajanPro-Regular';
+    margin-bottom: 11%;
+    margin-left: 28px;
+}
+.BorderHeading{
+    border: 1px solid #d9b065 !important; 
+    opacity: 0.23;
+    }
+.yourdoshaContentBox p { 
+font-size: 14px; 
+font-family: 'TrajanPro-Regular';
+}
+.DoshaLeftBox{
+    text-align: center;
+}
+.GetStartedBtn{
+    padding: 8px 28px;
+    outline-offset: -6px;
+-moz-outline-radius: 5px;
+font-size: 12px;
+border-radius: 5px; 
+box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.13);
+}
+.margin20{
+    margin: 17px;
+    width: 100%;
+}
+.PaddingRight17px{
+    padding-right: 17px;
+}
+.UpcomingAppointmentsBox{
+    padding: 3% 4% 4% 4%;
+  
+} 
+.UpcomingText{
+    margin-bottom: 5%;
+} 
+.UpcomingRightContentBox{
+    border: 1px solid #d6ad66;
+    border-radius: 5px;
+    padding: 10% 2% 2% 2%;
+}
+.UpcomingRightContentBox h4{
+    font-family: 'PlayfairDisplay-Bold';
+} 
+.BookAppoinment_my{
+    margin: 6% 0%;
+}
+
+.yourqueriesLeftDiv{
+    width: 50%;
+    float: left;
+}
+.YourQuriesHeadingDiv{
+    padding: 2% 2% 5% 3%;
+}
+.SaffarnText{
+    font-family: 'PlayfairDisplay-Regular'; 
+    font-size: 30px;
+} 
+.skintext{
+    font-size: 15px !important; 
+    font-family: 'TrajanPro-Regular' !important;
+} 
+.ZanduText{
+    font-size: 18px;
+    font-family: 'TrajanPro-Bold';
+} 
+.RupeesText{
+    font-size: 24px; 
+    font-family: 'PlayfairDisplay-Bold';
+} 
+.DateText{
+    color: #666666;
+    font-size: 14px;
+    font-family: 'PlayfairDisplay-Regular'; 
+}
+/* -----------------------OLD CSS------------- */
+
+.upcoming{
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.upcoming img {
+    margin-right: 5px;
+}
+
+
+.appon_card  h3{
+    font-weight: normal;
+} 
+.recent_order h3{
+    text-transform: capitalize;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #26cd85;
+    border-color: #26cd85;
+    width: 200px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    height: 55px;
+    font-size: 18px;
+}
+.btn-primary:hover {
+    background-color: #26cd85;
+    border-color: #26cd85;
+}
+a.btn.social-btn.explor:hover{
+    color: #ffffff;
+}
+.btn-outline-primary {
+    color: #26cd85;
+    background-color: transparent;
+    background-image: none;
+    border-color: #26cd85;
+    width: 100%;
+    font-weight: 700;
+}
+.btn-outline-primary:hover {
+    color: #ffffff;
+    background-color: #26cd85;
+    border-color: #26cd85;
+}
+
+.appon_card.big_card h5 {
+    line-height: 1.5;
+}
+.graph_img {
+    background: #26cd85;
+    padding: 5px;
+    border-radius: 5px;
+}
+.vital_card {
+    width: 100%;
+}
+
+.date_cursor{
+    cursor: pointer;
+}
+.bl_img {
+    margin-right: 30px;
+}
+.appon_card.vertcale_tab {
+    width: 100%;
+}
+.green_text a {
+    color: #26cd85 !important;
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.main_div .no_mr:nth-child(even) {
+    margin-right: 0px !important;
+}
+.cust_mr {
+    margin-right: 2%;
+}
+.card-body img{width: 100%}
+.divider {
+    border-bottom: 1px solid #d9b065;
+}
+.consult h5 {
+    text-transform: capitalize;
+} 
+.CalenderText{
+    font-size: 18px !important;
+    font-family: 'TrajanPro-Bold' !important;
+    width: 30%;
+    float: right;
+    text-align: right;
+} 
+.CalenderText1{
+    width: 60%;
+    float: left;
+} 
+.viewall{
+    font-family: 'TrajanPro-Bold'; 
+    font-size: 12px;
+    text-align: right;
+
+width: 100%;
+}  
+.margintborder{
+    margin: 3% 0% !important;
+} 
+.articleDiv{
+    margin-bottom: 13%; 
+    margin-top: 2%;
+} 
+.articleDiv2{
+    margin-bottom: 10%; 
+    margin-top: 2%;
+}
+.progress-bar {
+      background-color: #bccf60;
+      
+} 
+.TipOffTheDatDiv{
+    background: #ebf1cf;
+    border: none !important;
+}
+
+
+.progress {
+    background-color: #d6ad6633;
+    width: 35%;
+
+float: right;
+
+text-align: right;
+}
+
+/*----------------tab ---------------------------------------*/
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+    
+   }
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'TrajanPro-Bold';
+    font-size: 18px; 
+   
+}
+
+/* Change background color of buttons on hover */
+
+
+/* Create an active/current tablink class */
+.tab button.active {
+   
+    color: #bccf60;
+
+    border-bottom: 2px solid #bccf60;
+    
+    border-radius: 0px;
+    
+    margin: 0px 20px;
+  
+   
+}
+.tab1{
+ 
+    float: left; 
+    border-radius: 5px;
+    margin: 0px 20px;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+   
+    border-top: none;
+}
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+} 
+.BtnMargin15px{
+    margin: 0px 22px;
+} 
+.PatientProfileHeader{
+    padding: 2% 3%; 
+    border-bottom: 1px solid #333;
+}  
+.PatientHistoryBtnDiv{
+    text-align: center;
+}
+.PatientHistory{
+    padding: 2% 3%;
+    box-shadow: 0px 0px 4px #ccc;
+    margin: 3%;
+    border: 1px solid #ccc;
+}  
+#comment{
+   height: 90px; 
+   overflow-y: scroll;
+   border-radius: 0px;
+}
+
+  .PatientHistoryBtn{
+    padding: 2% 16%;
+  } 
+.SymptomsContentBox{
+    width: 46%;
+    float: left; 
+    min-height: 210px; 
+    margin-top: 0px;
+} 
+.SymptomsContentBoxmargin{
+    margin-right: 11px;
+} 
+.SymptomsContentBoxmargin1{
+    margin-right: 0px; 
+    margin-left: 10px;
+} 
+.SymptomsBtn{
+    margin-top: 7%;
+} 
+.DiagnosisInput{
+    border-bottom: 1px solid #333 !important;
+    border-radius: 0px; 
+    border: none;
+    
+}  
+.DiagnosisInput1{
+   
+    background: url("/assets/images/add.png") no-repeat right center;
+}  
+.OrderSummeryAddressContent{
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 0px; 
+    margin: 4% 0%; 
+    margin-left: 16px;
+}
+.ContentDiv{
+    margin: 8px;
+    padding: 14px 14px;
+    border: 1px solid #ccc;
+} 
+.RemoveBtn{
+    background-color: #ffffff;
+    border-bottom: 1px solid #333;
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 14px;
+} 
+.MarginLeftDiv{
+    margin-left: -25px;
+} 
+.AddAdressDiv h3{
+    margin-top: 22%;
+} 
+.ConfirmPaymentLeftCard {
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 6% 3%;
+    border-radius: 10px;
+} 
+.ConfirmPaymentLeftCard1{
+    margin: 0% 4%;
+} 
+.RoundImgDiv{
+    width: 88px;
+    height: 88px;
+    float: left; 
+    border: 1px solid #333;
+border-radius: 50px;
+padding: 13px; 
+margin-top: -18px;
+} 
+.RoundImgDiv img{
+    width: 100%;
+    height: 100%;
+  
+} 
+.card{
+    padding: 35px 15px 15px 15px;
+    box-shadow: 0px 0px 8px #ccc;
+}  
+.TabContentBox{
+    margin-top: 0% !important;
+    float: right;
+} 
+.BoxMinHeight{
+    min-height: 300px;
+} 
+.SubmitBtnDiv{
+    text-align: center;
+    padding: 1% 2% 4% 2%;
+} 
+.btn-primary{
+
+    background-color: #35a961;
+} 
+.table tbody tr td{
+    font-size: 12px;
+} 
+.subtotalPaddingLeft{
+    padding-left: 11px;
+} 
+  /*-----------*/
+  .cardbodydiv{
+    box-shadow: 0px 0px 10px #f1f1f1;
+    border: none;
+    padding: 2%; 
+    background-color: #f4f4f4;
+} 
+.Righttext{
+    font-size: 18px; 
+    color: #666;
+}
+
+
+
+
+.DotedBox{
+    width: 80%;
+  float: none;
+    margin: 0 auto;  
+    background: #ffffff; 
+    padding: 1% 3%;
+    border: 1px dashed #ccc;
+}
+.ViewAppointmentHistoryBtn{
+    background: transparent;
+    color: #000000;
+    font-weight: normal;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0px; 
+    font-size: 20px;
+}
+.DotedBox2{
+    min-height: 350px;
+    width: 100%;
+    padding: 4%;
+} 
+.appon_card2{
+    padding: 5% 5%;
+
+}  
+.DigestiveHealthCard{
+    background: #f5f5f5; 
+    box-shadow: 0px 0px 15px #ccc;
+    border: none;
+}
+.RecentOrderContentBox{
+    background: #ffffff;
+    padding: 4%; 
+    max-height: 490px;
+    overflow-y: scroll;
+    margin-top: 32px;
+} 
+.CreateQueryBtn{
+    border-radius: 8px;
+    font-weight: bold; 
+    font-size: 18px;
+}
+/* / You can add global styles to this file, and also import other style files / */
+.bg-color{
+    background-color:#F7F9F9;
+}
+.MarginTB{
+    margin: 20px 0px 20px 0px;
+}
+.MarginTop20{
+margin-top: 20px;
+} 
+.MarginBottom10px{
+    margin-bottom: 10px;
+} 
+.MarginBottom20px{
+    margin-bottom: 20px;
+}   
+.MarginLeft{
+margin-left: 18px;
+}
+.borderdiv{
+    border: 1px solid #cccccc;
+}
+
+
+
+.add-report-float{
+    text-align:right;
+}
+
+.report-font{
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+.filter-by{
+    font-size: 18px;
+    font-weight: 800;
+    }
+
+.float-filter-by{
+    text-align: right;
+}
+
+.bg-cyan{
+    background: #85929E;
+}   
+
+.fa-size{
+  font-size:24px
+}
+
+.fa-calendar2{
+    font-size:24px;color:green;
+    cursor: pointer;
+}
+
+.img-size{
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+    .add-report-float{
+        text-align:center;
+    }
+    .report-font{
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+    }
+    .float-filter-by{
+        text-align: center;
+    }
+    .Righttext{
+        font-size: 16px; 
+        color: #666;
+    }
+    
+    .MarginLeft{
+        margin-left: 10px;
+        }
+        
+    .img-size{
+        width:24%;
+        cursor: pointer;
+    }            
+} 
+@media screen and (min-width: 1px) and (max-width: 1300px) { 
+   
+    .tab1 {
+        width: 30%;
+          } 
+     }  
+     @media screen and (min-width: 1px) and (max-width: 992px) { 
+        .MarginLeftDiv, .OrderSummeryAddressContent {
+            margin-left: 0px;
+        }  
+        .AddAdressDiv h3{
+            margin: 12%;
+        }
+    }
+@media screen and (min-width: 1px) and (max-width: 768px) {  
+    .SymptomsContentBox {
+        width: 94%;
+            } 
+            .SymptomsContentBoxmargin1 {
+                margin-right: 3%;
+                margin-left: 3%;
+            } 
+            .ResMarginTop{
+             margin-top: 0px !important;
+            } 
+            .SymptomsBtn {
+                margin: 0 auto;
+            } 
+            .ConfirmPaymentLeftCard1 {
+                margin: 0% 0%;
+            } 
+            .ConfirmPaymentLeftCard {
+                margin: 0 auto; 
+                margin-bottom: 15px;
+            } 
+            .ZanduPaddingleft{
+                padding-left: 2%; 
+                text-align: center;
+                margin: 4% 0%;
+            } 
+            .RoundImgDiv{
+                margin: 0 auto;
+                float: none;
+            } 
+            .ZanduPaddingleft1{
+                text-align: center;
+            } 
+            .SpinerRes{
+                text-align: center;
+            } 
+            .ResText{
+                float: none !important;
+                text-align: center !important;
+                margin: 4% 0% !important;
+            } 
+            .ResTextLink{
+                text-align: center;
+                padding: 4%;
+            } 
+            .ResTextLink1{
+                padding-left: 4% !important;
+            }
+ }
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    .tab1 {
+        width: 100%;
+        margin-bottom: 20px;
+          } 
+          .BtnMargin15px {
+            margin-right: 0px;
+            margin-left: 0px;       
+        } 
+        .ResTextLink ,ResTextLink1{
+            padding-left: 12% !important;
+        } 
+      }
+
+
+/*----------------tab -end--------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 930px) {
+    .gryish{
+        width: 100%;
+        padding: 20px;
+    }
+    .consult,.wrapper,.appon_card.big_card,.bl_pressure,.bl_pressure_sub,.tabcontent,.tab {
+        width: 100% !important;
+    }
+    .upcoming {
+        font-size: 18px;
+    }
+    .appon_card {
+        width: 100%;
+        margin: 0% 0% 2% 0%;
+    }
+} 
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+    .consult,   .btn-book {
+        width: 100%;
+      
+    } 
+ 
+
+}  
+@media screen and (min-width: 1px) and (max-width: 768px) {  
+    .ProfileColContentBox,  .RangerSliderRightContentBox {
+        width: 100%;
+       
+    } 
+       .UpdateBtn {
+         float: left;
+    } 
+    .btn-book {
+        padding: 1% 4%;
+    }
+}
+

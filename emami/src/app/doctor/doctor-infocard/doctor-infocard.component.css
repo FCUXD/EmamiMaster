@@ -1,0 +1,43 @@
+.editbutton{
+    width: 175px;
+    height: 50px;
+    margin-top: 8%;
+} 
+.cardbodydiv{
+    border-radius: 10px;
+    background-color: #f9f4e4; 
+    min-height: 165px;
+} 
+.roundimg{
+width: 140px;
+height: 140px;
+} 
+.roundimg img{
+width: 100%;
+height: 100%;
+}
+.searchdiv{position: relative}
+.dr{
+  font-family: TrajanPro-Bold;
+  font-size: 22px;
+ 
+  color: #333333;
+}
+.tenappo{
+    font-size: 22px;
+   
+    font-family: PlayfairDisplay-Bold;
+    color: #333333;
+}
+.query-style{
+  font-family: PlayfairDisplay-Regular;
+  font-size: 14px;
+  font-style: normal;
+  color: #402909;
+}
+.query-style2{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    color: #402909;
+}

@@ -1,0 +1,331 @@
+
+ul.months-slider-list{
+    list-style-type: none;
+}
+ul.months-slider-list li{
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.active-month-cirlce{
+    width: 87px;
+    height: 87px;
+    border: solid 1px #cfa15a;
+    background-color: #cfa15a;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #402909;
+    font-family: 'PlayfairDisplay-Bold';
+    transition: all 0.5s;
+}
+
+.inactive-month-circle{
+    width: 60px;
+    height: 60px;
+    background-color: #fff9e5;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: normal;
+    color: #402909;
+    font-family: 'PlayfairDisplay-Regular';
+    padding: 16px;
+    transition: all 0.5s;
+}
+.inactive-month-circle:hover {
+    border: solid 1px #cfa15a;
+    background-color: #cfa15a;
+    font-family: 'PlayfairDisplay-Bold';
+    width: 61px;
+    height: 61px;
+}
+/* hide last 6  */
+ul.months-slider-list li:nth-last-child(-n+7){
+    display: none;
+}
+ul.months-slider-list li:last-child{
+    display: inline-block;
+}
+@media only screen and (max-width: 768px) {
+    ul.months-slider-list li:nth-last-child(-n+10){
+        display: none;
+    }
+    ul.months-slider-list li:last-child{
+        display: inline-block;
+    }
+}
+@media only screen and (max-width: 576px) {
+    ul.months-slider-list li:nth-last-child(-n+12){
+        display: none;
+    }
+    ul.months-slider-list li:last-child{
+        display: inline-block;
+    }
+}
+/* ----------------------------------------------------------------------- */
+
+.appointmentsMainContainer{
+    font-family: 'TrajanPro-Regular';
+    padding-top: 34px;
+}
+/* emami timeline stle css*/
+ul.timeline {
+ list-style-type: none;
+ position: relative;
+}
+ul.timeline:before {
+ content: ' ';
+ background: #fff9e5;
+ display: inline-block;
+ position: absolute;
+ left: 29px;
+ width: 5px;
+ height: 100%;
+ z-index: 400;
+}
+
+ul.timeline > li {
+ margin: 50px 0;
+ padding-left: 32px;
+}
+ul.timeline > li:first-of-type {
+ margin: 120px 0;
+ padding-left: 32px;
+}
+ul.timeline > li:before {
+ content: ' ';
+ background: #cfa15a;
+ display: inline-block;
+ position: absolute;
+ border-radius: 50%;
+ border: 3px solid #ffffff;
+ left: 20px;
+ width: 22px;
+ height: 22px;
+ z-index: 400;
+ box-shadow: 0 0 0 2px #cfa15a;
+}
+/* font size */
+.fs-12px{
+ font-size: 12px;
+}
+.fs-14px{
+ font-size: 14px;
+}
+.fs-16px{
+ font-size: 16px;
+}
+.fw-bold{
+ font-weight: bold;
+}
+/* colors */
+.clr-black{
+ color:#000000;
+}
+/* padding */
+.pdlr-5{
+ padding-left: 5px;
+ padding-right: 5px;
+}
+/* spacing */
+.clear5{
+ height: 5px;
+ clear: both;
+}
+/* btns */
+.btn-trasnp-1{
+ font-size: 12px;
+ letter-spacing: 1.2px;
+ background: transparent;
+ border-radius: 5px;
+ border: solid 1px #cfa15a;
+ font-family: 'TrajanPro-Bold';
+ padding: 7px 25px;
+}
+.btn-green-1{
+ font-size: 12px;
+ letter-spacing: 1.2px;
+ border-radius: 3px;
+ border: solid 1px #84b367;
+ background-color: #bccf60;
+ font-family: 'TrajanPro-Bold';
+ box-shadow: 0 0 0 2px #bccf60;
+ padding: 3px 25px;
+}
+.pastAppointments .btn-green-1, .pastAppointments .btn-trasnp-1{
+ padding-left:10px;
+ padding-right:6px;
+}
+.appointmentsMainContainer{
+ color: #402909;
+}
+.appointmentsMainContainer .appo-timeline-heading{
+ font-size: 24px;
+ font-weight: bold;
+ color: #402909;
+}
+.appointment-card-wrap{
+ padding: 30px;
+ border-radius: 5px;
+ background-color: #fbf8ee;
+}
+.appointment-card{
+ box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+ color: #402909;
+}
+.appointment-card .card-header{
+ color: #402909;
+ font-size: 14px;
+ background-color: #ffffff;
+ margin: 0 10px;
+ border-bottom: 1px solid  #d9b0656e;
+ font-family: 'PlayfairDisplay-Regular';
+}
+.appointment-card .card-header .badge{
+ font-family: 'TrajanPro-Bold';
+ font-size: 12px;
+ border-radius: 5px;
+ color: #faf7ed;
+ background-color: #d6ad66;
+ padding: 5px 25px;
+}
+.appointment-card .doct-exp{
+ font-family: 'PlayfairDisplay-Regular';
+}
+.appointment-card .doct-info{
+ font-family: 'TrajanPro-Bold';
+}
+/* slidersssss */
+.timeline app-year-slider{
+ position: absolute;
+ left: -20px;
+ top:-60px;
+ left: -35px;
+ top: -46px;
+}
+.timeline .months-slider-Container{
+ position: absolute;
+ left: -89px;
+ top: -25px;
+ z-index: 420;
+}
+/* .months-slider-Container{
+ position: absolute;
+ left: -20px;
+ top: -60px;
+}
+.timeline app-month-slider{
+ position: absolute;
+ left: -20px;
+ top:-60px;
+} */
+/* .year-slider{
+
+} */
+/* spacing */
+.clear5 {
+ height: 5px;
+ clear: both;
+}
+
+.clear10 {
+ clear: both;
+ height: 10px;
+}
+
+.clear20 {
+ clear: both;
+ height: 20px;
+}
+
+.clear30 {
+ clear: both;
+ height: 30px;
+}
+@media only screen and (max-width: 768px) {
+ .btn-green-1,.btn-trasnp-1{
+      width: 100%;
+     margin-bottom: 10px;
+ }
+ .appointmentsMainContainer .appo-timeline-heading{
+     font-size: 18px;
+ }
+}
+@media only screen and (max-width: 576px) {
+ .card.appointment-card span.float-right{
+     float: none !important;
+ }
+ .appointment-card-wrap{
+     padding: 15px;
+ }
+ ul.timeline> li{
+     padding-left: 15px;
+ }
+ .appointmentsMainContainer{
+     padding-left: 5px;
+     padding-right: 5px;
+ }
+ .container{
+     padding-left: 5px;
+     padding-right: 5px;
+ }
+ .appointment-card .card-header{
+     text-align: center;
+ }
+ .appointment-card .card-body{
+     padding: 5px;
+     text-align: center;
+ }
+ 
+}
+
+.UpdateBtn2{
+    font-family: 'TrajanPro-Bold';
+    font-size: 10px;
+    background: #bccf60;
+    border-radius: 5px;
+    margin: 10px !important;
+    /* outline: 1px solid #84b367 !important;
+    outline-offset: -5px;
+    -moz-outline-radius: 10px; */
+    padding: 0px 14px;
+    border: solid 1px #84b367 !important;
+    box-shadow: 0 0 0 6px #bccf60 !important;
+    height: 22px;
+    width:80px;
+}
+
+@media screen and (min-width: 1600px) and (max-width: 2400px) { 
+   
+}
+
+@media screen and (min-width: 1px) and (max-width: 1200px) { 
+    .UpdateBtn2 {
+       
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 1060px) {
+   
+}
+
+@media screen and (min-width: 1px) and (max-width: 992px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 768px) {
+    .textcenter{
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 480px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 380px) {
+}

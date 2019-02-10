@@ -1,0 +1,321 @@
+.bottom_footer {
+    background: url(src/assets/images/footer.png) no-repeat;
+background-position: center top;
+}
+.declaimer{margin-top: 80px}
+.maindiv {
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px 80px;
+}
+h3{
+    
+  font-family: TrajanPro-Regular;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #402909;
+  margin-top: 35px;
+    margin-bottom: 25px;
+
+}
+h1 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+p {    
+  font-family: PlayfairDisplay-Regular;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: justify;
+  color: #333333;
+   
+}
+span.more {
+    color: #ddb86f;
+}
+span.small {
+    font-size: 12px;
+    color: #333333;
+    font-weight: 700;
+    padding-left: 20px;
+}
+.carbohydrate-border{
+    border: 1px solid #d6ad66;
+    padding: 25px 35px;
+    margin: 30px 20px 30px 20px;
+}
+.carbohydrate-border{
+  font-family: TrajanPro-Regular;
+  font-size: 20px;
+  font-weight: bold; 
+  text-align: left;
+  color: #333333;
+}
+h3.dysfunctions{
+    object-fit: contain;
+    font-family: PlayfairDisplay-Regular;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #333333;
+}
+ul.dysfunctions {
+    list-style: none;
+}
+.dysfunctions li{
+font-family: PlayfairDisplay-Regular;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: left;
+}
+.dysfunctions p{
+    object-fit: contain;
+    font-family: PlayfairDisplay-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #333333;
+}
+.diabetes h3{
+    object-fit: contain;
+  font-family: TrajanPro-Regular;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #402909;
+  margin-top: 35px;
+    margin-bottom: 25px;
+}
+.diabetes p{
+    object-fit: contain;
+  font-family: PlayfairDisplay-Regular;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #333333;
+}
+.causes p{
+    font-family: PlayfairDisplay-Regular;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.symptoms ul{
+    list-style: none;
+}
+.symptoms li{
+    font-family: PlayfairDisplay-Regular;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: left;
+  color: #333333;
+}
+.hbbold{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 18px;    
+}
+b{
+    font-family: PlayfairDisplay-Bold; 
+}
+table {    
+    border-collapse: collapse;
+    width: 80%;
+}
+
+ th {
+    border: 1px solid#d6ad66;
+    text-align: left;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-family: TrajanPro-Bold;
+    color: #333333;
+}
+td {
+    border: 1px solid#d6ad66;
+    text-align: left;
+    padding: 8px 20px; 
+    font-family: PlayfairDisplay-regular;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: left;
+  color: #333333;
+}
+
+h5{
+    font-family: PlayfairDisplay-Bold; 
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #333333;
+}
+.herbs ul{
+    list-style: none;
+    padding: 0px;
+}
+.herbs li{
+    font-family: PlayfairDisplay;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #333333;
+}
+.diatary {
+    padding: 20px 50px;
+}
+.diatary span{
+    font-family: PlayfairDisplay-Bold; 
+}
+.diatary p{
+    margin: 7px;
+
+}
+.stock h3{
+    font-family: TrajanPro-regular;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+.stock span{
+    font-family:PlayfairDisplay-Bold;
+}
+.yoga li{
+    font-family:PlayfairDisplay-Bold;
+    line-height: 1.11;    
+}
+ul.pranayama {
+    list-style: disc !important;
+    padding: 0 50px !important;
+}
+.excercise li{
+    font-family:PlayfairDisplay-Bold;
+}
+.sleep li{
+    font-family:PlayfairDisplay-Bold;
+}
+ul.aviod {
+    list-style: disc !important;
+    margin: 5px 50px;
+}
+.avoid li{
+    font-family: PlayfairDisplay-Regular;
+}
+.reference li{
+    font-family:PlayfairDisplay-Bold;
+}
+.reference ul {
+    list-style: none;
+}
+.h3span{
+    object-fit: contain;
+    font-family: PlayfairDisplay-Regular;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #333333;
+}
+.pspan{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 0.9px;
+    text-align: justify;
+    color: #333333;
+}
+
+
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .reference li {
+        word-break: break-word;
+    }
+    .carbohydrate-border {
+        margin: 30px 0px 30px 0px;
+    }
+  
+} 
+
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    .maindiv {
+        padding: 30px 20px;
+    }
+    h3{    
+        word-break: break-word;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) { 
+
+}
+
+@media screen and (min-width: 1px) and (max-width: 380px) { 
+ 
+}

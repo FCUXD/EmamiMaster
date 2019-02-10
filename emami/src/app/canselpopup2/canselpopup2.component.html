@@ -1,0 +1,52 @@
+<button type="button" #p="popover" [popover]="myPopover" [popoverOnHover]="false" class="btn GetStartedBtn CanselBtnCard mr-2">Cancel</button>
+
+<popover-content #myPopover placement="">
+  <!-- The Modal -->
+
+
+
+  <!-- Modal Header -->
+  <div class="modal-header">
+    <h4 class="modal-title Modlheading">Cancel Appointment</h4>
+    <button type="button" class="close" (click)="p.toggle()">&times;</button>
+  </div>
+
+  <!-- Modal body -->
+  <div id="canpop" class="modal-body PopupBody">
+    <p>Are you sure you want to cancel this <br />
+      appointment with: </p>
+    <div class="clear20"></div>
+    <div class="row">
+      <div class="col-12 col-lg-8 MarginCenter">
+        <div class="row">
+          <div class="col-lg-4">
+
+            <p class="datepdiv m-0 text-center">{{ap.day}}
+              <span>{{ap.month}}</span> </p>
+          </div>
+          <div class="col-lg-8">
+            <h3 class="Modlheading">{{item.drName}}</h3>
+            <h4 class="float-left mt-2 mb-0">{{item.areaOfExpert}}</h4>
+            <h5 class="float-left">{{ap.day_time}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear20"></div>
+    <div class="form-group mt-2">
+      <label class="float-left" for="comment">Enter your Reason!:</label>
+      <textarea class="form-control textinput" rows="5" #iddd id="comment" placeholder="Write here..."></textarea>
+    </div>
+
+
+  </div>
+
+  <!-- Modal footer -->
+  <div class="modal-footer">
+    <div class="footerbtn">
+      <button  class="btn GetStartedBtn mr-4  NoLeftBtn" (click)="p.toggle()" type="button">No</button>
+      <button  class="btn UpdateBtn GetStartedBtn  yesbtn" (click)="p.toggle()" type="submit" (click)="CancelAppointment(iddd.value)">Yes</button>
+    </div>
+  </div>
+
+</popover-content>

@@ -1,0 +1,8 @@
+<ng-template #popovercal>
+    <app-datepicker (voted)= "getdate($event)">
+
+    </app-datepicker>
+    
+</ng-template>
+  <span class="right-side">{{selectdate}} <img class="ml-2" src="././assets/images/calendar_small.png" [ngbPopover]="popovercal" placement="bottom" ></span> 
+    

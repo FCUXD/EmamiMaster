@@ -1,0 +1,90 @@
+<div class="row m-0">
+  <div class="col-12 col-lg-8 PaddingRight17px">
+    <div class="WelcomeLeftContent">
+      <div class="row">
+        <div class="col-12 col-lg-6 pt-4">
+          <h3>Welcome, Rahul</h3>
+          <h4>It’s best to stay fit, Why dont you
+            consult our Community Doctor? </h4>
+
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="UpdateBtnRightBox">
+            <button type="button" class="btn UpdateBtn">book appointment</button> 
+            <div class="clear10"></div>
+            <P class="ORText">OR</P>
+            <h3> call 9999 8888 22</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+
+    <div class="clear"></div>
+  </div>
+  <div class="col-12 col-lg-4 pl-0">
+    <div class="appon_card big_card TipOffTheDatDiv">
+      <h5>tip of the day</h5>
+      <p>Oranges restore lost appetite! They stimulate
+        the flow of digestive juices and improve
+        digestion.
+      </p>
+      <a class="float-right mt-4">VIEW MORE <img src="././assets/images/RightArrow.png"></a>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="clear"></div>
+<!-- -------------------------------- -->
+<div class="margin20"></div>
+<div class="row m-0">
+  <div class="col-12 col-lg-4 PaddingRight17px">
+    <div class="yourdoshaContentBox">
+      <h5 class="HeadingText">your dosha</h5>
+      <div class="border BorderHeading my-4"></div>
+
+      <div class="clear"></div>
+      <div class="DoshaLeftBox">
+        <p>You have not taken <br />
+          the Dosha Test</p>
+        <div class="clear"></div>
+        <img src="././assets/images/vectorImg.png">
+        <button type="button" class="btn UpdateBtn GetStartedBtn mt-4">get started</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-8 pl-0">
+    <div class="yourdoshaContentBox UpcomingAppointmentsBox">
+      <h5 class="HeadingText UpcomingText CalenderText1">Upcoming Appointments</h5>
+      <!-- <p class="">sept 2018  
+            </p>  -->
+      <div class="float-right CalenderText">{{selecteddate}} <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker>
+      </div>
+      <div class="clear"></div>
+      <div class="DoshaLeftBox"> 
+          <ng-container *ngFor="let item of upcomingappoinments">
+          <div class="appon_card  Upcomingleftdiv">
+              <h2 class="CardDateDiv">{{item.carddatetext}}</h2>
+              <div _ngcontent-c1="" class="border BorderHeading my-4"></div>
+              <p class="CardDateDiv1">{{item.cardtime}}</p>
+              <h5 class="CardDateDiv2">{{item.appoincardtext}} <br/>
+                {{item.withtext}}</h5>
+                <h5 class="generalphytext"> {{item.generaltext}}</h5>
+            
+                
+                  <app-reshoulddatepicker></app-reshoulddatepicker>
+                 
+         <app-canselpopup></app-canselpopup>
+                </div> 
+          </ng-container>
+        
+         
+      </div> 
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

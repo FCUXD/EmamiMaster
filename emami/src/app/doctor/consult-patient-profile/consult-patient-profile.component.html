@@ -1,0 +1,3115 @@
+<app-doctor-navigation></app-doctor-navigation>
+<div class="clear100"></div>
+<div class="container">
+  <div class="clear20"></div>
+  <div class="prof-box col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-2 text-center">
+        <div class="clear20"></div>
+        <img class="profimg" src="././assets/images/default.png">
+        <div class="clear20"></div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-5 col-lg-4 center">
+        <div class="clear50"></div>
+        <div class="text2">{{patientName}}</div>
+        <div class="clear"></div>
+        <!-- <div class="text3">{{profile[0].id}}</div> -->
+        <div class="clear"></div>
+        <div class="text4"> {{patienteAge}} | {{patientGender}} | {{patientHealth}}</div>
+        <div class="clear"></div>
+        <div class="text4"> {{patientheight}} cm | {{patientweight}} kg</div>
+        <div class="clear"></div>
+        <div class="text5">{{patientMobileNo}}</div>
+        <div class="clear20"></div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+        <div class="clear50"></div>
+        <div class="clear20"></div>
+        <button *ngIf="modeOfConsultation == 'Video'" type="button" (click)="startVideoCall()" class="btn btn-green-1">
+          <img src="././assets/images/video_call.png" />
+          Start Video Call</button>
+        <div class="clear20"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear40"></div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+    <div class="tab BorderRadiusDiv">
+      <div class="row">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[0].active}}" (click)="openCity(0)">
+            <h4 class="tab-hbright12  tabres-font {{default}}">PATIENT PROFILE</h4>
+          </button>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[1].active}}" (click)="openCity(1)">
+            <h4 class="tab-hbright12  tabres-font  {{default2}}">CREATE PRESCRIPTION</h4>
+          </button>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[2].active}}" (click)="openCity(2)">
+            <h4 class="tab-hbright12 tabres-font {{default3}}">ORDER SUMMARY</h4>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="London" class="{{tabs[0].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+      <div class="card patientPriscript-info-bottom">
+
+        <div class="card-header">
+          <label class="title">&nbsp;&nbsp;PATIENT PROFILE</label>
+          <div class="float-right"><button  (click)="popup1()" class="btn" data-toggle="modal" data-target="#endCons">End Consultation</button> </div>
+   
+        </div>
+        <div class="card-body">
+
+          
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box shadow-none">
+            <label class="title">PATIENT HISTORY</label>
+            <button [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " class="btn btn-green-2 float-right" (click)="enebleAllPatientSection1()" type="button">Edit</button>
+            <div class="clear20"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Present Condition</label>
+              </div>
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " *ngIf="presentCondition" class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3"> 
+                  <div class="styled-select">
+                  <select class="formfield option form-control" [(ngModel)]="selectedPresentCondition" (change)="enableOtherFiled($event)">
+                    <option *ngFor="let data of presentCondition" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                </div>
+                <!-- <input type="text" *ngIf="showOtherFiled" [(ngModel)]="otherConditionName" class="form-control cp-input" placeholder="Enter Condition" /> -->
+                </div>
+              </div>
+
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " *ngIf="patientProfileSinceList" class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3"> 
+                    <div class="styled-select">
+                  <select class="formfield option form-control" [(ngModel)]="selectedConditionYears">
+                    <option *ngFor="let dataYrs of patientProfileSinceList" [selected]="dataYrs.id == 0" [value]="dataYrs.id">{{dataYrs.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+
+              <div  class="col-12 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addInMemoryPresentCondition()">Click here to add</button>
+               
+              </div>
+              <div *ngIf="flagShow1" class="col-1 col-sm-1 col-md-2 col-lg-2 ">
+                <textarea [(ngModel)]="selectedPresentConditionOther" class="textAreaCss"></textarea>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row">
+                  <div class="col-2 col-sm-6 col-md-6 col-lg-6">
+                    <!-- <input type="text" *ngIf="showOtherFiled" [(ngModel)]="otherConditionName" class="form-control cp-input" placeholder="Enter Condition" /> -->
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+            </div>
+            <div class="row" *ngFor="let item of inMemoryPresentCondition;let i = index">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3"> 
+                      <div [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="styled-select">
+                    <select [attr.disabled]="isDisabledInp1 ? '' : null" [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="formfield option form-control" #pcnlT (change)="replaceAndAddInMemoryObjPresentConsitionObj(i,item,pcnlT.value,pcyT.value,other?.value)">
+                      <option *ngFor="let mCNdata of presentCondition" [selected]="item.presentConditionName.id == mCNdata.id"
+                        [value]="mCNdata.id">{{mCNdata.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3"> 
+                    <div [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="styled-select">
+                  <select [attr.disabled]="isDisabledInp1 ? '' : null" [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="formfield option form-control" #pcyT (change)="replaceAndAddInMemoryObjPresentConsitionObj(i,item,pcnlT.value,pcyT.value,other?.value)">
+                    <option *ngFor="let mCYdata of patientProfileSinceList" [selected]="item.presentConditionYears.id == mCYdata.id"
+                      [value]="mCYdata.id">{{mCYdata.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button [ngClass]="isDisabledInp1 ? 'd-none' : d-block " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deletePresentCondition(i)">-</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row">
+                  <div class="col-2 col-sm-6 col-md-6 col-lg-6" *ngIf="item.presentConditionName.other">
+                    <!-- <input type="text" [value]="item.presentConditionName.other" class="form-control cp-input" placeholder="Enter Condition" /> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ng-container *ngIf="inMemoryPresentCondition.length == 0 && isDisabledInp1 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Present Condition added</span>
+            </ng-container>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Allergy</label>
+              </div>
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " *ngIf="allergies" class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3"> 
+                    <div class="styled-select">
+                  <select class="formfield option form-control" [(ngModel)]="selectedAllergiesName" (change)="onAllergyChange()">
+                    <option *ngFor="let data of allergies" [value]="data.id">{{data.name}}</option>
+                   
+                  </select> 
+                    </div>
+                </div>
+              </div>
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " *ngIf="patientProfileSinceList" class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group"> 
+                    <div class="styled-select">
+                  <select class="formfield option form-control" [(ngModel)]="selectAllergiesYears">
+                    <option *ngFor="let yrs of patientProfileSinceList" [value]="yrs.id">{{yrs.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addInMemoryAllergies()">Click here to add</button>
+              </div>
+              <div *ngIf="flagShow2" class="col-1 col-sm-1 col-md-2 col-lg-2 ">
+                <textarea class="textAreaCss" [(ngModel)]="selectAllergiesOther"></textarea>
+              </div>
+              
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row">
+                  <div class="col-2 col-sm-6 col-md-6 col-lg-6">
+                    <!-- <input type="text" *ngIf="true"  class="form-control cp-input" placeholder="Enter Condition" id="usr"> -->
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+            </div>
+            <div class="row" *ngFor="let item of inMemoryAllergies;let i = index">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3"> 
+                      <div [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="styled-select">
+                    <select [attr.disabled]="isDisabledInp1 ? '' : null " [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="formfield option form-control" #pcnlT (change)="replaceAndAddInMemoryObjAllergiesObj(i,item,pcnlT.value,pcyT.value,other?.value)">
+                      <option *ngFor="let mCNdata of allergies" [selected]="item.allergyName.id == mCNdata.id"
+                        [value]="mCNdata.id">{{mCNdata.name}}</option>
+                    </select>
+                    </div>
+                  </div>
+                </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3"> 
+                    <div [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="styled-select">
+                  <select [attr.disabled]="isDisabledInp1 ? '' : null " [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="formfield option form-control" #pcyT (change)="replaceAndAddInMemoryObjAllergiesObj(i,item,pcnlT.value,pcyT.value,other?.value)">
+                    <option *ngFor="let mCYdata of patientProfileSinceList" [selected]="item.allergyYears.id == mCYdata.id"
+                      [value]="mCYdata.id">{{mCYdata.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button [ngClass]="isDisabledInp1 ? 'd-none' : d-block " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteAllegries(i)">-</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row">
+                  <div class="col-2 col-sm-6 col-md-6 col-lg-6" *ngIf="false">
+                    <!-- <input type="text" [value]="item.allergyName.other" class="form-control cp-input" placeholder="Enter Condition" /> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ng-container *ngIf="inMemoryAllergies.length == 0 && isDisabledInp1 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Allergy added</span>
+            </ng-container>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2 p-lr5px">
+                <div class="clear5"></div>
+                <!-- <label class="text4 scgh">Special considerations/Gynaecological history</label> -->
+                <label class="text4 scgh">Special considerations/ Gynaecological history</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+                  <textarea [attr.disabled]="isDisabledInp1 ? 'disabledInputs' : null "  class="form-control areabg" [(ngModel)]="specialConsiderations" [value]="specialConsiderations"  placeholder="Please describe any Special considerations here" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear10"></div>
+                <label class="text4">Current Medication</label>
+              </div>
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+                <div class="form-group txt3">
+                  <input type="text" class="cp-input form-control" #cd [(ngModel)]="currentMedicationInpVal" placeholder="Enter Current Medication">
+                </div>
+              </div>
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group"> 
+                    <div class="styled-select">
+                  <select class="formfield option" [(ngModel)]="selectedNoOfYears">
+                    <option *ngFor="let data of patientProfileSinceList" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addInMemoryCurrentMedication()">Click here to add</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <div class="row" *ngFor="let item of inMemoryCurrentMedication">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear10"></div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+  
+                  <div class="form-group txt3">
+                  <input [attr.disabled]="isDisabledInp1 ? '' : null " [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " type="text" class="cp-input form-control" [value]="item.currentMedicationValue" placeholder="Enter Current Medication" >
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group"> 
+                      <div [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="styled-select">
+                    <select [attr.disabled]="isDisabledInp1 ? '' : null " [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="formfield option">
+                      <option *ngFor="let data of patientProfileSinceList" [selected]="data.id == item.noOfYears.id" [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button [ngClass]="isDisabledInp1 ? 'd-none' : d-block " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="removeInMemoryMedication()">-</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+            </div>
+            <ng-container class="d-none" *ngIf="inMemoryCurrentMedication.length == 0 && isDisabledInp1 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Current Medication added</span>
+            </ng-container>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2 p-lr5px">
+                <div class="clear5"></div>
+                <label class="text4">Past illness/ Surgeries</label>
+              </div>
+              <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3"> 
+                      <div class="styled-select">
+                    <select class="formfield option form-control" [(ngModel)]="selectedPastIllness" (change)="onChangeillness()">
+                      <option *ngFor="let data of presentCondition" [selected]="data.id == 0" [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+                <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " *ngIf="patientProfileSinceList" class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3"> 
+                      <div class="styled-select">
+                    <select class="formfield option form-control" [(ngModel)]="selectedPastYears">
+                      <option *ngFor="let dataYrs of patientProfileSinceList" [selected]="dataYrs.id == 0" [value]="dataYrs.id">{{dataYrs.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+                <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addInMemoryPassIllness()">Click here to add</button>
+              </div>
+              <div *ngIf="flagShow3" class="col-1 col-sm-1 col-md-2 col-lg-2 ">
+                <textarea [(ngModel)]="selectedPastillOther" class="textAreaCss"></textarea>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row">
+
+                  <div class="col-2 col-sm-6 col-md-6 col-lg-6">
+                     <input type="text" *ngIf="false" class="form-control cp-input"
+                      placeholder="Enter Past Illness"/>
+                  </div>
+                </div>
+              </div>
+              <div class="clear20"></div>
+            </div>
+            <ng-container *ngIf="inMemoryPastllnessOrSurgeies.length>0">
+              <div class="row" *ngFor="let item of inMemoryPastllnessOrSurgeies;let i = index">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3"> 
+                      <div [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="styled-select">
+                    <select [attr.disabled]="isDisabledInp1 ? '' : null " [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="formfield option form-control" #pcnlT (change)="replaceAndAddInMemoryObjPassIllness(i,item,pcnlT.value,pcyT.value,other?.value)">
+                      <option *ngFor="let mCNdata of pastillness" [selected]="mCNdata.id == item.pastConditionName.id" [value]="mCNdata.id">{{mCNdata.name}}</option>
+                    </select> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3"> 
+                      <div [ngClass]="isDisabledInp1 ? 'disabledInputs' : null "class="styled-select">
+                    <select [attr.disabled]="isDisabledInp1 ? '' : null " [ngClass]="isDisabledInp1 ? 'disabledInputs' : null " class="formfield option form-control" #pcyT (change)="replaceAndAddInMemoryObjPassIllness(i,item,pcnlT.value,pcyT.value,other?.value)">
+                      <option *ngFor="let mCYdata of patientProfileSinceList" [selected]="item.pastConditionYears.id == mCYdata.id" [value]="mCYdata.id">{{mCYdata.name}}</option>
+                    </select> 
+                      </div>
+                  </div>
+                </div>
+                <div [ngClass]="isDisabledInp1 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deletePassIllness(i)">-</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row">
+                    <div class="col-2 col-sm-6 col-md-6 col-lg-6">
+                      <!-- <input type="text" [value]="item.presentConditionName.other" class="form-control cp-input" placeholder="Enter Condition" /> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          
+            <ng-container class="d-none" *ngIf="inMemoryPastllnessOrSurgeies.length == 0 && isDisabledInp1 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Past illness/ Surgeries added</span>
+            </ng-container>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-right">
+                <div class="clear20"></div>
+                <button [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " type="button" (click)="savePatientHistory()" class="btn btn-green-2 float-right">Save</button>
+              </div>
+            </div>
+          </div>
+          <div class="clear10"></div>
+        
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box shadow-none">
+            
+            <label class="title">LIFESTYLE DETAILS</label>
+            <button [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " class="btn btn-green-2 float-right" (click)="enebleAllPatientSection2()" type="button">Edit</button>
+            <div class="clear20"></div>
+             <!--Eating Habits-->
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Habits</label>
+              </div>
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="habitList" class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3"> 
+                    <div class="styled-select">
+                  <select class="formfield option form-control" [(ngModel)]="selectedHabit">
+                    <option *ngFor="let data of habitList"[value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="patientProfileSinceList" class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group"> 
+                    <div class="styled-select">
+                  <select class="formfield option form-control" [(ngModel)]="selectedHabitYear">
+                    <option *ngFor="let data of patientProfileSinceList" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addHabits()">Click here to add</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <div class="row" *ngFor="let item of inMemoryHabitList;let i = index">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+              </div>
+              <div  class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3"> 
+                    <div [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="styled-select">
+                  <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option form-control" #hb (change)="replaceHabits(hb.value,hbyrs,i)">
+                    <option *ngFor="let data of habitList" [selected]="item.habit.id == data.id" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group"> 
+                    <div [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="styled-select">
+                  <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option form-control" #hbyrs (change)="replaceHabits(hb.value,hbyrs,i)">
+                    <option *ngFor="let data of patientProfileSinceList" [selected]="item.habitYrs.id == data.id" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteHabit(i)">-</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <ng-container *ngIf="inMemoryHabitList.length == 0 && isDisabledInp2 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Habits added</span>
+            </ng-container>
+            <div class="clear10"></div>
+             <!--Exercise Habits-->
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Exercise Routine</label>
+              </div>
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="exersiseRoutineList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3"> 
+                    <div class="styled-select">
+                  <select class="formfield option" [(ngModel)]="selectedExerciseRoutine">
+                    <option *ngFor="let data of exersiseRoutineList" [selected]="data.id == 0" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' "  class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addExersiseRoutine()">Click here to add</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row" *ngFor="let item of inMemoryExersiseRoutineList; let i = index">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3"> 
+                    <div [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="styled-select">
+                  <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #erl (change)=replaceExerciseRoutine(erl.value,i)>
+                    <option *ngFor="let data of exersiseRoutineList" [selected]="item.exercise.id == data.id" [value]="data.id" >{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+             <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteExersiceRoutine(i)">-</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <ng-container *ngIf="inMemoryExersiseRoutineList.length == 0 && isDisabledInp2 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Exercise Routine added</span>
+            </ng-container>
+            <div class="clear10"></div>
+            <!--Eating Habits-->
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Eating Preferences</label>
+              </div>
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="eatingPreferencesList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3"> 
+                    <div class="styled-select">
+                  <select class="formfield option" [(ngModel)]="selectedEatingPreferences">
+                    <option *ngFor="let data of eatingPreferencesList" [selected]="data.id == 0" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+             
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addEatingHabits()">Click here to add</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <div class="row" *ngFor="let item of inMemoryEatingPreferenceList;let i = index">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3"> 
+                    <div  [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="styled-select">
+                  <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #epl (change)="replaceEatingHabits(i,epl.value)">
+                    <option *ngFor="let data of eatingPreferencesList" [selected]="item.eatingHabits.id == data.id" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteEatingHabits(i)">-</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <ng-container *ngIf="inMemoryEatingPreferenceList.length == 0 && isDisabledInp2 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Eating Preferences added</span>
+            </ng-container>
+            <!--Woking Hours-->
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Working Hours</label>
+              </div>
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="workinigHours" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3"> 
+                    <div class="styled-select">
+                  <select class="formfield option" [(ngModel)]="selectedWorkingHours">
+                    <option *ngFor="let data of workinigHours" [selected]="data.id == 0" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+             
+              <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addWorkingHours()">Click here to add</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <div class="row" *ngFor="let item of inmMemoryWorkingHours;let i = index">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3">
+                  <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #whs (change)="replaceWorkingHours(i,whs.value)">
+                    <option *ngFor="let data of workinigHours" [selected]="item.workingHrs.id == data.id" [value]="data.id">{{data.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteWorkingHours(i)">-</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <ng-container *ngIf="inmMemoryWorkingHours.length == 0 && isDisabledInp2 ==true ">
+              <span class="d-none ml-5 no-data-found-style-2">No Working Hours added</span>
+            </ng-container>
+
+            <div class="clear10"></div>
+
+             <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Appetite</label>
+                </div>
+                <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="appetiteList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3"> 
+                      <div class="styled-select">
+                    <select class="formfield option" [(ngModel)]="selectedAppetite">
+                      <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                      <option *ngFor="let data of appetiteList" [selected]= "data.id == 0"  [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+               
+                <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addAppetite()">Click here to add</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div> 
+
+               <div class="row" *ngFor="let item of inMemoryAppetite;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #apt (change)="replaceAppetite(i,apt.value)">
+                        <option *ngFor="let data of appetiteList" [selected]="item.appetite.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteAppetite(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+                
+                 <ng-container *ngIf="inMemoryAppetite.length == 0 && isDisabledInp2 ==true ">
+                  <span class="d-none ml-5 no-data-found-style-2">No Appetite added</span>
+                </ng-container>  
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Physique</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="physiqueList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedPhysique">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of physiqueList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addphysique()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemoryPhysique; let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #phy (change)="replacePhysique(i,phy.value)">
+                        <option *ngFor="let data of physiqueList" [selected]="item.physique.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deletePhysique(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+                
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Skin</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="skinList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedSkin">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of skinList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addskin()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemorySkin;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replaceSkin(i,skin.value)">
+                        <option *ngFor="let data of skinList" [selected]="item.skin.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteSkin(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+               
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Hair</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="hairList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedHair">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of hairList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addhair()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemoryHair;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replaceHair(i,skin.value)">
+                        <option *ngFor="let data of hairList" [selected]="item.hair.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteHair(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+               
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Bowel & bladder habit</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="bbhList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedBbh">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of bbhList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addbbh()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemoryBbh;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replaceBbh(i,skin.value)">
+                        <option *ngFor="let data of bbhList" [selected]="item.bbh.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteBbh(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Voice & speech</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="vsList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedVs">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of vsList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addvs()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemoryVs;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replaceVs(i,skin.value)">
+                        <option *ngFor="let data of vsList" [selected]="item.vs.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteVs(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Sleep</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="sleepList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedSleep">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of sleepList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addsleep()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemorySleep;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replaceSleep(i,skin.value)">
+                        <option *ngFor="let data of sleepList" [selected]="item.sleep.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteSleep(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Psychological characteristics</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="pcList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedPc">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of pcList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addpc()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemoryPc;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replacePc(i,skin.value)">
+                        <option *ngFor="let data of pcList" [selected]="item.pc.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deletePc(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Overall prakriti</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="opList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedOp">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of opList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addop()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemoryOp;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replaceOp(i,skin.value)">
+                        <option *ngFor="let data of opList" [selected]="item.op.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteOp(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+
+                <div class="clear10"></div>
+
+                <div class="row">
+                   <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                     <div class="clear5"></div>
+                     <label class="text4">Thirst</label>
+                   </div>
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " *ngIf="thList" class="col-12 col-sm-12 col-md-4 col-lg-4">
+                     <div class="form-group txt3"> 
+                         <div class="styled-select">
+                       <select class="formfield option" [(ngModel)]="selectedTh">
+                         <!-- <option selected disabled [value]="NULL">Select Appetite</option> -->
+                         <option *ngFor="let data of thList" [selected]="data.id == 0"  [value]="data.id">{{data.name}}</option>
+                       </select> 
+                       </div>
+                     </div>
+                   </div>
+                  
+                   <div [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                     <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addth()">Click here to add</button>
+                   </div>
+                   <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   <div class="clear10"></div>
+                 </div> 
+               
+                 <div class="row" *ngFor="let item of inMemoryTh;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select [attr.disabled]="isDisabledInp2 ? '' : null " [ngClass]="isDisabledInp2 ? 'disabledInputs' : null " class="formfield option" #skin (change)="replaceOp(i,skin.value)">
+                        <option *ngFor="let data of thList" [selected]="item.th.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp2 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteTh(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+
+
+                <div class="clear10"></div>
+                
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <div class="clear20"></div>
+                <button type="submit" [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " (click)="saveLifeStyle()" class="btn btn-green-2 float-right">Save</button>
+              </div>
+            </div></div>
+        <div class="clear10"></div>
+        <!-- look for hide show class for family history below later -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box shadow-none">
+          
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <label class="title">FAMILY HISTORY</label>
+                </div>
+              <div class="col-6 col-sm-6 col-md-4 col-lg-4 text-right">
+                <button [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " type="button" class="btn btn-green-2" (click)="showAddMemberForm()">+add member</button>
+              </div>
+              <div class="col-6 col-sm-6 col-md-2 col-lg-2 text-right">
+                  <button [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " class="btn btn-green-2 float-right" (click)="enebleAllPatientSection3()" type="button">Edit</button>
+                 
+                </div>
+            </div>
+            <div class="clear20"></div>
+              <div class="row">
+              <div *ngFor="let singleObj of familyAlreadyFilledDataList;let whichFamilySection=index;" class="col-6 col-sm-6 col-md-6 col-lg-6 fh-div mb-5">
+               
+                <div *ngIf="familyRelationshipList" class="col-12 col-sm-12 col-md-12 col-lg-12 pl-0">
+                  <div class="form-group txt3"> 
+                      <div [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="styled-select">
+                    <select [attr.disabled]="isDisabledInp3 ? '' : null " [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="formfield option" (change)="onChangeUpdateRelationshipVal(whichFamilySection,$event.target.value)">
+                      <option *ngFor="let data of familyRelationshipList" [selected]="data.relation == singleObj.relation" [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="clear10"></div>
+                <div class="form-check fh1 pl-0">
+                  <label class="chkbx-container">
+                    <span  class="cp-chk-text">Deceased</span>
+                    <input type="checkbox"  [attr.disabled]="isDisabledInp3 ? '' : null " [checked]="singleObj.isdeceased" (change)="getDiseasedValue(whichFamilySection,$event)"/>
+                    <span  class="checkmark"></span>
+                </label>
+                </div>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                    <label class="text4">Diseases</label>
+                  </div>
+                  <div [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3"> 
+                        <div class="styled-select">
+                      <select class="formfield option form-control vvv" (change)="onChangeDisease(whichFamilySection,$event.target.value)">
+                        <option *ngFor="let data of diseaseList" [selected]="true" [value]="data.id">{{data.name}}</option>
+                      </select> 
+                      </div> 
+                  </div>
+                  </div>
+                  <div [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                      <div class="form-group"> 
+                          <div class="styled-select">
+                        <select class="formfield option form-control" (change)="onChangeDiseaseSince(whichFamilySection,$event.target.value)">
+                          <option *ngFor="let data of patientProfileSinceList" [value]="data.id" [selected]="data.id == 0" >{{data.name}}</option>
+                        </select> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button type="button" class="w-30px  minuspad plusminusbtn btn-add-new-filed-1 addFamBtn1" (click)="addFamilyMemberDiseases(whichFamilySection)">+</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+                <div class="row" *ngFor="let diseaseAdded of singleObj.disease; let whichObjIndex = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3"> 
+                        <div [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="styled-select">
+                      <select [attr.disabled]="isDisabledInp3 ? '' : null " [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="formfield option form-control" #dl (change)="replaceDiseaseList(whichObjIndex,whichFamilySection,dl.value,ds.value)">
+                        <option *ngFor="let data of diseaseList" [selected]="diseaseAdded.diseseId == data.id" [value]="data.id">{{data.name}}</option>
+                      </select> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                      <div class="form-group"> 
+                          <div [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="styled-select">
+                        <select [attr.disabled]="isDisabledInp3 ? '' : null " [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="formfield option form-control" #ds (change)="replaceDiseaseList(whichObjIndex,whichFamilySection,dl.value,ds.value)">
+                          <option *ngFor="let data of patientProfileSinceList" [value]="data.id" [selected]="diseaseAdded.sinceId == data.id" >{{data.name}}</option>
+                        </select> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteDiseaseList(whichFamilySection,diseaseAdded.diseseId,diseaseAdded.sinceId)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+                <ng-container *ngIf="singleObj.disease.length == 0 && isDisabledInp3 ==true ">
+                    <span class="d-none ml-5 no-data-found-style-2">No Disease added</span>
+                </ng-container>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                    <label class="text4">Allergy</label>
+                  </div>
+                  <div [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3"> 
+                        <div class="styled-select">
+                      <select class="formfield option form-control" (change)="onChangeAllergy(whichFamilySection,$event.target.value)">
+                        <option *ngFor="let data of allergies" [selected]="data.id == 0" [value]="data.id">{{data.name}}</option>
+                      
+                      </select> 
+                      </div>
+                    </div>
+                  </div>
+                  <div [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group"> 
+                        <div class="styled-select">
+                      <select class="formfield option form-control" (change)="onChangeAllergySince(whichFamilySection,$event.target.value)">
+                        <option *ngFor="let data of patientProfileSinceList" [selected]="data.id == 0" [value]="data.id">{{data.name}}</option>
+                      </select> 
+                      </div>
+                    </div>
+                  </div>
+                  <div [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button type="button" class="w-30px minuspad plusminusbtn btn-add-new-filed-1 addFamBtn1" (click)="addFamilyMemberAllergy(whichFamilySection)">+</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+                <div class="row" *ngFor="let allergyAdded of singleObj.allergies;let whichObjIndex =index;">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                      <div class="clear5"></div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group txt3"> 
+                          <div [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="styled-select">
+                        <select [attr.disabled]="isDisabledInp3 ? '' : null " [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="formfield option form-control" #allergy (change)="replaceFamilyMemberAllergyList(whichObjIndex,whichFamilySection,allergy.value,asince.value)">
+                          <option *ngFor="let data of allergies" [selected]="allergyAdded.allergyId == data.id" [value]="data.id">{{data.name}}</option>
+                        </select> 
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group"> 
+                          <div [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="styled-select">
+                        <select [attr.disabled]="isDisabledInp3 ? '' : null " [ngClass]="isDisabledInp3 ? 'disabledInputs' : null " class="formfield option form-control" #asince (change)="replaceFamilyMemberAllergyList(whichObjIndex,whichFamilySection,allergy.value,asince.value)">
+                          <option *ngFor="let data of patientProfileSinceList" [selected]="allergyAdded.sinceId == data.id" [value]="data.id">{{data.name}}</option>
+                        </select> 
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button [ngClass]="isDisabledInp3 ? 'd-none' : 'd-block' " type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFamilyMemberAllergyList(whichFamilySection,allergyAdded.allergyId,allergyAdded.sinceId)">-</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                    <div class="clear10"></div>
+                  </div>
+                  <ng-container *ngIf="singleObj.allergies.length == 0 && isDisabledInp3 ==true ">
+                    <span class="d-none ml-5 no-data-found-style-2">No Allergy added</span>
+                </ng-container>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-12 col-lg-12 text-right">
+                    <button [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " type="button" (click)="cancelFamilyMemberForm(whichFamilySection)" class="btn btn-gray-default-2" >Remove</button>
+                  </div>
+                 
+                </div>
+            </div>
+           
+              </div>
+              <div class="row">
+                  <button [ngClass]="dontShowActionsBtnsForHistoryAppointments ? 'd-none' : 'd-block' " type="button" (click)="saveFamilyMember()" class="btn btn-green-2 ml-auto">Save</button>
+              </div>
+          
+          <!-- <div *ngIf = "familyAlreadyFilledDataList.length > 0" class="row">
+            <div *ngFor="let singleObj of familyAlreadyFilledDataList" class="col-6 col-sm-6 col-md-6 col-lg-6 fh-div">
+             
+              <div *ngIf="familyRelationshipList" class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group txt3"> 
+                    <div class="styled-select">
+                  <select class="formfield option">
+                    <option *ngFor="let data of familyRelationshipList" [selected]="data.id == singleObj.relationId" [value]="data.id">{{data.name}}</option>
+                  </select> 
+                  </div>
+                </div>
+              </div>
+            
+              <div class="clear10"></div>
+              <div class="form-check fh1">
+                <label class="chkbx-container">
+                  <span  class="cp-chk-text">Deceased</span>
+                  <input type="checkbox"  [checked]="singleObj.isdeceased" (change)="getDiseasedValue($event)"/>
+                  <span  class="checkmark"></span>
+              </label>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Diseases</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3"> 
+                      <div class="styled-select">
+                    <select class="formfield option form-control">
+                      <option *ngFor="let data of diseaseList" [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div> 
+                                        </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="form-group"> 
+                        <div class="styled-select">
+                      <select class="formfield option form-control">
+                        <option *ngFor="let data of patientProfileSinceList" [value]="data.id" [selected]="data.id == 0" >{{data.name}}</option>
+                      </select> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFamilyMemberDiseases()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row" *ngFor="let item of inMemoryFamiltDiseaseList; let i = index">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3"> 
+                      <div class="styled-select">
+                    <select class="formfield option form-control" #dl (change)="replaceDiseaseList(i,dl.value,ds.value)">
+                      <option *ngFor="let data of diseaseList" [selected]="item.disease.id == data.id" [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group">
+                    <div class="form-group"> 
+                        <div class="styled-select">
+                      <select class="formfield option form-control" #ds (change)="replaceDiseaseList(i,dl.value,ds.value)">
+                        <option *ngFor="let data of patientProfileSinceList" [value]="data.id" [selected]="item.diseseSince.id == data.id" >{{data.name}}</option>
+                      </select> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteDiseaseList(i)">-</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Allergies</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3"> 
+                      <div class="styled-select">
+                    <select class="formfield option form-control" [(ngModel)]="selectedFamilyAllergy">
+                      <option *ngFor="let data of allergies" [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group"> 
+                      <div class="styled-select">
+                    <select class="formfield option form-control" [(ngModel)]="selectedFamilyAllergySince">
+                      <option *ngFor="let data of patientProfileSinceList" [value]="data.id">{{data.name}}</option>
+                    </select> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFamilyMemberAllergy()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row" *ngFor="let item of inMemoryFamilyAllergyList;let i = index">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3"> 
+                        <div class="styled-select">
+                      <select class="formfield option form-control" #allergy (change)="replaceFamilyMemberAllergyList(i,allergy.value,asince.value)">
+                        <option *ngFor="let data of allergies" [selected]="item.allergy.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group"> 
+                        <div class="styled-select">
+                      <select class="formfield option form-control" #asince (change)="replaceFamilyMemberAllergyList(i,allergy.value,asince.value)">
+                        <option *ngFor="let data of patientProfileSinceList" [selected]="item.allergySince.id == data.id" [value]="data.id">{{data.name}}</option>
+                      </select> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFamilyMemberAllergyList(i)">-</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+                </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                  <div class="clear20"></div>
+                  <button type="button" (click)="hideMemberForm()" class="btn btn-gray-default-2" >Cancel</button>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                  <div class="clear20"></div>
+                  <button type="button" (click)="saveFamilyMember()" class="btn btn-green-2">save</button>
+                </div>
+              </div>
+          </div>
+        </div> -->
+             <!--  <div class="col-6 col-sm-6 col-md-6 col-lg-6 fh-div1">
+                  <label class="fh">MOTHER</label>
+                  <div class="clear10"></div>
+                  <div class="form-check fh1">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" formControlName="motherdeceased" name="motherdeceased">Deceased
+                    </label>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                      <div class="clear5"></div>
+                      <label class="text4">Diseases</label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group txt3">
+                        <select class="formfield option form-control" #m formControlName="mdiseases1" (change)="callType6(m.value)">
+                          <option *ngFor="let md of mdiseases" [ngValue]="md">{{md}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                        <select class="formfield option form-control" formControlName="mdiseases2">
+                          <option *ngFor="let yrs4 of Since" [ngValue]="yrs4">{{yrs4.storingValue}}</option>
+                          <option *ngFor="let obj of genderObj" [ngValue]="obj.gId" [selected]="obj.gId == selectedGender">
+                            {{obj.storingValue}} </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue13()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+
+                      <input type="text" *ngIf=" flag_Change6==false" disabled class="form-control cp-input"
+                        placeholder="Enter Diseases" id="usr">
+                      <input type="text" *ngIf=" flag_Change6==true" formControlName="mdiseases" class="form-control cp-input"
+                        placeholder="Enter Diseases" id="usr">
+                    </div>
+
+
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                      <div class="row form-field-row" *ngFor="let item of formFilds13; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter13 >1">
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                              <div class="form-group">
+                                <select class="formfield option form-control" #m formControlName="mdiseases3" (change)="callType6(m.value)">
+                                  <option *ngFor="let mdd of mdiseases" [ngValue]="mdd">{{mdd}}</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                              <div class="form-group">
+                                <select class="formfield option form-control" formControlName="mdiseases4">
+                                  <option *ngFor="let yrs4 of Since" [ngValue]="yrs4">{{yrs4.storingValue}}</option>
+                                  <option *ngFor="let obj of genderObj" [ngValue]="obj.gId" [selected]="obj.gId == selectedGender">
+                                    {{obj.storingValue}} </option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue13(item)">-</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                      <div class="clear5"></div>
+                      <label class="text4">Allergies1</label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group txt3">
+                        <select class="formfield option form-control" #m formControlName="mallergies1" (change)="callType7(m.value)">
+                          <option *ngFor="let ma of mallergies" [ngValue]="ma">{{ma}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                        <select class="formfield option form-control" formControlName="mdiseases4">
+                          <option *ngFor="let yrs4 of Since" [ngValue]="yrs4">{{yrs4.storingValue}}</option>
+                          <option *ngFor="let obj of genderObj" [ngValue]="obj.gId" [selected]="obj.gId == selectedGender">
+                            {{obj.storingValue}} </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue14()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                    <div class="clear10"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+                      <input type="text" *ngIf="flag_Change7==false" disabled class="form-control cp-input" placeholder="Enter Allergies"
+                        id="usr">
+                      <input type="text" *ngIf="flag_Change7==true" formControlName="mAllergies" class="form-control cp-input"
+                        placeholder="Enter Allergies" id="usr">
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                      <div class="row form-field-row" *ngFor="let item of formFilds14; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter14 >1">
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                              <div class="form-group">
+                                <select class="formfield option form-control" #m formControlName="mallergies3" (change)="callType7(m.value)">
+                                  <option *ngFor="let maa of mallergies" [ngValue]="maa">{{maa}}</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                              <div class="form-group">
+                                <select class="formfield option form-control" formControlName="mdiseases4">
+                                  <option *ngFor="let yrs4 of Since" [ngValue]="yrs4">{{yrs4.storingValue}}</option>
+                                  <option *ngFor="let obj of genderObj" [ngValue]="obj.gId" [selected]="obj.gId == selectedGender">
+                                    {{obj.storingValue}} </option>
+                                </select>
+                              </div>
+
+                            </div>
+                            <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue14(item)">-</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="clear10"></div>
+                  <button type="submit" (click)="familyhistorysave(familyhistory.value)" class="btn btn-green-2">save</button>
+                </div>
+              </div> -->
+            
+          </div>
+          <div class="clear10"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box shadow-none">
+            <div id="" class="queriesMainContainer">
+              <div class="">
+                <div class="card queries-card box-with-shadow">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="queries-heading text-uppercase">All queries</div>
+                      </div>
+                      <!-- Post Query -->
+                      <div class="d-none col-md-6 text-right">
+                        <button class="btn btn-green-1 text-uppercase" type="button" data-toggle="modal">post query</button>
+                        <!--  (click)="openmodal();" -->
+                      </div>
+                      <!-- Search Bar -->
+                      <div class="d-none col-md-6">
+                        <div class="rounded-search">
+                          <div class="clear30"></div>
+                          <form class="form-search form-inline">
+                            <input type="text" class="search-query" placeholder="Type Keywords press enter" />
+                          </form>
+                        </div>
+                      </div>
+                      <!-- Date Picker -->
+                      <div class="d-none col-md-6 text-right">
+                        <div class="clear40"></div>
+                       
+                        <p>Filter By &nbsp;&nbsp;{{selecteddate}} <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker></p>   
+                        
+                      </div>
+            
+                      <div class="float-filter-by mt-2">
+                          
+                        </div>
+                    </div>
+                  </div>
+                  <!-- Message Box -->
+                  <div class="card-body">
+                    <!-- Doctor side Message Box -->
+                    <div class="tab BorderHeading">
+                        <ng-container *ngIf="recievedChatData.length == 0">No messages</ng-container>
+                      <ng-container *ngFor="let single of recievedChatData;let i=index">
+                          
+                        <div class="tablinks inner_div px-5 {{single.active}}" (click)="openMsg(i,single.conversationId,single.doctorId,single.patientId)">
+                          <div class="row">
+                            <div class="col-12 text-right dateText">
+                              {{single.conversationDate}}
+                            </div>
+                            <div class="col-md-4 text-center">
+                              <img class="img-fluid rounded-circle" src="././assets/images/doctor-profile-pic-1.png" />
+                            </div>
+                            <div class="col-md-8">
+                              <div class="clear20"></div>
+                              <div class="doctNameText">
+                                {{single.doctorName}}
+                              </div>
+                              <div class="doctSpecialityText">
+                                {{single.expertArea}}
+                              </div>
+                            </div>
+                            
+                            <div class="col-8">
+                               <div class="clear20"></div>
+                              <div class="queryQtnText">
+                                {{single.chatText}}
+                              </div>
+                            </div>
+                            <div class="col-4 text-right">
+                                <div class="clear20"></div>
+                               <div class="repliesText">
+                                {{single.numberOfReplies}}
+                               </div>
+                             </div>
+                          </div>
+                          <div class="right_arrow"><img src="././assets/images/keyboard-right-arrow-button.png"></div>
+                        </div>
+            
+                      </ng-container>
+            
+                    </div>
+            
+                    <!-- Patient side Message Box -->
+                    <div class="text-left tabcontent {{singleMessageSelected.active}}">
+                      <div class="chat_div">
+                        <div *ngFor="let reply of singleMessageSelected.querySubBeanList" class="my-5 w-75 p-3 box-with-shadow {{reply.personType}} ">
+                          <ng-container *ngIf="reply.personType == 'P' ">
+                              <img class="img-fluid rounded-circle" src="././assets/images/patient-profile-img-1.png" /> 
+                          </ng-container>
+                           
+                          <ng-container *ngIf="reply.personType == 'D' ">
+                              <img class="img-fluid rounded-circle" src="././assets/images/doctor-profile-pic-1.png" /> 
+                          </ng-container>
+                         
+                          <div class="queryQtnText">{{reply.chatText}}</div>
+                          <div class="clear20"></div>
+                          <div class="reply-date text-right">{{reply.chatDateTime}}</div>
+                        </div>
+                      </div>
+            
+            
+                      <div class="chat_inpute">
+                        <div class="">
+                          <div class="row">
+                              <div class="col-10">
+                                  <input type="text" #binpTxt (keydown.enter)="submitDoctorQuery(binpTxt.value);" class=" stylein  chatbox w-100"
+                                  placeholder="Write your reply..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                  <!--  [(ngModel)]="newMsg" -->
+                              </div>
+                              <div class="col-2">
+                                  <div class="">
+                                      <span class="input-group-text nbg" (click)="submitDoctorQuery(binpTxt.value);" [(ngModel)]="queriesForm.doctorDropDown" id="basic-addon2">&nbsp;&nbsp;<img src="././assets/images/sendMsgBlackIcon.png"></span>
+                                    </div>
+                              </div>
+                          </div>
+                          
+                         
+                        </div>
+                        <!-- <span class="send-btn"></span> -->
+                      </div>
+            
+                    </div>
+                    
+                    <div class="clear20"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clear10"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box shadow-none">
+            <label class="title">VITALS</label>
+            <app-my-vitals></app-my-vitals>
+          </div>
+          <div class="clear10"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box shadow-none">
+            <label class="title">HEALTH REPORT</label>
+            <!-- <div class="clear20"></div> -->
+            <!-- <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 fh-div1 buttonmain">
+                <label>
+                  <input value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">ALL</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">X-RAY</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">CT SCAN</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">BLOOD TEST</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">SUGAR</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <div class="clear20"></div>
+                <ng-container *ngFor="let item1 of hrecord">
+                  <div class="card queries-card  box-with-shadow">
+                    <div class="card-header card-bg">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <label class="fh-text">{{item1.prepo}}</label>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                          <label class="fh-text3">{{item1.date}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body card-bg">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <label class="fh-text">{{item1.file}}</label>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                          <img src="./../assets/images/delete-1.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <img src="./../assets/images/noun-download.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <img src="./../assets/images/noun-print.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clear10"></div>
+                </ng-container>
+              </div>
+            </div> -->
+         
+            <!-- <app-my-vitals></app-my-vitals> -->
+            <!-- <app-patient-report></app-patient-report> -->
+            <div class="">
+              <div class="container pt-5 mt-5">
+                <div class="ReportMainDiv">
+              <div class="row">
+              <div class="col-md-6">
+                <h2>Total {{totalReportCount}} Reports</h2> 
+              </div>
+              <div class="col-md-6 add-report-float">
+                <app-add-report-popup (reloadReportList)="getReportList()"></app-add-report-popup>
+              </div>
+            </div>
+            <div class="clear20"></div>
+                  
+            <ng-container *ngFor="let item of reportData;let i = index">
+                <div class="card cardbodydiv shadow-sm mb-3">
+                <div class="card-body px-0 py-2">
+                    <div class="row PaddingTextX">
+                      <div class="col-lg-6 col-sm-12 col-7">
+                        <h3 class="m-0 xrayheading">{{item.name}}</h3>
+                      </div>
+                      <div class="col-lg-6 col-sm-12 col-5">
+                        
+                        <div class="CardRightContent Righttext pull-right m-0">
+                          <img width="15" height="20" style="cursor: pointer;" (click)="deleteReport(item.id)" src="././assets/images/delete-1.png" />
+                          &nbsp;&nbsp;
+                          {{item.createTime}}
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="borderdiv MarginTB"></div>
+                    <div class="row PaddingTextX" *ngFor="let fileData of item.reportFileUrl;let indexValue = index">
+                      <div class="col-lg-6 col-sm-12 col-7">
+                        <h6 class="m-0 pdfname">{{item.name}}_{{indexValue+1}}</h6>
+                      </div>
+                      <div class="col-lg-6 col-sm-12 col-5 text-right">
+                        <div class="CardRightContent pull-right m-0">
+                          <a href="{{fileData}}" download="{{fileData}}">
+                            <img class="MarginLeft img-size" width="15" height="20" src="././assets/images/noun-download.png" /> 
+                          </a>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </ng-container> 
+             
+              <div class="mb-5"></div>
+              
+              </div> 
+            </div>
+              </div>
+          </div>
+          <div class="d-none col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <div class="clear10"></div>
+            <div class="f-text">Click here to view more reports</div>
+            <img src="././assets/images/copy-4.png">
+          </div>
+        </div>
+         
+         
+        </div>
+      </div>
+    </div>
+
+    <!-- CREATE PRESCRIPTION -->
+    <div id="Paris" class="{{tabs[1].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv padlrn">
+      <div class="card patientPriscript-info-bottom">
+        <div class="">
+          <div class="card patientPriscript-info-bottom">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-6 col-sm-6 col-md-12 col-lg-12">
+                  <label class="title">CREATE PRESCRIPTION</label>
+                  <div class="float-right"><button (click)="endCons()">End Consultation</button> </div>
+   
+                    <div class="float-right styled-select w-50">
+                        <select [(ngModel)]="selected" class="formfield option form-control" (change)="onChangePreviouslyAddedPrescription($event.target.value);">
+                            <option [selected] [ngValue]="null" disabled>Select Previous Consultation</option>
+                          <option *ngFor="let data of previouslyAddedPrescriptionList" [value]="data.id">{{data.val}}</option>
+                        </select> 
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box1">
+                      <label class="title">SYMPTOMS</label>
+                      <div class="clear10"></div>
+                      <ng-container *ngIf="isEditConsultation == 0">
+                             <div class="row mb-3" *ngFor="let symptom of symptomsList1">
+                                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                                    <span class="ml-0">{{symptom.name}}</span>
+                                  </div>
+                                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="removeSymptomFields(symptom.name)">-</button>
+                                  </div>
+                             </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                                  <input type="text" class="form-control cp-input pl-0" [(ngModel)]="symptom" placeholder="Enter Symptoms" />
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addSymptomFields()">Click here to add</button>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="isEditConsultation == 1">
+                            <div class="row mb-3" *ngFor="let symptom of symptomsList1">
+                                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                                    <span class="ml-0">{{symptom.name}}</span>
+                                  </div>
+                                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="removeSymptomFields(symptom.name)">-</button>
+                                  </div>
+                             </div>
+                            <input type="text" class="form-control cp-input pl-0" [(ngModel)]="symptom" placeholder="Enter Symptoms" />
+                            <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addSymptomFields()">Click here to add</button>
+                              </div>
+                            <div class="pl-0 col-12 col-sm-12 col-md-12 col-lg-12">
+                            <ng-container *ngIf="symptomsAlreadyAdded.length == 0">
+                              <div class="pl-0 col-12 col-sm-12 col-md-8 col-lg-8">
+                                <div><label class="no-data-found-style-1">No Symptomps were added</label></div>
+                              </div>
+                            </ng-container>
+                            <!-- <ng-container *ngIf="symptomsAlreadyAdded.length > 0">
+                              <div class="col-12 col-sm-12 col-md-8 col-lg-8" *ngFor="let symptom of symptomsAlreadyAdded">
+                                <div ><label>{{symptom.name}}</label></div>
+                              </div>
+                              
+                            </ng-container> -->
+                          </div>
+                        </ng-container>
+                      
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box1">
+                      <label class="title">Provisional Diagnosis</label>
+                      <div class="clear10"></div>
+                      <div class="pl-0 col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div  class="pl-0 col-12 col-sm-12 col-md-12 col-lg-12">
+                            <ng-container *ngIf="isEditConsultation == 0">
+                                <textarea rows="5" type="text" (change) = "dia()" class="areabg cust-textarea form-control cp-input" placeholder="Enter Diagnosis"  [(ngModel)]="diagnosys" [value]="diagnosys"></textarea>
+                            </ng-container>
+                            <ng-container *ngIf="isEditConsultation == 1">
+                                <ng-container *ngIf="diagnosysAlreadyAdded == null">
+                                  <span class="no-data-found-style-1">No Diagnosis was added</span>
+                                </ng-container>
+                                <ng-container *ngIf="diagnosysAlreadyAdded != null">
+                                    <textarea rows="5" type="text" class="areabg cust-textarea form-control cp-input"   value="{{diagnosysAlreadyAdded}}"></textarea>
+                                </ng-container>
+                                
+                            </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="clear10"></div>
+              <div *ngIf="investigationsOptions!=null" class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box1">
+                    <label class="title">INVESTIGATION</label>
+                    <div class="clear10"></div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <ng-container *ngIf="isEditConsultation == 0">
+                          <div *ngFor="let item of investigationsOptions;let i = index">
+                              <div *ngIf="item?.storingValue" class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                <label class="chkbx-container">
+                                    <span  class="cp-chk-text">{{item?.storingValue}}</span>
+                                    <input type="checkbox" (change)="addInMemoryInvestigation($event,item?.displayValue,i)"/>
+                                    <span  class="checkmark"></span>
+                                </label>
+                              </div>
+                          </div>
+                      </ng-container>
+                      <ng-container *ngIf="isEditConsultation == 1">
+                         <div *ngFor="let item of patientConsultationList.investigationsOptions;let i = index">
+                            <div *ngIf="item.storingValue" class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <label class="chkbx-container">
+                                <span class="cp-chk-text">{{item.storingValue}}</span>
+                                <ng-container *ngIf="investigationAlreadyAdded.length >0">
+                                  <input type="checkbox" [checked]="item.checked" [value]="item.id"  (change)="addInMemoryInvestigation($event,item?.displayValue,i)" />
+                                </ng-container>
+                                <ng-container *ngIf="investigationAlreadyAdded.length == 0">
+                                  <input type="checkbox"   (change)="addInMemoryInvestigation($event,item?.displayValue,i)" />
+                                </ng-container>
+                                 <span class="checkmark"></span>
+                              </label>
+                            </div>
+                          </div>
+                      </ng-container>
+                    
+                    </div>
+                    <div class="clear10"></div>
+                    <div class="row"  *ngIf="isEditConsultation == 0">
+                      <div class="clear5"></div>
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="row form-field-row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="row">
+                              <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                                <input type="text" class="form-control cp-input" [(ngModel)]="inverstigation"
+                                  placeholder="Enter Investigation" id="usr">
+                              </div>
+                              <div class="col-1 col-sm-2 col-lg-2 pluspad pad-l-r-5px cp-mbuttonpad">
+                                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addInMemoryOtherInvestigation()">Click here to add</button>
+                              </div>
+                              <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                            </div>
+                            <div class="clear10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 h-100 content-box1">
+                    <label class="title">CONSULTATION NOTES</label>
+                    <div class="clear10"></div>
+
+                    <!-- <input *ngIf="consultationNotes" type="text" class="form-control cp-input" FormControlName="consultationNotes"
+                      placeholder="Enter Notes" [value]="consultationNotes" id="usr"> -->
+                      <ng-container *ngIf="isEditConsultation == 0">
+                          <textarea rows="5" type="text" class="areabg cust-textarea form-control cp-input" placeholder="Enter Consultation Notes" [(ngModel)]="consultationNotes"
+                          [value]="consultationNotes"  id="usr"></textarea>
+                      </ng-container>
+                      <ng-container *ngIf="isEditConsultation  == 1">
+                        <ng-container *ngIf="ConsultationNotesAlreadyAdded  == null">
+                          <span class="no-data-found-style-1">No Consultation notes were added.</span>
+                        </ng-container>
+                        <ng-container >
+                          <textarea rows="5" type="text" class="areabg cust-textarea form-control cp-input"  value="{{ConsultationNotesAlreadyAdded}}"
+                            id="usr"></textarea>
+                        </ng-container>
+                      
+                      </ng-container>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row patientPriscript-info-bottom2">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                          <ng-container *ngIf="prescriptionAlreadyAdded.length == 0">
+                            <label class="title">PRESCRIBE MEDICINE</label>
+                          </ng-container>
+                          <ng-container *ngIf="prescriptionAlreadyAdded.length > 0">
+                              <label class="title">ADDED MEDICINE IN PRESCRIPTION</label>
+                          </ng-container>
+                      </div>
+                      <div class="row" >
+                        <div class="col-7 col-sm-7 col-md-7 col-lg-7 form-elemet-margin-rights medicine-background">
+                          <div class="form-group txt3 col-7 col-sm-7 col-md-7 col-lg-7">
+                            <div class="text4 form-element-margin">Select Medicine</div>
+                            <ng-container *ngIf="editPrescriptionData == undefined"> 
+                                <div class="styled-select">
+                              <select class="formfield option form-control" [(ngModel)]="selectedPrescribedMedicineId">
+                                <option *ngFor="let data of prescribedMedicine" [value]="data.productId">{{data.productName}}</option>
+                              </select> 
+                            </div>
+                            </ng-container>
+                            <ng-container *ngIf="editPrescriptionData != undefined">
+                              <select (change)="onChangeSelectedPrescribedMedicine($event.target.value)" class="formfield option form-control">
+                                <option *ngFor="let data of prescribedMedicine" [selected]="data.productId == editPrescriptionData.product.productId" [value]="data.productId">{{data.productName}}</option>
+                              </select>
+                            </ng-container>
+                           
+                            
+                          </div>
+                          <div class="form-group txt3 col-8 col-sm-8 col-md-12 col-lg-12">
+                            <div class="text4 form-element-margin">Timing</div>
+                            <ng-container *ngIf="editPrescriptionData == undefined">
+                            <label *ngFor="let timing of prescrideMedineNoOfTimes" class="form-elemet-margin-right chkbx-container">
+                              <span class="cp-chk-text">{{timing.displayValue}}</span>
+                              <input type="checkbox" (change)="changeTimingCheckBox(timing.displayValue,$event)" [(ngModel)]="timing.checked" [value]="timing.id">
+                              <span class="checkmark"></span>
+                            </label>
+                            </ng-container>
+                            <ng-container *ngIf="editPrescriptionData != undefined">
+                                <label *ngFor="let timing of prescrideMedineNoOfTimes;" class="form-elemet-margin-right chkbx-container">
+                                    <span class="cp-chk-text">{{timing.displayValue}}</span>
+                                    <input type="checkbox" (change)="changeTimingCheckBox(timing.displayValue,$event)" [checked]="timing.checked" [value]="timing.id">
+                                    <span class="checkmark"></span>
+                                  </label>
+                            </ng-container>
+                          </div>
+                          <div class="form-group txt3 col-8 col-sm-8 col-md-12 col-lg-12">
+                            <div class="text4 form-element-margin">When</div>
+                            <ng-container *ngIf="editPrescriptionData == undefined">
+                                <label *ngFor="let when of prescribedWhenToTake" class="form-elemet-margin-right chkbx-container">
+                                    <span class="cp-chk-text">{{when.displayValue}}</span>
+                                    <input type="radio" name="prescribedMEdicineWhenRadios" (change)="changeWhenCheckBox(when.id,$event)" [(ngModel)]="when.checked" [value]="when.id" />
+                                    <span class="checkmark"></span>
+                                  </label>
+                            </ng-container>
+                            <ng-container *ngIf="editPrescriptionData != undefined">
+                                <label *ngFor="let when of prescribedWhenToTake" class="form-elemet-margin-right chkbx-container">
+                                    <span class="cp-chk-text">{{when.displayValue}}</span>
+                                    <input type="radio" name="prescribedMEdicineWhenRadios" (change)="changeWhenCheckBox(when.id,$event)" [checked]="when.id == editPrescriptionData.whenToTake.id" [value]="when.id" />
+                                    <span class="checkmark"></span>
+                                  </label>
+                            </ng-container>
+                           
+                          </div>
+                          <ng-container *ngIf="editPrescriptionData == undefined">
+                          <div class="form-group txt3 col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="text4 form-element-margin">Days</div>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">15 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [(ngModel)]="isCheckedDay" (change)="changeDayCheckBox($event)" value="15"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">30 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [(ngModel)]="isCheckedDay" (change)="changeDayCheckBox($event)" value="30"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">45 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [(ngModel)]="isCheckedDay" (change)="changeDayCheckBox($event)" value="45"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">60 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [(ngModel)]="isCheckedDay" (change)="changeDayCheckBox($event)" value="60"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">Other</span>
+                                <input type="radio" name="prescribedMedicineDays" [(ngModel)]="isCheckedDay" (change)="changeDayCheckBox($event)" value="custom"/>
+                                <span  class="checkmark"></span>
+                                <input *ngIf ="isOtherChecked" type="text" [(ngModel)]="customDaysVal" class="form-control daysCustInput" placeholder="Other"/>
+                            </label>
+                          </div>
+                          </ng-container>
+                          <ng-container *ngIf="editPrescriptionData != undefined">
+                          <div class="form-group txt3 col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="text4 form-element-margin">Days</div>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">15 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [checked]="editPrescriptionData.noOfDay == 15" (change)="changeDayCheckBox($event)" value="15"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">30 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [checked]="editPrescriptionData.noOfDay == 30" (change)="changeDayCheckBox($event)" value="30"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">45 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [checked]="editPrescriptionData.noOfDay == 45" (change)="changeDayCheckBox($event)" value="45"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">60 Days</span>
+                                <input type="radio" name="prescribedMedicineDays" [checked]="editPrescriptionData.noOfDay == 60" (change)="changeDayCheckBox($event)" value="60"/>
+                                <span  class="checkmark"></span>
+                            </label>
+                            <label class="form-elemet-margin-right chkbx-container">
+                                <span  class="cp-chk-text">Other</span>
+                                <input type="radio" name="prescribedMedicineDays" [checked]="editPrescriptionData.noOfDay > 60" (change)="changeDayCheckBox($event)" value="custom"/>
+                                <span  class="checkmark"></span>
+                                <input *ngIf ="isOtherChecked" type="text" [(ngModel)]="editPrescriptionData.noOfDay" class="form-control daysCustInput" placeholder="Other"/>
+                            </label>
+                          </div>
+                          </ng-container>
+                          <div class="form-group txt3 col-7 col-sm-7 col-md-7 col-lg-7">
+                              <div class="text4 form-element-margin">Quantity</div>
+                              <ng-container *ngIf="editPrescriptionData == undefined"> 
+                                  <div class="styled-select">
+                                  <select class="formfield option form-control" [(ngModel)]="selectedDosage">
+                                      <option *ngFor="let data of prescribedDosage" [value]="data.id">{{data.displayValue}}</option>
+                                    </select> 
+                                  </div>
+                              </ng-container>
+                             
+                              <ng-container *ngIf="editPrescriptionData != undefined">
+                                  <select (change)="onChangeSelectedDosage($event.target.value)" class="formfield option form-control">
+                                      <option *ngFor="let data of prescribedDosage" [selected]="data.id == editPrescriptionData.dosage.id" [value]="data.id">{{data.displayValue}}</option>
+                                    </select>
+                              </ng-container>
+                          </div>
+                          <div class="form-group txt3 col-12 col-sm-12 col-md-12 col-lg-12">
+                              <button type="button" (click)="savePrescribedMedicineNew()" class="btn btn-green-2">Save</button>
+                          </div>
+                        </div>
+                        <div class="col-5 col-md-5">
+                          <ng-container *ngIf="inMemoryPrescribedMedicine.length>0">
+                              <div *ngFor="let adddedMedicine of inMemoryPrescribedMedicine" class="mx-auto mb-3 row medicineContainer1 medicine-background prescription" style="padding: 4%!important">
+                                  <label class="title">{{adddedMedicine.product.productName}}</label><br/>
+                                  <label> 
+                                    <span>{{adddedMedicine.noOfDays.newDisplayVal}}</span>| 
+                                    <span>{{adddedMedicine.dosage.displayValue}} &nbsp;&nbsp;</span>|
+                                    <span>{{adddedMedicine.whenToTake.displayValue}}</span>| 
+                                    <span>For {{adddedMedicine.noOfDay}}  Days</span>
+                                  </label>
+                                  <div class="row ml-auto">
+                                    <div class="col-6">
+                                      <div class="editimg text-center " (click)="deletePrescription(adddedMedicine.product.productId)"><img class="delImg" src="././assets/images/delete-1.png"></div>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="editimg text-center " (click)="editPrescription(adddedMedicine.product.productId,adddedMedicine.dosage.id,adddedMedicine.whenToTake.id)"><img src="././assets/images/editz.png"></div>
+                                    </div>
+                                  </div>
+                                 </div>
+                          </ng-container>
+                         
+                          <!-- <div  *ngIf="prescriptionAlreadyAdded.length>0">
+                            <div *ngFor="let adddedMedicine of prescriptionAlreadyAdded" >
+                             class="col-12 col-md-4 mb-3"
+                              <div class="cust-msg-div medicineContainer1 medicine-background prescription w-100" style="padding: 4%!important">
+                                  <label class="title">{{adddedMedicine.prodBean.name}}</label><br />
+                                  <label>
+                                    <span>{{adddedMedicine.timeBean.name}}</span>|
+                                    <span>{{adddedMedicine.dosageBean.name}} &nbsp;&nbsp;</span>|
+                                    <span>{{adddedMedicine.whenBean.name}}</span>|
+                                    <span>For {{adddedMedicine.days}} Days</span>
+
+                                    
+                                    <div class="editimg text-center " (click)="deletePrescription(adddedMedicine.prodBean.id)"><img class="delImg"
+                                      src="././assets/images/delete-1.png"></div>
+                                      <div class="col-6">
+                                        <div class="editimg text-center " (click)="editPrescription(adddedMedicine.prodBean.id,adddedMedicine.dosageBean.id,adddedMedicine.whenBean.id)"><img
+                                            src="././assets/images/editz.png"></div>
+                                      </div>
+                                  </label>
+                                  <div class="d-none row ml-auto">
+                                    <div class="col-6">
+                                      <div class="editimg text-center " (click)="deletePrescription(adddedMedicine.product.productId)"><img class="delImg"
+                                          src="././assets/images/delete-1.png"></div>
+                                          <span>wertyhujk</span>
+                                    </div>
+                                    <div class="col-6">
+                                      <div class="editimg text-center " (click)="editPrescription(adddedMedicine.product.productId,adddedMedicine.dosage.id,adddedMedicine.whenToTake.id)"><img
+                                          src="././assets/images/editz.png"></div>
+                                    </div>
+                                  </div>
+                              </div>
+                              
+                            </div>
+                        </div>  -->
+
+                        <ng-container *ngIf="prescriptionAlreadyAdded.length>0">
+                            <div *ngFor="let adddedMedicine of prescriptionAlreadyAdded" class="mx-auto mb-3 row medicineContainer1 medicine-background prescription" style="padding: 4%!important">
+                                <label class="title">{{adddedMedicine.prodBean.name}}</label><br/>
+                                <label> 
+                                  <!-- <span>{{adddedMedicine.noOfDays.newDisplayVal}}</span>| 
+                                  <span>{{adddedMedicine.dosage.displayValue}} &nbsp;&nbsp;</span>|
+                                  <span>{{adddedMedicine.whenToTake.displayValue}}</span>| 
+                                  <span>For {{adddedMedicine.noOfDay}}  Days</span> -->
+                                  <span>{{adddedMedicine.timeBean.name}}</span>|
+                                  <span>{{adddedMedicine.dosageBean.name}} &nbsp;&nbsp;</span>|
+                                  <span>{{adddedMedicine.whenBean.name}}</span>|
+                                  <span>For {{adddedMedicine.days}} Days</span>
+                                </label>
+                                <div class="row ml-auto">
+                                  <div class="col-6">
+                                    <div class="editimg text-center " (click)="deletePrescription(adddedMedicine.product.productId)"><img class="delImg" src="././assets/images/delete-1.png"></div>
+                                  </div>
+                                  <div class="col-6">
+                                    <div class="editimg text-center " (click)="editPrescription(adddedMedicine.product.productId,adddedMedicine.dosage.id,adddedMedicine.whenToTake.id)"><img src="././assets/images/editz.png"></div>
+                                  </div>
+                                </div>
+                               </div>
+                        </ng-container>
+                       
+
+
+                          <div class="row">
+                              <ng-container *ngIf="inMemoryPrescribedMedicine.length == 0 && isEditConsultation  == 0">
+                                  <div class="row text-center prescription">
+                                    <h5 class="cust-msg-div">No Medicine Added In Prescription, Please Add Medicines and other data from left side Panel.</h5>
+                                  </div>
+                              </ng-container>
+                              <button type="button" class="d-none btn btn-green-2" (click)="showAddMemberForm()">+Add Medicine</button>
+                            </div>
+                        </div>
+                      </div>
+
+
+                     
+                     <div class="clear10"></div>
+                      <!-- <div class="row">
+                      <div class="col-12 ml-3 select-medicines-notes">Add Medicine by selecting below</div>
+                      <div class="clear10"></div>
+                      <div *ngIf="patientConsultationList" class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="row box-shadow-seperation">
+  
+                          <div class="col-3 col-sm-3  col-md-3">
+                            <div class="form-group txt3"> 
+                                <div class="styled-select">
+                              <select class="formfield option form-control" [(ngModel)]="selectedPrescribedMedicineId">
+                                <option *ngFor="let item of prescribedMedicine" [value]="item.productId">{{item.productName}}</option>
+                              </select> 
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-1 col-sm-1  col-md-2">
+                            <div class="form-group txt3"> 
+                                <div class="styled-select">
+                              <select class="formfield option form-control" #b [(ngModel)]="selectedPrescrideMedineNoOfTimes">
+                                <option *ngFor="let item of prescrideMedineNoOfTimes" [value]="item.id">{{item.storingValue}}</option>
+                              </select> 
+                              </div>
+                            </div>
+                          </div>
+  
+                          <div class="clear10"></div>
+                          <div class="col-1 col-sm-1  col-md-2">
+                            <div class="form-group txt3"> 
+                                <div class="styled-select">
+                              <select class="formfield option form-control" #c [(ngModel)]="selectedDosage" >
+                                <option *ngFor="let item of prescribedDosage" [value]="item.id">{{item.storingValue}}</option>
+                              </select> 
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-2 col-sm-2 col-md-2">
+                            <div class="form-group txt3"> 
+                                <div class="styled-select">
+                              <select class="formfield option form-control" #d [(ngModel)]="selectedPrescribedWhenToTake">
+                                <option *ngFor="let item of prescribedWhenToTake" [value]="item.id">{{item.storingValue}}</option>
+                              </select> 
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-1 col-sm-1  col-md-2">
+                            <input type="number" class="form-control cp-input" [(ngModel)]="prescribedNoOfDays" placeholder="No. of Days" />
+                          </div>
+                          <div class="col-1 col-sm-1  col-md-1 pad-l-r-5px">
+                            <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addPrescribedMedicine()">+</button>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="clear20"></div>
+                      <div class="row">
+                          <div *ngIf="inMemoryPrescribedMedicine.length==0" class="col-12 ml-3 select-medicines-notes">No Medicines added</div>
+                          <div class="clear20"></div>
+                          <div *ngIf="inMemoryPrescribedMedicine.length>0" class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <div class="col-12 select-medicines-notes">Added Medicines</div>
+                              <div class="clear20"></div>
+                              <div class="row" *ngFor="let inMemoryItem of inMemoryPrescribedMedicine">
+                                <div class="col-3 col-sm-3 col-md-3">
+                                  <div class="form-group txt3"> 
+                                      <div class="styled-select">
+                                    <select class="formfield option form-control" #pm (change)="replacePrescribedMedicine(inMemoryItem.id,pm.value,pmnot.value,pd.value,pwtt.value,nod.value)">
+                                      <option *ngFor="let item of prescribedMedicine" [selected]="inMemoryItem.product.productId == item.productId" [value]="item.productId">{{item.productName}}</option>
+                                    </select> 
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-2">
+                                  <div class="form-group txt3"> 
+                                      <div class="styled-select">
+                                    <select class="formfield option form-control" #pmnot  (change)="replacePrescribedMedicine(inMemoryItem.id,pm.value,pmnot.value,pd.value,pwtt.value,nod.value)">
+                                      <option *ngFor="let item of prescrideMedineNoOfTimes" [selected]="inMemoryItem.noOfDays.id == item.id" [value]="item.id">{{item.storingValue}}</option>
+                                    </select> 
+                                    </div>
+                                  </div>
+                                </div>
+        
+                                <div class="clear10"></div>
+                                <div class="col-1 col-sm-1 col-md-2">
+                                  <div class="form-group txt3"> 
+                                      <div class="styled-select">
+                                    <select class="formfield option form-control" #pd (change)="replacePrescribedMedicine(inMemoryItem.id,pm.value,pmnot.value,pd.value,pwtt.value,nod.value)">
+                                      <option *ngFor="let item of prescribedDosage" [selected]="inMemoryItem.dosage.id == item.id" [value]="item.id">{{item.storingValue}}</option>
+                                    </select> 
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-2 col-sm-2 col-md-2">
+                                  <div class="form-group txt3"> 
+                                      <div class="styled-select">
+                                    <select class="formfield option form-control" #pwtt  (change)="replacePrescribedMedicine(inMemoryItem.id,pm.value,pmnot.value,pd.value,pwtt.value,nod.value)">
+                                      <option *ngFor="let item of prescribedWhenToTake" [selected]="inMemoryItem.whenToTake.id == item.id" [value]="item.id">{{item.storingValue}}</option>
+                                    </select> 
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-2">
+                                  <input type="number" class="form-control cp-input" #nod  [(ngModel)]="inMemoryItem.noOfDay" (keyup)="replacePrescribedMedicine(inMemoryItem.id,pm.value,pmnot.value,pd.value,pwtt.value,nod.value)" placeholder="No. of Days" />
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-1">
+                                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deletePrecribedMedicine(inMemoryItem)">-</button>
+                                </div>
+                              </div>
+                            </div>
+                      </div>  -->
+                     
+                    </div>
+                  </div>
+              </div> 
+              <div class="clear20"></div>
+              <!-- *ngIf="isEditConsultation == 0"  -->
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <button type="button" (click)="proceed()" class="btn btn-green-1">PROCEED</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="Tokyo" class="{{tabs[2].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+      <div id="" class="patientPrescriptionMainContainer">
+        <div class="card patientPriscript-info-bottom">
+            <div class="alert" *ngIf="showError">
+              <strong>{{errorMsg}}</strong>
+            </div>
+          <div class="card-header">
+            <span class="float-left text-uppercase fw-normal">
+              PRESCRIPTION 
+            </span>
+            <div class="float-right"><button (click)="endCons()">End Consultation</button> </div>
+   
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card queries-card box-with-shadow">
+                  <!-- <div class="card-header">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                      <label class="os-text2">Dr. Swapnil Kumar</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <label class="text4">14 April 2018</label>
+                    </div>
+                  </div> -->
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <label class="os-text1">Delivery Address and Phone Number</label>
+                      </div>
+                      <div class="clear10"></div>
+                      <div *ngFor="let data of addressBeanList" class="col-12 col-sm-12 col-md-4 col-lg-4 mb-2 mt-2 addressDiv">
+                          <div class="edit-remove-address text-right">
+                              <a class="os-remove-edit" (click)="popup3(data.addressId)" data-toggle="modal"
+                                data-target="#removeAddrConfirmationModal">Remove</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                              <a class="os-remove-edit editAddressPopup" (click)="popup4(data.addressId,data.name,data.addressLine1,data.addressLine2,data.state,data.city,data.location,data.pincode)"
+                                data-toggle="modal" data-target="#editAddrConfirmationModal">Edit</a>
+                            </div>
+                        <label for="{{data.addressId}}" class="col-12 col-sm-12 col-md-12 col-lg-12 addressbg">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <input  type="radio" (change)="selectAddress(data.addressId)" class="md-1 form-check-input deliverychekbox  rad-btn"
+                                id="{{data.addressId}}" name="deliveryAddress" value="deliveryAddress">
+                            </div>
+
+                            
+                            <!-- The Modal -->
+                            <div class="modal fade  {{custom3}}" id="removeAddrConfirmationModal">
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Are you sure you want to remove this address?</h4>
+                                    <button type="button" class="close" (click)="close3()">&times;</button>
+                                  </div>
+
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                    <div class="col-md-12  text-center">
+                                      <button type="button" class="Addaddressbtn" (click)="removeAddress()">Yes</button>&nbsp;&nbsp;&nbsp;
+                                      <button type="button" class="popclose" data-dismiss="modal" (click)="close3()">No</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-sm-12 col-md-10 col-lg-10 offset-md-1 pt-1">
+                            <div class="os-text3">{{data.name}}</div>
+                            <div class="os-text3">ADDRESS</div>
+                            <div class="os-text3">{{data.addressLine1}}, {{data.addressLine2}},
+                              {{data.location}},{{data.city}} </div>
+                            <div class="os-text3">{{data.state}} ({{data.pincode}})</div>
+                            <div class="os-text4">PHONE NUMBER</div>
+                            <div *ngIf="data.mobile!=null" class="os-text3">{{data.mobile}}</div>
+                            <div *ngIf="data.mobile==null" class="os-text3">--</div>
+                            <div class="clear10"></div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <button type="button" (click)="popup()" data-toggle="modal" data-target="#myModal"
+                          class="btn addbtnpad">
+                          <img src="././assets/images/noun-add.png"> </button>
+                      </div>
+                      <!-- The Modal -->
+                      <div class="modal fade  {{custom1}}" id="myModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Add New Address</h4>
+                              <button type="button" class="close" (click)="close()">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+                                <form [formGroup]="addAddressForm">
+                                  <input type="text" formControlName="firstNameAdd" class="form-control" id="usr"
+                                    placeholder="First Name*">
+                                  <div class="clear10"></div>
+                                  <input type="text" formControlName="lastNameAdd" class="form-control" id="usr"
+                                    placeholder="Last Name*">
+                                  <div class="clear10"></div>
+                                  <input type="text" formControlName="addressLine1Add" class="form-control" id="usr"
+                                    placeholder="Address Line1*">
+                                  <div class="clear10"></div>
+                                  <input type="text" formControlName="addressLine2Add" class="form-control" id="usr"
+                                    placeholder="Address Line2">
+                                  <div class="clear10"></div> 
+                                  <div class="">
+                                  <select (change)="onChangeState($event.target.value)" formControlName="stateAdd"
+                                    class="select-style">
+                                    <option [selected]="state.storingValue" *ngFor="let state of editAddStateList"
+                                      [value]="state.storingValue">
+                                      {{state.storingValue}}
+                                    </option>
+                                  </select> 
+                                  </div>
+                                  <div class="clear10"></div> 
+                                  <div class="">
+                                  <select (change)="onChangeCity($event.target.value)" formControlName="cityAdd" class="select-style">
+                                    <option [selected]="city.storingValue" *ngFor="let city of editAddCityList" [value]="city.storingValue">
+                                      {{city.storingValue}}
+                                    </option>
+                                  </select> 
+                                  </div>
+                                  <div class="clear10"></div> 
+                                  <div class="">
+                                  <select formControlName="localityAdd" class="select-style">
+                                    <option [selected]="locality.storingValue" *ngFor="let locality of editAddLocationList"
+                                      [value]="locality.storingValue">
+                                      {{locality.storingValue}}
+                                    </option>
+                                  </select> 
+                                  </div>
+                                  <div class="clear10"></div>
+                                  <input type="text" formControlName="zipAdd" class="form-control" id="usr" placeholder="Zip Code*">
+                                </form>
+
+                              </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <div class="col-md-12  text-center">
+                                <button type="button" class="Addaddressbtn" (click)="addNewAddress(addAddressForm.value)">Add
+                                  Address</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="popclose" data-dismiss="modal" (click)="close()">Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear20"></div>
+                      <!-- The Modal -->
+                      <div class="modal fade  {{custom4}}" id="editAddrConfirmationModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Edit Address</h4>
+                              <button type="button" class="close" (click)="close4()">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+                                <form [formGroup]="editAddressForm">
+                                  <input type="text" value="{{editFormName}}" #fName formControlName="firstNameEdit" class="form-control"
+                                    id="usr" placeholder="First Name*">
+                                  <div class="clear10"></div>
+                                  <input type="text" value="{{editFormName}}" #l2Name formControlName="lastNameEdit" class="form-control"
+                                    id="usr" placeholder="Last Name*">
+                                  <div class="clear10"></div>
+                                  <input type="text" value="{{editAddressLine1}}" #aLine1 formControlName="addressLine1Edit"
+                                    class="form-control" id="usr" placeholder="Address Line1*">
+                                  <div class="clear10"></div>
+                                  <input type="text" value="{{editAddressLine2}}" #aline2 formControlName="addressLine2Edit"
+                                    class="form-control" id="usr" placeholder="Address Line2">
+                                  <div class="clear10"></div> 
+                                  <div class="">
+                                  <select (change)="onChangeState($event.target.value)" #state2 formControlName="stateEdit"
+                                    class="select-style">
+                                    <option [selected]="true" *ngFor="let state of editAddStateList" [value]="state.storingValue">
+                                      {{state.storingValue}}
+                                    </option>
+
+                                  </select> 
+                                  </div>
+                                  <div class="clear10"></div> 
+                                  <div class="">
+                                  <select (change)="onChangeCity($event.target.value)" #city2 formControlName="cityEdit" class="select-style">
+
+                                    <option [selected]="true" *ngFor="let city of editAddCityList" [value]="city.storingValue">
+                                      {{city.storingValue}}
+                                    </option>
+                                  </select> 
+                                  </div>
+                                  <div class="clear10"></div> 
+                                  <div class="">
+                                  <select formControlName="localityEdit" #locality2 class="select-style">
+
+                                    <option [selected]="true" *ngFor="let locality of editAddLocationList" [value]="locality.storingValue">
+                                      {{locality.storingValue}}
+                                    </option>
+                                  </select> 
+                                  </div>
+                                  <div class="clear10"></div>
+                                  <input type="text" value="{{editZip}}" #zip2 formControlName="zipEdit" class="form-control"
+                                    id="usr" placeholder="Zip Code*">
+                                </form>
+
+                              </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <div class="col-md-12  text-center">
+                                <button type="button" class="Addaddressbtn" (click)="editAddress(editAddressForm.value,fName.value,l2Name.value,aLine1.value,aline2.value,state2.value,city2.value,locality2.value,zip2.value)">Add
+                                  Address</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="popclose" data-dismiss="modal" (click)="close4()">Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <label class="os-text1">Order details</label>
+                        <div class="clear20"></div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="row hrnone" *ngFor="let item of productBeanList">
+                          <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center">
+                            <img class="displayImg" src="{{item.imageUrl}}">
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+                            <div class="row">
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-left">
+                                <div class="fh">{{item.productName}}</div>
+                                <div class="clear10"></div>
+                                <!-- <div class="fh-text2"> {{item.ml}}ml</div> -->
+                              </div>
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                                <div class="order-margin-top2">
+                                    <ng-container *ngIf="item.qty==0">
+                                        <i class="fa"><img src="././assets/images/SpinnerMinus.png"></i>
+                                    </ng-container>
+                                    
+                                  <i *ngIf="item.qty>0" class="fa" (click)="item.qty=item.qty-1; add(item.qty, item.productId)"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                                  <input class="input-spinner" value="{{item.qty}}">&nbsp;
+                                  <i class="fa" (click)="item.qty=+item.qty+1; add(item.qty, item.productId)"><img src="././assets/images/SpinnerPluse.png"></i>
+                                </div>
+                              </div>
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <label class="rs">&#8377;</label>
+                                <label class="text2">{{item.sellingPrice}}</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clear10"></div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <hr>
+                          </div>
+                        </div>
+                        <div class="clear10"></div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                          <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                              <div class="offer">Please enter Zandu specific coupon code to avail discount</div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                              <div class="clear20"></div>
+                              <input type="text" class="form-control bgcolor fh cp-input" [(ngModel)]="coupanCode" (keyup)="updateOrdeBtnFlag()" FormControlName=""
+                                placeholder="Enter Coupon Code" id="usr">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 addressbg">
+                          <label class="os-text1">order summary</label>
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+                              <label class="text3">Name</label>
+                              <div class="clear10"></div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3">
+                              <label class="text3">Qty</label>
+                              <div class="clear10"></div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3 text-center">
+                              <label class="text3">Price</label>
+                              <div class="clear10"></div>
+                            </div>
+                          </div>
+                          <div class="row" *ngFor="let item of productBeanList">
+                            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+                              <div class="os-text3">{{item.productName}}</div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3">
+                              <div class="text3">{{item.qty}}</div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3 text-center">
+                              <label class="fh-text3">&#8377;</label>
+                              <label class="os-price">{{item.sellingPrice}}</label>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+                            <hr>
+                          </div>
+                          <!-- <div class="row">
+                              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="text41">Sub Total</div>
+                                <div class="text41">Delivery Charges</div>
+                              </div>
+                              <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right pad-r-50">
+                                <div>
+                                  <label class="rs">&#8377;</label>
+                                  <label class="text2">{{subtotal}}</label>
+                                </div>
+                                <div>
+                                  <label class="rs">&#8377;</label>
+                                  <label class="text2">{{dcharges}}</label>
+                                </div>
+                              </div>
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                <hr>
+                              </div>
+                            </div> -->
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                              <label class="option">Total</label>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right pad-r-50">
+                              <label class="rs">&#8377;</label>
+                              <label class="text2">{{total1}}</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                    </div>
+                    <hr>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <label class="os-text1">Payment mode</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button *ngIf="paymentModeSelected"  class="Addaddressbtn" type="button">{{paymentModeSelected}}</button>
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 cod" >
+                      <div class="row">
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4" (click)="updatePaymentMode('CASH ON DELIVERY',1)">
+                          <label class="w-h1">
+                            <input value="1" type="radio" name="radio1">
+                            <div class="checkmark btn-unclicked-1 col-12 col-sm-12 col-md-12 col-lg-12 content-box pm-button btn">
+                              <div class="clear20"></div>
+                              <img src="././assets/images/cod.png">
+                              <div class="clear10"></div>
+                              <label class="fh">CASH ON DELIVERY</label>
+                            </div>
+                          </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4" (click)="updatePaymentMode('ONLINE PAYMENT',2)">
+                          <label class="w-h1">
+                            <input value="1" type="radio" name="radio1">
+                            <div class="checkmark btn-unclicked-1  col-12 col-sm-12 col-md-12 col-lg-12 content-box pm-button btn">
+                              <div class="clear20"></div>
+                              <img src="././assets/images/onlinepayment.png">
+                              <div class="clear10"></div>
+                              <label class="fh">ONLINE PAYMENT</label>
+                            </div>
+                          </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <!-- <div class="col-4 col-sm-4 col-md-4 col-lg-4" (click)="updatePaymentMode('PAY LATER')">
+                          <label class="w-h1">
+                            <input value="1" type="radio" name="radio1">
+                            <div class="checkmark btn-unclicked-1  col-12 col-sm-12 col-md-12 col-lg-12 content-box pm-button btn">
+                              <div class="clear20"></div>
+                              <img src="././assets/images/onlinepayment.png">
+                              <div class="clear10"></div>
+                              <label class="fh">PAY Later</label>
+                            </div>
+                          </label>&nbsp;&nbsp;&nbsp;
+                        </div> -->
+                      </div>
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                      <button type="submit" class="btn btn-green-1 pdf-modal" [disabled]="isOrderSummaryBtnDisabled"  (click)="popup2()" data-toggle="modal"
+                        data-target="#myModal2">SEND MESSAGE</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+<div id="" class="modal fade pop-overflow  {{custom2}}" id="myModal1">
+  <div class="modal-dialog container modal-lg modalForPdfOrderSummary modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header pop-head-bgcolor">
+        <div class="w-100">
+          <span class="float-left">
+            <label class="zandupoptext">ZANDUCARE</label>
+          </span>
+          <span class="float-right">
+            <label class="pop-con-id">Consultation ID : </label>
+            <span class="pop-con-id1">{{pdfDataList.conId}}</span>
+            <br />
+            <label class="pop-con-id">Date : </label>
+            <span class="pop-con-id1">{{pdfDataList.dateP}} </span>
+          </span>
+        </div>
+        <button type="button" class="close" (click)="close2()">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="card  patientPriscript-info-bottom1">
+          <div class="card-header">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <label class="pop-text1">PATIENT'S INFORMATION</label>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="row">
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                  <label class="pop-text2">Name :</label>
+                  <span class="pop-text2-1">{{pdfDataList.name}}</span>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                  <label class="pop-text2">Age :</label>
+                  <span class="pop-text2-1">{{pdfDataList.age}}</span>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                  <label class="pop-text2">Gender :</label>
+                  <span class="pop-text2-1">{{pdfDataList.gender}}</span>
+                </div>
+              </div>
+              <div class="clear20"></div>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="row">
+          <div class="col -6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box pop-divheight">
+              <label class="title">SYMPTOMS</label>
+              <ng-container *ngFor="let item of pdfDataList.symptomsList1">
+                <div class="clear10"></div>
+                <div class="col-10 col-md-10 col-lg-10 padlrn">
+
+                    <label class="text4">{{item.name}}</label>
+
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box pop-divheight">
+              <label class="title">DIAGNOSIS</label>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <label class="text4">{{pdfDataList.diagnosis}}</label>
+                <div class="clear20"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+          <label class="title">INVESTIGATION</label>
+          <div class="clear10"></div>
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <ng-container *ngFor="let item of selectedInvestigationList">
+                <label class="chkbx-container1">
+                  <span class="cp-chk-text">{{item.storingValue}}</span>
+                  <input type="checkbox" disabled checked="checked">
+                  <span class="checkmark"></span>
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;
+              </ng-container>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="card  patientPriscript-info-bottom1">
+          <div class="card-header">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <label class="pop-text1">PRESCRIBED MEDICINE</label>
+            </div>
+          </div>
+          <div class="card-body">
+            <div id="popup" class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th>S. No.</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>No. of Times</th>
+                    <th>When</th>
+                    <th>No. of Days</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of pdfDataList.pList; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.dosage}}</td>
+                    <td>{{item.time}}</td>
+                    <td>{{item.when}}</td>
+                    <td>{{item.noOfDays}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="clear20"></div>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6">
+              <label class="title">CONSULTATION NOTES</label>
+              <div class="clear10"></div>
+              <label class="text3">{{pdfDataList.conNotes}}</label>
+            </div>
+            <div class="d-none col-6 col-sm-6 col-md-6">
+              <label class="title">NEXT CONSULTATION DATE :</label>
+              <div class="clear10"></div>
+              <label class="text3">{{pdfDataList.nDate}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 pop-f-bgcolor">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-left">
+              <div class="clear10"></div>
+              <label class="ml-4 pop-con-id">{{pdfDataList.dName}}</label>
+              <h6 class="ml-4">{{pdfDataList.dq}}</h6>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+              <div class="clear10"></div>
+              <label class="fot-text">For any further health queries, Call on </label>
+              <span class="fot-text1">1800-999-5678</span>
+            </div>
+          </div>
+          <div class="clear20"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <label class="web-text">Check your health profile. Login to</label>
+            <span class="web-text1"></span> https://test.zanducare.com
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+          <button type="button" (click)="close2()" class="btn btn-trasnp-1">CANCEL</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" (click)="confirmOrder()" class="btn btn-green-3">CONFIRM</button>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+     <!-- The Modal -->
+     <div class="modal fade  {{custom12}}" >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" (click)="close1()">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body">
+            Do you also want to send the prescription?
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button (click)="SendPres(1)" type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+            <button (click)="SendPres(2)" type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+      
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- for end consultation  -->
+
+    <div id="" class="modal fade pop-overflow  {{customEnd}}" id="endCons">
+        <div class="modal-dialog container modal-lg modalForPdfOrderSummary modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header pop-head-bgcolor">
+              <div class="w-100">
+                <span class="float-left">
+                  <label class="zandupoptext">ZANDUCARE</label>
+                </span>
+                <span class="float-right">
+                  <label class="pop-con-id">Consultation ID : </label>
+                  <span class="pop-con-id1">{{pdfDataList.conId}}</span>
+                  <br />
+                  <label class="pop-con-id">Date : </label>
+                  <span class="pop-con-id1">{{pdfDataList.dateP}} </span>
+                </span>
+              </div>
+              <button type="button" class="close" (click)="close2()">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="card  patientPriscript-info-bottom1">
+                <div class="card-header">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label class="pop-text1">PATIENT'S INFORMATION</label>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                        <label class="pop-text2">Name :</label>
+                        <span class="pop-text2-1">{{pdfDataList.name}}</span>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                        <label class="pop-text2">Age :</label>
+                        <span class="pop-text2-1">{{pdfDataList.age}}</span>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                        <label class="pop-text2">Gender :</label>
+                        <span class="pop-text2-1">{{pdfDataList.gender}}</span>
+                      </div>
+                    </div>
+                    <div class="clear20"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="row">
+                <div class="col -6 col-sm-6 col-md-6 col-lg-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box pop-divheight">
+                    <label class="title">SYMPTOMS</label>
+                    <ng-container *ngFor="let item of pdfDataList.symptomsList1">
+                      <div class="clear10"></div>
+                      <div class="col-10 col-md-10 col-lg-10 padlrn">
+      
+                          <label class="text4">{{item.name}}</label>
+      
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box pop-divheight">
+                    <label class="title">DIAGNOSIS</label>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <label class="text4">{{pdfDataList.diagnosis}}</label>
+                      <div class="clear20"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+                <label class="title">INVESTIGATION</label>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                    <ng-container *ngFor="let item of selectedInvestigationList">
+                      <label class="chkbx-container1">
+                        <span class="cp-chk-text">{{item.storingValue}}</span>
+                        <input type="checkbox" disabled checked="checked">
+                        <span class="checkmark"></span>
+                      </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </ng-container>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+      
+                  </div>
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="card  patientPriscript-info-bottom1">
+                <div class="card-header">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label class="pop-text1">PRESCRIBED MEDICINE</label>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div id="popup" class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th>S. No.</th>
+                          <th>Name</th>
+                          <th>Quantity</th>
+                          <th>No. of Times</th>
+                          <th>When</th>
+                          <th>No. of Days</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of pdfDataList.pList; let i=index">
+                          <td>{{i+1}}</td>
+                          <td>{{item.productName}}</td>
+                          <td>{{item.dosage}}</td>
+                          <td>{{item.time}}</td>
+                          <td>{{item.when}}</td>
+                          <td>{{item.noOfDays}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="clear20"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-6">
+                    <label class="title">CONSULTATION NOTES</label>
+                    <div class="clear10"></div>
+                    <label class="text3">{{pdfDataList.conNotes}}</label>
+                  </div>
+                  <div class="d-none col-6 col-sm-6 col-md-6">
+                    <label class="title">NEXT CONSULTATION DATE :</label>
+                    <div class="clear10"></div>
+                    <label class="text3">{{pdfDataList.nDate}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="col-12 col-sm-12 col-md-12 pop-f-bgcolor">
+                <div class="row">
+                  <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                    <div class="clear10"></div>
+                    <label class="ml-4 pop-con-id">{{pdfDataList.dName}}</label>
+                    <h6 class="ml-4">{{pdfDataList.dq}}</h6>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                    <div class="clear10"></div>
+                    <label class="fot-text">For any further health queries, Call on </label>
+                    <span class="fot-text1">1800-999-5678</span>
+                  </div>
+                </div>
+                <div class="clear20"></div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                  <label class="web-text">Check your health profile. Login to</label>
+                  <span class="web-text1"></span> https://test.zanducare.com
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <button type="button" (click)="close2()" class="btn btn-trasnp-1">CANCEL</button>&nbsp;&nbsp;&nbsp;
+                <button type="button" (click)="confirmOrder()" class="btn btn-green-3">CONFIRM</button>
+              </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>

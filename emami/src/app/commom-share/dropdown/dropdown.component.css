@@ -1,0 +1,8 @@
+.dropdownbox, .dropdownbox:hover, .dropdownbox:active, .dropdownbox:focus{
+    border: none;
+    color: #666 !important;
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    width: 118px;
+  } 
+  

@@ -1,0 +1,161 @@
+.nav-show {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    transition: all 0.2s ease-in-out;
+    height: auto;
+    background-color:transparent;  
+    line-height: 40px;
+}
+.nav-show.active {
+    background-color: #000000;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-inner{
+position: relative;
+overflow: visible;
+}
+.text-on-image {
+    font-size: 22px;
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.image_div {
+    position: absolute;
+    top: -130px;
+    right: -121px;
+}
+.center{
+text-align:center;
+}
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left, 
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+.carousel-indicators li {
+    position: relative;
+    flex: 0 1 auto;
+    margin-right: 5px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    text-indent: 0;
+    border: none;
+    border-radius: 100%;
+    line-height: 30px;
+    color: #fff;
+    transition: all 0.25s ease;
+    width: 6px;
+    height: 7px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    opacity: 0.5;
+    background-color: #3e2808;
+}
+.carousel-indicators
+{
+    height: 10px;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    right: auto;}
+
+.carousel-indicators .active {
+    background-color: transparent !important;
+    padding: 10px;
+    border: 2px solid #3e2808 !important;
+    margin-top: -7px !important;
+}
+
+
+.read_more, .read_more:active, .read_more:hover, .read_more:focus {
+    font-family: 'TrajanPro-Bold';
+    background-color: #cfa15a !important;
+    border: 0px;
+    box-shadow: 0px 0px 15px #ccc;
+    margin: 0 auto;
+    width: 172px;
+    height: 33px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #402909 !important;
+    outline: 1px solid #c29a5d;
+    outline-offset: -5px;
+    border-radius: 10px;
+    -moz-outline-radius: 10px;
+    margin-right: 10px;
+}
+span.title {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-align: left;
+    color: #000000;
+}
+
+.text-on-image h2 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 34px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+.text-on-image p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    margin-bottom: 0px;
+} 
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+    .ResHide {
+        display: none;
+    } 
+    .text-on-image h2 {
+        font-size: 25px;
+    }
+} 
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .carousel-inner {
+        text-align: center;
+    
+    } 
+    .text-on-image h2, .text-on-image p, .text-on-image p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,110 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header> 
+<app-innerfloating></app-innerfloating>
+<div id="" class="queriesMainContainer">
+  <div class="clear70"></div>
+  <div class="container">
+    <div class="card queries-card box-with-shadow">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="queries-heading text-uppercase">TOTAL queries</div>
+          </div>
+          <div class="col-md-6 text-right">
+            <button class="btn btn-green-1 text-uppercase" type="button">post query</button>
+          </div>
+          <div class="col-md-6">
+            <div class="rounded-search">
+              <div class="clear30"></div>
+              <form class="form-search form-inline">
+                <input type="text" class="search-query" placeholder="Type Keywords press enter" />
+              </form>
+            </div>
+
+          </div>
+          <div class="col-md-6 text-right">
+            <div class="clear40"></div>
+            <div class="queries-filter-by">Filter By
+              <app-datepicker class="date_cursor"></app-datepicker>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="tab BorderHeading">
+          <ng-container *ngFor="let tab of tabs;let i=index">
+
+            <div class="tablinks inner_div px-5 {{tab.active}}" (click)="openMsg(i)">
+              <div class="row">
+                <div class="col-12 text-right dateText">
+                  {{tab.date}}
+                </div>
+                <div class="col-md-4 text-center">
+                  <img class="img-fluid rounded-circle" src="{{tab.doctProfileImg}}" />
+                </div>
+                <div class="col-md-8">
+                  <div class="clear20"></div>
+                  <div class="doctNameText">
+                    {{tab.doctName}}
+                  </div>
+                  <div class="doctSpecialityText">
+                    {{tab.profile}}
+                  </div>
+                </div>
+                
+                <div class="col-8">
+                   <div class="clear20"></div>
+                  <div class="queryQtnText">
+                    {{tab.massage}}
+                  </div>
+                </div>
+                <div class="col-4 text-right">
+                    <div class="clear20"></div>
+                   <div *ngIf="tab.replies.length>0" class="repliesText">
+                     +{{tab.replies.length}} Replies
+                   </div>
+                 </div>
+              </div>
+              <div class="right_arrow"><img src="././assets/images/keyboard-right-arrow-button.png"></div>
+            </div>
+
+          </ng-container>
+
+        </div>
+
+        <div class="text-left tabcontent {{msgContent.active}}">
+          <div class="chat_div">
+            <div *ngFor="let reply of msgContent.replies" class="my-5 w-75 p-3 box-with-shadow {{reply.from}} ">
+              <ng-container *ngIf="reply.from == 'patient'">
+                  <img class="img-fluid rounded-circle" src="{{msgContent.doctProfileImg}}" /> 
+              </ng-container>
+               
+              <ng-container *ngIf="reply.from == 'doctor'">
+                  <img class="img-fluid rounded-circle" src="{{msgContent.doctProfileImg}}" /> 
+              </ng-container>
+             
+              <div class="queryQtnText">{{reply.msg}}</div>
+              <div class="clear20"></div>
+              <div class="reply-date text-right">{{reply.date}},{{reply.time}}</div>
+            </div>
+          </div>
+
+
+          <div class="chat_inpute">
+            <div class="input-group mb-3">
+              <input type="text" (keydown.enter)="sendMessage();" class="form-control chatbox" [(ngModel)]="newMsg"
+                placeholder="Write your replay..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <span class="input-group-text nbg" (click)="sendMessage();" id="basic-addon2"><img src="././assets/images/sendMsgBlackIcon.png"></span>
+              </div>
+            </div>
+            <span class="send-btn"></span>
+          </div>
+
+        </div>
+        <div class="clear20"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

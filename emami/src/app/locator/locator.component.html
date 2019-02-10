@@ -1,0 +1,72 @@
+
+
+
+<div class="quicksearch">
+    <h3>Locate Us</h3>
+    <img src="././assets/images/locator_border.png">
+    <h5>Find the nearest</h5>
+  
+    <div *ngIf="isDoctor">
+      <label  class="check_container mr-4">Ayurvedic Doctor <input (change)="handleChange(true)" type="radio" name="radioss" checked="checked"> <span class="checkmark"></span></label>
+      <label  class="check_container">Ayurvedic Store <input (change)="handleChange(false)" _ngcontent-c3="" type="radio" name="radioss"><span class="checkmark"></span></label>
+    </div>
+    <div *ngIf="!isDoctor">
+      <label  class="check_container mr-4">Ayurvedic Doctor <input type="radio" (change)="handleChange(true)" name="radioss" > <span class="checkmark"></span></label>
+      <label  class="check_container">Ayurvedic Store <input (change)="handleChange(false)" _ngcontent-c3="" type="radio" name="radioss" checked="checked"><span class="checkmark"></span></label>
+    </div>
+    
+    <div class="input-group inpute_box">
+      <input [(ngModel)]="address_serch" (keydown)="getlatlng($event,address_serch)"  type="text" class="form-control locate" placeholder="Search here...">
+      <!-- <input type="text" class="form-control locate" placeholder="Serch here..."> -->
+    </div>
+  <div class="clearfix"></div>
+  <div *ngIf="!isDoctor" class="my-2 result"><h4>{{pharmaSearch.length}} Results</h4></div>
+  <div *ngIf="isDoctor" class="my-2 result"><h4>{{doctorSearch.length}} Results</h4></div>
+  <div class="">
+    <div *ngIf="!isDoctor" style="height: 200px; overflow-y: auto;">
+  
+      <div  class="addres" *ngFor="let item of pharmaSearch">
+        <div  class="km">
+        <span class="distance" >{{item.distance}}</span>
+        <span class="kmeter">KM</span></div>
+        <div  class="location"><h4  >{{item.pharmacyName}}</h4>
+          <p  > {{item.pharmacyAddress}} {{item.pharmacyTownCity}} ({{item.pharmacyPin}})</p>
+        </div><div class="timing">
+          <div  class="text-center">
+            <!-- <img (click)="printOnMap(item.PharmacyAddress+' '+item.PharmacyTownCity+' ('+item.PharmacyPin+')')" class="mt-4" src="././assets/images/directions.png"> -->
+          </div>
+        </div>
+      </div>
+      </div> 
+  
+      <div *ngIf="isDoctor" style="height: 200px; overflow-y: auto;">
+  
+        <div  class="addres" *ngFor="let item of doctorSearch">
+          <div  class="km">
+          <span class="distance" >{{item.distance}}</span>
+          <span class="kmeter">KM</span></div>
+          <div  class="location"><h4  >{{item.drName}}</h4>
+            <p  > {{item.drClinicAddress}} {{item.drTownCity}} ({{item.drPin}})</p>
+          </div><div class="timing">
+            <div  class="text-center">
+              <!-- <img (click)="printOnMap(item.DrClinicAddress+' '+item.DrTownCity+' ('+item.DrPin+')')" class="mt-4" src="././assets/images/directions.png"> -->
+            </div>
+          </div>
+        </div>
+        </div>
+      
+     
+  </div>
+  </div>
+
+<div class="map_div">
+
+    <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng" >
+        <!-- <agm-marker [latitude]="lat" [longitude]="lng" ></agm-marker> -->
+        <agm-marker *ngFor="let loc of location" [latitude]="loc.lat" [longitude]="loc.lng">
+          <agm-info-window [latitude]="loc.lat" [longitude]="loc.lng">{{loc.name}}</agm-info-window>
+         </agm-marker>
+
+      </agm-map>
+</div>
+

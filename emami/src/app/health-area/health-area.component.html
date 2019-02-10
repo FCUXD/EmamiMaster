@@ -1,0 +1,160 @@
+<app-navigation *ngIf="showHeader"></app-navigation>
+<section class="home-top"> 
+    <app-floating></app-floating>
+  <div class="container ">
+    <h1 class="main_title">health conditions</h1>
+    <div class="col-lg-8 pl-0">
+      <h2 class="looking_for">what is your health concern?</h2>
+      <app-searchbar></app-searchbar>
+    </div>
+    
+    <div class="DibetectSection DibetectSectionScroll" >
+      <!-- <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" [routerLink]="daibetiesRoute"> -->
+          <!-- <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+        <img src="././assets/images/Nav_1.png">
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Diabetes</p>
+      </div> -->
+      <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+          <img src="././assets/images/Nav_4.png">
+          <p class="m-0" (click)="getHealthArea($event.target.innerText)">Constipation</p>
+        </div>
+      <!-- <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+        <img src="././assets/images/Nav_2.png">
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Piles</p>
+      </div> -->
+      <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+          <img src="././assets/images/Nav_1.png">
+          <p class="m-0" (click)="getHealthArea($event.target.innerText)">Diabetes</p>
+        </div>
+      <!-- <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+        <img src="././assets/images/Nav_3.png">
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Hypertension </p>
+      </div> -->
+      <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+          <img src="././assets/images/erectliedysfunction.png">
+          <p class="m-0" (click)="getHealthArea($event.target.innerText)">Erectile Dysfunction </p>
+        </div>
+      <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+        <img src="././assets/images/Dysmenorrhea.png">
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Dysmenorrhoea </p>
+      </div>
+      <!-- <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+        <img src="././assets/images/Nav_5.png">
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Asthma</p>
+      </div> -->
+      <div class="DibeticLeft DibeticLeftscroll DibeticLeft4" >
+          <img src="././assets/images/liver.png">
+          <p class="m-0" routerLink="../liverDiseases">Liver Health/Jaundice</p>
+        </div>
+
+    </div>
+  </div>
+<div class="clear"></div>
+</section>
+<div class="clear"></div>
+<section class="SelectCatagoryDiv">
+  <div class="container">
+    <div class="Heading txtalligncenter">
+      <h1>select a health conditions </h1>
+      <div class="clear"></div>
+      <div class="">
+        <img src="././assets/images/SelectCatagoryBorder.png"></div>
+    </div>
+
+    <div class="DibetectSection2 DibetectSection4 mt-4 txtalligncenter float-left">
+      <div class="DibeticLeft DibeticLeft2 DibeticLeftPink rounded-left resseprator float-left">
+
+       
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Hypertension</p>
+      
+        <p class="m-0" routerLink="constipationRoute" (click)="getHealthArea($event.target.innerText)">Constipation/IBS</p>
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Diarrhoea</p>  
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Piles</p> 
+        <!-- <p class="m-0" routerLink="../Stress">Stress</p> -->
+    
+      </div>
+      <div class="DibeticLeft DibeticLeft2 BorderDiv resseprator SelectmiddleDiv float-left">
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">UTI/urology</p> 
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Liver health/ Jaundice</p>
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Dysmenorrhoea</p> 
+       
+        <p class="m-0" (click)="getHealthArea($event.target.innerText)">Acne/Derma (Skin diseases)</p>
+        <!-- <p class="m-0" routerLink="../Insomnia">Insomnia</p>  -->
+      </div>
+      <div class="DibeticLeft DibeticLeftPink DibeticLeft2 MarginRightDiv float-left">
+          <p class="m-0" (click)="getHealthArea($event.target.innerText)">Respiratory /Bronchitis / Asthma</p> 
+          <p class="m-0" (click)="getHealthArea($event.target.innerText)">Diabetes</p>
+          <!-- <p class="m-0" routerLink="../">Gynaecological</p>  -->
+         
+          <p class="m-0" (click)="getHealthArea($event.target.innerText)">Erectile Dysfunction</p> 
+         
+          <!-- <p class="m-0" routerLink="../Hairfall">Hairfall</p>   -->
+          
+          <!-- <p class="m-0" routerLink="../Osteoporosis">Osteoporosis</p> -->
+      </div>
+      <!-- <div class="DibeticLeft DibeticLeft2">
+        <p class="m-0">Women's Health</p>
+      
+        <p class="m-0">Kidney Stone</p>
+        <p class="m-0">Otologicals</p>
+        <p class="m-0">Thyroidism</p>
+      
+        <p class="m-0">Migraine/Headache</p>
+    
+
+      </div>
+      <div class="DibeticLeft DibeticLeftPink DibeticLeft2 rounded-right">
+        <p class="m-0">Anti Malarials</p>
+        <p class="m-0">Men's Health</p>
+        <p class="m-0">Sex Stimulants</p>
+        <p class="m-0">Stomatologicals</p>
+        <p class="m-0">Weight Loss/Obesity</p>
+        <p class="m-0">Erectile Dysfunction</p>
+      </div> -->
+
+    </div>
+  </div>
+
+</section>
+<div class="clear"></div>
+<!-- <section class="dosha mb-5">
+    <div class="dosham">
+      <h3>Know your Dosha,<br>
+        Know your Body Type</h3>
+      <img class="my-3" src="././assets/images/big_border.png">
+      <p>A simple test to determine your unique
+        psychological temperament based on your
+        doshas - Kapha, Pitta & Vata and help you
+        make the right decisions for a better living.</p>
+      <h4>Find out how balanced<br>
+        your Mind and Body are</h4>
+      <h5>Take our 3 Minute Dosha Test</h5>
+      <div class="form-group">
+        <input type="email" class="form-control my_email" placeholder="email id">
+        <button class="btn btn-primary mb-2 SignBtn" type="button" data-toggle="modal" data-target="#myModal" (click)="model()">calculate
+            now</button>
+      </div>
+  
+    </div>
+  </section> -->
+
+<div class="">
+  <app-main-footer></app-main-footer>
+</div> 
+
+<!-- The Modal -->
+<div class="modal {{nomodel}}">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content">
+  
+        <!-- Modal body -->
+        <div class="modal-body text-center py-5">
+          <span class="modeltitle">COMING SOON</span>
+          <img src="././assets/images/model_border.png">
+          <p class="pt-3">Your Dosha Calculator</p>
+          <div class="smlltxt pb-4">We’ll Notify You Via Mail</div>
+          <button type="button" class="btn closingbtn" data-dismiss="modal" (click)="closed()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>

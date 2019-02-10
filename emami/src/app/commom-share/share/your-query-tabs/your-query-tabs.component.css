@@ -1,0 +1,170 @@
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #cccccc;
+    background-color: #f9f4e4!important;
+    width: 50%;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+.outer-box{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+.title{
+    font-family: 'TrajanPro-Regular';
+  font-size: 18.5px;
+  font-weight: normal;
+  color: #000000;
+}
+.topdiv{
+    height: 60px;
+}
+/* Style the buttons inside the tab */
+.tab .inner_div {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+    border-bottom: 1px solid #ffffff !important;
+    position: relative; 
+    background: #ffffff;
+}
+
+/* Change background color of buttons on hover */
+.tab .inner_div:hover {
+    background-color: #f9f4e4;
+}
+
+/* Create an active/current "tab button" class */
+.tab .inner_div.active {
+    background-color: #f9f4e4;
+    position: relative;
+    border-right: 20px solid #bccf60;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 50%;
+    border-left: none;
+    height: 500px;
+    position: relative
+}
+
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.bl_pressure {
+    width: 50%;
+    display: inline-block;
+}
+.bl_img {
+    margin-right: 30px;
+}
+.doc_info {
+    width: 50% !important;
+    display: inline-block !important;
+    vertical-align: top;
+    border-bottom: none !important;
+    padding: 5px 0px !important;
+    font-size: 14px !important;
+    font-family: 'TrajanPro-regular';
+    color: #333333;
+}
+.page{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'PlayfairDisplay-Bold';
+    color: #333333;
+}
+.fontstyle{
+    font-family: TrajanPro;
+    font-size: 14.5px;
+    font-weight: normal;
+    color: #000000;
+}
+.fent_font {
+    font-family: 'TrajanPro-Regular';
+    font-size: 12px!important;
+    font-weight: normal;
+    color: #402909;
+}
+.active .green_text,.tabcontent .green_text{
+    font-family: 'TrajanPro-Bold';
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+}
+.divider {
+    border-bottom: 1px solid #cccccc;
+
+}
+.active.right_arrow{
+    display: block;
+
+}
+.right_arrow {
+    position: absolute;
+    top: 70px;
+    right: -18px; 
+    top: 42%;
+
+}
+.chat_inpute {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.chatbox,.nbg {    border: none;
+    background: #f9f4e4;
+    height: 65px;
+}
+.nbg{cursor: pointer}
+input.form-control.chatbox:focus {
+    box-shadow: none;
+    outline: none;
+}
+input.form-control.chatbox::placeholder {
+    color: #5c5c5c;
+    font-size: 20px;
+}
+
+p.green_text.font-weight-bold.text-right[_ngcontent-c7] {
+    font-family: 'TrajanPro-Bold';
+    font-size: 16px;
+    font-weight: bold;
+    color: #84b367;
+}
+.patient{
+text-align: right;
+}
+.doctor{
+text-align: left;
+}
+.chat_div {
+    height: 370px;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+.pmessage{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    font-weight: normal;
+    color: #333333;
+}

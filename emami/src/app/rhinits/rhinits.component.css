@@ -1,0 +1,1786 @@
+.defalt{width: 200px;height: 200px; color: #fff;background: #000}
+.changed{background: rgb(158, 14, 14)}
+.addnotes {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+.yfrihinits{
+    width: 20%;
+}
+.symptoms-uti{
+    background-image: url("src/assets/images/symptom-uti.png"); 
+}
+.WhiteBox{cursor: pointer;}
+.Yoga_AurvedaSection12{
+    min-height: 600px;
+    margin-top: 50px;
+    padding-top: 74px;
+}
+.Yoga_AurvedaSection12 h1 {
+    font-family: 'TrajanPro-Regular';
+    object-fit: contain;
+
+font-size: 36px;
+font-weight: normal;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;    
+color: #402909;
+}  
+
+.Yoga_AurvedaSectionrp{
+    min-height: 600px;
+    margin-top: 50px;
+    padding-top: 74px;
+}
+.Yoga_AurvedaSectionrp h1 {
+    font-family: 'TrajanPro-Regular';
+    object-fit: contain;
+
+font-size: 36px;
+font-weight: normal;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;    
+color: #402909;
+}  
+.home-top,.prakrati-meter {
+     background-image: url("src/assets/images/rihinits-banner.png"); 
+    background-repeat: no-repeat;
+    margin-top: 80px;
+    background-position: center -82px;
+    background-size: 100% 100%;
+    min-height: 770px;
+    }
+.modal{background: rgba(9, 9, 9, 0.5);display: block;}
+.nomodel{display: none}
+.FbBtn,.GoogleBtn {
+    background-color: #385c9a;
+    color: #ffffff;
+    width: 227px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: #385c9a;
+    font-family: ''TrajanPro-Bold'';
+    font-size: 12px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-align: left;
+    color: #ffffff;
+}
+.GoogleBtn {
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+span.zanduser {
+    font-size: 30px;
+    font-weight: 700;
+}
+.bor-r {
+    border-right: 1px solid #ebebeb;
+}
+.minus-top{
+    margin-top: -44px;
+}
+/* Style the tab */
+
+/* Style the tab content */
+.tabcontent {
+    display: block; 
+    padding-bottom: 13% !important;
+}
+.hide{
+    display: none;
+} 
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5) !important;
+}
+.sm-btn {
+    padding: 14px 32px;
+}
+.arrow_div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -50px;
+    display: none
+}
+.active .arrow_div{
+    display: block;
+}
+.tab_card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 0px;
+    text-align: center;
+    font-family: 'TrajanPro-Regular';
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #402909;
+  display: inline-block;
+  width: 25%;
+} 
+.Yoga_AurvedaSection{
+  
+    min-height: 500px;
+    margin-top: -100px;
+ 
+} 
+
+.Yoga_AurvedaSection h1 {
+    font-family: 'TrajanPro-Regular';
+    object-fit: contain;
+
+font-size: 36px;
+font-weight: normal;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;
+color: #402909;
+}  
+.Yoga_AurvedaSection-artical{
+  
+    min-height: 600px;
+    margin-top: -5px;
+} 
+
+.Yoga_AurvedaSection-artical h1 {
+    font-family: 'TrajanPro-Regular';
+    object-fit: contain;
+
+font-size: 36px;
+font-weight: normal;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;
+color: #402909;
+}  
+
+.Yoga_AurvedaSection1{
+  
+    min-height: 600px;
+    margin-top: -152px;
+    padding-top: 175px;
+} 
+.Yoga_AurvedaSection1 h1 {
+    font-family: 'TrajanPro-Regular';
+    object-fit: contain;
+
+font-size: 36px;
+font-weight: normal;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;
+color: #402909;
+}  
+.artcle {
+    padding-top: 10%; 
+    min-height: 700px;
+}
+.Yoga_Ayurveda_RightDiv h5{
+    font-size: 30px;
+color: #402909;
+font-family: 'TrajanPro-Bold';
+} 
+.Yoga_Ayurveda_RightDiv p{
+font-size: 24px;
+color: #333333;
+color: #402909;
+font-family: 'PlayfairDisplay-Regular';
+} 
+.Yoga_Ayurveda_RightDiv{
+    margin-top: 7%;
+}
+.tab1ContentBox{
+    background: #fff5e4;
+
+border-radius: 10px;
+padding: 3% 7%;
+box-shadow: 0px 3px 14.2px 1.8px rgba(0, 0, 0, 0.14);
+}
+.herbof_text{
+    font-size: 18px;
+    color: #333333; 
+    font-family: 'TrajanPro-Bold';
+}
+.herbof_text2{
+    font-family: 'PlayfairDisplay-Bold';
+} 
+.herbof_text3{
+    font-family: 'PlayfairDisplay-Regular';
+}
+.findHerb_Btn{
+    font-size: 16px !important;
+    font-family: 'TrajanPro-Bold' !important;
+    width: 254px !important;
+
+    height: 64px !important;
+} 
+.paddingTabContentDiv{
+    padding-bottom: 13% !important;
+}
+.tab_card img {
+    margin-right: 10px;
+}
+.tab_card .card-body {
+    padding: 14px 0px;
+}
+.border_div {
+    border-right: 2px solid #d9b065;
+    padding: 20px 30px;
+    text-align: center;
+}
+.input-spinner{
+    width: 70px;
+    text-align: center;
+    font-family: PlayfairDisplay;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 18px;
+    letter-spacing: 1.2px;
+    color: #1d1d1b;
+  }
+  .product_img {
+    text-align: center;
+}
+.product_info {
+    text-align: center;
+}
+.product_info p {
+    font-size: 12px;
+}
+.Product_div{position: relative;overflow: hidden;border-radius: 10px;
+padding: 0px 20px;
+object-fit: contain;
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+background-color: #ffffff;
+}
+.Product_div span {
+    display: block;
+    width: 120px;
+    height: 24px;
+    background-color: #32aa61;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(319deg);
+    position: absolute;
+    text-align: center;
+    line-height: 24px;
+    top: 8px;
+    font-family: arial;
+    font-size: 12px;
+    left: -38px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .cart_btn {
+    width: 48%;
+    font-weight: 700;
+}
+.order-margin-top2 .fa {
+    cursor: pointer;
+}
+.keep_healthy h1 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 46px;
+}
+.gray {
+    background: #f5f5f5;
+}
+ agm-map {
+    height: 564px;
+    width: 564px;
+    border-radius: 50%;
+  }
+  :host >>>  .agm-map-container-inner{
+border-radius: 50%
+  }
+.defalt_height{height:360px;overflow: hidden;}
+.full_height{height: 780px;}
+  .radio_container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 2px solid #b47f3c;
+}
+
+
+
+.radio_container input:checked ~ .checkmark {
+    background-color: #ffffff;
+    border:1px solid #333333;
+}
+
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.radio_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.radio_container .checkmark:after {
+     top: 5px;
+    left: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: black;
+}
+.locate{background: url("../../assets/images/route.png") no-repeat;
+    background-position: 97%;
+    padding: 30px;
+    border: none;
+    background-color: #dddddd;
+    border-radius: 10px;}
+    .addres {
+        background: #ffffff;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    }
+    .addres p,h1,h4,h2{margin-bottom: 0px}
+    .km {
+        display: inline-block;
+        width: 25%;
+        vertical-align: top;
+        text-align: center;
+        padding: 26px 18px;
+        -o-object-fit: contain;
+        object-fit: contain;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        background-color: #b5803c;
+    }
+    .location {
+        width: 60%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+    }
+    .timing {
+        width: 14%;
+        display: inline-block;
+        vertical-align: top;
+        vertical-align: text-bottom;
+        text-align: right;
+        padding: 10px 0px;
+        padding-right: 10px;
+    }
+    h1.main_title {
+        object-fit: contain;
+        text-shadow: 0px 10px 35.6px rgba(0, 0, 0, 0.51);
+        font-family: 'TrajanPro-Bold';
+        font-size: 40.5px;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;     
+        color: #402909;
+        padding: 60px 0px 6px 0px;
+        margin-top: 14%;
+        text-align: center;
+    }
+
+    h2.looking_for {
+        object-fit: contain;
+        font-family: TrajanPro-Bold;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 1.8px;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+    .benefits_ayurveda {
+        background: url('../../assets/images/yoga.png') no-repeat;
+    }
+    .card.ayur_you h2 {
+        object-fit: contain;
+        font-family: TrajanPro-Regular;
+        font-size: 36px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #402909;
+    }
+    .card.ayur_you h4 {
+        object-fit: contain;
+        font-family: PlayfairDisplay-Regular;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        padding: 15px 0;
+        color: #402909;
+    }
+    .card.ayur_you p {
+        object-fit: contain;
+        font-family:  PlayfairDisplay-Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: 0.3px;
+        text-align: left;
+        color: #333333;
+        padding-bottom: 22px;
+    }
+    .SignBtn, .SignBtn:active, .SignBtn:hover, .SignBtn:focus {
+        font-size: 16px;
+        letter-spacing: 1.2px;
+        margin: 0 auto;
+        border-radius: 10px;
+        font-weight: bold;
+        border: solid 1px #c29a5d!important;
+        background-color: #cfa15a!important;
+        font-family: 'TrajanPro-Bold';
+        box-shadow: 0 0 0 7px #cfa15a!important;
+        width: 250px;
+        height: 50px;
+        color: #402909!important;
+    }
+    .ayur_you .natural_div h4 {
+        font-family: 'PlayfairDisplay-Bold';
+    font-size: 60px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 50px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #d6ad66;
+    padding: 0px !important;
+    margin: 0 !important;
+    }
+
+    .ayur_you .natural_div p {
+        object-fit: contain;
+        font-family: 'TrajanPro-Regular';
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #402909;
+    }
+    .notext{font-size: 48px !important;
+    line-height: 66px !important}
+    .notext2{    font-size: 56px !important;
+        line-height: 53px !important;}
+    .ayur_you .natural_div h4 .chota{
+        font-size: 24px
+    }
+    .nature_godes {
+        padding-top: 23%;
+    padding-bottom: 5%;
+    }
+    .dosha{
+        background-image: url('../../assets/images/juce.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 1% 10%;
+        position: relative;
+        width: 100%;
+    }
+    .dosham {
+        object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.13);
+    background-color: #f9f4e4;
+    width: 44%;
+    position: absolute;
+    top: 438px;
+    padding: 40px 50px;
+    text-align: center;
+    }
+    .dosham h3 {
+        object-fit: contain;
+        font-family: 'TrajanPro-Regular';
+        font-size: 36px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 0;
+    }
+    .dosham p {
+        font-family: PlayfairDisplay-regular;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  text-align: left;
+  color: #333333;
+    }
+    .dosham h4 {
+        object-fit: contain;
+        font-family: 'PlayfairDisplay-Regular';
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+    }
+    .dosham h5 {
+    font-family: TrajanPro-Bold;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  text-align: left;
+    }
+    .my_email {
+        border: none;
+        border-bottom: solid 2px #d6ad66;
+        background: transparent;
+        border-radius: 0px;
+        margin-bottom: 40px;
+        font-family: 'PlayfairDisplay-Regular';
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #666666;
+    }
+    .zanduservicemain {
+        border-radius: 10px;
+        background-color: #f9f4e4;
+        padding: 30px 10px; 
+        margin-top: -68px;
+        z-index: 999999;
+    }
+    .zanduservice p {
+        object-fit: contain;
+        font-family: 'TrajanPro-Bold';
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.64;
+        letter-spacing: normal;
+        text-align: left;
+        color: #333333;
+    }
+    .zanduservice {
+        padding: 0px !important;
+        margin: 0px !important;
+        background: transparent;
+    }
+.zanduservice .card-body {
+        padding: 0px;
+    }
+    .zanduservice span {
+        font-family: 'TrajanPro-Regular';
+        font-size: 20px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #402909;
+        border-left: 1px solid #cccccc;
+        padding-left: 40px;
+        padding-top: 10px;
+    }
+    .zanduservice h5{
+        font-family: 'TrajanPro-Bold';
+  font-size: 28px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #402909;
+  padding-top: 10px;
+    border-left: 1px solid #cccccc;
+    padding-left: 40px;
+    margin-top: -2px;
+}
+.deal-areabg{
+    background-image: url('../../assets/images/herbBG.png');  
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+.deal_area {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+.HiddenBorder{
+    border-right: none;
+}
+.artcle h6 {
+    object-fit: contain;
+    font-family: 'TrajanPro-Regular';
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0px;
+}
+.small_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+.article_div-artical {
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 450px;
+}
+.article_div-artical p {
+    font-family: PlayfairDisplay-Regular;
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+    text-align: center;
+}
+.article_div-artical span{
+    font-family: TrajanPro-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    color: #333333;
+ }
+.article_div {
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 350px;
+}
+.article_div-human {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 450px;
+}
+.article_div-human p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    color: #333333;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+.article_div-human span {
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+}
+.article_div1 {
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+.rmposition{
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}
+.rmposition1{
+    position: absolute;
+    bottom: 0;
+    left: 29%;
+}
+.article_div span {
+    font-family: 'TrajanPro-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #333333;
+}
+.article_div p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+
+.read_more, .read_more:active, .read_more:hover, .read_more:focus {
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-weight: bold;
+    border: solid 1px #c29a5d!important;
+    background-color: #cfa15a!important;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 5px #cfa15a!important;
+    width: 153px;
+    height: 33px;
+    color: #402909!important;
+
+}
+.read_more1, .read_more1:active, .read_more1:hover, .read_more1:focus {
+    font-family: 'TrajanPro-Bold';
+    background-color: #cfa15a !important;
+    border: 0px;
+    box-shadow: 0px 0px 15px #ccc;
+    margin: 0 auto;
+    padding: 15px 40px;
+    font-size: 15px;
+   
+    color: #402909 !important;
+    outline: 1px solid #c29a5d;
+    outline-offset: -5px;
+    border-radius: 5px;
+    -moz-outline-radius: 5px;
+}
+.read_morerp, .read_morerp:active, .read_morerp:hover, .read_morerp:focus {
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-weight: bold;
+    border: solid 1px #c29a5d!important;
+    background-color: #cfa15a!important;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 5px #cfa15a!important;
+    padding: 10px 40px;
+    color: #402909!important;
+}
+.small_width{width: 70%}
+
+.succes_stories {
+    background-image: url('../../assets/images/slider_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15% 0px 5% 0px ;
+}
+.all_benefits {
+    width: 68%;
+    display: inline-block;
+    vertical-align: top;
+}
+.topping_spac {
+    margin-top: 50px;
+    background: #f9f4e4;
+border-radius: 10px;
+padding: 3% 11%;
+}
+.all_benefits2 {
+    width: 32%;
+}
+.all_benefits p {
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    color: #333333;
+    margin-bottom: 0px;
+
+}
+.all_benefits span {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+
+
+
+
+.check_container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+
+
+.check_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.check_container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+
+.check_container input:checked ~ .checkmark {
+    background-color: #42b550;
+    border: 2px solid #42b550;
+}
+
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.check_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.check_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.locatus {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+.locatus h5 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-align: left;
+    color: #000000;
+}
+.locatus h6 {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333333;
+}
+.locate_input {
+    border: none;
+    height: 60px;
+    background-image: url('../../assets/images/gps.png');
+    background-repeat: no-repeat;
+    background-position: 92%;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 32.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+    padding-left: 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+span.distance {
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fbf4da;
+    display: block;
+}
+
+span.kmeter {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fbf4da;
+    display: block;
+}
+.location h4 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+.location p {
+    font-family: 'TrajanPro-Regular';
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666666;
+}
+.topping_spac2 {
+    margin-top: 166px;
+}
+.map {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+.deal_title h5 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0px;
+}
+.card-body.active {
+    box-shadow: 0px 3px 14.2px 1.8px rgba(0, 0, 0, 0.14);
+    background-color: #f9f4e4;
+}
+.card-body.active .border_div{
+    border-right: 0px;
+}
+.genral_care {
+    width: 39%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f9f4e4;
+    padding: 40px;
+}
+.big_product {
+    width: 61%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.genral_care h6 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+.genral_care p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.product_info h6 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.1px;
+    color: #333333;
+}
+.product_info p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    text-align: left;
+    color: #402909;
+}
+.product_info h4 {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 18px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #333333;
+}
+span.modeltitle {
+    font-family: 'TrajanPro-Bold';
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #402909;
+}
+.modal-body p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #402909;
+}
+.smlltxt {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333333;
+}
+.closingbtn {
+    width: 83px;
+    height: 35px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: #d6ad66;
+    font-family: 'TrajanPro-Regular';
+}  
+
+.main_title2{
+    text-align: center;
+    color: #402909;
+    font-size: 30px;
+    font-family: 'TrajanPro-Regular';
+}  
+.HedingMapContentBox{ 
+float: none;
+margin: 0 auto;
+} 
+.MapLeft{
+    width: 50%;
+float: left;
+} 
+.Around50Text{
+    width: 32%;
+float: left;
+} 
+.Around50Text2{
+    width: 68%;
+float: left;
+} 
+.Around50Text p {
+color: #402909;
+font-size: 16px; 
+font-family: 'PlayfairDisplay-Bold';
+} 
+.Around50Text h1 {
+    color: #402909;
+    font-size: 24px; 
+    font-family: 'PlayfairDisplay-Bold';
+    } 
+    .Around50Text2 p{
+        font-family: 'PlayfairDisplay-Regular';
+        margin: 0px;
+        line-height:normal!important;
+    } 
+    .BorderBotton{
+        border: 1px solid #402909;
+    } 
+    .DibetectSection{
+        width: 100%;
+
+background: #fff9e5;
+border-radius: 10px;
+padding: 2% 0%;
+text-align: center;  
+overflow-x: auto;
+    
+overflow-y: hidden;
+
+white-space: nowrap;
+
+display: inline-block;
+
+width: 100%;
+
+    }  
+    .DibeticLeft{
+        width: 204px;
+        cursor: pointer; 
+        display: inline-block;
+    } 
+    .DibeticLeft p{
+        color: #402909;
+        font-size: 16px; 
+        font-family: 'PlayfairDisplay-Bold'; 
+        margin-top: 5px !important;
+    }  
+    .Yoga_AurvedaSymptoms{
+        background-size: cover;
+    }
+
+.AyurvedicDietRightText h1{
+    color: #402909;
+    font-size: 36px; 
+    font-family: 'TrajanPro-Regular';
+} 
+.AyurvedicDietRightText h5{
+    color: #333333;
+    font-size: 24px;
+    font-family: 'PlayfairDisplay-Regular';
+}
+.AyurvedicDietRightText p{
+    color: #333333;
+    font-size: 16px;
+    font-family: 'PlayfairDisplay-Regular';
+} 
+.AyurvedicDietRightText{
+    margin-top: 9%;
+}  
+
+
+.Heading h1 {
+    font-size: 36px;
+    color: #000000; 
+    font-family: 'TrajanPro-Regular';
+  text-align: center;
+}  
+
+.AyurvedicDietRightText2{
+    padding-left: 16% !important;
+}
+ 
+.AyurvedicDietRightText2  ul li {
+  font-size: 24px; 
+
+  color: #333333; 
+  font-family: 'PlayfairDisplay-Regular'; 
+} 
+.IFSODiv{
+    margin-left: 47px;
+}
+/* --------Are you looking for Healthy Diet Ideas? section  End --------------*/  
+/*-------------- Skin Care section  ----------------------------*/
+.article_div2 {
+    width: 50%;
+  
+}
+.article_div2 span {
+    font-size: 24px; 
+    font-family: 'PlayfairDisplay-Regular'; 
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center; 
+    color: #1f1710;
+  
+  }
+.ORTExt{
+    font-size: 15.5px !important;
+
+    letter-spacing: 1.6px !important;
+  
+    color: #a58658 !important;
+} 
+/* -------Footer-------- */
+.bottom_footer {
+    background: url('../../assets/images/footer.png') no-repeat;
+background-position: center top;
+} 
+.BorderradiusLeft{
+    border-radius: 5px 0px 0px 0px;
+} 
+.BorderradiusRight{
+    border-radius: 0px 5px 0px 0px;
+}
+.padlrn{
+    padding: 0px;
+}
+.world-img{
+    width: 200px;
+    height: 86px;
+}
+.ptractinfection{
+    font-family: PlayfairDisplay-regular;
+    font-size: 16px;
+    font-weight: normal;
+    color: #402909;
+}
+.pfever{
+    font-family: TrajanPro-Bold;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #333333;
+}
+.padl20{
+    padding-left: 30px;
+}
+.padlr20{
+    padding-left: 220px;
+}
+.minitues{
+    font-family: PlayfairDisplay;
+    font-size: 24px;
+    font-weight: normal;
+    color: #402909;
+}
+.call-queries{
+    font-family: TrajanPro-Bold;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 2.4px;
+    text-align: center;
+    color: #402909;
+}
+.call-queries1{
+    font-family: TrajanPro3-Bold;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 2.4px;
+    text-align: center;
+    color: #402909;
+}
+.comp-contentbx{
+    opacity: 0.62;
+    border-radius: 10px;
+    background-color: #f9f4e4;
+    padding: 50px;
+}
+.c-infection{
+  font-family: PlayfairDisplay-Regular;
+  font-size: 20px!important;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color: #333333!important;
+}
+.utitop{
+    font-family: TrajanPro-Bold;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #402909;
+}
+.lyfestyle-mgmt{
+font-family: TrajanPro-Bold;
+font-size: 22px;
+font-weight: bold;
+color: #333333;
+} 
+.lfst-box{
+    opacity: 0.62;
+  border-radius: 10px;
+  background-color: #fbf8ee!important;
+}
+.shadoo1{
+    object-fit: contain;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.tab-p{
+    font-family: TrajanPro-Regular;
+    font-size: 22.8px;
+    font-weight: normal;
+    color: #3e2808;
+}
+
+
+
+
+
+
+
+
+.Product_div{position: relative;overflow: hidden;border-radius: 10px;}
+.Product_div span {
+display: block;
+width: 120px;
+height: 24px;
+background-color: #402909;
+-webkit-transform: rotate(45deg);
+transform: rotate(319deg);
+position: absolute;
+text-align: center;
+line-height: 24px;
+top: 8px;
+font-family: arial;
+font-size: 12px;
+left: -38px;
+font-weight: 600;
+color: #ffffff;
+}
+.tab-h .table-heading{
+    font-family: TrajanPro-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    color: #402909;
+    }
+
+    .zl-text{
+        font-size: 22px;
+        font-weight: bold;
+        color: #333333;
+        font-family: 'TrajanPro-Regular';
+        }
+        .zl-text1{
+        font-family: 'IndianRupee';
+        font-size: 24px;
+        color: #333333;
+        }
+        .zl-text12{
+        font-size: 30px;
+        font-weight: normal;
+        font-family: 'PlayfairDisplay-Regular';
+        color: #333333;
+        }
+        .zl-text2{
+        font-size: 14px;
+        font-weight: normal;
+        font-family: 'PlayfairDisplay-Regular';
+        color: #402909;
+        }
+        .product_img {
+            width: 100%;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            display: content;
+}
+.order-margin-top2 .fa {
+    cursor: pointer;
+    }
+
+
+
+
+    
+@media screen and (min-width: 1600px) and (max-width: 2400px) {
+}
+@media screen and (min-width: 1px) and (max-width: 1220px) {
+    .AcuteDirehaContentBox{
+        width: 55%;
+    }
+
+}
+@media screen and (min-width: 1px) and (max-width: 1200px) { 
+
+    .AcuteDirehaContentBox {
+        width: 60%;
+    } 
+    .HomeRemedies span {
+        font-size: 12px;
+      
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 1060px) {
+    .DibeticLeft p {
+        font-size: 12px;
+    } 
+    .ActuallyCausesPiles span {
+        font-size: 16px;
+       
+    } 
+    br{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+    .AcuteDirehaContentBox {
+        width: 100%;
+        text-align: center;
+    } 
+    .ActuallyCausesPiles span {
+        font-size: 15px;
+       
+    } 
+    .all_benefits p {
+        font-size: 18px;
+    } 
+    .all_benefits span {
+        font-size: 15px !important;
+    } 
+    .article_div span {
+       font-size: 25px;
+    }
+    .article_div p {
+        font-size: 14px; 
+    } 
+    .AnaemiaBG {
+        width: 100%; 
+    } 
+    .ResTextInCenter{
+        text-align: center;
+    } 
+    .border_div {
+        padding: 10px 1px; 
+    } 
+    .CarretDiv2 {
+        padding-top: 24px !important;
+    } 
+    .ResMarginTop15 {
+        margin-top: 15px;
+    } 
+    .rmposition {
+        left: 5%;
+    } 
+    .article_div {
+        width: 44%;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .home-top, .prakrati-meter {
+      background-size: cover;
+      background-position: -302px 0px;
+    } 
+    h1.main_title {
+        margin-top: 50%;
+    } 
+    .main_title2 {
+       font-size: 16px;
+      
+    } 
+    .div1, .div2, .div3, .div4, .div5 {
+            width: 50%;  
+    } 
+    h1.main_title {
+      font-size: 30px;
+    } 
+    .Around50Text p {
+       font-size: 14px;
+     } 
+     .Around50Text h1 span {
+        font-size: 15px;
+    } 
+
+    .Around50Text h1 {
+        font-size: 35px;
+    } 
+   
+        .ResReletedproduct{
+            margin-bottom: 15px;
+        } 
+        .Yoga_AurvedaSection h1 {           
+             font-size: 24px;
+        } 
+        /* .DibetectSection {
+           margin-bottom: 25px;
+        }  */
+        .Yoga_Ayurveda_RightDiv h5 {
+            font-size: 17px;
+        } 
+        .Yoga_Ayurveda_RightDiv p {
+            font-size: 17px;
+        } 
+        .HeadingTextSmall {
+            font-size: 14px;
+            
+        } 
+        .ResDispayNone{
+            display: none;
+        } 
+        
+        .SignBtn, .SignBtn:active, .SignBtn:hover, .SignBtn:focus {
+            width: 198px; 
+            font-size: 12px;
+        }
+        .ResReadMore,  .Yoga_Ayurveda_RightDivRes,  .herbof_text3 {
+            text-align: center;
+        }  
+        .ActuallyCausesLeft1 {
+            width: 50%;
+            
+        } 
+        .all_benefits {
+            width: 100%;
+            text-align: center; 
+            margin-bottom: 30px;
+        }  
+        .all_benefits p {
+            
+            margin-top: 10px;
+        } 
+        .topping_spac {
+            margin-bottom: 30px;
+            padding: 0% 10%;
+        } 
+        .doshas .article_div{
+            min-height: 340px;
+        }
+        .rmposition {
+            position: relative;
+            left: 0;
+        } 
+        .callToGetInTouch p, .callToGetInTouch span {
+            font-size: 17px !important;
+        } 
+        .AnaemiaBG {
+            margin-top: 0px;
+        } 
+        .panchkarmaTretment p {
+            font-size: 17px;
+            padding: 2%;
+        } 
+        .tab_card{
+            width: 100%;
+        } 
+        .border_div {
+            border-right: none;
+        }  
+        .zl-text {
+            font-size: 18px;
+        }
+        .zl-text12 {
+            font-size: 23px;
+        } 
+        .input-spinner {
+            width: 44px;
+        } 
+        .read_more, .read_more:active, .read_more:hover, .read_more:focus {
+            font-size: 12px;
+        }
+        .article_div {
+            width: 100%;
+        }
+        .Yoga_AurvedaSection {
+            margin-top: 50px;
+        }
+        .Yoga_AurvedaSymptoms .article_div-human {
+            width: 50%;
+            height: 525px;
+        }
+        .Yoga_AurvedaSection-artical .article_div-artical {
+            width: 50%;
+        }
+} 
+
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    /* .DibeticLeft {
+        width: 100%;
+        margin-top: 15px;
+    } */
+    .ActuallyCausesLeft1 {
+        width: 100%;
+        margin-bottom: 25px;
+    } 
+    .MapLeft {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    .MapLeft2 {
+        width: 100%;
+    } 
+    .topping_spac {
+        margin-top: 10px;
+        margin-bottom: 63px;
+       
+    }
+    .Yoga_Ayurveda_RightDiv{
+        text-align: center;
+    }
+    .Yoga_Ayurveda_RightDiv ul{
+        text-align: left;
+    }
+    .doshas .article_div{
+        min-height: 340px;
+    }
+    .artcle {
+        padding-top: 30%;
+    }
+    .AyurvedicApproach {
+        margin-top: 25px !important;
+    }
+    .div1, .div2, .div3, .div4, .div5 {
+        width: 100%;
+    }
+    .Yoga_AurvedaSection {
+        margin-top: 90px;
+    }
+    #SymptomsCauses img, #PreventionDiagnosis img{
+        padding: 15px 0 5px 0;
+    }
+    #Complications{
+        margin-top: 0px;
+    }
+    .Yoga_Ayurveda_RightDiv .col-11, .Yoga_Ayurveda_RightDiv .col-1{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .Yoga_AurvedaSymptoms .article_div-human {
+        width: 100%;
+        height: 525px;
+    }
+    .Yoga_AurvedaSection-artical .article_div-artical {
+        width: 100%;
+    }
+    .Yoga_AurvedaSection-artical {
+        margin-top: 0px;
+    }
+    .BorderBotton {
+        border: none;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) { 
+
+}

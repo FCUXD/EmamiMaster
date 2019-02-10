@@ -1,0 +1,264 @@
+/* spacing */
+.clear5 {
+    height: 5px;
+    clear: both;
+}
+
+.clear10 {
+    clear: both;
+    height: 10px;
+}
+
+.clear20 {
+    clear: both;
+    height: 20px;
+}
+
+.clear30 {
+    clear: both;
+    height: 30px;
+}
+.clear40 {
+    clear: both;
+    height: 40px;
+}
+/* font size */
+.fs-12px{
+    font-size: 12px;
+}
+.fs-14px{
+    font-size: 14px;
+}
+.fs-16px{
+    font-size: 16px;
+}
+.fw-bold{
+    font-weight: bold;
+}
+.patientFeedbackMainContainer ul{
+    padding: 0;
+}
+.patientFeedback-top{
+    font-family: 'TrajanPro-Bold';
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  opacity: 0.62;
+
+  background-color: #f9f4e4;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+.get-in-touch-heading{
+    font-family: 'TrajanPro-Bold';
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+.patientFeedbackMainContainer  .doct-exp{
+    font-family: 'PlayfairDisplay-Regular';
+}
+.patientFeedbackMainContainer  .doct-info{
+    font-family: 'TrajanPro-Bold';
+}
+.patientFeedbackMainContainer  .fdbk-heading{
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+}
+.patientFeedbackMainContainer .box-with-shadow{
+    padding: 35px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+.patientFeedbackMainContainer  .fdbk-question{
+    font-family: 'TrajanPro-Bold';
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.43;
+    letter-spacing: 0.7px;
+    color: #402909;
+}
+.patientFeedbackMainContainer  .rating-buttons-div ul{
+    list-style-type: none;
+}
+.patientFeedbackMainContainer  .rating-buttons-div ul li{
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li .btn{
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+
+  font-family: 'PlayfairDisplay-Bold';
+  font-size: 14px;
+  font-weight: bold;
+  color: #402909;
+  width: 35px;
+  height: 35px;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:first-of-type .btn{
+    opacity: 0.5;
+    background-color: #ff7575;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:nth-of-type(2) .btn{
+    opacity: 0.6;
+    background-color: #ff7575;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:nth-of-type(3) .btn{
+    opacity: 0.7;
+    background-color: #ff7575;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:nth-of-type(4) .btn{
+    opacity: 0.8;
+    background-color: #ff7575;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:nth-of-type(5) .btn{
+    opacity: 0.9;
+    background-color: #ff7575;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:nth-of-type(6) .btn{
+    opacity: 1;
+    background-color: #ff7575;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:nth-of-type(7) .btn{
+    opacity: 0.9;
+  background-color: #ffe26e;
+}
+.patientFeedbackMainContainer  ul.rating-buttons-container li:nth-of-type(8) .btn{
+    opacity: 1;
+  background-color: #ffe26e;
+}
+.patientFeedbackMainContainer ul.rating-buttons-container li:nth-of-type(9) .btn{
+    opacity: 0.9;
+    background-color: #a4ef9a;
+}
+.patientFeedbackMainContainer ul.rating-buttons-container li:nth-of-type(10) .btn{
+    opacity: 1;
+    background-color: #a4ef9a;
+}
+
+/* poor avg good exc btns */
+
+  .patientFeedbackMainContainer textarea.fdbk-cmnt{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    height: 142px;
+    border-radius: 5px;
+    background-color: #f7f0dd;
+    border: none;
+    line-height: 1.43;
+    letter-spacing: 0.7px;
+    color: #402909;
+
+    
+  }
+ .patientFeedbackMainContainer .question-label{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0.7px;
+    color: #402909;
+  }
+  .patientFeedbackMainContainer .btn-green-1{
+    font-size: 15.5px;
+    border-radius: 10px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 5px #bccf60;
+    letter-spacing: 1.5px;
+    width: 231px;
+    height: 50px;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#d9b065;
+    height: 1px;
+    opacity: 0.4;
+    margin: 40px 0;
+  }
+  .get-in-touch-phone-email{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 24px;
+    color: #402909;
+  }
+  .get-in-touch-bg-phone{
+    background: url('/assets/images/phone-black-icon-1.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 6%;
+    background-position-y: 20%;
+  }
+  .get-in-touch-bg-email{
+    background: url('/assets/images/email-black-icon-1.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 0%;
+    background-position-y: 20%;
+  }
+  .btn-unclicked-1{
+    background-color: #f7f0dd;
+  }
+  .btn-clicked-1{
+    background-color: #bccf60;
+  }
+
+
+    .patientFeedbackMainContainer .btn{
+        margin-bottom: 5px;
+    }
+
+    /* Hide the browser's default checkbox/radio */
+.rating-buttons-div input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* When the checkbox is checked, change background */
+.rating-buttons-div input:checked ~ .checkmark {
+    background-color: #bccf60 !important;
+}
+  @media only screen and (max-width: 767px) {
+    .patientFeedbackMainContainer  .patientFeedback-middle{
+        text-align: center;
+    }
+}
+  @media only screen and (max-width: 576px) {
+    .patientFeedbackMainContainer ol{
+        padding-left: 0;
+    }
+    .patientFeedbackMainContainer ul.p-a-g-e-buttons-container li .btn{
+        width: 80px;
+    }
+    .patientFeedbackMainContainer .btn-green-1{
+        width: 180px;
+    }
+    .get-in-touch-phone-email{
+        text-align: right !important;
+        font-size: 20px;
+
+    }
+    .rating-buttons-div{
+        text-align: center;
+    }
+    .container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+}
+  

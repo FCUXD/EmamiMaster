@@ -1,0 +1,55 @@
+.card{
+    padding: 2% 5% 2% 2%;
+    box-shadow: 0px 3px 8px #ccc;
+    border: none;
+}
+.CardProfileImg{
+    width: 130px;
+height: 130px;
+float: left;
+}  
+.ConsultationBtn{
+    padding: 3% 5%;
+    margin-top: 37px; 
+    border-radius: 12px;
+} 
+.InfoCardDiv{
+    margin-left: -15px;
+}  
+.btn-success {
+    color: #fff;
+    background-color: #32aa61;
+    border-color: #32aa61;
+}
+
+@media screen and (min-width: 1px) and (max-width: 1200px) { 
+    .InfoCardDiv{
+        margin-left: 0px;
+    }  
+  
+}
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+    .ConsultationBtn {
+       float: left !important;
+    }
+} 
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .CardProfileImg{
+        margin: 0 auto;       
+        float: none;
+    } 
+    .InfoCardDiv {
+        text-align: center;
+    
+    } 
+    .ResTextCenter{
+        text-align: center;
+    } 
+   
+}
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    .ConsultationBtn {
+        padding: 2% 3%;
+        font-size: 14px;
+    }
+}

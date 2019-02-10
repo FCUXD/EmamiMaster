@@ -1,0 +1,888 @@
+<app-navigation></app-navigation>
+<div class="container pt-5 mt-5"> 
+  <div class="clear20"></div> 
+  <div class="clear20"></div>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header CashBgColor" >
+          <a class="card-link" data-toggle="collapse"> 
+            <img  class="mr-2" *ngIf="ImgDiv" src="././assets/images/tick.png">
+            <div class="cart-order">
+              1. My Order 
+            </div>
+              <img (click)="openCity(0)" *ngIf="ImgDiv" class="float-right pr-2" src="././assets/images/Cart_Edit.png">
+          </a>
+        </div>
+        <div id="collapseOne"  class="collapse  {{accordance[0].show}}"  data-parent="#accordion">
+          <div class="card-body">
+             
+
+
+                  <div>
+                    <div class="appon_card product_card">
+                      <div class="row p-2 HeadingPaddingLeft" *ngIf="statusflag">
+                        <!-- <div class="col-md-6"> -->
+                            <div class="col-sm-6 col-6 col-md-6 col-lg-6">
+                          <p class="order-head order-res">Product Name</p>
+        
+                        </div>
+        
+                        <!-- <div class="col-md-4"> -->
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                          <p class="order-head2">Quantity</p>
+        
+                        </div>
+        
+                        <!-- <div class="col-md-2"> -->
+                            <div class="col-2 col-sm-2 col-md-2 col-lg-2">
+                          <p class="order-head2">Price</p>
+        
+                        </div>
+                        <!-- <div class="col-md-1"> -->
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1">
+                          <p class="order-head2"></p>
+        
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                      <div *ngFor="let data of cart;let i=index" class="row  pl-5 p-2 ShoppingCardBGRow mt-0">
+                        <div class="col-lg-6 col-sm-6 col-6 col-md-6">
+        
+                          <div class="row ">
+                            <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                              <img src="{{data.imageUrl}}" style="width:100%">
+                            </div>
+        
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                              <p class="ZanduSonaChandiText">{{data.productName}}</p>
+                            </div>
+        
+                          </div>
+                        </div>
+        
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+        
+                          <div class="order-margin-top2 text-center">
+                            <ng-container *ngIf="data.qty==0">
+                                <i class="fa"><img src="././assets/images/SpinnerMinus.png"></i>
+                            </ng-container>
+                            
+                            <!-- <i *ngIf="data.qty>0" class="fa" (click)="data.qty=data.qty-1; add(data.qty, data.productId)"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                           -->
+                            <i *ngIf="data.qty>0" class="fa" (click)="data.qty=data.qty-1; add(data.qty, data.productId)"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                            <input [(ngModel)]="data.qty" class="input-spinner">&nbsp;
+                            <i class="fa" (click)="data.qty=addQauntity(data.qty); add(data.qty, data.productId)"><img src="././assets/images/SpinnerPluse.png"></i>
+                          </div>
+                        </div>
+        
+                        <div class="col-2 col-sm-2 col-md-2 col-lg-2">
+        
+                          <div class="order-margin-top2">
+                            <strong><b class="rupeesText">&#X20B9; {{data.sellingPrice}} </b></strong>
+                            &nbsp; &nbsp; &nbsp; &nbsp;
+                            <strong><b class="rupeesText">   <i class="fa fa clear" (click)="deleteFieldValue(data.qty,data.productId,i)" title="Remove"><img src="././assets/images/closeIconOrange.png"></i> </b></strong>&nbsp;
+                 
+                          </div>
+                        </div>
+                        <!-- <div class="col-md-1">
+        
+                          
+                            <strong><b class="rupeesText">   <i class="fa fa clear" (click)="deleteFieldValue(data.qty,i)"><img src="././assets/images/closeIconOrange.png"></i> </b></strong>&nbsp;&nbsp;&nbsp;
+                        
+                        </div> -->
+
+                      </div>
+                      <div class="row m-0">
+                          <div  class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                            <div class="clear10"></div>
+                            <select *ngIf="dropFlag" (change)="product($event.target.value)" class="form-control add-prod-res">
+                                <option selected disabled>Add more Products</option>
+                                <option  *ngFor="let data of getProduct">{{data.name}}</option>
+                                
+                              </select>
+                            </div>
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                                <div class="clear10"></div>
+                                <span  *ngIf="productFlag">
+                                  <select (change)="productSelect($event.target.value)"  class="form-control float-right product">
+                                    <option selected  >Select Products</option>
+                                    <option  *ngFor="let item of products">{{item.name}}</option>
+                                  </select>
+                                </span>  
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6">
+                                <div *ngIf="productFlag1" class="order-margin-top2">
+                                    <ng-container *ngIf="qty==0">
+                                        <i class="fa"><img src="././assets/images/SpinnerMinus.png"></i>
+                                    </ng-container>
+                                  <!-- <i class="fa" (click)="qty=qty-1"><img *ngIf="qty>0" src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                                  <input [(ngModel)]="qty" class="input-spinner">&nbsp;
+                                  <i class="fa" (click)="qty=qty+1"><img src="././assets/images/SpinnerPluse.png"></i> -->
+                                  <i class="fa" (click)="qty=qty-1"><img *ngIf="qty>0" src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                                <input [(ngModel)]="qty" class="input-spinner">&nbsp;
+                                <i class="fa" (click)="qty=qty+1"><img src="././assets/images/SpinnerPluse.png"></i>
+                                </div>
+                            </div>
+                            <div  *ngIf="productFlag1"  class="col-6 col-md-6 text-center">
+                              <div class="clear20"></div>
+                                <button class="btn-size addButton btn-res-add" (click)="addProduct()">Add</button>
+                              </div>
+                          </div>
+                           
+                         
+                        </div>
+                        </div>
+                        <div class="clear20"></div>
+                        <div class="product_footer pl-5 pb-1 mb-3" *ngIf="statusflag">
+                          <p (click)="openDrop()" class="AddMoreProductText"> <img src="././assets/images/SpinnerPluse.png">
+                            
+                            &nbsp;&nbsp; Add more Products
+                          </p>
+                        </div>
+                        <div class="product_footer pl-5 pb-1 mb-3" *ngIf="!statusflag">
+                            <p (click)="openDrop()" class="AddMoreProductText"> <img src="././assets/images/SpinnerPluse.png">
+                              
+                              &nbsp;&nbsp; Add Products
+                            </p>
+                          </div>
+                      <!-- <div class="row">
+                        <div class="col-md-4 text-center">
+                            <div class="clear10"></div>
+                            <select class="form-control">
+                                <option selected disabled>Add more Products</option>
+                                <option>P1</option>
+                                <option>P2</option>
+                              </select>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="order-margin-top2">
+                                <i class="fa" (click)="data.qty=data.qty-1"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                                <input  class="input-spinner">&nbsp;
+                                <i class="fa" (click)="data.qty=data.qty+1"><img src="././assets/images/SpinnerPluse.png"></i>
+                              </div>
+                        </div>
+                        
+                      </div>
+                      <div class="product_footer pl-5 pb-1 mb-3">
+                        <p class="AddMoreProductText"> <img src="././assets/images/SpinnerPluse.png">
+                          &nbsp;&nbsp; Add more Products</p>
+                      </div> -->
+        
+                    </div>
+        
+        
+        
+        
+                    <div class="appon_card2 price_card">
+                      <div class="inner_Div rounded bg-white shadow-sm RightCardPadding">
+                        <p class="order-head">Price Detail</p>
+                        <div class="clear10"></div>
+                        <div class="row">
+                          <div class="col-md-8 col-6 mt-2">
+                            <p class="Subtotal">Subtotal</p>
+                          </div>
+                          <div class="col-md-4 col-6">
+                            <strong class="Subtotal"><b>&#X20B9; {{total1}} </b></strong>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-8 col-6 mt-0">
+                            <p class="Subtotal">Shipping Charges</p> 
+                          </div>
+                          <div class="col-md-4 col-6">
+                            <strong class="Subtotal"><b>&#X20B9; {{total_shipping_charges}} </b></strong>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-8 col-6 mt-0">
+                            <p class="Subtotal">Discount</p> 
+                          </div>
+                          <div class="col-md-4 col-6">
+                            <strong class="Subtotal"><b>&#X20B9; {{discount}} </b></strong>
+                          </div>
+                        </div>
+                       
+        
+                        <div class="row">
+                          <div class="col-md-7">
+                            <input type="text" #couponcode class="form-control searchbg2" placeholder="Apply Coupon Code">
+                          </div>
+                          <div class="col-md-5" class="btn-apply" >
+                            <button type="button" class="btn btn-success btn-size" [disabled]="(couponcode.value == '')">Apply</button>
+                          </div>
+                        </div>
+        
+                        <p class="freeDiliveryText" style="font-size:14px">Introductory Offer - FREE DELIVERY</p>
+        
+                        <div class="row">
+                          <div class="col-md-8 col-6 bg-whitesmoke">
+                            <p class="amount-payable-heading">Amount Payable</p>
+                          </div>
+        
+                          <div class="col-md-4 col-6 bg-linen">
+                            <p class="amount-payable"><strong>&#X20B9; {{total1}}</strong></p>
+                          </div>
+                        </div>
+                      </div>
+        <div >
+            <button [disabled]="(statusflag==false) " type="button" class="btn btn-success UpdateBtn proceedbtn mt-4" (click)="openCity(1)">Proceed</button>
+        </div>
+                     
+                    </div>
+        
+                  </div>
+        
+               
+        
+          
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header {{headerBG2}}" >
+          <a class="collapsed card-link" data-toggle="collapse"> 
+              <img  class="mr-2" *ngIf="ImgDiv2" src="././assets/images/tick.png">
+              <div class="cart-order">
+                2. Login or Sign Up
+              <p class="login-subtxt">Create new account if you are a new user?</p>
+              </div> 
+              <img (click)="openCity(1)"  *ngIf="ImgDiv2" class="float-right pr-2" src="././assets/images/Cart_Edit.png">
+        </a>
+        </div>
+        <div id="collapseTwo" class="collapse {{accordance[1].show}}"  data-parent="#accordion">
+          <div class="card-body">
+           
+              <div class="appon_card payment_card p-4 center">
+                  <div class="row">
+                    <div class="col-12 col-lg-6 borderright login-option">
+                      <p class="ChooseOption">Choose your Option</p>
+                      <p class="ChooseOption1">Register with us for fast checkout. to track the status of<br />
+                        your order and more. You can also checkout as a guest user. </p>
+                      <div class="form-check">
+                        <p class="form-check-label rad-size" for="radio1">
+                          <input type="radio" class="form-check-input {{btn[0]}} rad-btn" (click)="addBankingDetails(0)" id="radio1"
+                            name="optradio" value="option1" checked> Login
+                        </p>
+                      </div>
+      
+                      <div class="form-check">
+                        <p class="form-check-label rad-size" for="radio2">
+                          <input type="radio" class="form-check-input {{btn[1]}} rad-btn" name="optradio" id="radio2" (click)="addBankingDetails(1)"
+                            value="option2">Sign Up
+                        </p>
+                      </div>
+                      <div class="form-check">
+                        <p class="form-check-label rad-size" for="radio3">
+                          <input type="radio" class="form-check-input {{btn[2]}} rad-btn" name="optradio" id="radio3" (click)="addBankingDetails(2)"
+                            value="option3">Continue as a Guest
+                        </p>
+                      </div>
+      
+                    </div>
+                    <div class="col-12 col-lg-6">
+      
+                      <div *ngIf="btn[0]=='active'">
+                        <div class="card2 loginORsigninPad my-3">
+                          <form>
+      
+                            <div class="form-group">
+      
+                              <input type="text" class="form-control emailicon" #email placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+      
+                              <input type="password" class="form-control passwordicon" #pwd placeholder="Password">
+                            </div>
+                            <p class="forgetpass">Forgot password?</p>
+                            <button _ngcontent-c1="" (click)="login(email.value,pwd.value)" class="btn btn-success UpdateBtn proceedbtn mt-4" type="button">LogIn</button>
+                          </form>
+                          <div class="">
+                            <div class="col-md-12 mt-4"><a _ngcontent-c10="" class="ConnectWithText">
+                                <img class="LineImg mr-2" src="././assets/images/line.png"> <span>OR</span>
+                                <img class="LineImg ml-2" src="././assets/images/line.png"></a></div>
+                          </div>
+                          <div class="clear"></div>
+                          <div class="SocialIconContentBox mt-2">
+                            <div class="">
+                                <div class="SocialIcon"><img src="././assets/images/facebook-logo.png"></div>
+                                <div class="SocialIcon"><img src="././assets/images/google-plus.png"></div>
+                                <!-- <div class="SocialIcon"><img src="././assets/images/linkedin.png"></div> -->
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <div *ngIf="btn[1]=='active'">
+                        <div class="card2 loginORsigninPad  my-3">
+                          <form [formGroup]="patientRegister">
+                            <div class="form-group">
+      
+                              <input type="text" #user class="form-control Usernameicon" id="user" placeholder="Username"
+                              formControlName="firstName" (keypress)="restrictNumeric($event)">
+                              <div *ngIf="patientRegister.controls['firstName'].hasError('required') && patientRegister.controls['firstName']?.touched"
+                              class="redalert">
+                               Please Enter your Name
+                              </div>
+                            </div>
+                            <div class="form-group">
+      
+                              <input type="email" #patientEmail class="form-control"  formControlName="emailId" placeholder="Email">
+                            
+                            </div>
+
+                            
+                            <div class="form-group">
+      
+                              <input type="password" #patientPassword (keydown.space)="$event.preventDefault();" class="form-control passwordicon" id="pwd"
+                              formControlName="password"  placeholder="Password">
+                              <div *ngIf="patientRegister.controls['password'].hasError('required') && patientRegister.controls['password']?.touched"
+                              class="redalert">
+                              Please Enter your Password
+                            </div>
+                            <label *ngIf="capsOn">Caps Lock is On</label>
+                            </div>
+
+                            <div class="form-group">
+      
+                              <input #phone type="text" class="form-control emailicon"
+                              formControlName="mobileNumber" placeholder="Phone Number" minlength=10 maxlength=10>
+                              <div *ngIf="patientRegister.controls['mobileNumber'].hasError('required') && patientRegister.controls['mobileNumber']?.touched"
+                                class="redalert">
+                             Please Enter your Phone Number
+                            </div>
+                            </div>
+      
+                            <button type="submit" [disabled]="!patientRegister.valid"  (click)="Register(patientRegister.value,user.value)" class="btn btn-success UpdateBtn proceedbtn mt-4">PROCEED</button>
+                          </form>
+                          <div class="row">
+                            <div class="col-md-12 mt-4"><a _ngcontent-c10="" class="ConnectWithText">
+                                <img class="LineImg mr-2" src="././assets/images/line.png"> OR <span> </span>
+                                <img class="LineImg ml-2" src="././assets/images/line.png"></a></div>
+                          </div>
+                          <div class="clear"></div>
+                          <div class="SocialIconContentBox mt-2">
+                            <div class="SocialIcon"><img src="././assets/images/facebook-logo.png"></div>
+                            <div class="SocialIcon"><img src="././assets/images/google-plus.png"></div>
+                            <!-- <div class="SocialIcon"><img src="././assets/images/linkedin.png"></div> -->
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <div *ngIf="btn[2]=='active'">
+                        <div class="card2 loginORsigninPad my-3">
+                          <form [formGroup]="guestRegister">
+                            <div class="form-group">
+      
+                              <input type="email" class="form-control emailicon" #email placeholder="Phone Number"
+                              formControlName="mobileNumber" minlength=10 maxlength=10>
+                              <div *ngIf="guestRegister.controls['mobileNumber'].hasError('required') && guestRegister.controls['mobileNumber']?.touched" class="redalert">
+                              Please Enter your Phone Number
+                              </div>
+                            </div>
+                            <div class="form-group">
+      
+                              <input type="password" class="form-control passwordicon" #phn placeholder="Password" formControlName="password">
+                              <div *ngIf="guestRegister.controls['password'].hasError('required') && guestRegister.controls['password']?.touched" class="redalert">
+                                Please Enter your Password
+                             </div>
+                            </div>
+      
+                          <div class="form-group">
+                          <div id="chk" class="termsAndConditionsDiv">
+                            <label class="chkbx-container">
+                              <span class="sub-tandc-title">I agree to the </span>
+                              <span class="termspointer colored" data-toggle="modal">terms and conditions</span>
+                              <input [(ngModel)]="isChecked" formControlName="chkbox" class="form-control ng-untouched ng-pristine ng-valid" name="termsandcondition" type="checkbox" value="">
+                              <div *ngIf="guestRegister.controls['chkbox'].hasError('required') && guestRegister.controls['chkbox']?.touched" class="redalert">
+                                Please accept terms and conditions
+                             </div>
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                          </div>
+
+
+                          <!-- <button [disabled]="(isChecked==false && email.value == '' &&  phn.value=='') || (isChecked==false && email.value != '' &&  phn.value=='') || (isChecked==false && email.value == '' &&  phn.value!='') || (isChecked==true && email.value == '' &&  phn.value=='')" (click)="guest(email.value, phn.value); " class="btn btn-success UpdateBtn proceedbtn mt-4" type="button">continue
+                            as guest</button> -->
+                            <button [disabled]="!guestRegister.valid" (click)="guest(email.value, phn.value); " class="btn btn-success UpdateBtn proceedbtn mt-4" type="button">continue
+                              as guest</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+      
+      
+      
+                  </div>
+      
+      
+                </div>
+          
+          
+          </div>
+        </div>
+      </div>
+      <div class="">
+      <div class="card">
+        <div class="card-header {{headerBG3}}">
+          <a class="collapsed card-link" data-toggle="collapse"> 
+              <img  *ngIf="ImgDiv3"  class="mr-2" src="././assets/images/tick.png">
+              <div class="cart-order">
+                3. Delivery Address
+                <p class="login-subtxt">Tell us your delivery address?</p>
+              </div>
+              
+              <img (click)="openCity(2)" *ngIf="ImgDiv3" class="float-right pr-2" src="././assets/images/Cart_Edit.png">
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse {{accordance[2].show}}"  data-parent="#accordion">
+          <div class="card-body">
+
+              <form class="form-horizontal" [formGroup]="checkbox">
+              <div class=" address_card" data-toggle="modal" >
+                
+              <div class="appon_card payment_card delivery-res p-4 center">
+                  <div class="rowDiliveryDiv">
+                      <div *ngFor="let data of addressBeanList" class="col-12 col-sm-12 col-md-12 col-lg-4 mb-2 mt-2">
+                        <div class="add-clr-web">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 addressbg">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <input type="radio" formControlName='chkradio'  (change)="selectAddress(data.addressId)" class="md-1 form-check-input deliverychekbox  rad-btn"
+                                  id="radio4" name="deliveryAddress" value="deliveryAddress">
+                              </div>
+  
+                              <div class="col-md-6 text-right">
+                                <!-- <a class="os-remove-edit" (click)="helloModalpop(data.addressId)" data-toggle="modal"
+                                data-target="#removeAddrConfirmationModal">Remove</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a class="os-remove-edit editAddressPopup" (click)="popup4(data.addressId,data.name,data.addressLine1,data.addressLine2,data.state,data.city,data.location,data.pincode)"
+                                  data-toggle="modal" data-target="#editAddrConfirmationModal">Edit</a> -->
+                                 
+                              </div>
+                              <!-- The Modal -->
+                              <div class="custom_modal fade  {{custom11}}" id="removeAddrConfirmationModal">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Are you sure you want to remove this address?</h4>
+                                      <button type="button" class="close" (click)="close3()">&times;</button>
+                                    </div>
+  
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                      <div class="col-md-12  text-center">
+                                        <button type="button" class="Addaddressbtn" (click)="removeAddress()">Yes</button>&nbsp;&nbsp;&nbsp;
+                                        <button type="button" class="popclose" data-dismiss="modal" (click)="close3()">No</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+  
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+                              <div class="add-address-txt">
+                                <div class="os-text3">{{data.name}}</div>
+                                <div class="os-text3">ADDRESS</div>
+                                <div class="os-text3">{{data.addressLine1}}, {{data.addressLine2}},
+                                  {{data.location}},{{data.city}} </div>
+                                <div class="os-text3">{{data.state}} ({{data.pincode}})</div>
+                                <div class="os-text4">PHONE NUMBER</div>
+                                <div *ngIf="data.mobile!=null" class="os-text3">{{data.mobile}}</div>
+                                <div *ngIf="data.mobile==null" class="os-text3">--</div>
+                              </div>
+                              <div class="clear10"></div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+
+                        <div class="appon_card payment_card col-md-4 p-4 center">
+                          <div class="delivery-res">
+                            <div class="tex-ali pt-5">
+                                <img (click)="addressOpenmodal();" src="././assets/images/AdressAdd.png">
+                                <div class="clear20"></div>
+                                <p>Add new address</p>
+                              </div>
+                            </div>
+                        </div>
+                   
+                    <!-- <div  class="col-12 DilivrySection1 addnewaddDiv">
+                      <div *ngFor="let data of addressBeanList" class="appon_card address_card p-4">
+                        <p>{{data.name}}</p>
+                        <p>Address : {{data.addressLine1}},{{data.addressLine2}}, {{data.city}}, {{data.state}} - {{data.pincode}}</p>
+                        <p>{{data.mobile}}</p>
+                      </div>
+                      <div class=" address_card" data-toggle="modal" (click)="openmodal();">
+                        <div class="tex-ali pt-5">
+                          <img src="..././assets/images/AdressAdd.png">
+                          <div class="clear20"></div>
+                          <p>Add new address</p>
+                        </div>
+      
+                      </div>
+                    </div> -->
+                  </div> 
+                  <div class="clear"></div>
+                  <div class="row">
+               
+                  <div class="DiliveryBtn text-center">
+                      <div class="clear"></div> 
+                      <div class="clear50"></div>
+                    <button (click)="openCity(3)" [disabled]="!checkbox.valid" class="btn btn-success UpdateBtn proceedbtn mt-4" type="button">Proceed</button>
+                  </div>
+                  </div>
+                </div>
+               
+        
+          </div>
+</form>
+          
+        </div>
+      </div> 
+
+      <div class="card">
+          <div class="card-header {{headerBG4}}">
+            <a class="collapsed card-link" data-toggle="collapse"> 
+                <img class="mr-2" *ngIf="ImgDiv4" src="././assets/images/tick.png">
+                <div class="cart-order">
+                4. Payment Option 
+                <p class="login-subtxt">How would you like to pay?</p>
+              </div>
+                <img (click)="openCity(3)" *ngIf="ImgDiv4" class="float-right pr-2" src="././assets/images/Cart_Edit.png">
+            </a>
+          </div>
+          <div id="collapseFour" class="collapse {{accordance[3].show}}" data-parent="#accordion">
+            <div class="card-body">
+                <div class="appon_card address_card CashPading" data-toggle="modal">
+                    <div class="row m-0 CashRow">
+                      <!--  *ngIf="ORDER_TYPE==1" -->
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-3 {{borderbg1}}" data-toggle="modal"
+                          data-target="#codModal">
+                      
+                       <div class="col-12 col-sm-12 col-md-12 col-lg-12 CashText text-center borderbg mrgnb15 cash-clr" (click)="cod()">
+                        
+                          <div class="clear10"></div>
+                          <img src="././assets/images/cod.png">
+                          <div class="clear10"></div>
+                          <p>Cash on Delivery</p>
+                        
+                      </div>
+                      </div>
+                      <!-- *ngIf="ORDER_TYPE==2"  -->
+                      
+
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-3 {{borderbg2}}" (click)="payment();popup5()" data-toggle="modal"
+                          data-target="#onlinePaymentModal">
+                         
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 CashText text-center borderbg mrgnb15">
+                        <div class="clear10"></div>
+                        <img src="././assets/images/onlinepayment.png">
+                        <div class="clear10"></div>
+                        <p>Online Payment</p>
+                      </div>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+                    
+                    <div class="clear"></div>
+                  </div>
+                  <div class="clear20"></div>
+                  <div class="DiliveryBtn">
+                      <button  class="btn btn-success UpdateBtn proceedbtn mt-4" type="button">Proceed</button>
+                    </div>
+          
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="custom_modal fade  {{modal}}" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add New Address</h4>
+        <button type="button" class="close" (click)="closemodal()">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+          <!-- <form >
+            <input type="text" #firstsName class="form-control" 
+              placeholder="First Name*">
+            <div class="clear10"></div>
+            <input  #lastName type="text" class="form-control" 
+              placeholder="Last Name*">
+            <div class="clear10"></div>
+            <input type="text"  #addLine1 class="form-control" 
+              placeholder="Address Line1*">
+            <div class="clear10"></div>
+            <input type="text"  #addLine2 class="form-control" 
+              placeholder="Address Line2">
+            <div class="clear10"></div>
+            <select  (change)="onChangeState($event.target.value)" 
+              class="select-style">
+              <option [selected]="state.storingValue" *ngFor="let state of editAddStateList"
+                [value]="state.storingValue">
+                {{state.storingValue}}
+              </option>
+            </select>
+            <div class="clear10"></div>
+            <select (change)="onChangeCity($event.target.value)"  class="select-style">
+              <option [selected]="city.storingValue" *ngFor="let city of editAddCityList" [value]="city.storingValue">
+                {{city.storingValue}}
+              </option>
+            </select>
+            <div class="clear10"></div>
+            <select  class="select-style">
+              <option [selected]="locality.storingValue" *ngFor="let locality of editAddLocationList"
+                [value]="locality.storingValue">
+                {{locality.storingValue}}
+              </option>
+            </select>
+            <div class="clear10"></div>
+            <input type="text"  class="form-control" id="usr" placeholder="Zip Code*">
+          </form> -->
+          <form [formGroup]="addAddressForm">
+            <input type="text" formControlName="firstNameAdd" class="form-control"
+            placeholder="Name*">
+            <div class="clear10"></div>
+            <input type="text" formControlName="lastNameAdd" class="form-control" 
+            placeholder="Last Name*">
+            <div class="clear10"></div>
+            <input type="text" formControlName="addressLine1Add" class="form-control" 
+            placeholder="Address Line1*">
+            <div class="clear10"></div>
+            <input type="text" formControlName="addressLine2Add" class="form-control" 
+            placeholder="Address Line2">
+            <div class="clear10"></div>
+            <select (change)="onChangeState($event.target.value)" formControlName="stateAdd"
+            class="select-style">
+            <option [selected]="state.storingValue" *ngFor="let state of editAddStateList"
+            [value]="state.storingValue">
+            {{state.storingValue}}
+            </option>
+            </select>
+            <div class="clear10"></div>
+            <select (change)="onChangeCity($event.target.value)" formControlName="cityAdd" class="select-style">
+            <option [selected]="city.storingValue" *ngFor="let city of editAddCityList" [value]="city.storingValue">
+            {{city.storingValue}}
+            </option>
+            </select>
+            <div class="clear10"></div>
+            <input type="text" formControlName="localityAdd" class="form-control"  placeholder="Locality">
+           
+            <!-- <select formControlName="localityAdd" class="select-style">
+            <option [selected]="locality.storingValue" *ngFor="let locality of editAddLocationList"
+            [value]="locality.storingValue">
+            {{locality.storingValue}}
+            </option>
+            </select> -->
+            <div class="clear10"></div>
+            <input type="text" formControlName="zipAdd" class="form-control" id="usr" placeholder="Zip Code*">
+            </form>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <div class="col-md-12  text-center">
+          <button type="button" class="Addaddressbtn" (click)="addNewAddress(addAddressForm.value)">Add
+            Address</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" class="popclose" data-dismiss="modal" (click)="closemodal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form #submitBill action="{{billbeskPaymentGatewayUrl}}" method="POST">
+
+
+    <input type="hidden" name="msg"  [(ngModel)]='paymentRequestProcessParameter' ngModel>
+    <input type="hidden" name="txtCustomerID"  [(ngModel)]='customerID' ngModel>
+    <input type="hidden" name="txtTxnAmount"  [(ngModel)]='TxnAmount' ngModel>
+    <input type="hidden" name="txtAdditionalInfo1"  [(ngModel)]='txtadditional1' ngModel>
+    <input type="hidden" name="txtAdditionalInfo2"  [(ngModel)]='txtadditional2' ngModel>
+    <input type="hidden" name="txtAdditionalInfo3"  [(ngModel)]='txtadditional3' ngModel>
+    <input type="hidden" name="txtAdditionalInfo4"  [(ngModel)]='txtadditional4' ngModel>
+    <input type="hidden" name="txtAdditionalInfo5"  [(ngModel)]='txtadditional5' ngModel >
+    <input type="hidden" name="txtAdditionalInfo6"  [(ngModel)]='txtadditional6' ngModel>
+    <input type="hidden" name="txtAdditionalInfo7"  [(ngModel)]='txtadditional7' ngModel>
+    <input type="hidden" name="ru"  [(ngModel)]='ru' ngModel>
+
+ </form>
+
+
+
+ 
+    <div class="custom_modal fade {{custom4}} addAddressModal" id="editAddrConfirmationModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Address</h4>
+            <button type="button" class="close" (click)="close4()">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="col-12 col-sm-12 col-lg-12 col-md-12" >
+              <form [formGroup]="editAddressForm" >
+                <input type="text" value="{{editFormName}}" #fName1 formControlName="firstNameEdit" class="form-control"
+                   placeholder="First Name*">
+                <div class="clear10"></div>
+                <!-- <input type="text" value="{{editFormName}}" #lName1 formControlName="lastNameEdit" class="form-control"
+                   placeholder="Last Name*"> -->
+                <div class="clear10"></div>
+                <input type="text" value="{{editAddressLine1}}" #aLine1 formControlName="addressLine1Edit"
+                  class="form-control"  placeholder="Address Line1*">
+                <div class="clear10"></div>
+                <input type="text" value="{{editAddressLine2}}" #aLine2 formControlName="addressLine2Edit"
+                  class="form-control"  placeholder="Address Line2">
+                <div class="clear10"></div>
+                <select (change)="onChangeState($event.target.value)" #state1 formControlName="stateEdit"
+                  class="form-control select-style">
+                  <option [selected]="true" *ngFor="let state of editAddStateList"  [value]="state.storingValue">
+                    {{state.storingValue}} 
+                  </option>
+
+                </select>
+                <div class="clear10"></div>
+                <select (change)="onChangeCity($event.target.value)" #city1 formControlName="cityEdit" class="form-control select-style">
+
+                  <option [selected]="true" *ngFor="let city of editAddCityList"  [value]="city.storingValue">
+                    {{city.storingValue}}
+                  </option>
+                </select>
+                <div class="clear10"></div>
+                <!-- <input type="text" value="" formControlName="localityEdit" #locality1 class="form-control"
+                   placeholder="Zip Code*"> -->
+                <!-- <select formControlName="localityEdit" class="select-style">
+
+                  <option [selected]="true" *ngFor="let locality of editAddLocationList" [value]="locality.storingValue">
+                    {{locality.storingValue}}
+                  </option>
+                </select> -->
+                <div class="clear10"></div>
+                <input type="text" value="{{editZip}}" formControlName="zipEdit" #zipC1 class="form-control"
+                   placeholder="Zip Code*">
+              </form>
+
+            </div>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <div class="col-md-12  text-center">
+              <button type="button" class="Addaddressbtn" (click)="editAddress(editAddressForm.value,fName1.value,lName1.value,aLine1.value,aLine2.value,state1.value,city1.value,locality1.value,zipC1.value)">Edit
+                Address</button>&nbsp;&nbsp;&nbsp;
+              <button type="button" class="popclose" data-dismiss="modal" (click)="close4()">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+   <!-- COD Modal -->
+<div class="modal fade {{custom6}}" id="codModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Are you sure you want to continue with Cash On Delivery?</h4>
+        <button type="button" class="close" (click)="close6()">&times;</button>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <div class="col-md-12  text-center">
+          <button type="button" class="Addaddressbtn" (click)="cod()">Yes</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" class="popclose" data-dismiss="modal" (click)="close6()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Online Payment Modal -->
+<div class="custom_modal fade  {{custom5}}" id="onlinePaymentModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Are you sure you want to continue with Online Payment?</h4>
+        <!-- <button type="button" class="close" (click)="close5()">&times;</button> -->
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <div class="col-md-12  text-center">
+          <button type="button" class="Addaddressbtn" (click)="onlinePayment()">Yes</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" class="popclose" data-dismiss="modal" (click)="close5()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- <div class="{{modal}} custom_modal">
+      <div class="modal-dialog">
+      <div class="modal-content">
+      
+      
+      <div class="modal-header">
+      <h4 class="modal-title">Terms and conditions</h4>
+      <button type="button" class="close" data-dismiss="modal" (click)="closemodal()">&times;</button>
+      </div>
+  
+      <div class="container scroll">
+          <p>(a) Emami is the owner/ proprietor of the Website.  </p>
+          <p>(b) The information on the Website (including but not limited to video consult, live chat, e-mails, phone support) is provided for general informational purposes only and should not be relied upon as a substitute for sound professional medical advice, evaluation or care from your physician or other qualified healthcare provider. Nothing on the Website should be used for treating or diagnosing a medical or health condition or for replacing any relationship with your physician or other qualified healthcare provider. The health information furnished on the Website and the interactive responses (if any) furnished by or through the Website are not intended to or implied to be professional medical advice. User shall consult other sources and confirm the information contained within the Website. Further, User shall never disregard medical advice or delay in seeking it because of the information available on the Website (including but not limited to video consult, live chat, e-mails, phone support).   </p>
+          <p>(c) No medications, diet supplements or treatments as may be described on the Website shall be taken or begun without first consulting a physician or other healthcare provider. </p>  
+          <p>(d) Information or advice provided on the Website by professionals should be used merely as a guide rather than a definitive recommendation to adopt any specific action or treatment. Nothing transmitted to or from the Website constitutes the establishment of a doctor-patient relationship between You and any professional providing information or advice through the Website.  </p>  
+          <p>(e) Website is not intended to be used to:  </p>  
+          <p>(i) treat or give diagnosis of a medical emergency or medical condition; or  </p>  
+          <p>(ii) advise or resolve medical issues which are outside the scope of what has been specifically agreed.  </p>  
+          <p>(f) User absolves professionals, engaged and / or contracted by Emami who offer services through the Website, from any responsibility or liability whatsoever, for any medical, legal or financial events or outcomes related to services attained using online video consultation or any form of communication. </p>  
+          <p>(g) Emami does not regularly review the posts on the Website and the views expressed therein are those of the posters and do not necessarily reflect those of Emami, its officers, managers, directors, employees, agents, partners, advertisers, consultants or affiliates. Emami assumes no responsibility for the posts or the information contained therein, nor does it make any claims, promises or guarantees about the accuracy, suitability or completeness of any of the information on the said posts.  </p>  
+          <p>(h) Emami is solely entitled to the trade marks, names, logos and service marks, copyrights and all other intellectual property rights including but not limited to the software, application, graphics, text and other materials used therein (collectively, the “Content”). Nothing contained on the Website should be construed as granting any license or right to use Content without the prior written permission of Emami. Any other material displayed on the Website that is capable of being protected as intellectual property shall be the property of Emami and nothing contained on the Website should be construed as granting any license or right to use any such material without the prior written permission of Emami. </p>  
+          <p>(i) Emami makes no claim that the Content is appropriate or may be downloaded in a particular jurisdiction. The access to Website and Content may not be legal by certain persons or in certain states or countries. If You access the Website from outside India, You do so at your own risk and are responsible for compliance with the laws of your jurisdiction. </p>  
+          <p>(j) The Content is for informational purposes only. The Content is not intended to be a substitute for face-to-face professional advice, diagnosis, or treatment.  </p>  
+          <p>(k) The information on the Website may become outdated and efforts will be made to correct the errors and keep the Content updated. The information and materials on the Website are provided on an “as is” basis. </p>  
+          <p>(l) User shall provide full and complete information pertaining to the ailment (including but not limited to the User’s medical history).  </p>  
+          <p>(m) No warranty or representation of any kind, express or implied, is given by or on behalf of Emami that the responses to the queries, shall be appropriate, secure, reliable and free from error. </p>  
+          <p>(n) Emami shall not be liable for any negligence (including gross negligence), loss, injury or damage (including without limitation direct, indirect, consequential, special, 
+              exemplary or punitive loss) suffered by You on account of the use/performance of the information, response, advice furnished to You, any action or lack of action by User and/ or medicines prescribed/ sold to the User.
+               </p>  
+          <p>(o) User agrees to defend, indemnify, compensate and hold Emami, its officers, directors, employees, agents, licensors, and suppliers, harmless from and against all claims, actions or demands, liabilities and settlements including without limitation, reasonable legal and accounting fees, resulting from, or alleged to result from, User’s violation of these terms and conditions or any claims based upon the User’s posts/submissions on the Website.  </p>  
+          <p>(p) Emami shall not be liable to indemnify the User under any event. </p>  
+          <p>(q) For damages (including without limitation liability arising out of tort, strict liability, negligence, contract or patent or copyright infringement), if any, the liability of Emami shall not exceed the lesser of: (i) the fees paid, if any, to Emami for the information or service provided on this Website; or (ii) INR 200 (Indian Rupees Two Hundred).  </p>  
+          <p>(r) These terms and conditions and the privacy policy constitute the entire understanding and agreement between the User and Emami. There are no understandings, representations or warranties (whether written or oral) except as expressly referred to herein.  </p>  
+          <p>(s) If any dispute, difference, claim or question, shall at any time, arises between Emami and You, in relation to the use of the Website (in any manner whatsoever) such dispute, difference, claim or question shall be referred to arbitration. Emami and You shall mutually appoint a sole arbitrator. Such arbitration shall be held in accordance with the provisions of the Arbitration and Conciliation Act, 1996. The venue and seat of arbitration shall be [Kolkata, West Bengal] and the proceedings shall be in the English language.  </p>  
+          <p>(t) User warrants that he/ she has completed eighteen (18) years of age as on date of this agreement and has fully read and understood these terms and conditions without any impairment in judgment resulting, inter-alia, from mental illness, mental handicap, intoxication, medication, or any other health problem.  </p>  
+    
+        </div>
+    
+      
+  
+  </div>
+  </div>  
+  </div>  -->

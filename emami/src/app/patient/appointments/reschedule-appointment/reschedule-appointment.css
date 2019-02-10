@@ -1,0 +1,374 @@
+:host >>> .popover {
+    color: #000;
+    max-width: 692px;
+    top: 278px !important;
+ left: 0% !important;
+  data-trigger:focus;
+  } 
+  :host >>> .popover .arrow {
+   position: absolute;
+   display: block;
+   width: 1rem;
+   height: 0.5rem;
+   margin: 0 0.3rem;
+   left: 101px;
+ }
+   h3 {
+    margin: 0 0 10px;
+  }
+  .line1InCenter{
+    margin: 0 auto; 
+    width: 47% !important;
+  
+  }  
+  :host >>> .bs-popover-right .arrow, .bs-popover-auto[x-placement^="right"] .arrow { 
+   position: absolute;
+   left: calc((0.5rem + 1px) * -1) !important;
+   display: block;
+   
+   width: 1rem;
+   
+   height: 0.5rem;
+   
+   margin: 0 0.3rem;
+   
+   left: 101px;
+  } 
+  :host >>> .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"][_ngcontent-c5] .arrow[_ngcontent-c5]::before {
+ 
+   background: url("/src/assets/images/popoverArrow.png") no-repeat;
+   border: none;
+   top: 1px;
+   right: -273px;
+ 
+ } 
+ 
+ :host >>> .bs-popover-bottom .arrow::after, .bs-popover-auto[x-placement^="bottom"] .arrow::after {
+ 
+   top: 1px;
+   border-bottom-color: #fff;
+ 
+ }  
+ 
+  .main_div{
+    float: left;
+    width: 616px;
+    padding: 4%;
+    background-color: #ffffff; 
+    border-radius: 10px;
+  }
+  pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+  }
+  th , td {
+      padding: 5px;
+  }
+  .current-day{text-align:center;padding:5px 10px;cursor: pointer;}
+  .currentDate{
+    font-weight: normal;
+    color: #333333;
+    background-color: #d6ad66;
+    border-radius: 5px;
+   padding: 3px 5px;
+  }
+   .popover .sendbtn123 {
+    margin-top: 20px;
+    background-color:#d6ad66 !important;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 62px;
+    width: 192px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .snd-style{
+    background-color:#d6ad66!important;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 62px;
+    width: 192px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .calendar-date {
+      text-align: center;
+      margin: 0;
+    } 
+    .RESCHEDULEBtn{
+      border: 1px solid #33a15c;
+      font-size: 11px;
+     color: #33a15c; 
+     background-color: rgba(0, 0, 0, 0.05);
+    }
+    .currentDatecal {
+      
+      font-weight: bold;
+      background-color: orange;
+      color: white;
+      border-radius: 20px;
+    width: 30px;
+    height: 30px;
+    
+      margin: 0 auto;
+    }
+    [col-1] {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 8.33333%;
+      -ms-flex: 0 0 8.33333%;
+      flex: 0 0 14.285714285714286%;
+      width: 14.285714285714286%;
+      max-width: 14.285714285714286%;
+      color: dimgray;
+      
+      line-height: 30px;
+    }
+    .next-month{
+      color: #999999;
+      text-align: center;
+      background-color: white;
+      padding:5px 10px;
+      cursor:pointer;
+    }
+   
+     .last-month {
+      color: #999999;
+      text-align: center;
+      background-color: white;
+      padding:5px 10px;
+      cursor:pointer;
+    }
+   
+    .grid-container {
+   
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto auto;
+     
+      width: 100%;
+      
+    }
+    .btn-green-1{
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      border-radius: 3px;
+      color: #402909;
+      border: solid 1px #84b367;
+      background-color: #bccf60;
+      font-family: 'TrajanPro-Bold';
+      box-shadow: 0 0 0 2px #bccf60;
+      padding: 3px 56px; 
+      border-radius: 10px;
+      }
+    body{
+      background:transparent;
+    }
+    .bgcolor{
+     border-radius: 5px 5px 0px 0px;
+      padding:6px 8px 10px 8px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      background-color: #d6ad66;
+    }
+    .bgitem{
+      grid-row: 1;
+      color: #402909;
+      cursor: pointer; 
+      font-family: 'PlayfairDisplay-Bold';
+    }
+    .gridhead{
+      width:100%;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto auto;
+      height: 28px;
+      padding: 5px 0px;
+    }
+    .grid-item2{
+      padding: 5px;
+      font-size: 30px;
+      text-align: center;
+    
+    } 
+    textarea {
+ 
+     overflow: auto;
+     resize: vertical;
+     border: 1px solid #d6ad66;
+     border-radius: 5px;
+     min-width: 100% !important;
+ 
+ }
+    .item {
+      grid-row: 1 ;
+      padding: 5px;
+      font-size: 14px;
+      text-align: center;
+      cursor:pointer;
+    
+    }
+    .grid-item {
+      text-align: center;
+    
+    }
+    .calendar-header {
+      width: 320px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .right{
+      float: right;
+      height: 20px; 
+      width: 20px;
+      padding-right: 10px;
+    }
+  
+    .last-month:nth-child(8n+0) {
+        background: #000000 !important;
+    }
+    * {
+      box-sizing:content-box;
+  }
+  *[_ngcontent-c0] {
+    box-sizing: border-box;
+  }
+  .rowclass{
+   width: 227px;
+   margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'TrajanPro-Bold';
+  } 
+  .close{
+   margin-right:5px;
+  }
+  .rowcol{
+   width: 36px;
+  } 
+  .DotColon{
+   margin-top: 20px;
+  } 
+  .ReshouldLabel{
+   font-family: 'TrajanPro-Bold'; 
+   font-size: 16px;
+  }
+  .rowcolmargin{
+   margin-left: 54px;
+  }
+  
+  .uline{
+    padding-top: 2px;
+    font-size: 10px; 
+   
+  }
+  .divtime{
+   font-size: 16px;
+    text-transform: uppercase;
+    font-family: 'TrajanPro-Bold';
+  }
+  
+  .rowfirst {
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 1000
+    px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .line1{
+  height: 1px;
+  background-color: gray; 
+  width: 34%; 
+  margin: 0 auto;
+  }
+  .ArrowUpDown{
+    margin-left: 2px;
+  }
+  .foot{
+    padding: 20px;
+  } 
+  
+  .col-md-3{
+    text-align: center
+  }
+  hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  }
+  
+  .calender {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top; 
+    float: left; 
+    box-shadow: 0px 0px 15px #eee;
+    border: none;
+    border-radius: 10px;
+  }
+  .timepick {
+    width: 44%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    float: left;
+  }
+  .popover .sendbtn123{
+    background-color: #402909!important;
+  }
+  .btn-trasnp-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    background: transparent;
+    border-radius: 5px;
+    border: solid 1px #cfa15a;
+    font-family: 'TrajanPro-Bold';
+    width: 145px !important;
+    margin: 5px;
+    padding: 5px 0px;
+    width: 88%;
+    height: 22px;
+
+    }
+    
+    .modal.fade.show {
+      display: block;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1050;
+      background: rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      outline: 0;
+    }
+    
+    .modal.fade.show {
+      display: block;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1050;
+      background: rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      outline: 0;
+
+    }

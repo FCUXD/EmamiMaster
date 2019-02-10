@@ -1,0 +1,199 @@
+<div class="text-center my-4">
+
+    <div class="row mx-auto my-auto">
+    <div id="recipeCarousel" class="carousel slide w-100 mt-3" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+    
+    <div class="carousel-item active">
+    
+    <div class="row" *ngIf="isDesktop">
+    
+    <div class="col-md-4 col-12">     
+    <div class="card custom_card">
+      <img  src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">{{carouselarr2[cImageIndex].cardTitle}}</h4>
+        <p class="card-text">{{carouselarr2[cImageIndex].cardText}}</p>
+        <span>{{carouselarr2[cImageIndex].offer}}</span>
+        <div class="mt-2 mb-4">
+            <div class="product_info float-left">
+               <h4><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h4>
+               </div>
+            <div class="product_img float-right">
+            <div class="order-margin-top2">
+              <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+            <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+            <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+            </div>
+            </div>
+            </div>
+            <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4 col-12">     
+    <div class="card custom_card">
+      <img src="././assets/images/{{carouselarr2[cImageIndex+1].imageURL}}" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">{{carouselarr2[cImageIndex+1].cardTitle}}</h4>
+        <p class="card-text">{{carouselarr2[cImageIndex+1].cardText}}</p>
+        <span>{{carouselarr2[cImageIndex].offer}}</span>
+        <div class="mt-2 mb-4">
+            <div class="product_info float-left">
+               <h4><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h4>
+               </div>
+            <div class="product_img float-right">
+            <div class="order-margin-top2">
+              <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+            <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+            <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+            </div>
+            </div>
+            </div>
+            <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+      </div>
+    </div>
+    </div>
+    
+    <div class="col-md-4 col-12">       
+    <div class="card custom_card">
+      <img src="././assets/images/{{carouselarr2[cImageIndex+3].imageURL}}" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">{{carouselarr2[cImageIndex+3].cardTitle}}</h4>
+        <p class="card-text">{{carouselarr2[cImageIndex+3].cardText}}</p>
+        <span>{{carouselarr2[cImageIndex].offer}}</span>
+        <div class="mt-2 mb-4">
+            <div class="product_info float-left">
+               <h4><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h4>
+               </div>
+            <div class="product_img float-right">
+            <div class="order-margin-top2">
+              <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+            <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+            <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+            </div>
+            </div>
+            </div>
+            <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+      </div>
+    </div>
+    </div>
+
+    <!-- <div class="col-md-4 col-12 mt-4">     
+        <div class="card custom_card">
+          <img  src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">{{carouselarr2[cImageIndex].cardTitle}}</h4>
+            <p class="card-text">{{carouselarr2[cImageIndex].cardText}}</p>
+            <span>{{carouselarr2[cImageIndex].offer}}</span>
+            <div class="mt-2 mb-4">
+                <div class="product_info float-left">
+                   <h4><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h4>
+                   </div>
+                <div class="product_img float-right">
+                <div class="order-margin-top2">
+                  <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+                <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+                <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+                </div>
+                </div>
+                </div>
+                <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-4 col-12 mt-4">     
+        <div class="card custom_card">
+          <img src="././assets/images/{{carouselarr2[cImageIndex+1].imageURL}}" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">{{carouselarr2[cImageIndex+1].cardTitle}}</h4>
+            <p class="card-text">{{carouselarr2[cImageIndex+1].cardText}}</p>
+            <span>{{carouselarr2[cImageIndex].offer}}</span>
+            <div class="mt-2 mb-4">
+                <div class="product_info float-left">
+                   <h4><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h4>
+                   </div>
+                <div class="product_img float-right">
+                <div class="order-margin-top2">
+                  <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+                <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+                <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+                </div>
+                </div>
+                </div>
+                <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+          </div>
+        </div>
+        </div>
+        
+        <div class="col-md-4 col-12 mt-4">      
+        <div class="card custom_card">
+          <img src="././assets/images/{{carouselarr2[cImageIndex+3].imageURL}}" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">{{carouselarr2[cImageIndex+3].cardTitle}}</h4>
+            <p class="card-text">{{carouselarr2[cImageIndex+3].cardText}}</p>
+            <span>{{carouselarr2[cImageIndex].offer}}</span>
+            <div class="mt-2 mb-4">
+                <div class="product_info float-left">
+                   <h4><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h4>
+                   </div>
+                <div class="product_img float-right">
+                <div class="order-margin-top2">
+                  <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+                <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+                <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+                </div>
+                </div>
+                </div>
+                <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+          </div>
+        </div>
+        </div> -->
+    </div>
+    
+    <div class="row" *ngIf="isMobile">
+    
+      <div class="col-12">      
+      <div class="card custom_card">
+        <img src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">{{carouselarr2[cImageIndex].cardTitle}}</h4>
+          <p class="card-text">{{carouselarr2[cImageIndex].cardText}}</p>
+          <span>{{carouselarr2[cImageIndex].offer}}</span>
+          <div class="mt-2 mb-4">
+              <div class="product_info float-left">
+                 <h4><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h4>
+                 </div>
+              <div class="product_img float-right">
+              <div class="order-margin-top2">
+                <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+              <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+              <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+              </div>
+              </div>
+              </div>
+              <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+        </div>
+      </div>
+      </div>
+      </div>
+     </div>
+     </div>
+              <a class="carousel-control-prev" (click)="previousSlide()">
+                  <img src="././assets/images/slide_left.png">
+                  <span class="sr-only">Previous</span>
+              </a>
+
+            
+
+              <a class="carousel-control-next" (click)="nextSlide()">
+                  <img src="././assets/images/slide_right.png">
+                  <span class="sr-only">Next</span>
+              </a>
+
+              
+          </div>
+      </div>
+    </div>
+    
+    

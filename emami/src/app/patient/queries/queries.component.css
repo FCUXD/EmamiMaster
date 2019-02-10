@@ -1,0 +1,339 @@
+.queriesMainContainer{
+    font-family: 'TrajanPro-Regular';
+}
+/* spacing */
+.clear5 {
+    height: 5px;
+    clear: both;
+}
+
+.clear10 {
+    clear: both;
+    height: 10px;
+}
+
+.clear20 {
+    clear: both;
+    height: 20px;
+}
+
+.clear30 {
+    clear: both;
+    height: 30px;
+}
+
+.box-with-shadow{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+.queries-heading{
+    font-family: 'TrajanPro-Regular';
+    font-size: 18.4px;
+    letter-spacing: 1.8px;
+    color: #000000;
+}
+.btn-green-1{
+    border-radius: 10px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    color: #402909;
+    box-shadow: 0 0 0 5px #bccf60;
+    padding: 5px 25px;
+}
+.queriesMainContainer .card-header{
+    background-color: #ffffff;
+    border-bottom: 1px solid #f7f0dd;
+    padding: 30px 50px;
+}
+.queriesMainContainer .card-body{
+    padding: 0 10px;    
+}
+
+.rounded-search input.search-query {
+    padding-left:40px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    outline: none;
+    border: solid 1px #d6ad66;
+    width: 100%;
+    height: 45px;
+    padding-bottom: 5px;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    line-height: 2.29;
+    letter-spacing: 0.7px;
+    color: #000000;
+    
+
+}
+.rounded-search input.search-query ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bebcbc;
+}
+.rounded-search form.form-search {
+    position: relative;
+}
+
+.rounded-search form.form-search:before {
+    content:'';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-image: url("/assets/images/searchIconOrange.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top:15px;
+    left:15px;
+    z-index: 1000;
+}
+
+.rounded-search form.form-search:after {
+    content:'';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-image: url('/assets/images/closeIconOrange.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top:15px;
+    right:15px;
+    z-index: 1000;
+}
+.queries-filter-by{         
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 22px;
+    letter-spacing: 1.1px;
+    color: #333333;
+}
+
+/* tabs css */
+/* Style the tab */
+.tab {
+    float: left;
+    background-color: #f9f4e4;
+    width: 50%;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    direction: rtl; /* scroll to left side */
+}
+.tab div{
+    direction: ltr; /* text to right side */
+} 
+/* custom scroll */
+ /* width */
+ ::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d6ad66; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+.dateText{
+    font-size: 12px;
+    line-height: 2.67;
+    letter-spacing: 0.6px;
+    color: #402909;
+}
+.doctNameText{
+    font-family: 'TrajanPro-Bold';
+    font-size: 16.7px;
+    font-weight: bold;
+    color: #402909;
+}
+.doctSpecialityText{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    color: #333333;
+}
+.queryQtnText{
+ font-family: 'PlayfairDisplay-Regular';
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  color: #333333;
+}
+.repliesText{
+    font-family: 'TrajanPro-Bold';
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        letter-spacing: 0.8px;
+        color: #84b367;
+}
+.BorderHeading {
+   border-left: none !important;
+}
+/* Style the buttons inside the tab */
+.tab .inner_div {
+    display: block;
+    color: black;
+    padding-top: 10px;
+    padding-bottom:10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+    position: relative;
+}
+.tab .inner_div:nth-of-type(even){
+    background-color: #ffffff;
+}
+.tab .inner_div:nth-of-type(odd){
+    
+    background-color: #fdfbf6;
+}
+
+
+/* Create an active/current "tab button" class */
+.tab .inner_div.active {
+    position: relative;
+    border-right: 25px solid #bccf60;
+}
+.tab .inner_div.active .queryQtnText{
+    font-weight: bold;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border-right: none !important;
+    width: 50%;
+    border-left: none;
+    height: 500px;
+    position: relative
+}
+
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.bl_pressure {
+    width: 50%;
+    display: inline-block;
+}
+.bl_img {
+    margin-right: 30px;
+}
+.doc_info {
+    width: 50% !important;
+    display: inline-block !important;
+    vertical-align: top;
+    border-bottom: none !important;
+    padding: 5px 0px !important;
+    font-size: 14px !important;
+    font-weight: 900;
+}
+.fent_font {
+    color: #aca9a9 !important;
+    font-weight: 600;
+}
+
+.divider {
+    border: 1px solid #f3e7ce;
+}
+.active.right_arrow{
+    display: block;
+
+}
+.right_arrow {
+    position: absolute;
+    top: 45%;
+    right: -18px;
+
+}
+.chat_inpute {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #f9f4e4;
+    padding:18px 10px;
+}
+.chatbox,.nbg {    border: none;
+    background: #f9f4e4;
+    font-family: 'PlayfairDisplay-Regular';
+font-size: 16px;
+color: #333333;
+}
+.nbg{cursor: pointer}
+input.form-control.chatbox:focus {
+    box-shadow: none;
+    outline: none;
+}
+input.form-control.chatbox::placeholder {
+    color: #5c5c5c;
+    font-size: 20px;
+}
+p.green_text.font-weight-bold.text-right {
+    color: #e1c599 !important;
+}
+
+
+.chat_div {
+    height: 370px;
+    overflow-y: auto;
+}
+.chat_div .patient {
+    position: relative;
+    margin-right: auto;
+    margin-left: 3rem !important;
+}
+.chat_div .doctor {
+    margin-left: auto;
+    position: relative;
+    margin-right: 3rem !important;
+}
+.chat_div .patient  img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -44px;
+    left: -40px;
+}
+.chat_div .doctor  img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -44px;
+    right: -40px;
+}
+
+.reply-date{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    color: #656464;
+}
+@media only screen and (max-width: 768px) {
+    .text-right{
+        text-align:center !important;
+    }
+    .queriesMainContainer .card-header{
+        text-align: center !important;
+    }
+    .BorderHeading,.tabcontent{
+        width: 100%;
+    }
+}

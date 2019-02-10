@@ -1,0 +1,19 @@
+.formContent{
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); 
+  width: 55%;
+
+margin: 0 auto;
+} 
+.InputEmail{
+  width: 58%;
+
+float: left;
+} 
+.Btn1{
+  background: #bccf60;
+  font-family: 'TrajanPro-Bold';
+color: #402909;
+font-size: 14px;
+padding: 1% 5%;
+}
+   

@@ -1,0 +1,1812 @@
+<div class="container">
+  <div class="clear20"></div>
+  <div class="prof-box col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-2 text-center">
+        <div class="clear20"></div>
+        <img class="profimg" src="{{profile[0].img}}">
+        <div class="clear20"></div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-5 col-lg-4 center">
+        <div class="clear50"></div>
+        <div class="text2">{{profile[0].name}}</div>
+        <div class="clear"></div>
+        <div class="text3">{{profile[0].id}}</div>
+        <div class="clear"></div>
+        <div class="text4"> {{profile[0].age}} | {{profile[0].gender}} | {{profile[0].deases}}</div>
+        <div class="clear"></div>
+        <div class="text5">{{profile[0].mobno}}</div>
+        <div class="clear20"></div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+        <div class="clear50"></div>
+        <div class="clear20"></div>
+        <button type="button" class="btn btn-gray-1">save and end consultation</button>
+        <div class="clear20"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear40"></div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+    <div class="tab BorderRadiusDiv">
+      <div class="row">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[0].active}}" (click)="openCity(0)">
+            <h4 class="tab-hbright12  tabres-font {{default}}">PATIENT PROFILE</h4>
+          </button>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[1].active}}" (click)="openCity(1)">
+            <h4 class="tab-hbright12  tabres-font  {{default2}}">CREATE PRESCRIPTION</h4>
+          </button>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[2].active}}" (click)="openCity(2)">
+            <h4 class="tab-hbright12 tabres-font {{default3}}">ORDER SUMMARY</h4>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="London" class="{{tabs[0].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+      <div class="card patientPriscript-info-bottom">
+
+        <div class="card-header">
+          <label class="title">&nbsp;&nbsp;PATIENT PROFILE</label>
+        </div>
+        <div class="card-body">
+
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+              <label class="title">PATIENT HISTORY</label>
+              <div class="clear20"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Present Condition</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3">
+                      <!-- <select class="formfield option form-control" formControlName="firstName" >
+                          <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+                      </select> --> 
+                      
+                      <select class="formfield option form-control" #t formControlName="firstName" (change)="callType(t.value)">
+                          <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <select class="formfield option form-control" formControlName="firstName1" >
+                          <option *ngFor="let yrs of since" [ngValue]="yrs">{{yrs}}</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue1()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row">
+                
+                  <div class="col-2 col-sm-6 col-md-6 col-lg-6">
+                      <!-- <input type="text" *ngIf="flag_Change==true" formControlName="enterCondition"  class="form-control cp-input" placeholder="Enter Condition" id="usr"> -->
+                  </div>
+                </div>
+                </div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds1; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter1 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                          <div class="form-group">
+                              <select class="formfield option form-control" formControlName="presentcondition1" >
+                                  <option *ngFor="let type1 of typess" [ngValue]="type1">{{type1}}</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                          <div class="form-group">
+                              <select class="formfield option form-control" formControlName="firstName1" >
+                                  <option *ngFor="let yrs1 of since" [ngValue]="yrs1">{{yrs1}}</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue1(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Allergies</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3">
+                      <select class="formfield option form-control" #a formControlName="Allergies1" (change)="callType2(a.value)">
+                          <option *ngFor="let aller of Allergies" [ngValue]="aller">{{aller}}</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group">
+                      <select class="formfield option form-control" formControlName="firstName2" >
+                          <option *ngFor="let yrs2 of since" [ngValue]="yrs2">{{yrs2}}</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue2()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                    <div class="row"> 
+                    <div class="col-2 col-sm-6 col-md-6 col-lg-6">
+                        <!-- <input type="text" *ngIf="flag_Change2==true" formControlName="enterAllergies"  class="form-control cp-input" placeholder="Enter Condition" id="usr"> -->
+                    </div>
+                  </div>
+                  </div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds2; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter2 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="Allergies3" id="sel1" name="sellist1">
+                              <option>{{selected7}}</option>
+                              <option>Drug Allergy</option>
+                              <option>Dust Allergy</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                          <div class="form-group">
+                           <select class="formfield option form-control" formControlName="Allergies4" >
+                          <option *ngFor="let yrs3 of since" [ngValue]="yrs3">{{yrs3}}</option>
+                      </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue2(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4 scgh">Special considerations/Gynaecological history</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group">
+                    <textarea class="form-control areabg" formControlName="specialconsideration" placeholder="Spots on the skin to sunlight"
+                      rows="3" id="comment"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Current Medication</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3">
+                      <select class="formfield option form-control" #t formControlName="currentMedication1" (change)="callType(t.value)">
+                          <option *ngFor="let cm of cmedication" [ngValue]="cm">{{cm}}</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group">
+                    <select class="formfield option" formControlName="currentMedication2" id="sel1" name="sellist1">
+                      <option>{{selected10}}</option>
+                      <option>0-1yrs</option>
+                      <option>1-5yrs</option>
+                      <option>5-10yrs</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue3()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds3; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter3 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="currentMedication3" id="sel1" name="sellist1">
+                              <option>{{selected11}}</option>
+                              <option>Zandu Pancharisth</option>
+                              <option>Zandu Pancharisth</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="currentMedication4" id="sel1" name="sellist1">
+                              <option>{{selected12}}</option>
+                              <option>0-1yrs</option>
+                              <option>1-1.5yrs</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue3(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Past illness/ Surgeries</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3">
+                     <select class="formfield option form-control" #p formControlName="illness1" (change)="callType3(p.value)">
+                          <option *ngFor="let illness of pastillness" [ngValue]="illness">{{illness}}</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue4()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                    <div class="row">
+                   
+                    <div class="col-2 col-sm-6 col-md-6 col-lg-6">
+                      <!-- <input type="text" *ngIf="flag_Change3==true" formControlName="enterAllergies"  class="form-control cp-input" placeholder="Enter Condition" id="usr"> -->
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="clear20"></div>
+                        <button type="button" class="btn btn-green-2">save</button>
+                      </div>
+                  </div>
+               
+                <div class="clear20"></div>
+               
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds4; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter4 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                          <div class="form-group">
+                              <select class="formfield option form-control" #p formControlName="illness2" (change)="callType3(p.value)">
+                                  <option *ngFor="let illness of pastillness" [ngValue]="illness">{{illness}}</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue4(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+              <label class="title">LIFESTYLE DETAILS</label>
+              <div class="clear20"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Habits</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group txt3">
+                    <select class="formfield option" formControlName="habit1" id="sel1" name="sellist1">
+                      <option class="">{{selected15}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="form-group">
+                    <select class="formfield option" formControlName="habit2" id="sel1" name="sellist1">
+                      <option>{{selected16}}</option>
+                      <option>1-5yrs</option>
+                      <option>5-10yrs</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue5()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds5; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter5 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="habit3" id="sel1" name="sellist1">
+                              <option class="">{{selected17}}</option>
+                              <option class="">Drinking</option>
+                              <option class="">Sleeping</option>
+                              <option class="">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="habit4" id="sel1" name="sellist1">
+                              <option>{{selected18}}</option>
+                              <option>0-1yrs</option>
+                              <option>1-1.5yrs</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue5(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Exercise Routine</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3">
+                    <select class="formfield option" formControlName="exroutine1" id="sel1" name="sellist1">
+                      <option class="">{{selected19}}</option>
+                      <option class="">Weekly</option>
+                      <option class="">Monthly</option>
+                      <option class="">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue6()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds6; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter6 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="exroutine2" id="sel1" name="sellist1">
+                              <option class="">{{selected20}}</option>
+                              <option class="">Weekly</option>
+                              <option class="">Monthly</option>
+                              <option class="">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue6(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Eating Preference</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3">
+                    <select class="formfield option" formControlName="eatingpref1" id="sel1" name="sellist1">
+                      <option class="">{{selected21}}</option>
+                      <option class="">Homemade Food</option>
+                      <option class="">Homemade Food</option>
+                      <option class="">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue7()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds7; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter7 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="eatingpref2" id="sel1" name="sellist1">
+                              <option class="">{{selected22}}</option>
+                              <option class="">Homemade Food</option>
+                              <option class="">Homemade Food</option>
+                              <option class="">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue7(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Working Hours</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3">
+                    <select class="formfield option" formControlName="workinghours1" id="sel1" name="sellist1">
+                      <option class="">{{selected23}}</option>
+                      <option class="">4-10 Hours</option>
+                      <option class="">2-3 Hours</option>
+                      <option class="">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue8()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds8; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter8 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="workinghours2" id="sel1" name="sellist1">
+                              <option class="">{{selected24}}</option>
+                              <option class="">4-10 Hours</option>
+                              <option class="">2-3 Hours</option>
+                              <option class="">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue8(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear10"></div>
+              <!-- <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Night Sleep Time</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3">
+                    <select class="formfield option" formControlName="nstime1" id="sel1" name="sellist1">
+                      <option class="">{{selected25}}</option>
+                      <option class="">4-10 Hours</option>
+                      <option class="">2-3 Hours</option>
+                      <option class="">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue9()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds9; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter9 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="nstime1" id="sel1" name="sellist1">
+                              <option class="">{{selected26}}</option>
+                              <option class="">4-10 Hours</option>
+                              <option class="">2-3 Hours</option>
+                              <option class="">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue9(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="clear10"></div>
+
+              <!-- <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                  <div class="clear5"></div>
+                  <label class="text4">Afternoon Sleep Time</label>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                  <div class="form-group txt3">
+                    <select class="formfield option" formControlName="astime1" id="sel1" name="sellist1">
+                      <option class="">{{selected27}}</option>
+                      <option class="">4-10 Hours</option>
+                      <option class="">2-3 Hours</option>
+                      <option class="">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                  <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue10()">+</button>
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5 text-center">
+                  <button type="button" class="btn btn-green-2">save</button>
+                </div>
+                <div class="clear10"></div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                  <div class="row form-field-row" *ngFor="let item of formFilds10; let i = index">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter10 >1">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                          <div class="form-group">
+                            <select class="formfield option" formControlName="astime1" id="sel1" name="sellist1">
+                              <option class="">{{selected28}}</option>
+                              <option class="">4-10 Hours</option>
+                              <option class="">2-3 Hours</option>
+                              <option class="">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                          <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue10(item)">-</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+            <div class="clear10"></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+              <div class="row">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                  <label class="title">FAMILY HISTORY</label>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button type="button" class="btn btn-green-2">+add member</button>
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="row">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 fh-div">
+                  <label class="fh">FATHER</label>
+                  <div class="clear10"></div>
+                  <div class="form-check fh1">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" formControlName="fatherdeceased" name="fatherdeceased">Deceased
+                    </label>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                      <div class="clear5"></div>
+                      <label class="text4">Diseases</label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group txt3">
+                        <select class="formfield option form-control" #f formControlName="fd1" (change)="callType4(f.value)">
+                          <option *ngFor="let fd of fdiseases" [ngValue]="fd">{{fd}}</option>
+                      </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                          <div class="form-group">
+                              <select class="formfield option form-control" formControlName="fd2" >
+                                  <option *ngFor="let yrs4 of since" [ngValue]="yrs4">{{yrs4}}</option>
+                              </select>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue11()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                    <div class="clear10"></div>
+                  </div>
+                  <div class="row">
+                      <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                     
+                       
+                        
+                          <div class="col-2 col-sm-4 col-md-4 col-lg-4">
+        
+                              <input type="text"  *ngIf="flag_Change4==false" disabled class="form-control cp-input" placeholder="Enter Diseases" id="usr">
+                              <input type="text" *ngIf="flag_Change4==true" formControlName="fdiseses"  class="form-control cp-input" placeholder="Enter Diseases" id="usr">
+                          </div>
+                        
+                       
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                      <div class="row form-field-row" *ngFor="let item of formFilds11; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter11 >1">
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                              <div class="form-group">
+                                  <select class="formfield option form-control"  formControlName="fd3" (change)="callType4(value)">
+                                      <option *ngFor="let fds of fdiseases" [ngValue]="fds">{{fds}}</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                              <div class="form-group">
+                                  <select class="formfield option form-control" formControlName="fd4" >
+                                      <option *ngFor="let yrs5 of since" [ngValue]="yrs5">{{yrs5}}</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue11(item)">-</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                      <div class="clear5"></div>
+                      <label class="text4">Allergies</label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group txt3">
+                          <select class="formfield option form-control" #fa formControlName="fatherAllergies1" (change)="callType5(fa.value)">
+                              <option *ngFor="let fda of fdAllergies" [ngValue]="fda">{{fda}}</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                          <select class="formfield option form-control" formControlName="fatherAllergies2" >
+                              <option *ngFor="let yrs6 of since" [ngValue]="yrs6">{{yrs6}}</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue12()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                    <div class="clear10"></div>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                      <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                          <div class="col-2 col-sm-4 col-md-4 col-lg-4">
+        
+                              <input type="text"  *ngIf="flag_Change5==false" disabled class="form-control cp-input" placeholder="Enter Allergies" id="usr">
+                              <input type="text" *ngIf="flag_Change5==true" formControlName="fAllergies"  class="form-control cp-input" placeholder="Enter Allergies" id="usr">
+                          </div>
+                        
+                       
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                      <div class="row form-field-row" *ngFor="let item of formFilds12; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter12 >1">
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                              <div class="form-group">
+                                  <select class="formfield option form-control" #fa formControlName="fatherAllergies3" (change)="callType5(fa.value)">
+                                      <option *ngFor="let fda1 of fdAllergies" [ngValue]="fda1">{{fda1}}</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                              <div class="form-group">
+                                  <select class="formfield option form-control" formControlName="fatherAllergies4" >
+                                      <option *ngFor="let yrs7 of since" [ngValue]="yrs7">{{yrs7}}</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue12(item)">-</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 fh-div1">
+                  <label class="fh">MOTHER</label>
+                  <div class="clear10"></div>
+                  <div class="form-check fh1">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" formControlName="motherdeceased" name="motherdeceased">Deceased
+                    </label>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                      <div class="clear5"></div>
+                      <label class="text4">Diseases</label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group txt3">
+                          <select class="formfield option form-control" #m formControlName="mdiseases1" (change)="callType6(m.value)">
+                              <option *ngFor="let md of mdiseases" [ngValue]="md">{{md}}</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                          <select class="formfield option form-control" formControlName="mdiseases2" >
+                              <option *ngFor="let yrs8 of since" [ngValue]="yrs8">{{yrs8}}</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue13()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                   
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                    <div class="col-2 col-sm-4 col-md-4 col-lg-4">
+                          <!-- <input type="text" *ngIf=" flag_Change6==true" formControlName="mdiseases"  class="form-control cp-input" placeholder="Enter Condition" id="usr"> -->
+                    </div>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                      <div class="row form-field-row" *ngFor="let item of formFilds13; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter13 >1">
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                              <div class="form-group">
+                                  <select class="formfield option form-control" #m formControlName="mdiseases3" (change)="callType6(m.value)">
+                                      <option *ngFor="let mdd of mdiseases" [ngValue]="mdd">{{mdd}}</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                              <div class="form-group">
+                                  <select class="formfield option form-control" formControlName="mdiseases4" >
+                                      <option *ngFor="let yrs9 of since" [ngValue]="yrs9">{{yrs9}}</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue13(item)">-</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                  
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                      <div class="clear5"></div>
+                      <label class="text4">Allergies</label>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group txt3">
+                          <select class="formfield option form-control" #m formControlName="mallergies1" (change)="callType7(m.value)">
+                              <option *ngFor="let ma of mallergies" [ngValue]="ma">{{ma}}</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                          <select class="formfield option form-control" formControlName="mdiseases4" >
+                              <option *ngFor="let yrs10 of since" [ngValue]="yrs10">{{yrs10}}</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue14()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                    <div class="clear10"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                    <div class="col-2 col-sm-4 col-md-4 col-lg-4">
+                        <!-- <input type="text" *ngIf="flag_Change7==true" formControlName="mAllergies"  class="form-control cp-input" placeholder="Enter Condition" id="usr"> -->
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                      <div class="row form-field-row" *ngFor="let item of formFilds14; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter14 >1">
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                              <div class="form-group">
+                                <select class="formfield option form-control" #m formControlName="mallergies3" (change)="callType7(m.value)">
+                              <option *ngFor="let maa of mallergies" [ngValue]="maa">{{maa}}</option>
+                          </select>
+                              </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                              <div class="form-group">
+                                  <select class="formfield option form-control" formControlName="mdiseases4" >
+                                      <option *ngFor="let yrs11 of since" [ngValue]="yrs11">{{yrs11}}</option>
+                                  </select>
+                              </div>
+
+                            </div>
+                            <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue14(item)">-</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="clear10"></div>
+                  <button type="submit" class="Addaddressbtn">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+            <div class="clear10"></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+              <label class="title">HEALTH REPORT</label>
+              <div class="clear20"></div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 fh-div1 buttonmain">
+                  <label>
+                    <input value="1" type="checkbox">
+                    <span class="checkmark btn-unclicked-1 btnfont btn">ALL</span>
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <label>
+                    <input value="1" type="checkbox">
+                    <span class="checkmark btn-unclicked-1 btnfont btn">X-RAY</span>
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <label>
+                    <input value="1" type="checkbox">
+                    <span class="checkmark btn-unclicked-1 btnfont btn">CT SCAN</span>
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <label>
+                    <input value="1" type="checkbox">
+                    <span class="checkmark btn-unclicked-1 btnfont btn">BLOOD TEST</span>
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <label>
+                    <input value="1" type="checkbox">
+                    <span class="checkmark btn-unclicked-1 btnfont btn">SUGAR</span>
+                  </label>&nbsp;&nbsp;&nbsp;
+                  <div class="clear20"></div>
+                  <ng-container *ngFor="let item1 of hrecord">
+                    <div class="card queries-card  box-with-shadow">
+                      <div class="card-header card-bg">
+                        <div class="row">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                            <label class="fh-text">{{item1.prepo}}</label>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                            <label class="fh-text3">{{item1.date}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body card-bg">
+                        <div class="row">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                            <label class="fh-text">{{item1.file}}</label>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                            <img src="././assets/images/delete-1.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="././assets/images/noun-download.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="././assets/images/noun-print.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear10"></div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              <div class="clear10"></div>
+              <div class="f-text">Click here to view more reports</div>
+              <img src="././assets/images/copy-4.png">
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="Paris" class="{{tabs[1].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv padlrn">
+      <div class="card patientPriscript-info-bottom">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <label class="title">CREATE PRESCRIPTION</label>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+              <div class="float-right fontstyle">{{selecteddate}}
+                <app-datepicker (voted)="onvoted1($event)" class="date_cursor"></app-datepicker>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="createprescription" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+                  <label class="title">SYMPTOMS</label>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                      <input type="text" class="form-control cp-input" FormControlName="esymptom" placeholder="Enter Symptoms" id="usr">
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue15()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="clear5"></div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="row form-field-row" *ngFor="let item of formFilds15; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter15 >1">
+                          <div class="row">
+                            <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                              <input type="text" class="form-control cp-input" FormControlName="esymptom2" placeholder="Enter Symptoms" id="usr">
+                            </div>
+                            <div class="col-1 col-sm-2 col-lg-2 pluspad pad-l-r-5px cp-mbuttonpad">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue15(item)">-</button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                          </div>
+                          <div class="clear10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+                  <label class="title">DIAGNOSIS</label>
+                  <div class="col-10 col-sm-10 col-md-10 col-lg-10">
+                    <div class="form-group txt3">
+                        <select class="formfield option form-control"  formControlName="cpdiagnosis" (change)="callType7(value)">
+                            <option *ngFor="let dia of diagnosis" [ngValue]="dia">{{dia}}</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box1">
+                  <label class="title">INVESTIGATION RECOMMENDED</label>
+                  <div class="clear10"></div>
+                  <label class="chkbx-container">
+                    <span class="cp-chk-text">B. Sugar –Fasting/ PP/ Random/ HbA1C</span>
+                    <input type="checkbox" checked="checked" FormControlName="Investigation3">
+                    <span class="checkmark"></span>
+                  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label class="chkbx-container">
+                    <span class="cp-chk-text">Serum Lipids</span>
+                    <input type="checkbox" FormControlName="Investigation4">
+                    <span class="checkmark"></span>
+                  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label class="chkbx-container">
+                    <span class="cp-chk-text">Urea/Creatinine
+                      </span>
+                    <input type="checkbox" FormControlName="Investigation5">
+                    <span class="checkmark"></span>
+                  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label class="chkbx-container">
+                    <span class="cp-chk-text">Uric Acid
+                      </span>
+                    <input type="checkbox" FormControlName="Investigation6">
+                    <span class="checkmark"></span>
+                  </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label class="chkbx-container">
+                      <span class="cp-chk-text">SGOT/SGPT/Serum Proteins
+
+                        </span>
+                      <input type="checkbox" FormControlName="Investigation6">
+                      <span class="checkmark"></span>
+                    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="chkbx-container">
+                        <span class="cp-chk-text"> Urine Routine/Microscopic
+
+                          </span>
+                        <input type="checkbox" FormControlName="Investigation6">
+                        <span class="checkmark"></span>
+                      </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <label class="chkbx-container">
+                          <span class="cp-chk-text">X rays
+
+  
+                            </span>
+                          <input type="checkbox" FormControlName="Investigation6">
+                          <span class="checkmark"></span>
+                        </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                      <input type="text" class="form-control cp-input" FormControlName="Investigation1" placeholder="Enter Investigation" id="usr">
+                    </div>
+                    <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                      <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue16()">+</button>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="clear5"></div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="row form-field-row" *ngFor="let item of formFilds16; let i = index">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter16 >1">
+                          <div class="row">
+                            <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                              <input type="text" class="form-control cp-input" FormControlName="Investigation2" placeholder="Enter Investigation" id="usr">
+                            </div>
+                            <div class="col-1 col-sm-2 col-lg-2 pluspad pad-l-r-5px cp-mbuttonpad">
+                              <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue16(item)">-</button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2"></div>
+                          </div>
+                          <div class="clear10"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box1">
+                  <label class="title">CONSULTATION NOTES</label>
+                  <div class="clear10"></div>
+                  <input type="text" class="form-control cp-input" FormControlName="consultationnotes" placeholder="Enter Notes" id="usr">
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <label class="title">PRESCRIBE MEDICINE</label>
+                  </div>
+                  <div class="clear10"></div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-lg-8 col-md-8 medicineContainer1">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <label class="cp-select-mtext">Select Medicine</label>
+                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 padlrn">
+                          <div class="form-group txt3">
+                              <select class="formfield option bgcolor form-control"  formControlName="selectmedicine" (change)="callType7(value)">
+                                  <option *ngFor="let sm of selmedicine" [ngValue]="sm">{{sm}}</option>
+                              </select>
+                         
+                          </div>
+                        </div>
+                        <div class="clear20"></div>
+                        <label class="cp-select-mtext">No. of times in a day</label>
+                        <div class="clear10"></div>
+                        <div class="row">
+                          <div class="col-8 col-sm-8 col-md-8 col-lg-8 buttonmedicine">
+                            <label (click)="noOftime1('1')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">1</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="noOftime2('2')">
+                              <input value="2" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">2</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="noOftime3('3')">
+                              <input value="3" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">3</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="noOftime4('4')">
+                              <input value="4" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">4</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="noOftime5('5')">
+                              <input value="5" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">5</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="noOftime6('6')">
+                              <input value="6" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">6</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="noOftime7('sos')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">sos</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="noOftimeCustom()">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">Custom</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                            <input type="text" *ngIf="flag==false" disabled class="form-control bgcolor cp-input" placeholder="Enter no. of times" id="usr">
+                            <input type="text" *ngIf="flag==true" [(ngModel)]="numdays" class="form-control bgcolor cp-input" FormControlName="Nooftypes"
+                              placeholder="Enter no. of times" id="usr">
+                          </div>
+                        </div>
+                        <div class="clear10"></div>
+                        <label class="cp-select-mtext">Timing</label>
+                        <div class="clear10"></div>
+                        <div class="row">
+                          <div class="col-8 col-sm-8 col-md-8 col-lg-8 buttonmedicine">
+                            <label (click)="Timing1('Morning')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">Morning</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="Timing2('Afternoon')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">Afternoon</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="Timing3('Night')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">Night</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="Timing4()">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">Custom</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                            <input type="text" *ngIf="flag1==false" disabled class="form-control bgcolor cp-input" FormControlName="medicineTiming" placeholder="Enter Timing"
+                              id="usr">
+                            <input type="text" *ngIf="flag1==true" class="form-control bgcolor cp-input" FormControlName="medicineTiming" placeholder="Enter Timing"
+                              id="usr">
+                          </div>
+                        </div>
+                        <div class="clear20"></div>
+                        <label class="cp-select-mtext">Quantity</label>
+                        <div class="clear10"></div>
+                        <div class="row">
+                          <div class="col-8 col-sm-8 col-md-8 col-lg-8 buttonmedicine">
+                            <label (click)="quantity1('1 Tablespoons')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">1 Tablespoons</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="quantity2('2 Tablespoons')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">2 Tablespoons</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="quantity3()">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">Custom</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="quantity4('N/A')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">N/A</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                            <input type="text" *ngIf="flag2==false" disabled class="form-control bgcolor cp-input" FormControlName="medicineQuantity"
+                              placeholder="Enter Quantity" id="usr">
+                            <input type="text" *ngIf="flag2==true" class="form-control bgcolor cp-input" FormControlName="medicineQuantity" placeholder="Enter Quantity"
+                              id="usr">
+                          </div>
+                        </div>
+                        <div class="clear20"></div>
+                        <label class="cp-select-mtext">When</label>
+                        <div class="clear10"></div>
+                        <div class="row">
+                          <div class="col-8 col-sm-8 col-md-8 col-lg-8 buttonmedicine">
+                            <label (click)="when1('Before Food')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">Before Food</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="when2('After Food')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">After Food</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="when4('HS')">
+                                <input value="1" type="radio" name="radio1">
+                                <span class="checkmark btn-unclicked-1 pm-button btn">HS</span>
+                              </label>&nbsp;&nbsp;&nbsp;
+                            <label (click)="when3('N/A')">
+                              <input value="1" type="radio" name="radio1">
+                              <span class="checkmark btn-unclicked-1 pm-button btn">N/A</span>
+                            </label>&nbsp;&nbsp;&nbsp;
+                          </div>
+                        </div>
+                        <div class="clear20"></div>
+                        <label class="cp-select-mtext">Days</label>
+                        <div class="row">
+                          <div class="col-8 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" class="form-control cp-input bgcolor" FormControlName="medicineDays" placeholder="Enter No.of days" id="usr">
+                          </div>
+                        </div>
+                        <div class="clear20"></div>
+                        <div class="col-12 col-sm-12 col-md-12">
+                          <button type="submit" class="btn btn-green-2" (click)="prescribeMedicineSave(createprescription.value)">save</button>
+                        </div>
+                        <div class="clear10"></div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-4 col-md-4">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 medicineContainer1">
+                        <div class="clear20"></div>
+                        <div class="form-group txt3">
+                            <select class="formfield option bgcolor form-control"  formControlName="premedicine" (change)="callType7(value)">
+                                <option *ngFor="let pm of pmedicine" [ngValue]="pm">{{pm}}</option>
+                            </select>
+                       
+                        </div>
+                        <div class="clear20"></div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                          <label class="prescription">{{nooftimes}}</label>&nbsp;&nbsp;|&nbsp;&nbsp;
+                          <label class="prescription">&nbsp;&nbsp;{{time1}}&nbsp;&nbsp;-&nbsp;&nbsp;{{time2}}&nbsp;&nbsp;-&nbsp;&nbsp;{{time3}}&nbsp;&nbsp;</label>&nbsp;&nbsp;|&nbsp;&nbsp;
+                          <label class="prescription">{{qty}}</label>&nbsp;&nbsp;
+                          <label class="prescription">{{when}}</label>&nbsp;&nbsp;|&nbsp;&nbsp;
+                          <label class="prescription">For{{days}} Days</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear20"></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              <button type="submit" (click)="prescribeMedicineSave(createprescription.value)" class="btn btn-green-1">PROCEED</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="Tokyo" class="{{tabs[2].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+      <div id="" class="patientPrescriptionMainContainer">
+        <div class="card patientPriscript-info-bottom">
+          <div class="card-header">
+            <span class="float-left text-uppercase fw-normal">
+              prescriptions
+            </span>
+            <span class="float-right calender">{{selecteddate}}
+              <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker>
+            </span>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card queries-card box-with-shadow">
+                  <div class="card-header">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                      <label class="os-text2">Dr. Swapnil Kumar</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <label class="text4">14 April 2018</label>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <label class="os-text1">delivery Address and phone number</label>
+                      </div>
+                      <div class="clear10"></div>
+                      <div class="col-12 col-sm-12 col-md-4 col-lg-4 addressbg">
+                        <div class="col-md-12 text-right">
+                          <a class="os-remove-edit" href="#">Remove</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a class="os-remove-edit" href="#">Edit</a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+                          <div class="os-text3">ADDRESS</div>
+                          <div class="os-text3">921, Church St , Aundh, Pune Maharasatra (411007)</div>
+                          <div class="os-text4">PHONE NUMBER</div>
+                          <div class="os-text3">869-847-6151</div>
+                          <div class="clear10"></div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <button type="button" (click)="popup()" data-toggle="modal" data-target="#myModal" class="btn addbtnpad">
+                          <img src="././assets/images/noun-add.png"> </button>
+                      </div>
+                      <!-- The Modal -->
+                      <div class="modal fade  {{custom1}}" id="myModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Add New Address</h4>
+                              <button type="button" class="close" (click)="close()">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+                                <input type="text" class="form-control" id="usr" placeholder="First Name*">
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Last Name*">
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Address Line1*">
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Address Line2">
+                                <div class="clear10"></div>
+                                <select class="select-style">
+                                  <option value="volvo">State*</option>
+                                  <option value="saab">Andhra Pradesh</option>
+                                  <option value="opel">Maharashtra</option>
+                                  <option value="audi">Goa</option>
+                                </select>
+                                <div class="clear10"></div>
+                                <select class="select-style">
+                                  <option value="volvo">City*</option>
+                                  <option value="saab">Mumbai</option>
+                                  <option value="opel">Pune</option>
+                                  <option value="audi">Other</option>
+                                </select>
+                                <div class="clear10"></div>
+                                <select class="select-style">
+                                  <option value="volvo">Locality*</option>
+                                  <option value="saab">Mumbai</option>
+                                  <option value="opel">Pune</option>
+                                  <option value="audi">Other</option>
+                                </select>
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Zip Code*">
+                              </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <div class="col-md-12  text-center">
+                                <button type="button" class="Addaddressbtn">Add Address</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="popclose" data-dismiss="modal" (click)="close()">Cancel</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear20"></div>
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <label class="os-text1">Order details</label>
+                        <div class="clear20"></div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="row hrnone" *ngFor="let item of orderdetails">
+                          <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+                            <img src="{{item.img}}">
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+                            <div class="row">
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-left">
+                                <div class="fh">{{item.pname}}</div>
+                                <div class="clear10"></div>
+                                <div class="fh-text2"> {{item.ml}}ml</div>
+                              </div>
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                                <div class="order-margin-top2">
+                                  <i class="fa" (click)="down()">&#xf056;</i>&nbsp;
+                                  <input [(ngModel)]="spinner" class="input-spinner">&nbsp;
+                                  <i class="fa" (click)="spinner=spinner+1">&#xf055;</i>
+                                </div>
+                              </div>
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <label class="rs">&#8377;</label>
+                                <label class="text2">{{item.price}}</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clear10"></div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <hr>
+                          </div>
+                        </div>
+                        <div class="clear10"></div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                          <div class="row">
+                            <div class="col-md-6 col-lg-6">
+                              <div class="offer">Please enter Zandu specific coupon code to avail discount</div>
+                              <div class="prescription">Please check https//zigy.com for more details</div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                              <div class="clear20"></div>
+                              <input type="text" class="form-control bgcolor fh cp-input" FormControlName="" placeholder="Enter Coupon Code" id="usr">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 addressbg">
+                          <label class="os-text1">order summary</label>
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+                              <label class="text3">Name</label>
+                              <div class="clear10"></div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3">
+                              <label class="text3">Qty</label>
+                              <div class="clear10"></div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3 text-center">
+                              <label class="text3">Price</label>
+                              <div class="clear10"></div>
+                            </div>
+                          </div>
+                          <div class="row" *ngFor="let item of totalproduct">
+                            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+                              <div class="os-text3">{{item.product1}}</div>
+                              <!-- <label class="os-text3">Zandu Nityam{{item.product2}}</label> -->
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3">
+                              <div class="text3">{{item.product1qty}}</div>
+                              <!-- <label class="text3">1{{item.product2qty}}</label> -->
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3 text-center">
+                              <label class="fh-text3">&#8377;</label>
+                              <label class="os-price">{{item.product1price}}</label>
+                              <!--  <label class="fh-text3">&#8377;</label>
+                               <label class="os-price">179{{item.product1price}}</label> -->
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+                            <hr>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                              <div class="text41">Sub Total</div>
+                              <div class="text41">Delivery Charges</div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right pad-r-50">
+                              <div>
+                                <label class="rs">&#8377;</label>
+                                <label class="text2">{{subtotal}}</label>
+                              </div>
+                              <div>
+                                <label class="rs">&#8377;</label>
+                                <label class="text2">{{dcharges}}</label>
+                              </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <hr>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                              <label class="option">Total</label>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right pad-r-50">
+                              <label class="rs">&#8377;</label>
+                              <label class="text2">{{totalprice}}</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                    </div>
+                    <hr>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                      <label class="os-text1">Payment mode</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button _ngcontent-c1="" class="Addaddressbtn" type="button">CASH ON DELIVERY</button>
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 cod">
+                      <div class="row">
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                          <label class="w-h1">
+                            <input value="1" type="radio" name="radio1">
+                            <div class="checkmark btn-unclicked-1 col-12 col-sm-12 col-md-12 col-lg-12 content-box pm-button btn">
+                              <div class="clear20"></div>
+                              <img src="././assets/images/cod.png">
+                              <div class="clear10"></div>
+                              <label class="fh">CASH ON DELIVERY</label>
+                            </div>
+                          </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                          <label class="w-h1">
+                            <input value="1" type="radio" name="radio1">
+                            <div class="checkmark btn-unclicked-1  col-12 col-sm-12 col-md-12 col-lg-12 content-box pm-button btn">
+                              <div class="clear20"></div>
+                              <img src="././assets/images/onlinepayment.png">
+                              <div class="clear10"></div>
+                              <label class="fh">ONLINE PAYMENT</label>
+                            </div>
+                          </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                          <label class="w-h1">
+                            <input value="1" type="radio" name="radio1">
+                            <div class="checkmark btn-unclicked-1  col-12 col-sm-12 col-md-12 col-lg-12 content-box pm-button btn">
+                              <div class="clear20"></div>
+                              <img src="././assets/images/onlinepayment.png">
+                              <div class="clear10"></div>
+                              <label class="fh">ONLINE PAYMENT</label>
+                            </div>
+                          </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                      <button type="submit" class="btn btn-green-1" (click)="popup2()" data-toggle="modal" data-target="#myModal2">SEND MESSAGE</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="" class="modal fade pop-overflow  {{custom2}}" id="myModal1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header pop-head-bgcolor">
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+            <label class="zandupoptext">ZANDUCARE</label>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+            <div>
+              <label class="pop-con-id">Consultation ID : </label>
+              <span class="pop-con-id1">MN_106</span>
+            </div>
+            <div>
+              <label class="pop-con-id">Date : </label>
+              <span class="pop-con-id1"> 5th august, 2018 </span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="close" (click)="close2()">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="card  patientPriscript-info-bottom1">
+          <div class="card-header">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <label class="pop-text1">PATIENT'’S INFORMATION</label>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="row">
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                  <label class="pop-text2">Name :</label>
+                  <span class="pop-text2-1">Krishna Reddy</span>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                  <label class="pop-text2">Age :</label>
+                  <span class="pop-text2-1">23 Years</span>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                  <label class="pop-text2">Gender :</label>
+                  <span class="pop-text2-1">Male</span>
+                </div>
+              </div>
+              <div class="clear20"></div>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="row">
+          <div class="col -6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box pop-divheight">
+              <label class="title">SYMPTOMS</label>
+              <div class="clear10"></div>
+              <div class="col-10 col-md-10 col-lg-10 padlrn">
+                <input type="text" class="form-control pop-input" id="usr" placeholder="Weight Loss">
+              </div>
+              <div class="clear10"></div>
+              <div class="col-10 col-md-10 col-lg-10 padlrn">
+                <input type="text" class="form-control pop-input" id="usr" placeholder="Increased Fatigue">
+              </div>
+              <div class="clear10"></div>
+              <div class="col-10 col-md-10 col-lg-10 padlrn">
+                <input type="text" class="form-control pop-input" id="usr" placeholder="Irritability">
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box pop-divheight">
+              <label class="title">DIAGNOSIS</label>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <label class="text4">Fasting Test</label>
+                <div class="clear20"></div>
+                <label class="text4">Glucose Test</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+          <label class="title">INVESTIGATION</label>
+          <div class="clear10"></div>
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <label class="chkbx-container1">
+                <span class="cp-chk-text">Blood Pressure</span>
+                <input type="checkbox" checked="checked" FormControlName="Investigation3">
+                <span class="checkmark"></span>
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="chkbx-container1">
+                <span class="cp-chk-text">Oral Glucose Tolerance</span>
+                <input type="checkbox" checked="checked" FormControlName="Investigation3">
+                <span class="checkmark"></span>
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="chkbx-container1">
+                <span class="cp-chk-text">Blood Sugar</span>
+                <input type="checkbox" checked="checked" FormControlName="Investigation3">
+                <span class="checkmark"></span>
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="chkbx-container1">
+                <span class="cp-chk-text">Emami Report</span>
+                <input type="checkbox" checked="checked" FormControlName="Investigation3">
+                <span class="checkmark"></span>
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="clear20"></div>
+              <input type="text" class="form-control pop-input" id="usr" placeholder="No Other Report">
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="card  patientPriscript-info-bottom1">
+          <div class="card-header">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <label class="pop-text1">PRESCRIBED MEDICINE</label>
+            </div>
+          </div>
+          <div class="card-body">
+            <div id="popup" class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th>S. No.</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>No. of Times</th>
+                    <th>When</th>
+                    <th>No. of Days</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Zandu Pancharishta</td>
+                    <td>1 Tablespoon</td>
+                    <td>Morning-Afternoon-Night</td>
+                    <td>After Food</td>
+                    <td>5 Days</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="clear20"></div>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6">
+              <label class="title">CONSULTATION NOTES</label>
+              <div class="clear10"></div>
+              <label class="text3">Yoga and exercise recommended for relief</label>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6">
+              <label class="title">NEXT CONSULTATION DATE :</label>
+              <div class="clear10"></div>
+              <label class="text3">20th Oct, 2018</label>
+            </div>
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 pop-f-bgcolor">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+              <div class="clear10"></div>
+              <label class="pop-con-id">DR. SWAPNIL KUMAR</label>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+              <div class="clear10"></div>
+              <label class="fot-text">For any further health queries, Call on </label>
+              <span class="fot-text1">1800-999-5678</span>
+            </div>
+          </div>
+          <div class="clear20"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <label class="web-text">Check your health profile. Login to</label>
+            <span class="web-text1"></span> https://www.zanducare.com
+          </div>
+        </div>
+        <div class="clear20"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+          <button type="button" class="btn btn-trasnp-1">CANCEL</button>&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-green-3">CONFIRM</button>
+        </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1298 @@
+<div class="container">
+  <div class="clear20"></div>
+  <div class="prof-box col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-2 text-center">
+        <div class="clear20"></div>
+        <img class="profimg" src="{{profile[0].img}}">
+        <div class="clear20"></div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-5 col-lg-6 center">
+        <div class="clear50"></div>
+        <div class="text2">{{profile[0].name}}</div>
+        <div class="clear"></div>
+        <div class="text3">{{profile[0].id}}</div>
+        <div class="clear"></div>
+        <div class="text4"> {{profile[0].age}} | {{profile[0].gender}} | {{profile[0].deases}}</div>
+        <div class="clear"></div>
+        <div class="text5">{{profile[0].mobno}}</div>
+        <div class="clear20"></div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <div class="clear50"></div>
+        <div class="clear20"></div>
+        <button type="button" class="btn btn-green-1">EDIT</button>
+        <div class="clear20"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear40"></div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+    <div class="tab BorderRadiusDiv">
+      <div class="row">
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[0].active}}" (click)="openCity(0)">
+            <h4 class="tab-hbright12  tabres-font {{default}}">PATIENT PROFILE</h4>
+          </button>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[1].active}}" (click)="openCity(1)">
+            <h4 class="tab-hbright12  tabres-font  {{default2}}">PRESCRIPTION</h4>
+          </button>
+        </div>
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 text-center">
+          <button class="tablinks {{tabs[2].active}}" (click)="openCity(2)">
+            <h4 class="tab-hbright12 tabres-font {{default3}}">ORDER SUMMERY</h4>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="London" class="{{tabs[0].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+      <div class="card patientPriscript-info-bottom">
+      
+        <div class="card-header">
+          <label class="title">&nbsp;&nbsp;PATIENT PROFILE</label>
+        </div>
+        <div class="card-body">
+           <form [formGroup]="patientProfileForm">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+             
+            <label class="title">PATIENT HISTORY</label>
+            <div class="clear20"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Present Condition</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3">
+                  <select class="formfield option" formControlName="firstName" id="sel1" name="sellist1" required>
+                      <option class="">{{selected1}}</option>
+                    <option class="">Bloating</option>
+                    <option class="">Drug Allergy</option>
+                    <option class="">Dust Allergy</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group">
+                  <select class="formfield option"  formControlName="firstName2" id="sel1" name="sellist1">
+                    <option>{{selected2}}</option>
+                    <option>0-1yrs</option>
+                    <option>1-5yrs</option>
+                    <option>5-10yrs</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue1(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds1; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter1 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="presentcondition1" id="sel1" name="sellist1">
+                            <option>{{selected3}}</option>
+                            <option>Drug Allergy</option>
+                            <option>Dust Allergy</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="presentcondition2" id="sel1" name="sellist1">
+                            <option>{{selected4}}</option>
+                            <option>0-1yrs</option>
+                            <option>1-1.5yrs</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue1(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Allergies</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3">
+                  <select class="formfield option" formControlName="Allergies1" id="sel1" name="sellist1">
+                    <option class="option">{{selected5}}</option>
+                    <option class="option">Drug Allergy</option>
+                    <option class="option">Dust Allergy</option>
+                    <option class="option">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group">
+                  <select class="formfield option" formControlName="Allergies2" id="sel1" name="sellist1">
+                    <option>{{selected6}}</option>
+                    <option>0-1yrs</option>
+                    <option>1-5yrs</option>
+                    <option>5-10yrs</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue2(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds2; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter2 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="Allergies3" id="sel1" name="sellist1">
+                            <option>{{selected7}}</option>
+                            <option>Drug Allergy</option>
+                            <option>Dust Allergy</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="Allergies4" id="sel1" name="sellist1">
+                            <option>{{selected8}}</option>
+                            <option>0-1yrs</option>
+                            <option>1-1.5yrs</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue2(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Special Considerations</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group">
+
+                  <textarea class="form-control areabg"  formControlName="specialconsideration" placeholder="Spots on the skin to sunlight" rows="3" id="comment"></textarea>
+                </div>
+              </div>
+
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Current Medication</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3">
+                  <select class="formfield option" formControlName="currentMedication1" id="sel1" name="sellist1">
+                    <option class="">{{selected9}}</option>
+                    <option class="">Zandu Pancharisth2</option>
+                    <option class="">Zandu Pancharisth3</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group">
+                  <select class="formfield option" formControlName="currentMedication2" id="sel1" name="sellist1">
+                    <option>{{selected10}}</option>
+                    <option>0-1yrs</option>
+                    <option>1-5yrs</option>
+                    <option>5-10yrs</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue3(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds3; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter3 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="currentMedication3" id="sel1" name="sellist1">
+                            <option>{{selected11}}</option>
+                            <option>Zandu Pancharisth</option>
+                            <option>Zandu Pancharisth</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="currentMedication4" id="sel1" name="sellist1">
+                            <option>{{selected12}}</option>
+                            <option>0-1yrs</option>
+                            <option>1-1.5yrs</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue3(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Past illness/ Surgeries</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3">
+                  <select class="formfield option" formControlName="illness1" id="sel1" name="sellist1">
+                    <option class="">{{selected13}} </option>
+                    <option class="">Skin Surgery</option>
+                    <option class="">Brain Surgery</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue4(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds4; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter4 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="illness2" id="sel1" name="sellist1">
+                              <option class="">{{selected14}} </option>
+                              <option class="">Skin Surgery</option>
+                              <option class="">Brain Surgery</option>
+                              <option class="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue4(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clear10"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+            <label class="title">LIFESTYLE DETAILS</label>
+            <div class="clear20"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Habits</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group txt3">
+                  <select class="formfield option"  formControlName="habit1"  id="sel1" name="sellist1">
+                    <option class="">{{selected15}}</option>
+                    <option class="">Drinking</option>
+                    <option class="">Sleeping</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="form-group">
+                  <select class="formfield option" formControlName="habit2" id="sel1" name="sellist1">
+
+                    <option>{{selected16}}</option>
+                    <option>1-5yrs</option>
+                    <option>5-10yrs</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue5(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds5; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter5 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="habit3" id="sel1" name="sellist1">
+                            <option class="">{{selected17}}</option>
+                            <option class="">Drinking</option>
+                            <option class="">Sleeping</option>
+                            <option class="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="habit4" id="sel1" name="sellist1">
+                            <option>{{selected18}}</option>
+                            <option>0-1yrs</option>
+                            <option>1-1.5yrs</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue5(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Exercise Routine</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3">
+                  <select class="formfield option" formControlName="exroutine1" id="sel1" name="sellist1">
+                    <option class="">{{selected19}}</option>
+                    <option class="">Weekly</option>
+                    <option class="">Monthly</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue6(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds6; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter6 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="exroutine2" id="sel1" name="sellist1">
+                            <option class="">{{selected20}}</option>
+                            <option class="">Weekly</option>
+                            <option class="">Monthly</option>
+                            <option class="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue6(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Eating Preference</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3">
+                  <select class="formfield option" formControlName="eatingpref1" id="sel1" name="sellist1">
+                    <option class="">{{selected21}}</option>
+                    <option class="">Homemade Food</option>
+                    <option class="">Homemade Food</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue7(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds7; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter7 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="eatingpref2" id="sel1" name="sellist1">
+                            <option class="">{{selected22}}</option>
+                            <option class="">Homemade Food</option>
+                            <option class="">Homemade Food</option>
+                            <option class="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue7(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Working Hours</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3">
+                  <select class="formfield option"  formControlName="workinghours1" id="sel1" name="sellist1">
+                    <option class="">{{selected23}}</option>
+                    <option class="">4-10 Hours</option>
+                    <option class="">2-3 Hours</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue8(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds8; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter8 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option"  formControlName="workinghours2"  id="sel1" name="sellist1">
+                            <option class="">{{selected24}}</option>
+                            <option class="">4-10 Hours</option>
+                            <option class="">2-3 Hours</option>
+                            <option class="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue8(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Night Sleep Time</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3">
+                  <select class="formfield option"  formControlName="nstime1"  id="sel1" name="sellist1">
+                    <option class="">{{selected25}}</option>
+                    <option class="">4-10 Hours</option>
+                    <option class="">2-3 Hours</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue9(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds9; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter9 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option"  formControlName="nstime1" id="sel1" name="sellist1">
+                            <option class="">{{selected26}}</option>
+                            <option class="">4-10 Hours</option>
+                            <option class="">2-3 Hours</option>
+                            <option class="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue9(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clear10"></div>
+
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                <div class="clear5"></div>
+                <label class="text4">Afternoon Sleep Time</label>
+              </div>
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group txt3">
+                  <select class="formfield option" formControlName="astime1" id="sel1" name="sellist1">
+                    <option class="">{{selected27}}</option>
+                    <option class="">4-10 Hours</option>
+                    <option class="">2-3 Hours</option>
+                    <option class="">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-1 col-sm-1 col-md-1 col-lg-1 pad-l-r-5px">
+                <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue10(0)">+</button>
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+              <div class="clear10"></div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+              </div>
+              <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="row form-field-row" *ngFor="let item of formFilds10; let i = index">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter10 >1">
+                    <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-10 allerp full-droppad text-right pad-l-r-5px">
+                        <div class="form-group">
+                          <select class="formfield option" formControlName="astime1"  id="sel1" name="sellist1">
+                            <option class="">{{selected28}}</option>
+                            <option class="">4-10 Hours</option>
+                            <option class="">2-3 Hours</option>
+                            <option class="">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                        <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue10(item)">-</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="clear10"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+            <label class="title">Family History</label>
+            <div class="clear20"></div>
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6 fh-div">
+                <label class="fh">FATHER</label>
+                <div class="clear10"></div>
+                <div class="form-check fh1">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input"  formControlName="fatherdeceased"   name="fatherdeceased">Deceased
+                  </label>
+                </div>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                    <label class="text4">Diseases</label>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select class="formfield option" formControlName="fd1"  id="sel1" name="sellist1">
+                        <option class="">{{selected29}}</option>
+                        <option class="">Asthma</option>
+                        <option class="">Cancer</option>
+                        <option class="">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                      <select class="formfield option"  formControlName="fd2" id="sel1" name="sellist1">
+
+                        <option>{{selected30}}</option>
+                        <option>1-5yrs</option>
+                        <option>5-10yrs</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue11(0)">+</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                    <div class="row form-field-row" *ngFor="let item of formFilds11; let i = index">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter11 >1">
+                        <div class="row">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option"  formControlName="fd3" id="sel1" name="sellist1">
+                                <option class="">{{selected31}}</option>
+                                <option class="">Asthma</option>
+                                <option class="">Cancer</option>
+                                <option class="">Other</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option"  formControlName="fd4" id="sel1" name="sellist1">
+                                <option>{{selected32}}</option>
+                                <option>1-1.5yrs</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+
+                          </div>
+                          <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                            <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue11(item)">-</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                    <label class="text4">Allergies</label>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select class="formfield option" formControlName="fatherAllergies1" id="sel1" name="sellist1">
+                        <option class="">{{selected33}}</option>
+                        <option class="">Medicne</option>
+                        <option class="">Water</option>
+                        <option class="">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                      <select class="formfield option" formControlName="fatherAllergies2"  id="sel1" name="sellist1">
+                        <option>{{selected34}}</option>
+                        <option>1-5yrs</option>
+                        <option>5-10yrs</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue12(0)">+</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                    <div class="row form-field-row" *ngFor="let item of formFilds12; let i = index">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter12 >1">
+                        <div class="row">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option" formControlName="fatherAllergies3"  id="sel1" name="sellist1">
+                                <option class="">{{selected35}}</option>
+                                <option class="">Medicne</option>
+                                <option class="">Water</option>
+                                <option class="">Other</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option" formControlName="fatherAllergies4"  id="sel1" name="sellist1">
+
+                                <option>{{selected36}}</option>
+                                <option>1-1.5yrs</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+
+                          </div>
+                          <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                            <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue12(item)">-</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6 fh-div1">
+                <label class="fh">MOTHER</label>
+                <div class="clear10"></div>
+                <div class="form-check fh1">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" formControlName="motherdeceased" name="motherdeceased">Deceased
+                  </label>
+                </div>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                    <label class="text4">Diseases</label>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select class="formfield option" formControlName="mdiseases1" id="sel1" name="sellist1">
+                        <option class="option">{{selected37}}</option>
+                        <option class="option">Asthma</option>
+                        <option class="option">Cancer</option>
+                        <option class="option">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                      <select class="formfield option" formControlName="mdiseases2" id="sel1" name="sellist1">
+
+                        <option>{{selected38}}</option>
+                        <option>1-5yrs</option>
+                        <option>5-10yrs</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue13(0)">+</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                    <div class="row form-field-row" *ngFor="let item of formFilds13; let i = index">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter13 >1">
+                        <div class="row">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option" formControlName="mdiseases3" id="sel1" name="sellist1">
+                                <option class="option">{{selected39}}</option>
+                                <option class="option">Asthma</option>
+                                <option class="option">Cancer</option>
+                                <option class="option">Other</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option" formControlName="mdiseases4" id="sel1" name="sellist1">
+                                <option>{{selected40}}</option>
+                                <option>1-1.5yrs</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+
+                          </div>
+                          <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                            <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue13(item)">-</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear10"></div>
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                    <div class="clear5"></div>
+                    <label class="text4">Allergies</label>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group txt3">
+                      <select class="formfield option" formControlName="mallergies1" id="sel1" name="sellist1">
+                        <option class="">{{selected41}}</option>
+                        <option class="">Medicne</option>
+                        <option class="">Water</option>
+                        <option class="">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                      <select class="formfield option" formControlName="mallergies2"  id="sel1" name="sellist1">
+                        <option>{{selected42}}</option>
+                        <option>1-5yrs</option>
+                        <option>5-10yrs</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-2 col-lg-2 pad-l-r-5px">
+                    <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="addFieldValue14(0)">+</button>
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-5 col-lg-5"></div>
+                  <div class="clear10"></div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                    <div class="row form-field-row" *ngFor="let item of formFilds14; let i = index">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12" If as *ngIf="counter14 >1">
+                        <div class="row">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-5 allerp text-right pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option" formControlName="mallergies3"  id="sel1" name="sellist1">
+                                <option class="">{{selected43}}</option>
+                                <option class="">Medicne</option>
+                                <option class="">Water</option>
+                                <option class="">Other</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-4 col-lg-5 sincepad pad-l-r-5px">
+                            <div class="form-group">
+                              <select class="formfield option" formControlName="mallergies4"  id="sel1" name="sellist1">
+
+                                <option>{{selected44}}</option>
+                                <option>1-1.5yrs</option>
+                                <option>Other</option>
+                              </select>
+                            </div>
+
+                          </div>
+                          <div class="col-1 col-sm-1 col-lg-2 pluspad pad-l-r-5px">
+                            <button type="button" class=" minuspad plusminusbtn btn-add-new-filed-1" (click)="deleteFieldValue14(item)">-</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 text-center">
+                  <div class="clear10"></div>
+                <button type="submit" (click)="patientProfileSubmit(patientProfileForm.value)" class="Addaddressbtn">Submit</button> 
+              </div>
+
+            </div>
+          </div>
+          <div class="clear10"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 content-box">
+            <label class="title">HEALTH REPORT</label>
+            <div class="clear20"></div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 fh-div1 buttonmain">
+                
+                <label>
+                  <input  value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">ALL</span>
+                </label>&nbsp;&nbsp;&nbsp;
+          
+                <label>
+                  <input  value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">X-RAY</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input  value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">CT SCAN</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input  value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">BLOOD TEST</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input  value="1" type="checkbox">
+                  <span class="checkmark btn-unclicked-1 btnfont btn">SUGAR</span>
+                </label>&nbsp;&nbsp;&nbsp;
+                <div class="clear20"></div>
+                <ng-container *ngFor="let item1 of hrecord">
+                  <div class="card queries-card  box-with-shadow">
+                    <div class="card-header card-bg">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <label class="fh-text">{{item1.prepo}}</label>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                          <label class="fh-text3">{{item1.date}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body card-bg">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <label class="fh-text">{{item1.file}}</label>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                          <img src="././assets/images/delete-1.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <img src="././assets/images/noun-download.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                          <img src="././assets/images/noun-print.png">&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clear10"></div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <div class="clear10"></div>
+          
+            <div class="f-text">Click here to view more reports</div>
+            <img src="././assets/images/copy-4.png">
+          </div>
+        </form>
+        </div>
+      
+
+      </div>
+    </div>
+
+    <div id="Paris" class="{{tabs[1].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv padlrn">
+      <app-search-patient-prescription></app-search-patient-prescription>
+    </div>
+
+    <div id="Tokyo" class="{{tabs[2].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+
+      <div id="" class="patientPrescriptionMainContainer">
+
+        <div class="card patientPriscript-info-bottom">
+          <div class="card-header">
+            <span class="float-left text-uppercase fw-normal">
+              prescriptions
+            </span>
+            <span class="float-right calender">{{selecteddate}}
+              <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker>
+            </span>
+          </div>
+          <div class="card-body">
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card queries-card box-with-shadow">
+                  <div class="card-header">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                      <label class="os-text2">Dr. Swapnil Kumar</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <label class="text4">14 April 2018</label>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <label class="os-text1">delivery Address and phone number</label>
+                      </div>
+                      <div class="clear10"></div>
+                      <div class="col-12 col-sm-12 col-md-4 col-lg-4 addressbg">
+                        <div class="col-md-12 text-right">
+                          <a class="os-remove-edit" href="#">Remove</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a class="os-remove-edit" href="#">Edit</a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+                          <div class="os-text3">ADDRESS</div>
+                          <div class="os-text3">921, Church St , Aundh, Pune Maharasatra (411007)</div>
+                          <div class="os-text4">PHONE NUMBER</div>
+                          <div class="os-text3">869-847-6151</div>
+                          <div class="clear10"></div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-2">
+                        <button type="button" (click)="popup()" data-toggle="modal" data-target="#myModal" class="btn addbtnpad">
+                          <img src="././assets/images/noun-add.png"> </button>
+                      </div>
+
+                      <!-- The Modal -->
+                      <div class="modal fade  {{custom1}}" id="myModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Add New Address</h4>
+                              <button type="button" class="close" (click)="close()">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+                                <input type="text" class="form-control" id="usr" placeholder="First Name*">
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Last Name*">
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Address Line1*">
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Address Line2">
+                                <div class="clear10"></div>
+                                <select class="select-style">
+                                  <option value="volvo">State*</option>
+                                  <option value="saab">Andhra Pradesh</option>
+                                  <option value="opel">Maharashtra</option>
+                                  <option value="audi">Goa</option>
+                                </select>
+                                <div class="clear10"></div>
+                                <select class="select-style">
+                                  <option value="volvo">City*</option>
+                                  <option value="saab">Mumbai</option>
+                                  <option value="opel">Pune</option>
+                                  <option value="audi">Other</option>
+                                </select>
+                                <div class="clear10"></div>
+                                <select class="select-style">
+                                  <option value="volvo">Locality*</option>
+                                  <option value="saab">Mumbai</option>
+                                  <option value="opel">Pune</option>
+                                  <option value="audi">Other</option>
+                                </select>
+                                <div class="clear10"></div>
+                                <input type="text" class="form-control" id="usr" placeholder="Zip Code*">
+                              </div>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <div class="col-md-12  text-center">
+                                <button type="button" class="Addaddressbtn">Add Address</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="popclose" data-dismiss="modal"
+                                  (click)="close()">Cancel</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear20"></div>
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="clear20"></div>
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <label class="os-text1">Order details</label>
+                        <div class="clear20"></div>
+                        <div class="row hrnone" *ngFor="let item of orderdetails">
+                          <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+                            <img src="{{item.img}}">
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                              <label class="text2">{{item.quantity}}</label>
+                            </div>
+                            <div class="row">
+                              <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                                <div class="fh">{{item.pname}}</div>
+                                <div class="clear10"></div>
+                                <div class="fh-text2"> {{item.ml}}ml</div>
+                              </div>
+                              <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                                <label class="rs">&#8377;</label>
+                                <label class="text2">{{item.price}}</label>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="clear10"></div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <hr>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="clear40"></div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 addressbg">
+                          <label class="os-text1">order summary</label>
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+                                <label class="text3">Name</label>
+                                <div class="clear10"></div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3">
+                                <label class="text3">Qty</label>
+                                <div class="clear10"></div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3 text-center">
+                                <label class="text3">Price</label>
+                              <div class="clear10"></div>
+                            </div>
+                          </div>
+                          <div class="row" *ngFor="let item of totalproduct">
+                            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+                             
+                              <div class="os-text3">{{item.product1}}</div>
+                              
+                              <!-- <label class="os-text3">Zandu Nityam{{item.product2}}</label> -->
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3">
+                           
+                              <div class="text3">{{item.product1qty}}</div>
+                             
+                              <!-- <label class="text3">1{{item.product2qty}}</label> -->
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3 col-md-3 text-center">
+                              
+                              <label class="fh-text3">&#8377;</label>
+                              <label class="os-price">{{item.product1price}}</label>
+                              
+                              <!--  <label class="fh-text3">&#8377;</label>
+                             <label class="os-price">179{{item.product1price}}</label> -->
+                            </div>
+                           
+                          
+
+                          </div>
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+                              <hr>
+                            </div>
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                              <div class="text41">Sub Total</div>
+                              <div class="text41">Delivery Charges</div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right pad-r-50">
+                              <div><label class="rs">&#8377;</label>
+                              <label class="text2">{{subtotal}}</label></div>
+                             <div> <label class="rs">&#8377;</label>
+                              <label class="text2">{{dcharges}}</label></div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                              <hr>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                              <label class="option">Total</label>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 text-right pad-r-50">
+                              <label class="rs">&#8377;</label>
+                              <label class="text2">{{totalprice}}</label>
+                            </div>
+                          </div>
+                        </div>
+                      
+                      </div>
+                    
+                      <hr>
+                    </div>
+
+                    
+                    <hr>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <label class="os-text1">Payment mode</label>&nbsp;&nbsp;&nbsp;&nbsp;<button _ngcontent-c1="" class="Addaddressbtn" type="button">Cash On Delivery</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+</div>

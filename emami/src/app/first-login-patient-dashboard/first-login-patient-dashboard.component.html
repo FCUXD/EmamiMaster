@@ -1,0 +1,244 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header>
+<div class="clear20"></div> 
+<app-floating></app-floating>
+<div class="container"> 
+  <div class="row m-0">
+    <div class="col-12 col-lg-8 PaddingRight17px">
+      <div class="WelcomeLeftContent">
+        <h3>Welcome, Rahul</h3>
+        <h4>Your profile is not updated!</h4>
+        <div class="clear"></div>
+        <div class="ProgressBarContentBox">
+          <p class="m-0">Profile strength</p>
+          <h3 class="m-0">40%</h3>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+              aria-valuemax="100" style="width:40%">
+
+            </div>
+          </div>
+        </div>
+        <div class="UpdateBtnRightBox">
+          <button type="button" class="btn UpdateBtn">update</button>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 pl-0">
+      <div class="appon_card big_card TipOffTheDatDiv">
+        <h5>tip of the day</h5>
+        <p>Oranges restore lost appetite! They stimulate
+          the flow of digestive juices and improve
+          digestion.
+        </p>
+        <a class="float-right mt-4">VIEW MORE <img src="././assets/images/RightArrow.png"></a>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!-- -------------------------------- -->
+  <div class="margin20"></div>
+  <div class="row m-0">
+    <div class="col-12 col-lg-4 PaddingRight17px">
+      <div class="yourdoshaContentBox">
+        <h5 class="HeadingText">your dosha</h5>
+        <div class="border BorderHeading my-4"></div>
+
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <p>You have not taken <br />
+            the Dosha Test</p>
+          <div class="clear"></div>
+          <img src="././assets/images/vectorImg.png">
+          <button type="button" class="btn UpdateBtn GetStartedBtn mt-4">get started</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-8 pl-0">
+      <div class="yourdoshaContentBox UpcomingAppointmentsBox">
+        <h5 class="HeadingText UpcomingText CalenderText1">Upcoming Appointments</h5>
+        <!-- <p class="">sept 2018  
+              </p>  -->
+        <div class="float-right CalenderText">{{selecteddate}} <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker>
+        </div>
+        <div class="clear"></div>
+        <div class="DoshaLeftBox UpcomingRightContentBox">
+          <h4>Oops! You have no upcoming appointments. <br />
+            Do you want to book a new appointment?</h4>
+          <div class="clear"></div>
+          <button type="button" class="btn UpdateBtn BookAppoinment_my">book appointment</button>
+          <div class="border BorderHeading my-4"></div>
+          <div class="clear"></div>
+          <p class="m-0">view appointment history</p>
+          <img src="././assets/images/UpArrow.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="margin20"></div>
+  <!-- //------------// -->
+  <div class="clear"></div>
+  <div class="row m-0">
+    <div class="col-12">
+      <div class="yourdoshaContentBox p-0">
+        <div class="YourQuriesHeadingDiv">
+          <h5 class="HeadingText  yourqueriesLeftDiv m-0">your queries</h5>
+          <button type="button" class="btn UpdateBtn GetStartedBtn float-right ">Post query</button>
+        </div>
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <app-your-query-tabs></app-your-query-tabs>
+
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="margin20"></div>
+  <!-- //------------// -->
+  <div class="row m-0">
+    <div class="col-12">
+      <div class="yourdoshaContentBox UpcomingAppointmentsBox">
+        <h5 class="HeadingText UpcomingText">your vitals</h5>
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+
+              <div class="appon_card vital_card">
+                <div class="bl_pressure text-left">
+                  <h4>glucose</h4>
+                </div>
+                <div class="bl_pressure text-right">
+                  <!-- <img class="bl_img" src="././assets/images/options-lines.png"> -->
+                  <img src="././assets/images/plus-symbol.png">
+                </div>
+                <canvas id="lineChart" style="width: 420px; height: 225px;">
+                </canvas>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="appon_card vital_card mr-0">
+                <div class="bl_pressure text-left">
+                  <h4>heart rate</h4>
+                </div>
+                <div class="tab TabContentBox">
+                  <button class=" tab1 tablinks {{tabs[0].active}}" (click)="openCity(0)">measure</button>
+                  <button class=" tab1  tablinks {{tabs[1].active}}" (click)="openCity(1)">statistics</button>
+
+                  <div class="bl_pressure text-right float-right">
+                    <!-- <img class="bl_img" src="././assets/images/options-lines.png"> -->
+                    <img src="././assets/images/plus-symbol.png">
+                  </div>
+                </div>
+                <div id="London" class="{{tabs[0].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+
+
+                  <canvas id="lineChart2" style="width: 420px; height: 225px;">
+                  </canvas>
+
+                </div>
+                <!--**************************-->
+                <div id="Paris" class="{{tabs[1].tabcontent}} p-0  TabContentBox MarginTop20 BorderRadiusDiv bordertop">
+
+
+                  <canvas id="lineChart3" style="width: 420px; height: 225px;">
+                  </canvas>
+                </div>
+                <!--**************************-->
+
+                <div class="clear"></div>
+
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="margin20"></div>
+  <!-- //------------// -->
+  <div class="row m-0">
+    <div class="col-12 col-lg-6 PaddingRight17px">
+      <div class="yourdoshaContentBox UpcomingAppointmentsBox ">
+        <h5 class="HeadingText UpcomingText articleDiv">recommended articles</h5>
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <div class="bl_pressure text-left  cust_mr">
+            <div class="clearfix mb-4"></div>
+
+            <div class="main_div">
+              <div class="row">
+                <ng-container *ngFor="let item of recommendedArticles">
+
+                  <div class="bl_pressure_sub no_mr border-0 bg-white mb-4 col-12 col-lg-6">
+                    <div class="card-body p-0">
+                      <img class="" src="{{item.image}}" alt="Card image">
+                      <div class="p-4">
+                        <p class=" skintext">{{item.head2}}</p>
+                        <h4 class="SaffarnText">{{item.data}}</h4>
+                        <button _ngcontent-c1="" class="btn UpdateBtn GetStartedBtn mt-4" type="button">READ MORE</button>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </ng-container>
+                <div class="divider w-100 mt-0 mb-0"></div>
+                <a class="float-right mt-4 viewall">view all <img src="././assets/images/RightArrow.png"></a>
+                <div class="clear"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 pl-0">
+      <div class="yourdoshaContentBox UpcomingAppointmentsBox ">
+        <h5 class="HeadingText UpcomingText articleDiv2">recent orders</h5>
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <div class="bl_pressure text-left   ">
+            <div class="clearfix mb-4"></div>
+            <div class="border-0  bg-white ">
+              <div class="card-body pb-0">
+                <ng-container *ngFor="let item of recent_order">
+                  <div class="recent_order">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img src="{{item.image}}">
+                      </div>
+                      <div class="col-md-9">
+                        <h3 class="ZanduText">{{item.data}}</h3>
+                        <h3 class="RupeesText">rs 250</h3>
+                        <p class="card-text text-right DateText">{{item.date}}</p>
+                      </div>
+                    </div>
+                    <div class="divider margintborder mb-0"></div>
+
+                  </div>
+                </ng-container>
+
+              </div>
+              <a class="float-right viewall pt-2">view all <img src="././assets/images/RightArrow.png"></a>
+              <div class="clear"></div>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear20"></div>
+
+  <div class="clear"></div>
+  <app-footer></app-footer>

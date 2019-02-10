@@ -1,0 +1,66 @@
+.UrjentCardHeader{
+    background-color: #f6eddb;
+    font-family: TrajanPro-Regular;
+    font-size: 16.5px;
+    font-weight: normal;
+    color: #402909;
+} 
+.UrjentCardHeader1{
+    font-family: TrajanPro-Regular;
+    font-size: 16.5px;
+    font-weight: normal;
+    color: #402909;
+}
+.UrjentCardHeaderPadding, .CardText {
+    padding: 5px 25px;
+}  
+.BorderRadiusDiv {
+    border-radius: 10px;
+}
+.CardText h2{
+    padding: 9px 0px 17px 0px;
+} 
+.ViewHistoryBtn{
+    background-color: #33a15c;
+color: #ffffff;
+font-size: 14px;
+padding: 10px 50px;
+} 
+.clear5 {
+    clear: both;
+    height: 5px;
+}
+.tabshadow{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06)!important; 
+    min-height: 165px;
+}
+
+.ptext{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333333;
+    margin-bottom: 0;
+}
+.pbold{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+.btn-green-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 2px #bccf60;
+    padding: 3px 25px;
+    }
+
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+    .CardResMarginTop{
+        margin-top: 20px;
+    }
+}

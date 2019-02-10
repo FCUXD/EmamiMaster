@@ -1,0 +1,1606 @@
+.defalt{width: 200px;height: 200px; color: #fff;background: #000}
+.changed{background: rgb(158, 14, 14)}
+.paratxt{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 22px;
+    font-weight: normal;
+    color: #333333;
+}
+.container1 {
+    width: 91% !important;
+    max-width: 2400px !important;
+    margin: 0 auto;
+    padding: 0px;
+}
+.webhidden{
+    display: none;
+}
+.hiddencta{
+    display: none;
+}
+.article_divall {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    min-height:400px;
+}
+.article_divall span {
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #333333;
+}
+.article_divall p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333333;
+}
+.rsposition{
+    position: absolute;
+    bottom: 10px;
+}
+ .rmposition10{
+    position: absolute;
+    bottom: -10px;
+}
+.paraul{
+    list-style-type: none;
+    padding: 0px;
+}
+.padlrn{
+    padding: 0px;
+}
+.ppad{
+    padding: 0px 20px;
+}
+.ppad1{
+    padding: 0px 70px;
+}
+.card-deck {
+    flex-wrap:  wrap!important;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.padright122{
+    padding-right: 122px;
+}
+.subtxtb{
+  font-family: PlayfairDisplay-Regular;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+.addnotes {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+.home-top,.prakrati-meter {
+    background-image: url("src/assets/images/ayurveda-new.png");
+    background-repeat: no-repeat;
+    margin-top: 80px;
+    background-position: 100% 100%;
+    min-height:500px;
+    background-size: cover;
+    }
+.modal{background: rgba(9, 9, 9, 0.5);display: block;}
+.nomodel{display: none}
+.FbBtn,.GoogleBtn {
+    background-color: #385c9a;
+    color: #ffffff;
+    width: 227px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: #385c9a;
+    font-family: ''TrajanPro-Bold'';
+    font-size: 12px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-align: center;
+    color: #ffffff;
+}
+.GoogleBtn {
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+span.zanduser {
+    font-size: 30px;
+    font-weight: 700;
+}
+.bor-r {
+    border-right: 1px solid #ebebeb;
+}
+.minus-top{
+    margin-top: -44px;
+}
+/* Style the tab */
+
+/* Style the tab content */
+.tabcontent {
+    display: block; 
+    padding-bottom: 13% !important;
+}
+.hide{
+    display: none;
+} 
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5) !important;
+}
+.sm-btn {
+    padding: 14px 32px;
+}
+.arrow_div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -50px;
+    display: none
+}
+.active .arrow_div{
+    display: block;
+}
+.tab_card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 0px;
+    text-align: center;
+    font-family: 'TrajanPro-Regular';
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #402909;
+  display: inline-block;
+  width: 33%;
+} 
+.Yoga_AurvedaSection{
+  
+    min-height: 1110px;
+    margin-top: -152px;
+    padding-top: 202px;
+} 
+.Yoga_AurvedaSection h1 {
+    font-family: 'TrajanPro-Regular';
+    object-fit: contain;
+
+font-size: 36px;
+font-weight: normal;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;
+color: #402909;
+}  
+.artcle {
+    padding-top: 10%; 
+    min-height: 500px;
+}
+.Yoga_Ayurveda_RightDiv h5{
+    font-size: 30px;
+color: #333333;
+font-family: 'TrajanPro-Bold';
+} 
+.suparistyle{
+    height: 440px;
+}
+.Yoga_Ayurveda_RightDiv p{
+    font-size: 16px;
+color: #333333;
+font-family: 'PlayfairDisplay-Bold';
+} 
+.Yoga_Ayurveda_RightDiv{
+    margin-top: 7%;
+}
+.tab1ContentBox{
+    background: #fff5e4;
+
+border-radius: 10px;
+padding: 3% 7%;
+box-shadow: 0px 3px 14.2px 1.8px rgba(0, 0, 0, 0.14);
+}
+.herbof_text{
+    font-size: 18px;
+    color: #333333; 
+    font-family: 'TrajanPro-Bold';
+}
+.herbof_text2{
+    font-family: 'PlayfairDisplay-Bold';
+} 
+.herbof_text3{
+    font-family: 'PlayfairDisplay-Regular';
+}
+.findHerb_Btn{
+    font-size: 16px !important;
+    font-family: 'TrajanPro-Bold' !important;
+    width: 254px !important;
+
+    height: 64px !important;
+} 
+.paddingTabContentDiv{
+    padding-bottom: 13% !important;
+}
+.tab_card img {
+    margin-right: 10px;
+}
+.bg{
+    background-image: url('../../assets/images/footerbg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.tab_card .card-body {
+    padding: 14px 0px;
+}
+.border_div {
+    border-right: 2px solid #d9b065;
+    padding: 20px 30px;
+    text-align: center;
+}
+.input-spinner{
+    width: 70px;
+    text-align: center;
+    font-family: PlayfairDisplay;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 18px;
+    letter-spacing: 1.2px;
+    color: #1d1d1b;
+  }
+  .product_img {
+    text-align: center;
+}
+.product_info {
+    text-align: center;
+}
+.product_info p {
+    font-size: 12px;
+}
+.Product_div{position: relative;overflow: hidden;border-radius: 10px;
+padding: 0px 20px;}
+.Product_div span {
+    display: block;
+    width: 120px;
+    height: 24px;
+    background-color: #32aa61;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(319deg);
+    position: absolute;
+    text-align: center;
+    line-height: 24px;
+    top: 8px;
+    font-family: arial;
+    font-size: 12px;
+    left: -38px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .cart_btn {
+    width: 48%;
+    font-weight: 700;
+}
+.order-margin-top2 .fa {
+    cursor: pointer;
+}
+.keep_healthy h1 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 46px;
+}
+.gray {
+    background: #f5f5f5;
+}
+ agm-map {
+    height: 564px;
+    width: 564px;
+    border-radius: 50%;
+  }
+  :host >>>  .agm-map-container-inner{
+border-radius: 50%
+  }
+.defalt_height{height:360px;overflow: hidden;}
+.full_height{height: 780px;}
+  .radio_container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 2px solid #b47f3c;
+}
+
+
+/* When the radio button is checked, add a blue background */
+.radio_container input:checked ~ .checkmark {
+    background-color: #ffffff;
+    border:1px solid #333333;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio_container .checkmark:after {
+     top: 5px;
+    left: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: black;
+}
+.locate{background: url("src/assets/images/route.png") no-repeat;
+    background-position: 97%;
+    padding: 30px;
+    border: none;
+    background-color: #dddddd;
+    border-radius: 10px;}
+    .addres {
+        background: #ffffff;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    }
+    .addres p,h1,h4,h2{margin-bottom: 0px}
+    .km {
+        display: inline-block;
+        width: 25%;
+        vertical-align: top;
+        text-align: center;
+        padding: 26px 18px;
+        -o-object-fit: contain;
+        object-fit: contain;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        background-color: #b5803c;
+    }
+    .location {
+        width: 60%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+    }
+    .timing {
+        width: 14%;
+        display: inline-block;
+        vertical-align: top;
+        vertical-align: text-bottom;
+        text-align: right;
+        padding: 10px 0px;
+        padding-right: 10px;
+    }
+    h1.main_title {
+        object-fit: contain;
+        text-shadow: 0px 10px 35.6px rgba(0, 0, 0, 0.51);
+        font-family: 'TrajanPro-Regular';
+        font-size: 36px;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;     
+        color: #ffffff;
+        margin-left: 70px;
+        padding: 62px 0px 60px 0px;
+        margin-top: 1%;
+    }
+
+    h2.looking_for {
+        object-fit: contain;
+        font-family: TrajanPro-Bold;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 1.8px;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+    .benefits_ayurveda {
+        background: url('src/assets/images/yoga.png') no-repeat;
+    }
+    .card.ayur_you h2 {
+        object-fit: contain;
+        font-family: TrajanPro-Regular;
+        font-size: 36px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #402909;
+    }
+    .card.ayur_you h4 {
+        object-fit: contain;
+        font-family: PlayfairDisplay-Regular;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        padding: 15px 0;
+        color: #402909;
+    }
+    .card.ayur_you p {
+        object-fit: contain;
+        font-family:  PlayfairDisplay-Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: 0.3px;
+        text-align: left;
+        color: #333333;
+        padding-bottom: 22px;
+    }
+    .SignBtn, .SignBtn:active, .SignBtn:hover, .SignBtn:focus {
+        font-family: 'TrajanPro-Bold';
+        background-color: #cfa15a !important;
+        border: 0px;
+        box-shadow: 0px 0px 15px #ccc;
+        margin: 0 auto;
+        width: 297px;
+        height: 63px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #402909 !important;
+        outline: 1px solid #c29a5d;
+        outline-offset: -11px;
+        border-radius: 15px;
+        -moz-outline-radius: 10px;
+    }
+    .ayur_you .natural_div h4 {
+        font-family: 'PlayfairDisplay-Bold';
+    font-size: 60px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 50px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #d6ad66;
+    padding: 0px !important;
+    margin: 0 !important;
+    }
+
+    .ayur_you .natural_div p {
+        object-fit: contain;
+        font-family: 'TrajanPro-Regular';
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #402909;
+    }
+    .notext{font-size: 48px !important;
+    line-height: 66px !important}
+    .notext2{    font-size: 56px !important;
+        line-height: 53px !important;}
+    .ayur_you .natural_div h4 .chota{
+        font-size: 24px
+    }
+    .nature_godes {
+        padding-top: 23%;
+    padding-bottom: 5%;
+    }
+    .dosha{
+        background-image: url('src/assets/images/family.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 39% 10%;
+        position: relative;
+        width: 100%;
+    }
+    .dosham {
+        object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.13);
+    background-color: #f9f4e4;
+    width: 44%;
+    position: absolute;
+    top: 122px;
+    padding: 40px 50px;
+    text-align: center;
+    }
+    .dosham h3 {
+        object-fit: contain;
+        font-family: 'TrajanPro-Regular';
+        font-size: 36px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 0;
+    }
+    .dosham p {
+        object-fit: contain;
+        font-family: 'PlayfairDisplay-Regular';
+        font-size: 22px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.64;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+    }
+    .dosham h4 {
+        object-fit: contain;
+        font-family: 'PlayfairDisplay-Regular';
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+    }
+    .dosham h5 {
+        object-fit: contain;
+        font-family: 'PlayfairDisplay-Bold';
+        font-size: 24px;
+      
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;
+        margin: 20px 0px;
+    }
+    .my_email {
+        border: none;
+        border-bottom: solid 2px #d6ad66;
+        background: transparent;
+        border-radius: 0px;
+        margin-bottom: 40px;
+        font-family: 'PlayfairDisplay-Regular';
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #666666;
+    }
+    .zanduservicemain {
+        border-radius: 10px;
+        background-color: #f8f2df;
+        padding: 30px 10px; 
+        margin-top: -68px;
+        z-index: 999999;
+    }
+    .zanduservice p {
+        object-fit: contain;
+        font-family: 'TrajanPro-Bold';
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.64;
+        letter-spacing: normal;
+        text-align: none;
+        color: #333333;
+    }
+    .zanduservice {
+        padding: 0px !important;
+        margin: 0px !important;
+        background: transparent;
+        padding-top: 16px !important;
+    }
+.zanduservice .card-body {
+        padding: 0px;
+    }
+    .zanduservice span {
+        font-family: 'TrajanPro-Regular';
+        font-size: 20px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #402909;
+        border-left: 1px solid #cccccc;
+        padding-left: 40px;
+        padding-top: 10px;
+    }
+    .zanduservice h5{
+        font-family: 'TrajanPro-Bold';
+  font-size: 28px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #402909;
+  padding-top: 10px;
+    border-left: 1px solid #cccccc;
+    padding-left: 40px;
+    margin-top: -2px;
+}
+.deal_area {
+    background-image: url('src/assets/images/herbBG.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+.HiddenBorder{
+    border-right: none;
+}
+.artcle h6 {
+    object-fit: contain;
+    font-family: 'TrajanPro-Regular';
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0px;
+}
+.small_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+.article_div {
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 300px;
+}
+.article_div span {
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #333333;
+}
+.article_div p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333333;
+}
+
+.read_more, .read_more:active, .read_more:hover, .read_more:focus {
+    font-family: 'TrajanPro-Bold';
+    background-color: #cfa15a !important;
+    border: 0px;
+    box-shadow: 0px 0px 15px #ccc;
+    margin: 0 auto;
+    width: 153px;
+    height: 33px;
+    font-size: 12px;
+   
+    color: #402909 !important;
+    outline: 1px solid #c29a5d;
+    outline-offset: -5px;
+    border-radius: 5px;
+    -moz-outline-radius: 5px;
+}
+.small_width{width: 70%}
+
+.succes_stories {
+    background-image: url('src/assets/images/slider_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15% 0px 5% 0px ;
+}
+.all_benefits {
+    width: 68%;
+    display: inline-block;
+    vertical-align: top;
+}
+.topping_spac {
+    margin-top: 95px;
+    background: #f9f4e4;
+border-radius: 10px;
+padding: 3% 11%;
+}
+.all_benefits2 {
+    width: 32%;
+}
+.all_benefits p {
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+  
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    color: #333333;
+    margin-bottom: 0px;
+
+}
+.all_benefits span {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+
+
+
+/* The container */
+.check_container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+
+/* Hide the browser's default checkbox */
+.check_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+
+/* On mouse-over, add a grey background color */
+.check_container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.check_container input:checked ~ .checkmark {
+    background-color: #42b550;
+    border: 2px solid #42b550;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.newbg{
+    
+    background: url('../../assets/images/skinSymptomBG.png') no-repeat;
+}
+.locatus {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+.locatus h5 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-align: left;
+    color: #000000;
+}
+.locatus h6 {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333333;
+}
+.locate_input {
+    border: none;
+    height: 60px;
+    background-image: url('src/assets/images/gps.png');
+    background-repeat: no-repeat;
+    background-position: 92%;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 32.5px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+    padding-left: 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+span.distance {
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fbf4da;
+    display: block;
+}
+
+span.kmeter {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fbf4da;
+    display: block;
+}
+.location h4 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #333333;
+}
+.location p {
+    font-family: 'TrajanPro-Regular';
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666666;
+}
+.topping_spac2 {
+    margin-top: 166px;
+}
+.map {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+.deal_title h5 {
+    font-family: 'TrajanPro-Regular';
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0px;
+}
+.card-body.active {
+    box-shadow: 0px 3px 14.2px 1.8px rgba(0, 0, 0, 0.14);
+    background-color: #f9f4e4;
+}
+.card-body.active .border_div{
+    border-right: 0px;
+}
+.genral_care {
+    width: 39%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f9f4e4;
+    padding: 40px;
+}
+.big_product {
+    width: 61%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.genral_care h6 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+.genral_care p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.product_info h6 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.1px;
+    color: #333333;
+}
+.product_info p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    text-align: left;
+    color: #402909;
+}
+.product_info h4 {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 18px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #333333;
+}
+span.modeltitle {
+    font-family: 'TrajanPro-Bold';
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-align: left;
+    color: #402909;
+}
+.modal-body p {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #402909;
+}
+.smlltxt {
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333333;
+}
+.closingbtn {
+    width: 83px;
+    height: 35px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: #d6ad66;
+    font-family: 'TrajanPro-Regular';
+} 
+/* --------Ayurvedic Diet section --------------*/
+.AyurvedicDietContent{
+background: url('src/assets/images/RightDesign.png') no-repeat right center;
+} 
+.AyurvedicDietRightText h1{
+    color: #402909;
+    font-size: 36px; 
+    font-family: 'TrajanPro-Regular';
+} 
+.AyurvedicDietRightText h5{
+    color: #333333;
+    font-size: 22px;
+    font-family: 'PlayfairDisplay-Regular';
+}
+.AyurvedicDietRightText p{
+    color: #333333;
+    font-size: 16px;
+    font-family: 'PlayfairDisplay-Regular';
+} 
+.onesideicon{
+    width: 200px;
+}
+.AyurvedicDietRightText{
+    margin-top: 9%;
+}  
+
+/* --------Ayurvedic Diet section End --------------*/  
+/* --------Are you looking for Healthy Diet Ideas? section  --------------*/ 
+.Heading h1 {
+    font-size: 36px;
+    color: #000000; 
+    font-family: 'TrajanPro-Regular';
+  text-align: center;
+}  
+ .AyurvedicDietContent2{
+    background: url('src/assets/images/vihaar-ban.png') no-repeat left center;
+    background-size: 100% 100%;
+}  
+.AyurvedicDietRightText2{
+    padding-left: 16% !important;
+}
+.AyurvedicDietRightText2  ul {
+    list-style-image: url('src/assets/images/ListStyle.png');
+} 
+.AyurvedicDietRightText2  ul li {
+  font-size: 24px; 
+  color: #333333; 
+  font-family: 'PlayfairDisplay-Bold'; 
+} 
+.IFSODiv{
+    margin-left: 47px;
+}
+/* --------Are you looking for Healthy Diet Ideas? section  End --------------*/  
+/*-------------- Skin Care section  ----------------------------*/
+.article_div2 {
+    width: 50%;
+  
+}
+.article_div2 span {
+    font-size: 24px; 
+    font-family: 'PlayfairDisplay-Regular'; 
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center; 
+    color: #1f1710;
+  
+  }
+.ORTExt{
+    font-size: 15.5px !important;
+
+    letter-spacing: 1.6px !important;
+  
+    color: #a58658 !important;
+} 
+/* -------Footer-------- */
+.bottom_footer {
+    background: url('src/assets/images/footer.png') no-repeat;
+background-position: center top;
+} 
+.BorderradiusLeft{
+    border-radius: 5px 0px 0px 0px;
+} 
+.BorderradiusRight{
+    border-radius: 0px 5px 0px 0px;
+}
+
+
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /*/ IE10 + CSS styles go here /*/
+
+   
+}
+
+@media screen and (min-width: 1600px) and (max-width: 2400px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 1060px) {
+   
+}
+
+/* @media screen and (min-width: 768px) and (max-width: 992px) { */
+    @media screen and (min-width: 1px) and (max-width: 992px) {
+    .zanduservice p{
+        font-size: 14px;
+    }
+    .zanduservice h5 {
+        font-size: 20px;
+    }
+    .zanduservice span {
+        font-size: 16px;
+    }
+    .FbBtn {
+        background-color: #385c9a;
+        color: #ffffff;
+        
+    }
+    .GoogleBtn {
+        color: #333;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+       
+    }
+    .read_more, .read_more:active, .read_more:hover, .read_more:focus {
+        font-family: 'TrajanPro-Bold';
+        background-color: #cfa15a !important;
+        border: 0px;
+        box-shadow: 0px 0px 15px #ccc;
+        margin: 0 auto;
+        width: 153px;
+     
+        bottom: 10px;
+      
+        height: 33px;
+        font-size: 12px;
+        color: #402909 !important;
+        outline: 1px solid #c29a5d;
+        outline-offset: -5px;
+        border-radius: 5px;
+        -moz-outline-radius: 5px;
+    }
+    .article_div {
+        width: 33%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        min-height:383px;
+    }
+    .card-deck {
+        flex-wrap:  wrap!important;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    button.btn.read_more.medi-btn-learn {
+        margin: -6px auto;
+    }
+    .read_more.yoga-read-more {
+        margin: -20px auto;
+        left: 36%;
+    }
+    
+}
+
+/* @media screen and (min-width: 1px) and (max-width: 992px) {
+
+    button.btn.read_more.medi-btn-learn {
+        margin: -74px auto;
+    }
+    .read_more.yoga-read-more {
+        margin: -35px auto;
+        left: 32%;
+    }
+} */
+@media screen and (min-width: 770px)and (max-width: 1200px) {
+    br{
+        display: none;
+    }
+    .article_div {
+        width: 72%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        min-height: 310px;
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .h1.main_title{
+        margin-left: 0px;
+    }
+    .padlrn{
+        padding: 0px;
+    }
+    .m-tops{ 
+        margin-top: 40px !important;
+    }
+    .article_div {
+        width: 72%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        min-height: 330px;
+    } 
+    br{
+        display: none;
+    }
+    .topping_spac {
+        margin-top: 36px;
+    }
+    .clear80{
+        height: 0px;
+        clear: both;
+    }
+    .article_div p {
+        font-size: 14px;
+    }
+    .container1 {
+        width: 100% !important;
+        max-width: 2400px !important;
+        margin: 0 auto;
+        padding: 0px;
+    }
+    .small_wrapper {
+        margin-top: 15px !important;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .mobhidden{
+        display: none;
+    }
+    .webhidden{
+        display: block;
+    }
+    .AyurvedicDietContent {
+        background: url('src/assets/images/RightDesign.png') no-repeat right center;
+        background-image: none;
+    }
+    .AyurvedicDietRightText{
+        margin-top: 0%;
+    }
+    .artcle {
+        padding-top: 10%; 
+        min-height: 440px;
+    }
+    .ppad1{
+        padding: 0px 20px;
+    }
+    .m-top{
+        margin-bottom: 25px !important;
+    }
+    .m-t{
+        margin-top: 25px;
+    }
+
+    .home-top,.prakrati-meter {
+        background-image: url(../../assets/images/ayurveda_res.png);
+        background-repeat: no-repeat;
+        margin-top: 80px;
+        background-position: 100% 100%;
+        min-height: 500px;
+        background-size: cover;
+    }
+    /* .article_div {
+        width: 72%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        min-height: 311px;
+
+    }  */
+ 
+    .article_divall {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        min-height:410px;
+    }
+    .article_divall span {
+        font-family: 'TrajanPro-Bold';
+        font-size: 22px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 1.5px;
+        text-align: left;
+        color: #333333;
+    }
+    .article_divall p {
+        font-family: 'PlayfairDisplay-Regular';
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #333333;
+    }
+    .m-top10{
+        margin-top: 10px;
+    }
+    .all_benefits span {
+        font-size: 14px;
+    }
+    .Ayurvedicdietholder{
+        width:200px;
+    }
+    .SignBtn, .SignBtn:active, .SignBtn:hover, .SignBtn:focus {
+        width: 100%;
+        font-size: 11px;
+        height: 63px;
+    }
+    
+    .txtalligncenter{
+        text-align: center;
+    }
+    
+    .AyurvedicDietRightText2 {
+        padding-left: 1% !important;
+    }
+    
+    .padright122 {
+         padding-right:2px; 
+    }
+    .footerDiv[_ngcontent-c4] {
+        width: 92%;
+    }
+    input.form-control {
+        font-size: 14px!important;
+        font-weight: bold;
+        letter-spacing: 1.8px;
+        height: 39px!important;
+        padding-left: 6px;
+    }
+    button.btn.btn-success {
+        font-size: 14px;
+        font-weight: bold;
+        width: 131px!important;
+        height: 39px!important;
+    }
+    .zanduservice h5{
+        font-size: 28px;
+        border-left: none;
+        padding-left: 0px;
+    }
+    .AyurvedicDietRightText2 ul li {
+        font-size: 16px;
+    }
+    .zanduservice h5 {
+        border-left: none;
+        /* padding-left: 14%!important; */
+        text-align: center;
+        font-size: 23px!important;
+    }
+    .zanduservice span{
+        border-left: none;
+        font-size: 23px!important;
+        padding-left: 4px!important;
+    }
+   
+    .Heading h1 {
+    font-size: 30px;
+    }
+.AyurvedicDietRightText h1 {
+    font-size: 30px;
+}
+.Yoga_AurvedaSection h1 {
+    font-size: 24px;
+}
+.Yoga_Ayurveda_RightDiv h5 {
+    font-size: 18px;
+}
+.all_benefits p {
+    font-size: 18px;
+}
+.my-5{
+    margin-top: 0px!important;
+}
+ .px-5 {
+    padding-left: 0rem !important;
+    padding-right:0rem!important;
+}
+.card-deck {
+    flex-direction:  column ;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.card-deck .card {
+    display: flex;
+    flex: 1 0 0%;
+    flex-direction: column;
+}
+.card-deck {
+    display: table;
+    text-align: center;
+    margin: 0 auto;
+}
+.card-deck .px-5{
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}
+.zanduservice {
+    margin: 10px !important;
+    text-align: center !important;
+}
+.zanduservice span, .zanduservice h5{
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0px;
+}
+.zanduservice p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* .ResMainDiv {
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+} 
+.ResScroll{
+    display: inline-block !important;
+}  */
+.paratxt{
+    font-family:PlayfairDisplay-Regular;
+    font-size: 20px;
+    font-weight: normal;
+    color: #333333;
+}
+.ahaar-res {
+    display: none;
+}
+.vihaar-res{
+    text-align: center;
+}
+.container.vihar-container {
+    margin-top: 50px;
+}
+.small_wrapper.mb-5 {
+    margin-top: 17% !important;
+}
+
+}
+
+@media screen and (min-width: 1px) and (max-width: 480px) {
+    .para-res {
+        text-align: justify;
+    }
+    .footer-info {
+        text-align: center;
+    }
+    .read_more.medi-btn-learn{
+        margin: -9px auto;
+        left: 29%;
+    }
+    .read_more.yoga-read-more{
+        margin: -20px auto;
+        left: 30%;
+    }
+    .rmposition10 {
+        position: absolute;
+        /* bottom: 40px; */
+        right: 10%;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 380px) {
+   
+.article_divall {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    min-height: 422px;
+}
+}
+
+@media screen and (min-width: 1px) and (max-width: 320px) {
+
+    h1.main_title{
+        margin-left: 20px;
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /*/ IE10 + CSS styles go here /*/
+
+   
+}

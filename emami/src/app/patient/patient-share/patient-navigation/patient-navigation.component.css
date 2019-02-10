@@ -1,0 +1,362 @@
+.navspac .nav-item {
+    /* padding: 10px 6% 10px 7px; */
+    margin: 0% 3%;
+  
+}      
+.MobileMenu{
+    display: none;
+}
+.DisplayNoneHeader{
+    display: none;
+}
+.displayNone, .CollapseProfile {
+    display: none;
+}
+.navspac2{
+    width: 64%;
+
+float: left;
+} 
+.navspac3{
+    float: right;
+    text-align: right;
+    width: 36%;
+}
+.navspac{
+    margin-left: 6%;
+    float: left;
+}
+.disply-default {
+    display: none;
+  
+  }
+  
+  .disply-change {
+      display: block;
+  }
+  .nav-link {
+    color: #402909;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'TrajanPro-Regular'; 
+    outline: none; 
+    text-align: center;
+} 
+
+.NavBarLogo, .NavBarLogo:hover {
+    color: #402909;
+    font-size: 14px;
+    font-family: 'TrajanPro-Bold'; 
+    margin-top: -13px;
+padding-bottom: 0px;
+}
+
+.iconPadding{
+    padding: 10px 4% !important; 
+    width: 77px;
+} 
+.iconPadding2{
+    padding-right: 10% !important; 
+
+} 
+
+.SearchByMoodBox{
+    background: url('../../../../assets/images/search.png') no-repeat 555px center;  
+    background-color: #ffffff; 
+    border-radius: 0px;
+    border: 1px solid #333;
+} 
+.HeaderBtn{
+    background-color: #ffffff;
+    border-radius: 0px;
+    border: 1px solid #333;
+}  
+.HeaderBtn1{
+    background-color: #d7d7d7;
+   
+} 
+
+.HeaderBG{
+    background-color: #f1f1f1;
+} 
+.HeaderMenu li{
+    padding: 0px 5px;
+} 
+/* .nav-link:active, .nav-link:focus, .nav-link:hover  {
+  border-bottom: 4px solid #000;
+}  */
+.menubar{
+    /* border-bottom: 3px solid #84b367;  */
+    color: #84b367 !important; 
+    font-size: 14px;
+    width: 100%;
+
+   font-family: 'TrajanPro-Regular';
+} 
+.menubar:after{
+    margin-top: 8px;
+    display: block;
+    content: "";
+    background: #84b367 !important;
+    height: 3px;
+    width: 100%;
+}   
+.dropdown-menu{
+    left: -50px; 
+    z-index: 9999;
+}
+ .margitop4{
+    margin-top: 4px;
+ }
+.navlink{
+    color: #402909 !important;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    
+    font-family: 'TrajanPro-Regular';
+} 
+a:hover {
+  
+    text-decoration: none;
+} 
+.navbar-nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    float: right;
+}
+.btn-primary {
+    color: #000000;
+    border: none;
+    background-color: #ffffff;
+}
+.btn-primary:hover {
+    color: #000000;
+    border: none;
+    background-color: #ffffff;
+}
+.btn-primary:focus, .btn-primary:active {
+    color: #000000;
+    border: none;
+    background-color: #ffffff; 
+    box-shadow: none !important;
+}
+.btn-primary.dropdown-toggle, .btn-primary.dropdown-toggle:active, .btn-primary.dropdown-toggle:focus {
+    color: #000000;
+    border: none;
+    background-color: #ffffff; 
+    box-shadow: none;
+}
+
+.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.SearchByMoodBox{
+    background: url('../../../../assets/images/search.png') no-repeat 555px center;  
+    background-color: #ffffff; 
+    border-radius: 0px;
+    border: 1px solid #333;
+} 
+.HeaderBtn{
+    background-color: #ffffff;
+    border-radius: 0px;
+    border: 1px solid #333;
+}  
+.HeaderBtn1{
+    background-color: #d7d7d7;
+   
+}  
+.HeaderBG{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+} 
+.FrontImg1, .FrontImg{
+  
+    padding-right: 8px;
+   
+} 
+.FrontImg1{
+    display: none; 
+    margin-right: 5px;
+} 
+.HeaderMenu .FrontImg{
+    display: block; 
+    margin-right: 5px;
+} 
+.menubar .FrontImg1{
+    display: block;
+} 
+.menubar .FrontImg{
+    display: none;
+    
+}
+.HeaderMenu{
+    width: 62%;
+
+
+float: none;
+
+margin: 0 auto;
+}
+.HeaderMenu li{
+    margin-right: 1% !important;
+} 
+/* .nav-link:active, .nav-link:focus, .nav-link:hover  {
+  border-bottom: 4px solid #000;
+}  */
+.menubar{
+    /* border-bottom: 3px solid #84b367;  */
+    color: #84b367 !important; 
+    font-size: 14px;
+    width: 100%;
+
+   font-family: 'TrajanPro-Regular';
+} 
+.menubar:after{
+    margin-top: 8px;
+    display: block;
+    content: "";
+    background: #84b367 !important;
+    height: 3px;
+    width: 100%;
+}
+.navlink{
+    color: #402909 !important;
+    padding-bottom: 10px;
+    
+    font-size: 14px;
+    
+    font-family: 'TrajanPro-Regular';
+} 
+.borderbottom{
+    border: 3px solid #402909;
+    opacity: 0.27;
+}
+.header-bottom.navbar{
+    position: fixed;
+    top: 75px;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    background: #ffffff;
+    border-top: 2px solid #40290926; 
+    height: 66px;
+}
+
+@media screen and (min-width: 1px) and (max-width: 1356px) { 
+    .navspac .nav-item {
+        /* padding: 10px 3% 10px 7px; */
+        margin-right:10px;
+    } 
+    .iconPadding {
+        padding: 10px !important; 
+        
+
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 1200px) { 
+    .navspac .nav-item {
+        /* padding: 10px 1% 10px 7px; */
+        margin-right: 0px !important; 
+        margin-left: 0px;
+    } 
+    .navspac3 {
+        float: right;
+        text-align: right;
+        width: 39%;
+    } 
+    .navspac {
+        margin-left: 0%;
+     
+    } 
+    .menubar {
+              font-size: 12px;
+        
+    } 
+    .navlink {
+            font-size: 12px;
+      
+    } 
+    .HeaderMenu {
+        width: 83%;
+    }
+}
+
+.dropdownbox, .dropdownbox:hover, .dropdownbox:active, .dropdownbox:focus{
+    border: none;
+    color: #666 !important;
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    width: 118px;
+  } 
+  
+  
+@media screen and (min-width: 1px) and (max-width: 1060px) {
+    .navspac3 {
+      
+        width: 42%;
+    } 
+    .navspac .nav-item {
+        margin: 0% 0% !important;
+         
+    }
+}  
+
+
+@media screen and (min-width: 1px) and (max-width: 992px) {  
+    .navspac .nav-item {
+        /* padding: 10px 4px 10px 4px; */
+        margin-right:2px;
+    } 
+    .HeaderMenu {
+        width: 94%;
+    }
+} 
+@media screen and (min-width: 1px) and (max-width: 768px) {  
+.iconPadding {
+    width: 39px;
+} 
+}
+@media screen and (min-width: 1px) and (max-width: 766px) {  
+    .displayNoneRes, .Header2, .FrontImg1, .FrontImg {
+        display: none !important;
+    } 
+    .displayNone, .CollapseProfile {
+        display: block;
+    } 
+    .navlink, .menubar {
+       
+        font-size: 14px;
+    } 
+    .HeaderMenu {
+        width: 100%;
+    }  
+    .CollapseProfile {
+        display: block;
+        background: #f9f4e4;
+        padding: 28% 2% 4% 2% !important; 
+        margin-top: 5px;
+    } 
+    .CollapseBtn, .CollapseProfile {
+        width: 100%;
+        float: left;
+        padding: 7% 11% !important;
+        text-align: center;
+    } 
+    .CollapseProfile h4 {
+        font-size: 14px;
+        font-family: 'TrajanPro-Bold'; 
+        margin-bottom: 0px;
+    }
+    .navbar-collapse {
+        flex-basis: 70%;
+        flex-grow: 0;
+        align-items: center;
+    } 
+    .Hide766 {
+        display: none;
+    } 
+    .MobileMenu{
+        display: block;
+    }
+}

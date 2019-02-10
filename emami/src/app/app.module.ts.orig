@@ -1,0 +1,472 @@
+
+import { RouterModule, Router, Routes } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { Navigation } from 'selenium-webdriver';
+import { SearchbarComponent } from './commom-share/share/searchbar/searchbar.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderModule } from 'angular-image-slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { SearchPipe } from './search.pipe';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+import { HttpClientModule } from '@angular/common/http';
+import { WeatherService } from './weather.service';
+import { YourQueryTabsComponent } from './commom-share/share//your-query-tabs/your-query-tabs.component';
+import { DatepickerComponent } from './commom-share/share//datepicker/datepicker.component';
+import { PopoverModule } from "ngx-smart-popover";
+import { PatientComponent } from './patient/patient.component';
+import { PatientDashboardComponent } from './patient/patient-dashboard/patient-dashboard.component';
+import { PatientNavigationComponent } from './patient/patient-share/patient-navigation/patient-navigation.component';
+import { PatientHeaderComponent } from './patient/patient-share/patient-header/patient-header.component';
+
+import { PatientReportComponent } from './patient/patient-report/patient-report.component';
+import { DatepickerimgComponent } from './commom-share/datepickerimg/datepickerimg.component';
+import { DropdownComponent } from './commom-share/dropdown/dropdown.component';
+import { LandingpageTabComponent } from './doctor/landingpage-tab/landingpage-tab.component';
+import { DoctorTableComponent } from './doctor/doctor-table/doctor-table.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DoctorNavigationComponent } from './doctor/doctor-navigation/doctor-navigation.component';
+import { DoctorLandingpageComponent } from './doctor/doctor-landingpage/doctor-landingpage.component';
+import { DoctorInfocardComponent } from './doctor/doctor-infocard/doctor-infocard.component';
+import { DoctorSearchComponent } from './doctor/doctor-search/doctor-search.component';
+import { DoctorUrgentcardComponent } from './doctor/doctor-urgentcard/doctor-urgentcard.component';
+import { DoctorComponent } from './doctor/doctor/doctor.component';
+import { IndextabComponent } from './doctor/indextab/indextab.component';
+import { AppointmentscardComponent } from './doctor/appointmentscard/appointmentscard.component';
+import { FooterComponent } from './commom-share/footer/footer.component';
+import { PatientBookAppointmentComponent } from './patient/patient-book-appointment/patient-book-appointment.component';
+
+import { ConsultpageComponent } from './doctor/consultpage/consultpage.component';
+
+import { ConsultpagetabpanelComponent } from './doctor/consultpagetabpanel/consultpagetabpanel.component';
+
+import { ConsultpagedropdownComponent } from './doctor/consultpagedropdown/consultpagedropdown.component';
+import { SpinerComponent } from './doctor/spiner/spiner.component';
+
+import { PrescribemedicineComponent } from './doctor/prescribemedicine/prescribemedicine.component';
+import { ReshoulddatepickerComponent } from './reshoulddatepicker/reshoulddatepicker.component';
+import { LoginComponent } from './commom-share/login/login.component';
+import { PatientloginpageComponent } from './patientloginpage/patientloginpage.component';
+import { Datepicker2Component } from './commom-share/share/datepicker2/datepicker2.component';
+import { PatientRegistrationComponent } from './patient/patient-registration/patient-registration.component';
+
+import { TopstoriesSliderComponent } from './topstories-slider/topstories-slider.component';
+
+import { AgmCoreModule } from '@agm/core';
+import { LocatorComponent } from './locator/locator.component';
+import { HealthAreaComponent } from './health-area/health-area.component';
+import { AppoinmentConfirmedComponent } from './appoinment-confirmed/appoinment-confirmed.component';
+import { PatientForgetpasswordComponent } from './patient/patient-forgetpassword/patient-forgetpassword.component';
+import { ResetpasswordComponent } from './patient/resetpassword/resetpassword.component';
+import { AppointmentsComponent } from './patient/appointments/appointments.component';
+import { MonthsMultisliderComponent } from './months-multislider/months-multislider.component';
+import { YearSliderComponent } from './year-slider/year-slider.component';
+import { PatientPrescriptionComponent } from './patient/patient-prescription/patient-prescription.component';
+import { PatientFeedbackComponent } from './patient/patient-feedback/patient-feedback.component';
+import { CanselpopupComponent } from './canselpopup/canselpopup.component';
+import { DashboardlinkComponent } from './patient/dashboardlink/dashboardlink.component';
+import { RegistrationValidatorComponent } from './registration-validator/registration-validator.component';
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedinLoginProvider } from "angular-6-social-login";
+import { PatientQueriesComponent } from './patient/patient-queries/patient-queries.component';
+import { UserProfileComponent } from './patient/user-profile/user-profile.component'; 
+import { DoctorPiechartComponent } from './doctor/doctor-piechart/doctor-piechart.component';
+import { DocdashcalComponent } from './doctor/docdashcal/docdashcal.component';
+import { OrdersComponent } from './patient/orders/orders.component';
+import { SearchPatientPrescriptionComponent } from './doctor/search-patient-prescription/search-patient-prescription.component';
+import { SearchPatientsProfileComponent } from './doctor/search-patients-profile/search-patients-profile.component';
+import { LandingSliderComponent } from './landing-slider/landing-slider.component';
+import { AddReportPopupComponent } from './patient/add-report-popup/add-report-popup.component';
+import { FileuploadComponent } from './commom-share/fileupload/fileupload.component';
+import { MainFooterComponent } from './main-footer/main-footer.component';
+import { DoctorSearchbarComponent } from './doctor/doctor-searchbar/doctor-searchbar.component';
+
+import { TopProductSliderComponent } from './top-product-slider/top-product-slider.component';
+import { ImmunitySliderComponent } from './immunity-slider/immunity-slider.component';
+import { DigestionSliderComponent } from './digestion-slider/digestion-slider.component';
+import { DiabetesSliderComponent } from './diabetes-slider/diabetes-slider.component';
+import { PainManagementSliderComponent } from './pain-management-slider/pain-management-slider.component';
+import { GeneralCareSliderComponent } from './general-care-slider/general-care-slider.component';
+import { OtherSliderComponent } from './other-slider/other-slider.component';
+import { MyVitalsComponent } from './patient/my-vitals/my-vitals.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+import { Constants } from './app.constants';
+import { ConsultPatientProfileComponent } from './doctor/consult-patient-profile/consult-patient-profile.component';
+import { ResetPassComponent } from './doctor/reset-pass/reset-pass.component';
+import { ForgetpasswordDocComponent } from './forgetpassword-doc/forgetpassword-doc.component';
+import { OtpscreenComponent } from './patient/otpscreen/otpscreen.component';
+import { PatientOTPComponent } from './patient-otp/patient-otp.component';
+import { OTPComponentComponent } from './otpcomponent/otpcomponent.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { AyurvedaComponent } from './ayurveda/ayurveda.component';
+import { OrderCancelledPopupComponent } from './patient/order-cancelled-popup/order-cancelled-popup.component';
+import { ForgetpasswordpageComponent } from './forgetpasswordpage/forgetpasswordpage.component';
+import { ConsultPatientsProfileComponent } from './consult-patients-profile/consult-patients-profile.component';
+import { FirstLoginPatientDashboardComponent } from './first-login-patient-dashboard/first-login-patient-dashboard.component';
+import { HealthsearchbarComponent } from './healthsearchbar/healthsearchbar.component';
+import { PatientCartComponent } from './patient/patient-cart/patient-cart.component';
+
+
+import { SuccessfulMsgComponent } from './successful-msg/successful-msg.component';
+
+import {RecaptchaModule } from 'ng-recaptcha';
+
+import { PilesComponent } from './piles/piles.component';
+import { DiabetesComponent } from './diabetes/diabetes.component';
+import { HypertensionComponent } from './hypertension/hypertension.component';
+import { LiverDiseasesComponent } from './liver-diseases/liver-diseases.component';
+
+import { Datepicker3Component } from './commom-share/share/datepicker3/datepicker3.component';
+import { AyurvedaYouDropdownComponent } from './ayurveda-you-dropdown/ayurveda-you-dropdown.component';
+import { HealthareadropdownComponent } from './healthareadropdown/healthareadropdown.component';
+import { ProductdropdownComponent } from './productdropdown/productdropdown.component';
+import { DiarheaComponent } from './diarhea/diarhea.component';
+import { DysmenorrheaComponent } from './dysmenorrhea/dysmenorrhea.component';
+import { CancelAppointmentPopoverComponent } from './patient/appointments/cancel-appointment/cancel-appointment.component';
+import { Reshoulddatepicker2Component } from './reshoulddatepicker2/reshoulddatepicker2.component';
+import { Canselpopup2Component } from './canselpopup2/canselpopup2.component';
+import { ShoppingCartComponent } from './commom-share/shopping-cart/shopping-cart/shopping-cart.component';
+import { MainProductPageComponent } from './main-product-page/main-product-page/main-product-page.component';
+import { UtiComponent } from './uti/uti.component';
+import { RescheduleAppointmentPopoverComponent } from './patient/appointments/reschedule-appointment/reschedule-appointment.component';
+
+
+// Configs 
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider("2087004318279342")
+      },
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("42956409123-ciof82uvakpgm0buqhpbbhqr118n7a3h.apps.googleusercontent.com")
+      },
+      {
+        id: LinkedinLoginProvider.PROVIDER_ID,
+        provider: new LinkedinLoginProvider("815h4fau81hgci")
+      },
+    ]
+  );
+  return config;
+}
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ResetPassComponent,
+    NavigationComponent,
+    ConsultPatientProfileComponent,
+    SearchbarComponent,
+    LandingpageComponent,
+    SearchPipe,
+    YourQueryTabsComponent,
+    DatepickerComponent,
+    PatientDashboardComponent,
+    PatientComponent,
+    PatientNavigationComponent,
+    PatientHeaderComponent,
+    ShoppingCartComponent,
+    PatientReportComponent,
+    DatepickerimgComponent,
+    DropdownComponent,
+    LandingpageTabComponent,
+    DoctorTableComponent,
+    DoctorNavigationComponent,
+    DisclaimerComponent,
+    DoctorLandingpageComponent,
+    DoctorInfocardComponent,
+    DoctorSearchComponent,
+    DoctorUrgentcardComponent,
+    OTPComponentComponent,
+    DoctorComponent,
+    IndextabComponent,
+    AppointmentscardComponent,
+    FooterComponent,
+    PatientBookAppointmentComponent,
+    ForgetpasswordpageComponent,
+    ConsultPatientsProfileComponent,
+    OrdersComponent,
+    ConsultpageComponent,
+    ConsultpagetabpanelComponent,
+    ConsultpagedropdownComponent,
+    SpinerComponent,
+    PrescribemedicineComponent,
+    ReshoulddatepickerComponent,
+    LoginComponent,
+    PatientloginpageComponent,
+    Datepicker2Component,
+    PatientRegistrationComponent,
+    TopstoriesSliderComponent,
+    LocatorComponent,
+    HealthAreaComponent,
+    AppoinmentConfirmedComponent,
+    PatientForgetpasswordComponent,
+    ResetpasswordComponent,
+    AppointmentsComponent,
+    MonthsMultisliderComponent,
+    YearSliderComponent,
+    OrderCancelledPopupComponent,
+    PatientPrescriptionComponent,
+    PatientFeedbackComponent,
+    AyurvedaComponent,
+    CanselpopupComponent,
+    DashboardlinkComponent,
+    RegistrationValidatorComponent,
+    PatientQueriesComponent,
+    FirstLoginPatientDashboardComponent,
+    UserProfileComponent,
+    DoctorPiechartComponent,
+    DocdashcalComponent,
+    OrdersComponent,
+    SearchPatientPrescriptionComponent,
+    SearchPatientsProfileComponent,
+    LandingSliderComponent,
+    PatientCartComponent,
+    AddReportPopupComponent,
+    FileuploadComponent,
+    MainFooterComponent,
+    DoctorSearchbarComponent,
+    MainProductPageComponent,
+    TopProductSliderComponent,
+    ImmunitySliderComponent,
+    DigestionSliderComponent,
+    DiabetesSliderComponent,
+    PainManagementSliderComponent,
+    GeneralCareSliderComponent,
+    OtherSliderComponent,
+    MyVitalsComponent,
+    ForgetpasswordDocComponent,
+    OtpscreenComponent,
+    PatientOTPComponent,
+    HealthsearchbarComponent,
+    SuccessfulMsgComponent,
+    PilesComponent,
+    DiabetesComponent,
+    HypertensionComponent,
+    LiverDiseasesComponent,
+    Datepicker3Component,
+    AyurvedaYouDropdownComponent,
+    HealthareadropdownComponent,
+    ProductdropdownComponent,
+    DiarheaComponent,
+    DysmenorrheaComponent,
+    CancelAppointmentPopoverComponent,
+<<<<<<< Updated upstream
+    Reshoulddatepicker2Component,
+    Canselpopup2Component,
+    UtiComponent
+=======
+    UtiComponent,
+    RescheduleAppointmentPopoverComponent
+>>>>>>> Stashed changes
+    
+
+  ],
+  imports: [
+    AngularDateTimePickerModule,
+    BrowserModule,
+    SliderModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
+    PopoverModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SocialLoginModule,
+    RecaptchaModule,
+    NgMultiSelectDropDownModule.forRoot(),
+
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDWqWkIoi64fC6BDBXUZDmLiwVo_vkEYXc'
+    }),
+
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: LandingpageComponent
+      },
+      {
+        path: 'healtharea',
+        component: HealthAreaComponent
+      },
+      {
+        path: 'appoinmentconfirmed',
+        component: AppoinmentConfirmedComponent
+      },
+      {
+        path: 'PatientDashboard',
+        component: PatientDashboardComponent
+      },
+      {
+        path: 'shopping_cart',
+        component: ShoppingCartComponent
+      },
+      {
+        path: 'patientReport',
+        component: PatientReportComponent
+      },
+      {
+        path: 'doctor_landingpage',
+        component: DoctorLandingpageComponent
+      },
+      {
+        path: 'patientbookappointment',
+        component: PatientBookAppointmentComponent
+      },
+      {
+        path: 'consultpage',
+        component: ConsultpageComponent
+      },
+      {
+        path: 'doctorloginpage',
+        component: LoginComponent
+      },
+      {
+        path: 'patientloginpage',
+        component: PatientloginpageComponent
+      },
+      {
+        path: 'PatientRegistration',
+        component: PatientRegistrationComponent
+      },
+      {
+        path: 'locator',
+        component: LocatorComponent
+      },
+      {
+        path: 'forgotpassword',
+        component: PatientForgetpasswordComponent
+      },
+      {
+        path: 'resetpassword',
+        component: ResetpasswordComponent
+      },
+      {
+        path: 'patientAppointment',
+        component: AppointmentsComponent
+      },
+      {
+        path: 'patientPrescription/:id',
+        component: PatientPrescriptionComponent
+      },
+      {
+        path: 'patientFeedback',
+        component: PatientFeedbackComponent
+      },
+      {
+        path: 'patientQueries',
+        component: PatientQueriesComponent
+      },
+      {
+        path: 'User-Profile',
+        component: UserProfileComponent
+      },
+      {
+        path: 'Orders',
+        component: OrdersComponent
+      },
+      {
+        path: 'mainproductpage',
+        component: MainProductPageComponent
+      },
+      {
+        path: 'myVitals',
+        component: MyVitalsComponent
+      },
+      {
+        path: 'consultPatientProfile',
+        component: ConsultPatientProfileComponent
+      },
+      {
+        path: 'forgotpasswordpage_Doc',
+        component: ForgetpasswordDocComponent
+      },
+      {
+        path: 'loginpage',
+        component: LoginComponent
+      },
+      {
+        path: 'resetpassword',
+        component: ResetPassComponent
+      },
+      {
+        path: 'sendOTP',
+        component: OtpscreenComponent
+      },
+      {
+        path: 'disclaimer',
+        component: DisclaimerComponent
+      },
+      {
+        path: 'ayurveda',
+        component: AyurvedaComponent
+      },
+      {
+        path: 'patientCart',
+        component: PatientCartComponent
+      },
+      {
+        path: 'patientOrderSummary',
+        component: PatientCartComponent
+      },
+      {
+      path: 'successErrorPage',
+      component: SuccessfulMsgComponent
+     },
+     {
+      path:'Piles',
+      component:PilesComponent},
+     
+      {
+        path: 'diabetes',
+        component: DiabetesComponent
+      },
+      {
+      path: 'hypertension',
+      component: HypertensionComponent
+     },
+     {
+      path:'liverDiseases',
+      component:LiverDiseasesComponent
+    },
+    
+    {
+      path:'diarhea',
+      component:DiarheaComponent
+    },
+    {
+      path:'dysmenorrhea',
+      component:DysmenorrheaComponent
+    }, 
+    {
+      path:'uti',
+      component:UtiComponent
+    },
+      
+      
+
+    ],{useHash:true})
+  ],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    },
+    MatDatepickerModule, WeatherService],
+
+  bootstrap: [AppComponent]
+
+})
+export class AppModule { }
+

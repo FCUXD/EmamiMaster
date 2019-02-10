@@ -1,0 +1,54 @@
+<app-navigation></app-navigation>
+<div class="bgcolor">
+  <div class="margin-10"></div>
+  <div class="container mt-4 mb-4">
+    
+    <div class="card border-0 mt-4">
+      <div class="card-body">
+        <h2>Sign Up</h2>
+        <form class="form-horizontal" [formGroup]="deliveryAddressForm">
+      
+          <div class="col-sm-12">
+            <input type="text" id="name" class="form-control mb-2 mr-sm-2 border-top-0 border-right-0 border-left-0" formControlName="name" required
+            placeholder="User Name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="alert alert-danger">Name is required</div>
+         
+         </div>
+      
+
+            <div class="col-sm-12">
+                <input type="text" id="email" class="form-control mb-2 mr-sm-2 border-top-0 border-right-0 border-left-0" formControlName="email" required
+                placeholder="Email ID">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="alert alert-danger">Email ID is required</div>
+             
+            </div>
+          
+            <div class="col-sm-12">
+
+              <input type="password" id="password" class="form-control mb-2 mr-sm-2 border-top-0 border-right-0 border-left-0"
+                formControlName="password" required placeholder="Password">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                class="alert alert-danger">Password is required</div>
+            
+          </div>
+          
+          <button type="button" routerLink="../PatientDashboard" class="btn btn-primary mb-2 mt-4 SignBtn" (click)="myDeliveryAddress(deliveryAddressForm)">SIGN UP</button>
+
+        </form>
+
+
+        <h6 class="my-3">OR Sign up with</h6> 
+        <button type="button" class="btn btn-primary mb-2 FbBtn"><img class="mr-2" src="././assets/images/facebook.png" alt="facebook"> Facebook</button>
+        <button type="button" class="btn btn-primary mb-2 GoogleBtn"><img class="mr-2" src="././assets/images/google.png" alt="google"> Google</button>
+    
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+    <a class="bot-a-font" routerLink="../patientloginpage"> Already have an account?<strong> SIGN IN</strong></a>
+    </div>
+
+  </div>
+</div>

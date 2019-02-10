@@ -1,0 +1,11 @@
+
+
+      <input [(ngModel)]="querystring"  type="text" class="form-control searchbg" placeholder="type your health concern here">
+      <div  class="srchresult shadow-sm  ">
+          <div [routerLink]="querystring" class="innersearch py-0 px-4 bg-white rounded" *ngFor="let item of searcharray | search : querystring : 'doctor':'product':'healtharea' ">
+
+            <p (click)="querystring=item.healtharea">
+                {{item.healtharea}}
+            </p>
+          </div>
+      </div>

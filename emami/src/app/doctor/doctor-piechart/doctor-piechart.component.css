@@ -1,0 +1,114 @@
+.title{
+    font-family: TrajanPro-Regular;
+    font-size: 18.5px;
+    font-weight: normal;
+    color: #000000;
+    height: 82px;
+}
+.box-min-height{
+    min-height: 452px;
+}
+
+.piecontent{
+    background-color: #f9f4e4;
+}
+.padlrn{
+    padding: 0px;
+}
+.outer{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+.stc{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.pietxtstyle{
+    font-family: TrajanPro;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    color: #333333;
+}
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+    background-color: #ffffff; 
+    box-shadow: 0px 0px 15px #e5e5e5; 
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 2px 16px 12px 16px;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ffffff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.13);
+  background-color: #fff9e5;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.tabbtn-style{
+  font-family: TrajanPro;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 20px!important;
+  color: #333333;
+  width: 100%;
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+    .tabres { 
+        font-size: 14px!important;
+    }
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 480px) { 
+        .tabbtn-style{
+            padding: 20px 10px !important;
+        }
+        .tabres {
+            font-size: 12px!important;
+        }
+    }
+      
+    @media screen and (min-width: 1px) and (max-width: 420px) { 
+    
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 380px) { 
+
+    }
+  

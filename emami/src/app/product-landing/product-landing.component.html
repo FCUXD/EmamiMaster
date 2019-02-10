@@ -1,0 +1,138 @@
+
+
+<div class="backgroundImg">
+<div class="container DivTopBottomPadding">
+<h6 class="ArticlesHeading">Specialist care in multiple health conditions 
+  </h6> 
+  <div class="BorderImgDiv">
+  <img class="my-3" src="././assets/images/big_border.png"> 
+</div>
+<div class="text-center">
+<div class="text-center my-4">
+
+    <div class="row mx-auto my-auto">
+    <div id="recipeCarousel" class="carousel slide w-100 mt-3" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+    
+    <div class="carousel-item active">
+    
+    <div class="OuterDiv m-0" *ngIf="isDesktop">
+    
+        <div class="InnerDiv p-0  "  (click)="listClick($event, data,i)" *ngFor="let data of visibleProds;let i=index">     
+            <div class="card {{data.CardBG}}" >
+                <div class="article_div" > 
+                    <p class="ConstipationHealth">
+                            <img  class="img-fluid SmallImgIcon" src="{{data.imageURL}}"> 
+                            {{data.cardTitle}}
+                        </p>
+                            <h1><img src="{{data.line}}" class="float-right LineImg"></h1>
+
+                  
+                    
+                    
+            </div>
+            </div>
+ 
+    </div> 
+    
+    
+    <div class="row m-0" *ngIf="isMobile">
+    
+      <div class="col-12 p-0 CardBG">      
+        <div class="card">
+            <div class="article_div">
+                <img class="mx-auto d-block img-fluid" src="{{data.imageURL}}"> 
+                <span>{{data.cardTitle}}</span>
+                </div>
+        </div>
+      </div>
+      </div>
+     </div>
+     </div>
+              <a class="carousel-control-prev" (click)="previousSlide()">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" (click)="nextSlide()">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </div>
+      </div>
+    </div>  
+    <div class="clear20"></div> 
+    <div class="clear5"></div> 
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 btnallign">
+        <button type="button" class="btn healthConditionBtn" routerLink="../healtharea">view all health conditions</button> 
+    </div>
+    <div class="clear20"></div>  
+    <div class="clear5"></div>
+    <div >
+<div class="ProductLeft" >
+  <h4 class="ConstipationText">{{hname}}</h4> 
+  <div class="clear10"></div>
+  <h5 class="TextInDetails"> {{hdesp}}</h5> 
+      <div class="clear30"></div>
+    <button type="button" class="btn BtnREadMore mr-2 mb15" routerLink="../{{pname}}">READ MORE</button> 
+      <button type="button" class="btn  ViewAllProduct" routerLink="../mainproductpage">VIEW ALL PRODUCTS</button>
+</div>
+<div >
+<div class="ProductRight" > 
+  <div class="ProductLeftDiv VerticalLineProduct ProductLeftDivn"  *ngFor="let data of visibleProdsNew;">
+      <div *ngIf="data!='' && data!=undefined">
+  <div (click)="getProductDetails(data.id)" class="ImgDiv WhiteBox">
+
+    <img src="{{data.imageUrl}}" width="199" height="195">
+    <div class="clear"></div> 
+    <h4>{{data.name}}</h4>
+  </div>  
+  <div class="clear"></div> 
+  <div class="BottomDiv">
+    <!-- <h4>{{data.name}}</h4> -->
+    <!-- <p>Lalima is a 100% Ayurvedic Blood &...</p>   -->
+    <div class="Div175">
+    <h6 class="Text175"><img src="././assets/images/rupee.png"> {{data.selling}}</h6> 
+    <div class="order-margin-top2">
+        <img src="././assets/images/minus.png" (click)="reduce(data)">&nbsp;&nbsp;
+      <input [(ngModel)] = "data.qty" class="input-spinner">&nbsp;&nbsp;
+      <img src="././assets/images/plus_small.png" (click)="add(data)" >
+      <!-- <img class="SpinnerImg" src="././assets/images/SpinnerMinus.png" (click)="reduce(item)" />
+      <input type="text" class="form-control SpinnerInput text-center" [(ngModel)]="item.qty" >
+      <img class="SpinnerImg2" src="././assets/images/SpinnerPluse.png" (click)="add(item)" /> -->
+      </div>   
+    </div>
+      <!-- <div class="clear"></div> -->
+      <button type="button" class="btn AddToCartBtn" (click)="addTocart(data)">add to cart</button>
+  </div>
+</div>
+</div> 
+<div *ngIf="data==''" class="pos"> <h6>No Products Found...</h6></div>
+</div>
+  <!-- 2nd div -->
+<!-- <div class="ProductLeftDiv" *ngIf="data.length>(i+1)">
+    <div class="ImgDiv">
+      <img src="{{data[i+1].imageUrl}}">
+    </div>  
+    <div class="clear"></div> 
+    <div class="BottomDiv">
+      <h4>{{data[i+1].name}}</h4>
+     
+      <h6 class="Text175"><img src="../../assets/images/rupee.png">{{data[i+1].selling}} </h6> 
+      <div class="order-margin-top2">
+          <img src="../../assets/images/minus.png" (click)="down()">&nbsp;&nbsp;
+        <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+        <img src="../../assets/images/plus_small.png" (click)="spinner=spinner+1">
+        </div>  
+        <div class="clear"></div>
+        <button type="button" class="btn AddToCartBtn">add to cart</button>
+    </div>
+  </div> -->
+</div>
+
+
+</div>
+
+  </div>
+<div class="clear"></div>
+
+</div>

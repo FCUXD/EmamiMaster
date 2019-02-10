@@ -1,0 +1,171 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header> 
+<!-- <app-floating></app-floating> -->
+<div class="clear20"></div>
+<app-innerfloating></app-innerfloating>
+<div id="" class="queriesMainContainer">
+  <div class="container">
+    <div class="card queries-card box-with-shadow">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="queries-heading text-uppercase">All queries</div>
+          </div>
+          <!-- Post Query -->
+          <div class="col-md-6 text-right">
+            <button class="btn btn-green-1 text-uppercase" type="button" data-toggle="modal" (click)="openmodal();">post query</button>
+          </div>
+          <!-- Search Bar -->
+          <div class="col-md-6">
+            <div class="rounded-search">
+              <div class="clear30"></div>
+              <form class="d-none form-search form-inline">
+                <input type="text" class="search-query" placeholder="Type Keywords press enter" />
+              </form>
+            </div>
+          </div>
+          <!-- Date Picker -->
+          <div class="d-none col-md-6 text-right">
+            <div class="clear40"></div>
+           
+            <p>Filter By &nbsp;&nbsp;{{selecteddate}} <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker></p>   
+            
+          </div>
+
+          <div class="float-filter-by mt-2">
+              
+            </div>
+        </div>
+      </div>
+      <!-- Message Box -->
+      <div class="card-body">
+        <!-- Doctor side Message Box -->
+        <div class="tab BorderHeading">
+          <ng-container *ngIf="recievedChatData.length == 0">No messages</ng-container>
+          <ng-container *ngFor="let single of recievedChatData;let i=index">
+            <div class="tablinks inner_div px-5 {{single.active}}" (click)="openMsg(i,single.doctorId,single.doctorName,single.patientId,single.conversationId)">
+              <div class="row">
+                <div class="col-12 text-right dateText">
+                  {{single.conversationDate}}
+                </div>
+                <div class="col-md-4 text-center">
+                  <img class="img-fluid rounded-circle" src="././assets/images/doctor-profile-pic-1.png" />
+                </div>
+                <div class="col-md-8">
+                  <div class="clear20"></div>
+                  <div class="doctNameText">
+                    {{single.doctorName}}
+                  </div>
+                  <div class="doctSpecialityText">
+                    {{single.expertArea}}
+                  </div>
+                </div>
+                
+                <div class="col-8">
+                   <div class="clear20"></div>
+                  <div class="queryQtnText">
+                    {{single.chatText}}
+                  </div>
+                </div>
+                <div class="col-4 text-right">
+                    <div class="clear20"></div>
+                   <div class="repliesText">
+                    {{single.numberOfReplies}}
+                   </div>
+                 </div>
+              </div>
+              <div class="right_arrow"><img src="././assets/images/keyboard-right-arrow-button.png"></div>
+            </div>
+
+          </ng-container>
+
+        </div>
+
+        <!-- Patient side Message Box -->
+        <div class="text-left tabcontent {{singleMessageSelected.active}}">
+          <div class="chat_div">
+            <div *ngFor="let reply of singleMessageSelected.querySubBeanList" class="my-5 w-75 p-3 box-with-shadow {{reply.personType}} ">
+              <ng-container *ngIf="reply.personType == 'P' ">
+                  <img class="img-fluid rounded-circle" src="././assets/images/patient-profile-img-1.png" /> 
+              </ng-container>
+               
+              <ng-container *ngIf="reply.personType == 'D' ">
+                  <img class="img-fluid rounded-circle" src="././assets/images/doctor-profile-pic-1.png" /> 
+              </ng-container>
+             
+              <div class="queryQtnText">{{reply.chatText}}</div>
+              <div class="clear20"></div>
+              <div class="reply-date text-right">{{reply.chatDateTime}}</div>
+            </div>
+          </div>
+
+
+          <div class="chat_inpute">
+            <div class="input-group">
+              <input type="hidden">
+              <input type="text" #binpTxt (keydown.enter)="submitDoctorQuery2(binpTxt.value);" class=" stylein  chatbox" [(ngModel)]="newMsg"
+                placeholder="Write your reply..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="">
+                <span class="input-group-text nbg" (click)="submitDoctorQuery2(binpTxt.value);" [(ngModel)]="queriesForm.doctorDropDown" id="basic-addon2">&nbsp;&nbsp;<img src="././assets/images/sendMsgBlackIcon.png"></span>
+              </div>
+            </div>
+            <!-- <span class="send-btn"></span> -->
+          </div>
+
+        </div>
+        
+        <div class="clear20"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+
+<!-- Post Query Popup -->
+<div class="{{modal}} custom_modal">
+  <div class="modal-dialog">
+  <div class="modal-content">
+  
+  
+  <div class="queryHeight">
+      <button type="button" class="close" data-dismiss="modal" (click)="closemodal()">&times;</button>
+  <h4 class="modal-title">ENTER YOUR QUERY</h4>
+  
+  <div class="textareaMargin">
+  <textarea class="tacolor w-100" rows="4" id="comment" #enteredQuery name="text" placeholder="WRITE HERE..."></textarea>
+  </div>
+  
+  <div class="dropHeigh">
+
+    <select class="selectDrop" id="firstName" #selectedDoctor>
+      <option [ngValue]="null" disabled>SELECT DOCTOR/CONSULATION</option>
+      <option *ngFor="let data of doctorListForQuery" [value]="data.doctorId" >{{data.fname}} {{data.lname}}</option>
+
+    </select>
+  </div>
+
+<div class="dragHeight">
+<label for="upload-photo"><img src="././assets/images/move.png"></label>
+<input type="file" id="upload-photo">
+
+<p>DRAG & DROP FILES<br/>
+png, jpg, or Pdf format</p>
+  
+</div>
+
+</div>
+
+  <div class="text-center">
+    <button type="button" class="btn btned btn-trasnp-1" data-dismiss="modal" (click)="closemodal()">CANCEL</button>
+    <button type="submit" class="btn UpdateBtn GetStartedBtn submitbtn" (click)="submitPatientQuery(enteredQuery.value,selectedDoctor.value,0)">SUBMIT</button>
+    
+    <!-- <button type="button" class="btn btn-success" data-dismiss="modal" (click)="closemodal()">SUBMIT</button> -->
+  </div>
+
+  </div>
+  </div>
+  </div>
+
+

@@ -1,0 +1,97 @@
+
+  <div class="col-12 MedicinLeftDiv float-left PrescribeMedicineBgColor"> 
+    <p class="mb-0">Select Medicine</p>
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <app-consultpagedropdown></app-consultpagedropdown>
+      </div>
+    </div>
+    <div class="clear20"></div>
+    <p>No. of times in a day</p>
+    <div class="BtnGroup1">
+      <button type="button" (click)="AddBtn(0)"  class="{{btn[0]}}">1</button>
+      <button type="button" (click)="AddBtn(1)"  class="{{btn[1]}}">2</button>
+      <button type="button" (click)="AddBtn(2)" class="{{btn[2]}}">3</button>
+      <button type="button" (click)="AddBtn(3)" class="{{btn[3]}}">4</button>
+      <button type="button" class="btn">5</button>
+      <button type="button" class="btn">6</button>
+      <button type="button" class="btn">SOS</button>
+      <button type="button" class="btn">Custom</button>
+
+    </div>
+    <div class="form-group InputTimingRight">
+
+      <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter Diagnosis">
+
+    </div>
+    <div class="clear20"></div>
+
+    <p>Timing</p>
+    <div class="BtnGroup2" *ngIf="btn[0]=='changed'">
+      <button type="button" class="btn" >Morning</button>
+      <button type="button" class="btn" >Afternoon</button>
+      <button type="button" class="btn" >Night</button>
+      <button type="button" class="btn" >Custom</button>
+    </div>
+    <div class="BtnGroup2" *ngIf="btn[1]=='changed'">
+        <button type="button" class="btn" >Morning</button>
+        <button type="button" class="btn" >Night</button>
+    </div>
+    <div class="BtnGroup2" *ngIf="btn[2]=='changed'">
+        <button type="button" class="btn" >Morning</button>
+        <button type="button" class="btn" >Afternoon</button>
+        <button type="button" class="btn" >Night</button>
+    </div>
+    <div class="BtnGroup2" *ngIf="btn[3]=='changed'">
+          <button type="button" class="btn" >Custom</button>
+    </div>
+    
+    <div class="form-group InputTimingRight">
+
+      <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter Timing">
+    </div> 
+    <div class="clear20"></div>
+    <p>Quantity</p> 
+    <div class="BtnGroup3">
+    <button type="button" class="btn">1 Spoon</button>
+    <button type="button" class="btn">2 Spoons</button>
+    <button type="button" class="btn">3 Spoons</button>
+    <button type="button" class="btn">Custom</button>
+    <button type="button" class="btn">N/A</button> 
+  </div>
+    
+        <div class="form-group InputTimingRight">
+
+          <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter Timing">
+       
+    </div> 
+    <div class="clear20"></div>
+    <p>When</p>
+    <button type="button" class="btn">Before Food</button>
+    <button type="button" class="btn">After food</button>
+
+    <button type="button" class="btn">N/A</button> 
+    <div class="clear20"></div>
+    <p class="mb-0">Days</p>
+    <div class="row">
+      <div class="col-12 col-lg-4 col-md-12">
+        <div class="form-group">
+
+          <input type="text" class="form-control DiagnosisInput" id="usr" placeholder="Enter No.Days">
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn PatientHistoryBtn">Save</button> 
+    <div class="clear"></div>
+  </div> 
+  <div class=" col-12 MedicinRightDiv float-left p-0">
+  <div class="PrescribeMedicineBgColor">
+      <app-consultpagedropdown></app-consultpagedropdown> 
+    
+      <div class="clear"></div> 
+      <p class="mt-2">2 Times | Morning-Afternoon-Night |1 tablespoon After Food | For 5 Days</p> 
+      
+  </div> 
+  <div class="clear10"></div> 
+  <button type="button" class="btn PatientHistoryBtn"><img src="././assets/images/add.png"> Add Medicine</button>  
+</div>
