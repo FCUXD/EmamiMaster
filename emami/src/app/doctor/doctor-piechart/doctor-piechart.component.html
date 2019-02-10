@@ -1,0 +1,56 @@
+<div class="col-12 col-md-12 col-md-12 col-lg-12 outer padlrn">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 title text-center padlrn">
+    <div class="clear20"></div>
+    <label class="">CONSULTATION VS CONVERSION</label>
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 box-min-height piecontent padlrn">
+  <div class="row">
+    <div class="col-12 col-sm-2 col-md-2 col-lg-2">
+  
+    </div>
+    <div class="col-10 col-sm-8 col-md-8 col-lg-8">
+      <div class="clear10"></div>
+      <label class="stc">Select Time Period</label>
+      <div class="clear10"></div>
+      <div class="tab BorderRadiusDiv">
+        <div class="row">
+          <div class="col-4 col-sm-4 col-md-4 col-lg-4 padlrn">
+              <button class="tablinks tabres  tabbtn-style {{tabs[0].active}}" (click)="openCity(0)">DAY</button>
+          </div>
+          <div class="col-4 col-sm-4 col-md-4 col-lg-4 padlrn">
+              <button class="tablinks tabres tabbtn-style {{tabs[1].active}}" (click)="openCity(1)">WEEKLY</button>  
+          </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 padlrn">
+                <button class="tablinks tabres tabbtn-style {{tabs[2].active}}" (click)="openCity(2)">MONTHLY</button>
+            </div>
+        </div>
+          
+         
+          
+        </div>
+        
+        <div id="London" class="{{tabs[0].tabcontent}} border-0 p-0 pietxtstyle  MarginTop20 BorderRadiusDiv">
+            <canvas id="pie-chart" width="800" height="550"></canvas>
+            <div class="clear10"></div>
+        </div>
+        
+        <div id="Paris" class="{{tabs[1].tabcontent}} border-0 p-0  MarginTop20 BorderRadiusDiv">
+            <canvas id="pie-chart1" width="800" height="550"></canvas>
+            <div class="clear10"></div>
+        </div>
+        
+        <div id="Tokyo" class="{{tabs[2].tabcontent}} border-0 p-0  MarginTop20 BorderRadiusDiv"> 
+            <canvas id="pie-chart2" width="800" height="550"></canvas>
+            <div class="clear10"></div>
+        </div> 
+        
+        
+    </div>
+    <div class="col-2 col-sm-2 col-md-2 col-lg-2 padlrn">
+      <div class="clear50"></div>
+      <div class="clear20"></div>
+      <app-datepicker></app-datepicker>
+    </div>
+  </div>
+  </div>
+  </div>

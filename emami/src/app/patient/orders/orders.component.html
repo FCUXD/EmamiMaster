@@ -1,0 +1,609 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header>
+<div class="clear20"></div> 
+<div class="clear"></div> 
+<app-innerfloating></app-innerfloating>
+<div class="container">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 r-align">
+    <ng-container *ngIf="this.whichTabToShowCount == undefined || this.whichTabToShowCount == 1">
+      <label *ngIf="pendingOrdersData.orderListByDays" class="t-order">TOTAL ORDERS-{{pendingLength}}</label>
+    </ng-container>
+    <ng-container *ngIf="this.whichTabToShowCount == 2">
+      <label *ngIf="deliveredOrdersData.orderListByDays" class="t-order">TOTAL ORDERS-{{deliverLength}}</label>
+    </ng-container>
+    <ng-container *ngIf="this.whichTabToShowCount == 3">
+      <label *ngIf="canceledOrdersData.orderListByDays"  class="t-order">TOTAL ORDERS-{{cancelLength}}</label>
+    </ng-container>
+
+
+
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-right">
+    <div class="row">
+      <div class="col-6 col-sm-2 col-lg-6 col-md-6">
+      </div>
+      <div class="col-12 col-sm-10 col-lg-6 col-md-6">
+        <div class="row">
+          <div class="col-12 col-sm-5 col-md-5 col-lg-6 text-right r-align">
+            <label class="f-by">Filter By</label>
+          </div>
+          <div class="col-12 col-sm-7 col-md-7 col-lg-6 r-align text-left">
+            <div class="dropdown {{custom}} ArrowDropdown2" (input)="onKeydownHandler($event)">
+              <!-- <button type="button" class="btn dropdown-toggle ddbstyle" (click)="drop()" data-toggle="dropdown">
+                {{sring}}
+              </button> -->
+              <select [(ngModel)]="item" (change)="filterChange($event)">
+                  <option *ngFor="let item of Dropi" selected="item">{{item.name}}</option>
+                </select>
+              <!-- <div class="dropdown-menu {{custom}}">
+               
+                <ng-container *ngFor="let item of Dropi">
+                  <a class="dropdown-item" (click)="sring=item.name">{{item.name}}</a>
+                </ng-container>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+    <div class="inner_div" id="ordertab">
+      <div class="label_div">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 tab-h padlrn">
+          <div class="row">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-3 text-center padrn">
+              <button class="tablinks tw-hundred {{tabs[0].active}}" (click)="openTabs(0)">
+                <h4 class="tab-hbright12  tabres-font {{default}}">RECENT</h4>
+              </button>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-3 text-center padlrn">
+              <button class="tablinks  tw-hundred {{tabs[1].active}}" (click)="openTabs(1)">
+                <h4 class="tab-hbright12  tabres-font  {{default2}}">DELIVERED</h4>
+              </button>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-3 text-center padln">
+              <button class="tablinks  tw-hundred {{tabs[2].active}}" (click)="openTabs(2)">
+                <h4 class="tab-hbright12 tabres-font {{default3}}">CANCELLED</h4>
+              </button>
+            </div>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-3 text-center padln">
+              <button class="tablinks  tw-hundred {{tabs[3].active}}" (click)="openTabs(3)">
+                <h4 class="tab-hbright12 tabres-font {{default4}}">REPLACEMENT</h4>
+              </button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="margin_40"></div>
+      <div id="agent" class="{{tabs[0].tabcontent}} padlrn">
+        <!-- <div class=" table-responsive tab-h">
+          <table class="table table-borderless">
+            <thead>
+              <tr *ngFor="let item of tableoneheader">
+                <th>
+                  <span class="table-heading"></span>ORDER PLACED
+                  <br>
+                  <span class="table-text1">{{item.orderdate}}</span>
+                </th>
+                <th>
+                  <span class="table-heading"></span>EXPECTED DELIVERY
+                  <br>
+                  <span class="table-text1">{{item.expecteddelivery}}</span>
+                </th>
+                <th>
+                  <span class="table-heading"></span>ORDER ID
+                  <span class="table-text1">{{item.oid}}
+
+                  </span>
+                </th>
+                <th>
+                  <span class="table-heading"></span>TOTAL
+                  <br>
+                  <span class="table-text0">RS{{item.total}}</span>
+                </th>
+                <th>
+                  <button type="button" class="btn btn-green-1">track order</button>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tableonedata">
+                <td>
+                  <img src="{{item.pimg}}"> </td>
+                <td>
+                  <span class="table-text1">{{item.product}}</span>
+                  <br>
+                  <span class="table-text0">{{item.total}}</span>&nbsp;
+                  <span class="table-text2">
+                    <del>Rs{{item.iprice}} </del>
+                  </span>
+                  <br>
+                  <span class="table-text2">Save Rs{{item.save}}</span>
+                </td>
+                <td class="table-heading">QTY {{item.qty}}</td>
+                <td></td>
+                <td>
+                  <button type="button" class="mx-auto btn btn-trasnp-1">Cancel Order</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div> -->
+
+
+        <div class="margin_20"></div>
+        <ng-container *ngIf="pendingOrdersData.orderListByDays">
+          <div class="table-responsive  tab-h">
+            <table *ngFor="let item of pendingOrdersData.orderListByDays" class="table table-borderless">
+              <thead>
+                <tr>
+                  <th>
+                    <span class="table-heading">ORDER PLACED</span>
+                    <br>
+                    <span class="table-text1">{{item.orderDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">EXPECTED DELIVERY</span>
+                    <br>
+                    <span class="table-text1">{{item.deliveryDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">Transaction ID:-</span>
+                    <span class="table-text1">{{item.transactionId}}</span>
+                    <br />
+                    <span class="table-heading">ORDER ID:-</span>
+                    <span class="table-text1">{{item.orderId}}
+
+                    </span>
+                  </th>
+                  <th>
+                    <span class="table-heading">TOTAL</span>
+                    <br>
+                    <span class="table-text0">RS {{item.amount}}</span>
+                  </th>
+                  <th>
+                    <button type="button" class="btn btn-green-1">Track Order</button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item1 of item.productBeanObj">
+                  <td>
+                    <img class="orders-product-images" src="{{item1.imageUrl}}"> </td>
+                  <td>
+                    <span class="table-text1">{{item1.productName}}</span>
+                    <br>
+                    <span class="table-text0">{{item1.sellingPrice}}</span>&nbsp;
+                    <span class="table-text2">
+                      <del>Rs {{item1.mrpPrice}} </del>
+                    </span>
+                    <br>
+                    <span class="table-text2">Save Rs {{item1.doscount}}</span>
+                  </td>
+                  <td class="table-heading">QTY {{item1.qty}}</td>
+                  <td></td>
+                  <td>
+                    <!-- <button type="button" class="mx-auto btn btn-trasnp-1">Cancel Order</button> -->
+                    <!-- <app-order-cancelled-popup></app-order-cancelled-popup> -->
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="margin_40"></div>
+        </ng-container>
+
+        <ng-container *ngIf="!pendingOrdersData.orderListByDays || pendingOrdersData.orderListByDays.length === 0">
+          <label class="t-order"> No Recent products</label>
+        </ng-container>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <label class="text1">PRODUCT RECOMMENDATIONS</label>
+        </div>
+        <div class="margin_40"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3" *ngFor="let item of SUGGESTED_PRODUCTS">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 Product_div tab-h text-center padlrn">
+                <div class="clear20"></div>
+                <div class="imgClass text">
+                    <img class="imgClass" src="{{item.imageUrl}}">
+                </div>
+                <div class="clear10"></div>
+                <label class="zl-text">{{item.name}}</label>
+                <label class="zl-text2">{{item.description}}</label>
+
+                <div class="row">
+                  <div class="text-center ppstyle col-6 col-sm-6 col-md-6 col-lg-4 ">
+                    <label class="">
+                      <label class="zl-text1">&#8377;</label>
+                      <label class="zl-text12">{{item.selling}}</label>
+                    </label>
+                  </div>
+                  <div class=" col-6 col-sm-6 col-md-6 col-lg-8 text-center ppstyle1">
+                    <div class="product_img">
+                      <div class="clear10"></div>
+                      <div class="order-margin-top2">
+                        <i class="fa" (click)="reduce(item)">&#xf056;</i>&nbsp;
+                        <input [(ngModel)]="item.qty" class="input-spinner">&nbsp;
+                        <i class="fa" (click)="add(item)">&#xf055;</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span>{{item.offer}}</span>
+                <button type="button" class="btn byenowbut   btn-green-1">Buy Now</button>&nbsp;&nbsp;
+                <button type="button" class="mx-auto addtocart btn btn-trasnp-1">Add To Cart</button>
+                <div class="clear10"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- END OF RECENT TAB -->
+      <div id="developer" class="{{tabs[1].tabcontent}} padlrn">
+
+
+        <div class="margin_20"></div>
+        <ng-container *ngIf="deliveredOrdersData">
+          <div class="table-responsive  tab-h">
+            <table class="table table-borderless" *ngFor="let item of deliveredOrdersData">
+              <thead>
+                <tr>
+                  <th>
+                    <span class="table-heading">ORDER PLACED</span>
+                    <br>
+                    <span class="table-text1">{{item.orderDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">DELIVERY DATE</span>
+                    <br>
+                    <span class="table-text1">{{item.deliveryDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">Transaction ID:- </span>
+                    <span class="table-text1">{{item.transactionId}}</span>
+                    <br />
+                    <span class="table-heading">ORDER ID:- </span>
+                    <span class="table-text1">{{item.orderId}}
+
+                    </span>
+                  </th>
+                  <th>
+                    <span class="table-heading">TOTAL</span>
+                    <br>
+                    <span class="table-text0">RS {{item.amount}}</span>
+                  </th>
+                  <th>
+                    <button type="button" class="btn btn-green-1">Re-Order</button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item1 of item.productBeanObj">
+                  <td>
+                    <img class="orders-product-images" src="{{item1.imageUrl}}"> </td>
+                  <td>
+                    <span class="table-text1">{{item1.productName}}</span>
+                    <br>
+                    <span class="table-text0">{{item1.sellingPrice}}</span>&nbsp;
+                    <span class="table-text2">
+                      <del>Rs {{item1.mrpPrice}} </del>
+                    </span>
+                    <br>
+                    <span class="table-text2">Save Rs {{item1.doscount}}</span>
+                  </td>
+                  <td class="table-heading">QTY {{item1.qty}}</td>
+                  <td></td>
+                  <td>
+                    <button type="button" class="mx-auto btn btn-trasnp-1">Add To Cart</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="margin_40"></div>
+        </ng-container>
+
+        <ng-container *ngIf="!deliveredOrdersData.orderListByDays || deliveredOrdersData.orderListByDays.length === 0">
+          <label class="t-order"> No delivered products</label>
+        </ng-container>
+
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <label class="text1">PRODUCT RECOMMENDATIONS</label>
+        </div>
+        <div class="margin_40"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3" *ngFor="let item of SUGGESTED_PRODUCTS">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 Product_div tab-h text-center padlrn">
+                <div class="clear20"></div>
+                <div class="imgClass text-center">
+                    <img class="imgClass" src="{{item.imageUrl}}">
+                </div>
+                <div class="clear10"></div>
+                <label class="zl-text">{{item.name}}</label>
+                <label class="zl-text2">{{item.description}}</label>
+
+                <div class="row">
+                  <div class=" col-6 col-sm-6 col-md-6 col-lg-4 text-center ppstyle">
+                    <label class="">
+                      <label class="zl-text1">&#8377;</label>
+                      <label class="zl-text12">{{item.selling}}</label>
+                    </label>
+                  </div>
+                  <div class=" col-6 col-sm-6 col-md-6 col-lg-8 text-center ppstyle1">
+                    <div class="product_img">
+                      <div class="clear10"></div>
+                      <div class="order-margin-top2">
+                        <!-- <i class="fa" (click)="down()">&#xf056;</i>&nbsp;
+                        <input [(ngModel)]="spinner" class="input-spinner">&nbsp;
+                        <i class="fa" (click)="spinner=spinner+1">&#xf055;</i> -->
+                        <i *ngIf="item.qty!=0" class="fa" (click)="reduce(item)"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                        <input [(ngModel)]="item.qty" class="input-spinner" >&nbsp;
+                        <i class="fa" (click)=" add(item)"><img src="././assets/images/SpinnerPluse.png"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span>{{item.offer}}</span>
+                <button type="button" class="btn byenowbut btn-green-1">Buy Now</button>&nbsp;&nbsp;
+                <button type="button" class="mx-auto addtocart btn btn-trasnp-1" (click)="addToCart(item)">Add To Cart</button>
+                <div class="clear10"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="brokers" class="{{tabs[2].tabcontent}} padlrn">
+
+
+        <div class="margin_20"></div>
+        <ng-container *ngIf="canceledOrdersData">
+          <div class="table-responsive  tab-h">
+            <table class="table table-borderless" *ngFor="let item of canceledOrdersData">
+              <thead>
+                <tr>
+                  <th>
+                    <span class="table-heading">ORDER PLACED</span>
+                    <br>
+                    <span class="table-text1">{{item.orderDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">CANCELLED DATE</span>
+                    <br>
+                    <span class="table-text1">{{item.deliveryDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">Transaction ID:- </span>
+                    <span class="table-text1">{{item.transactionId}}</span>
+                    <br />
+                    <span class="table-heading">ORDER ID:-</span>
+                    <span class="table-text1">{{item.orderId}}
+
+                    </span>
+                  </th>
+                  <th>
+                    <span class="table-heading">TOTAL</span>
+                    <br>
+                    <span class="table-text0">RS {{item.amount}}</span>
+                  </th>
+                  <th>
+                    <button type="button" class="btn btn-green-1">Re-Order</button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item1 of item.productBeanObj">
+                  <td>
+                    <img class="orders-product-images" src="{{item1.imageUrl}}"> </td>
+                  <td>
+                    <span class="table-text1">{{item1.productName}}</span>
+                    <br>
+                    <span class="table-text0">{{item1.sellingPrice}}</span>&nbsp;
+                    <span class="table-text2">
+                      <del>Rs {{item1.mrpPrice}} </del>
+                    </span>
+                    <br>
+                    <span class="table-text2">Save Rs {{item1.doscount}}</span>
+                  </td>
+                  <td class="table-heading">QTY {{item1.qty}}</td>
+                  <td></td>
+                  <td>
+                    <button type="button" class="mx-auto btn btn-trasnp-1">Add To Cart</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="margin_40"></div>
+        </ng-container>
+
+
+        <ng-container *ngIf="!canceledOrdersData.orderListByDays || canceledOrdersData.orderListByDays.length === 0">
+          <label class="t-order"> No cancelled products</label>
+        </ng-container>
+
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <label class="text1">PRODUCT RECOMMENDATIONS</label>
+        </div>
+        <div class="margin_40"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3" *ngFor="let item of SUGGESTED_PRODUCTS">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 Product_div tab-h text-center padlrn">
+                <div class="clear20"></div>
+                <div class="imgClass text-center">
+                    <img class="imgClass" src="{{item.imageUrl}}">
+                </div>
+               
+                <div class="clear10"></div>
+                <label class="zl-text">{{item.name}}</label>
+                <label class="zl-text2">{{item.description}}</label>
+
+                <div class="row">
+                  <div class=" col-6 col-sm-6 col-md-6 col-lg-4 ppstyle text-center">
+                    <label class="">
+                      <label class="zl-text1">&#8377;</label>
+                      <label class="zl-text12">{{item.selling}}</label>
+                    </label>
+                  </div>
+                  <div class=" col-6 col-sm-6 col-md-6 col-lg-8 text-center ppstyle1">
+                    <div class="product_img">
+                      <div class="clear10"></div>
+                      <div class="order-margin-top2">
+                        <i class="fa" (click)="reduce(item)">&#xf056;</i>&nbsp;
+                        <input [(ngModel)]="item.qty" class="input-spinner">&nbsp;
+                        <i class="fa" (click)="add(item)">&#xf055;</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span>{{item.offer}}</span>
+                <button type="button" class="btn byenowbut btn-green-1">Buy Now</button>&nbsp;&nbsp;
+                <button type="button" class="mx-auto addtocart btn btn-trasnp-1">Add To Cart</button>
+                <div class="clear10"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div id="brokers" class="{{tabs[3].tabcontent}} padlrn">
+
+
+        <div class="margin_20"></div>
+        <ng-container *ngIf="canceledOrdersData.orderListByDays">
+          <div class="table-responsive  tab-h">
+            <table class="table table-borderless" *ngFor="let item of canceledOrdersData.orderListByDays">
+              <thead>
+                <tr>
+                  <th>
+                    <span class="table-heading">ORDER REPLACED</span>
+                    <br>
+                    <span class="table-text1">{{item.orderDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">CANCELLED DATE</span>
+                    <br>
+                    <span class="table-text1">{{item.deliveryDate}}</span>
+                  </th>
+                  <th>
+                    <span class="table-heading">Transaction ID:- </span>
+                    <span class="table-text1">{{item.transactionId}}</span>
+                    <br />
+                    <span class="table-heading">ORDER ID:-</span>
+                    <span class="table-text1">{{item.orderId}}
+
+                    </span>
+                  </th>
+                  <th>
+                    <span class="table-heading">TOTAL</span>
+                    <br>
+                    <span class="table-text0">RS {{item.amount}}</span>
+                  </th>
+                  <th>
+                    <button type="button" class="btn btn-green-1">Re-Order</button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item1 of item.productBeanObj">
+                  <td>
+                    <img class="orders-product-images" src="{{item1.imageUrl}}"> </td>
+                  <td>
+                    <span class="table-text1">{{item1.productName}}</span>
+                    <br>
+                    <span class="table-text0">{{item1.sellingPrice}}</span>&nbsp;
+                    <span class="table-text2">
+                      <del>Rs {{item1.mrpPrice}} </del>
+                    </span>
+                    <br>
+                    <span class="table-text2">Save Rs {{item1.doscount}}</span>
+                  </td>
+                  <td class="table-heading">QTY {{item1.qty}}</td>
+                  <td></td>
+                  <td>
+                    <button type="button" class="mx-auto btn btn-trasnp-1">Add To Cart</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="margin_40"></div>
+        </ng-container>
+
+
+        <ng-container *ngIf="!canceledOrdersData.orderListByDays || canceledOrdersData.orderListByDays.length === 0">
+          <label class="t-order"> No Replacement products</label>
+        </ng-container>
+
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <label class="text1">PRODUCT RECOMMENDATIONS</label>
+        </div>
+        <div class="margin_40"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 padlrn">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3" *ngFor="let item of SUGGESTED_PRODUCTS">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 Product_div tab-h text-center padlrn">
+                <div class="clear20"></div>
+                <div class="imgClass text-center">
+                    <img class="imgClass" src="{{item.imageUrl}}">
+                </div>
+               
+                <div class="clear10"></div>
+                <label class="zl-text">{{item.name}}</label>
+                <label class="zl-text2">{{item.description}}</label>
+
+                <div class="row">
+                  <div class=" col-6 col-sm-6 col-md-6 col-lg-4 ppstyle text-center">
+                    <label class="">
+                      <label class="zl-text1">&#8377;</label>
+                      <label class="zl-text12">{{item.selling}}</label>
+                    </label>
+                  </div>
+                  <div class=" col-6 col-sm-6 col-md-6 col-lg-8 text-center ppstyle1">
+                    <div class="product_img">
+                      <div class="clear10"></div>
+                      <div class="order-margin-top2">
+                        <i class="fa" (click)="down()">&#xf056;</i>&nbsp;
+                        <input [(ngModel)]="spinner" class="input-spinner">&nbsp;
+                        <i class="fa" (click)="spinner=spinner+1">&#xf055;</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span>{{item.offer}}</span>
+                <button type="button" class="btn byenowbut btn-green-1">Buy Now</button>&nbsp;&nbsp;
+                <button type="button" class="mx-auto addtocart btn btn-trasnp-1">Add To Cart</button>
+                <div class="clear10"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

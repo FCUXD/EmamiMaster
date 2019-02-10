@@ -1,0 +1,153 @@
+.ImmunityHeader {
+    font-size: 24px;
+    color: #402909;
+    width: 50%;
+    float: left;
+    margin: 0px; 
+    font-family: 'TrajanPro-Regular';
+}
+.mrgn-r50{
+    margin-right: 50px;
+}
+.mt-100{
+    margin-top: 100px !important;
+}
+
+.SliderArrow {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.WhiteBox {
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 25px;
+    position: relative;
+    height: 390px; 
+    cursor: pointer;
+}
+
+    .WhiteBox h5 {
+        font-size: 22px;
+        color: #333333;
+        font-family: 'TrajanPro-Bold';
+    }
+
+.Rupees {
+    width: 40%;
+    /* float: left; */
+    font-size: 24px;
+    margin-top: -8px;
+    position: absolute;
+    bottom: 70px;
+    left: 10px;
+}
+
+    .Rupees span {
+        font-size: 30px;
+        font-family: 'PlayfairDisplay-Regular';
+    }
+
+.Spinner {
+    width: 46%;
+    /* float: left; */
+    right: 23px;
+    bottom: 70px;
+    position: absolute;
+}
+
+.SpinnerInput {
+    width: 70px;
+    height: 30px;
+    float: left;
+}
+.mt-65{
+    margin-top: -85px !important;
+}
+.AddToCartBtn {
+    background: #cfa15a;
+    color: #402909 !important;
+    width: 75%;
+    position: absolute;
+    height: 34px;
+    outline: 1px solid #c29a5d;
+    outline-offset: -6px;
+    left: 13%;
+    bottom: 25px;
+    border-radius: 10px;
+    -moz-outline-radius: 10px;
+    font-size: 16px;
+    font-family: 'TrajanPro-Bold';
+}
+
+.SpinnerImg {
+    float: left;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.SpinnerImg2 {
+    margin-top: 0px;
+}
+
+.TopSliderArrow {
+    width: 100%;
+    float: left;
+}
+
+.TopSliderSection {
+    position: relative;
+}
+
+.LeftArrowImg {
+    left: 0px;
+    position: absolute;
+    margin-top: 205px;
+}
+
+.RightArrowImg {
+    right: 0px;
+    position: absolute;
+    margin-top: 205px;
+}
+
+.TopSlider2 {
+    margin-left: 40px;
+}
+
+.TopSlider1 {
+    width: 31%;
+    float: left;
+    padding: 0px 10px;
+}
+
+.SpinnerImg3 {
+    margin-right: 24px;
+}
+
+.product-title{
+    min-height: 52px;
+}
+
+@media screen and (min-width: 1px) and (max-width: 768px) {
+    .cp{
+        margin-top: 100px;
+    }
+    .cn{
+        margin-top: 100px;
+    }
+    .SliderArrow {
+        width: 100%;
+        text-align: center;
+    }
+    .ImmunityHeader {
+        font-size: 18px;
+        color: #402909;
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+        font-family: 'TrajanPro-Regular';
+    }
+}

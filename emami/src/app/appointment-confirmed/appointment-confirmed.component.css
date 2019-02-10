@@ -1,0 +1,133 @@
+.pink-bg {
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: rgba(251, 248, 238,0.5);
+    text-align: center;
+    margin: 20px 0px;
+}
+.pink-bg h1{
+    object-fit: contain;
+    font-family: TrajanPro-Bold;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #402909;
+}
+
+.pink-bg h2{
+    object-fit: contain;
+    font-family: PlayfairDisplay-Regular;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #402909;
+}
+
+.hyfl{background-image: url("../../assets/images/happy_family.jpg") no-repeat;
+    object-fit: contain;
+    background-size: cover; 
+    height: 900px;
+}
+.hyfl h2{
+    object-fit: contain;
+  font-family: TrajanPro-Bold;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff9e5;
+}
+.hyfl p{
+    object-fit: contain;
+    font-family: PlayfairDisplay-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff9e5;
+}
+.hyfl p.primise{
+    object-fit: contain;
+    font-family: PlayfairDisplay-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff9e5;
+}
+.spacing{padding: 40px;}
+.waiting,.consult{
+    object-fit: contain;
+  font-family: PlayfairDisplay-Regular;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #333333;
+}
+.waiting {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.consult {
+    display: inline-block;
+    text-align: right;
+    width: 50%;
+    vertical-align: top;
+}
+.card.expert {
+    background: #fbf8ee;
+}
+.innerdiv {
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #333333;
+    padding: 10px;
+}
+.px-3.bori {
+    border-bottom: 1px solid #d9b06566;
+    padding: 10px;
+}
+.CanselBtnCard{
+    object-fit: contain;
+    border-radius: 5px;
+    border: solid 1px #cfa15a;
+    background-color: transparent;
+    object-fit: contain;
+    font-family: TrajanPro-Bold;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-align: center;
+    color: #402909;
+    width: 153px;
+    height: 34px;
+}
+.GetStartedBtn {
+    border-radius: 5px;
+    box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.13);
+    background-color: #bccf60;
+}

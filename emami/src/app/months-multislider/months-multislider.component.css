@@ -1,0 +1,66 @@
+
+ul.months-slider-list{
+    list-style-type: none;
+}
+ul.months-slider-list li{
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.active-month-cirlce{
+    width: 87px;
+    height: 87px;
+    border: solid 1px #cfa15a;
+    background-color: #cfa15a;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #402909;
+    font-family: 'PlayfairDisplay-Bold';
+    transition: all 0.5s;
+}
+
+.inactive-month-circle{
+    width: 60px;
+    height: 60px;
+    background-color: #fff9e5;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: normal;
+    color: #402909;
+    font-family: 'PlayfairDisplay-Regular';
+    padding: 16px;
+    transition: all 0.5s;
+}
+.inactive-month-circle:hover {
+    border: solid 1px #cfa15a;
+    background-color: #cfa15a;
+    font-family: 'PlayfairDisplay-Bold';
+    width: 61px;
+    height: 61px;
+}
+/* hide last 6  */
+ul.months-slider-list li:nth-last-child(-n+7){
+    display: none;
+}
+ul.months-slider-list li:last-child{
+    display: inline-block;
+}
+@media only screen and (max-width: 768px) {
+    ul.months-slider-list li:nth-last-child(-n+10){
+        display: none;
+    }
+    ul.months-slider-list li:last-child{
+        display: inline-block;
+    }
+}
+@media only screen and (max-width: 576px) {
+    ul.months-slider-list li:nth-last-child(-n+12){
+        display: none;
+    }
+    ul.months-slider-list li:last-child{
+        display: inline-block;
+    }
+}

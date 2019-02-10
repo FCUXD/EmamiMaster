@@ -1,0 +1,575 @@
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+    background-color: #ffffff; 
+    box-shadow: 0px 0px 15px #e5e5e5; 
+    padding: 15px 15px 0px 15px; 
+    width: 100%;
+}
+.BtnWidthConsult{
+  width: 95px;
+}
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 2px 16px 12px 16px;
+    font-family: TrajanPro-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    color: #402909;
+}
+:host >>> .popover {
+  color: #000;
+  max-width: 100%;
+  cursor: pointer; 
+  left: 43% !important;
+}   
+:host >>> .MarginBottom10px {
+  margin-bottom: 0px;
+}
+:host >>> .date_cursor2 .popover {
+
+  max-width: 50% !important;
+  left: 43% !important;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ffffff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ffffff;
+    border-bottom: 3px solid #84b367;
+    font-family: TrajanPro-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    color: #84b367;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.date_cursor{
+    cursor: pointer;
+}
+
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.fontstyle{
+    font-family: TrajanPro-Regular;
+    font-size: 14.5px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.tabshadow{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06)!important;
+}
+
+ :host >>> .popover {
+  color: #000;
+  max-width: 600%;
+  left:0 !important;
+  width:650px;
+  }
+  :host >>> .popover  .sendbtn123{
+    margin-top: 20px;
+    background-color: #33a15c  !important;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 62px;
+      width: 192px;
+      font-size: 18px;
+    text-transform: uppercase;
+    cursor:pointer;
+  }
+  :host >>> .popover .textarea12{
+    border-radius: 5px;
+    width: 100% !important;
+    padding: 18px 30px 22px 5px!important;
+    margin-top: 10%;
+  }
+  
+  :host >>> .popover .col-md-1{
+    font-size: 30px;
+    margin-top: 7%;
+    width:150%;
+  }
+  :host >>> .popover .divtime{
+    font-size: 30px;
+    margin-top: 7%;
+    width:114%;
+  }
+  :host >>> .popover .divhr{
+    font-size: 30px;
+    margin-top: 7%;
+    width: 150%;
+  }
+  :host >>> app-datepicker {
+    cursor: pointer;
+}
+  :host >>> .popover .divmin{
+    font-size: 30px;
+    margin-top: 7%;
+    width: 150%;
+  }
+  :host >>> .popover .img{
+    margin-left: 31%;
+  }
+  :host >>> .popover .col-md-3 {
+    text-align: center;
+  }
+  :host >>> .popover .col-md-2.rowcol {
+    position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 0px;
+      padding-left: 15px;
+  
+  }
+  .PatientTable{
+    padding: 0px 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .PatientTable thead tr th{
+  font-size: 15px;
+  font-weight: normal;
+  border: none;
+  } 
+  .table th, .table td {
+    padding: 1rem 0.5rem;
+}
+  .PatientTable tbody tr td{
+      font-size: 12px;
+      font-weight: normal;
+      } 
+      .CONSULTBtn{
+          background-color: #33a15c;
+          color: #ffffff;
+          font-size: 12px;
+          
+                    } 
+      .RESCHEDULEBtn{
+          background-color: transparent;
+          border: 1px solid #33a15c; 
+           color: #33a15c;
+      } 
+      .CANCELBtn{
+          color: #ff8590; 
+          background-color: transparent;
+          border: 1px solid #ff8590;
+      }  
+      .CANCELBtn img{
+        width: 8px;
+      }
+      :host >>> .popover {
+  color: #000;
+  max-width: 600%;
+  left:0 !important;
+  width:650px;
+  }
+  :host >>> .popover  .sendbtn123{
+    margin-top: 20px;
+    background-color: #33a15c  !important;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 62px;
+      width: 192px;
+      font-size: 18px;
+    text-transform: uppercase;
+    cursor:pointer;
+  }
+  :host >>> .popover .textarea12{
+    border-radius: 5px;
+    width: 100% !important;
+    padding: 18px 30px 22px 5px!important;
+    margin-top: 10%;
+  }
+  
+  :host >>> .popover .col-md-1{
+    font-size: 30px;
+    margin-top: 7%;
+    width:150%;
+  }
+  :host >>> .popover .divtime{
+    font-size: 30px;
+    margin-top: 7%;
+    width:114%;
+  }
+  :host >>> .popover .divhr{
+    font-size: 30px;
+    margin-top: 7%;
+    width: 150%;
+  }
+  :host >>> app-datepicker {
+    cursor: pointer;
+}
+  :host >>> .popover .divmin{
+    font-size: 30px;
+    margin-top: 7%;
+    width: 150%;
+  }
+  :host >>> .popover .img{
+    margin-left: 31%;
+  }
+  :host >>> .popover .col-md-3 {
+    text-align: center;
+  }
+  :host >>> .popover .col-md-2.rowcol {
+    position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 0px;
+      padding-left: 15px;
+  
+  }
+  .PatientTable{
+    padding: 0px 0px;
+  }
+  .PatientTable thead tr th{
+  font-size: 15px;
+  font-weight: normal;
+  border: none;
+  } 
+  .table th, .table td {
+    padding: 1rem 0.5rem;
+}
+  .PatientTable tbody tr td{
+      font-size: 12px;
+      font-weight: normal;
+      } 
+      .CONSULTBtn{
+          background-color: #33a15c;
+          color: #ffffff;
+          font-size: 12px;
+          
+                    } 
+      .RESCHEDULEBtn{
+          background-color: transparent;
+          border: 1px solid #33a15c; 
+           color: #33a15c;
+      } 
+      .CANCELBtn{
+          color: #ff8590; 
+          background-color: transparent;
+          border: 1px solid #ff8590;
+      }  
+      .CANCELBtn img{
+        width: 8px;
+      }
+      
+.PatientTable thead tr th {
+  font-weight: normal;
+  border: none;
+  background-color: #f6eddb!important;
+  font-family: PlayfairDisplay-Bold;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.29;
+  letter-spacing: 0.7px;
+  text-align:center;
+  color: #333333;
+}
+.PatientTable tbody tr:hover{
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.13);
+background-color: #fff9e5;
+}
+.PatientTable tbody tr td{
+  font-family: TrajanPro-Regular;
+  font-size: 13.5px;
+  font-weight: normal;
+  color: #402909;
+  vertical-align:middle;
+  text-align:center;
+  padding: 1rem 0rem;
+}
+.h4style{
+  font-size: 13.5px;
+  font-weight: normal;
+  color: #402909;
+  border-right: solid 0.5px #402909;
+  border-left: solid 0.5px #402909;
+}
+.btn-trasnp-1{
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  background: transparent;
+  border-radius: 5px;
+  border: solid 1px #cfa15a;
+  font-family: 'TrajanPro-Bold';
+  padding: 5px 10px;
+  }
+  .btn-green-1{
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  border-radius: 3px;
+  color: #402909;
+  border: solid 1px #84b367;
+  background-color: #bccf60;
+  font-family: 'TrajanPro-Bold';
+  box-shadow: 0 0 0 2px #bccf60;
+  padding: 3px 25px;
+  }
+  .CanselBtnCard[_ngcontent-c16] {
+    background-color: #ffffff;
+    border: 1px solid #cfa15a;
+    outline-offset: 0px;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: none;
+    box-shadow: none !important;
+    padding: 5px 42px !important;
+}
+  .timespan{
+    font-family: TrajanPro-Bold;
+  font-size: 19.5px;
+  font-weight: bold;
+  color: #402909;
+  }
+
+  :host >>> .popover {
+    color: #000;
+    max-width: 600%;
+    left:0 !important;
+    width:650px;
+    }
+    :host >>> .popover  .sendbtn123{
+      margin-top: 20px;
+      background-color: #33a15c  !important;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      height: 62px;
+        width: 192px;
+        font-size: 18px;
+      text-transform: uppercase;
+      cursor:pointer;
+    }
+    :host >>> .popover .textarea12{
+      border-radius: 5px;
+      width: 100% !important;
+      padding: 18px 30px 22px 5px!important;
+      margin-top: 10%;
+    }
+    
+    :host >>> .popover .col-md-1{
+      font-size: 30px;
+      margin-top: 7%;
+      width:150%;
+    }
+    :host >>> .popover .divtime{
+      font-size: 30px;
+      margin-top: 7%;
+      width:114%;
+    }
+    :host >>> .popover .divhr{
+      font-size: 30px;
+      margin-top: 7%;
+      width: 150%;
+    }
+    :host >>> app-datepicker {
+      cursor: pointer;
+  }
+    :host >>> .popover .divmin{
+      font-size: 30px;
+      margin-top: 7%;
+      width: 150%;
+    }
+    :host >>> .popover .img{
+      margin-left: 31%;
+    }
+    :host >>> .popover .col-md-3 {
+      text-align: center;
+    }
+    :host >>> .popover .col-md-2.rowcol {
+      position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 0px;
+        padding-left: 15px;
+    
+    }
+    .PatientTable{
+      padding: 0px 0px; 
+      border-radius: 5px;
+    }
+    .PatientTable thead tr th{
+    font-size: 15px;
+    font-weight: normal;
+    border: none;
+    } 
+    .table th, .table td {
+      padding: 1rem 0.5rem;
+  }
+    .PatientTable tbody tr td{
+        font-size: 12px;
+        font-weight: normal;
+        } 
+        .CONSULTBtn{
+            background-color: #33a15c;
+            color: #ffffff;
+            font-size: 12px;
+            
+                      } 
+        .RESCHEDULEBtn{
+            background-color: transparent;
+            border: 1px solid #33a15c; 
+             color: #33a15c;
+        } 
+        .CANCELBtn{
+            color: #ff8590; 
+            background-color: transparent;
+            border: 1px solid #ff8590;
+        }  
+        .CANCELBtn img{
+          width: 8px;
+        }
+        
+  .PatientTable thead tr th {
+    font-weight: normal;
+    border: none;
+    background-color: #f6eddb!important;
+    font-family: PlayfairDisplay-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.29;
+    letter-spacing: 0.7px;
+    text-align:center;
+    color: #333333;
+  }
+  .PatientTable tbody tr:hover{
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.13);
+  background-color: #fff9e5;
+  }
+  .PatientTable tbody tr td{
+    font-family: TrajanPro-Regular;
+    font-size: 13.5px;
+    font-weight: normal;
+    color: #402909;
+    vertical-align:middle;
+    text-align:center;
+    padding: 1rem 0rem;
+  }
+  .h4style{
+    font-size: 13.5px;
+    font-weight: normal;
+    color: #402909;
+    border-right: solid 0.5px #402909;
+    border-left: solid 0.5px #402909;
+  }
+  .btn-trasnp-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    background: transparent;
+    border-radius: 5px;
+    border: solid 1px #cfa15a;
+    font-family: 'TrajanPro-Bold';
+    padding: 5px 10px;
+    }
+    .btn-green-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+    color: #402909;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 2px #bccf60;
+    padding: 3px 25px;
+    }
+    .CanselBtnCard[_ngcontent-c16] {
+      background-color: #ffffff;
+      border: 1px solid #cfa15a;
+      outline-offset: 0px;
+      font-family: 'TrajanPro-Bold';
+      box-shadow: none;
+      box-shadow: none !important;
+      padding: 5px 42px !important;
+  }
+    .timespan{
+      font-family: TrajanPro-Bold;
+    font-size: 19.5px;
+    font-weight: bold;
+    color: #402909;
+    } 
+    .datepicker{
+      float: right; 
+      position: absolute;
+     right: 7px;
+     top: 9px;
+    }
+
+    @media screen and (min-width: 1600px) and (max-width: 2400px) {
+
+    }
+    @media screen and (min-width: 1px) and (max-width: 1220px) {
+    
+    }
+    @media screen and (min-width: 1px) and (max-width: 1200px) { 
+    
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 1060px) {
+
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 992px) { 
+
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 768px) { 
+                  
+    } 
+    
+    @media screen and (min-width: 1px) and (max-width: 480px) { 
+      .tab button.active, .tab button {
+        font-size: 14px;
+      }  
+      .PatientTable thead tr th {
+        vertical-align: middle;
+        font-size: 13px;
+        line-height: 1;
+      }
+      .PatientTable tbody tr td {
+        padding: 1rem 0.5rem;
+      }
+      .h4style {
+          padding: 0 0.5rem;
+      }
+
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 420px) { 
+    
+    }
+    
+    @media screen and (min-width: 1px) and (max-width: 380px) { 
+      .tab button.active, .tab button {
+        font-size: 12px;
+        padding: 2px 10px 12px 10px;
+      }  
+
+
+    }

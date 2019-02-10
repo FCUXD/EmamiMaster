@@ -1,0 +1,299 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header>
+<div class="clear30"></div>
+<div class="clear30"></div>
+<div id="" class="patientFeedbackMainContainer">
+    <section class="patientFeedback-top text-center">
+      <div>Help us to serve you Better</div>
+      <div>
+        <img class="img-fluid" src="././assets/images/seperator-design-left-1.png" />
+        <img class="img-fluid" src="././assets/images/seperator-design-right-1.png" />
+      </div>
+    </section>
+    <div class="clear30"></div>
+    <div class="container">
+      <div class="box-with-shadow patientFeedback-middle">
+        <div class="row">
+          <div class="col-md-2  text-center">
+            <img class="img-fluid rounded-circle" src="{{fdbkdoctinfo[0].appoDoctImg}}" />
+          </div>
+          <div class="col-md-10 ">
+            <div class="clear10"></div>
+            <div class="doct-info fs-16px fw-bold">{{fdbkdoctinfo[0].doctName}}</div>
+            <div class="doct-exp fs-14px">{{fdbkdoctinfo[0].doctExp}}</div>
+            <div class="clear5"></div>
+            <div class="doct-info fs-12px fw-bold">{{fdbkdoctinfo[0].doctCare}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="clear30"></div>
+      <div class="box-with-shadow patientFeedback-bottom">
+        <form #feedbackForm="ngForm" (ngSubmit)="submitFeedback(feedbackForm)">
+        <div class="row">
+          <div class="col-md-6">
+            <ol type="1" start="1" class="fdbk-question">
+              <li>
+                {{fdbkQuestions[0].fdbkQ}}
+              </li>
+              <div class="clear30"></div>
+              <div class="rating-buttons-div">
+                <ul class="rating-buttons-container">
+                  <li>
+                    <label>
+                      <input  #recmRating="ngModel" value="1" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">1</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="2" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">2</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="3" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">3</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="4" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">4</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="5" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">5</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="6" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">6</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="7" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">7</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="8" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">8</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="9" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">9</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #recmRating="ngModel" value="10" type="radio" name="recommendRating" required ngModel>
+                      <span class="checkmark btn">10</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="clear40"></div>
+            </ol>
+  
+          </div>
+          <div class="col-md-6">
+            <ol type="1" start="2" class="fdbk-question">
+              <li>
+                {{fdbkQuestions[1].fdbkQ}}
+              </li>
+              <div class="clear30"></div>
+              <div class="rating-buttons-div">
+                <ul class="rating-buttons-container">
+                    <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="1" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">1</span>
+                        </label>
+      
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="2" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">2</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="3" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">3</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="4" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">4</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="5" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">5</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="6" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">6</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="7" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">7</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="8" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">8</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="9" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">9</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #consultExpRating="ngModel" value="10" type="radio" name="consultExperienceRating" required ngModel>
+                          <span class="checkmark btn">10</span>
+                        </label>
+                      </li>
+                </ul>
+              </div>
+              <div class="clear40"></div>
+            </ol>
+  
+          </div>
+          <div class="col-md-6">
+            <ol type="1" start="3" class="fdbk-question">
+              <li>
+                {{fdbkQuestions[2].fdbkQ}}
+              </li>
+              <div class="clear30"></div>
+              <div class="question-label">Customer Experience</div>
+              <div class="clear10"></div>
+              <div class="rating-buttons-div">
+                <ul class="p-a-g-e-buttons-container">
+                  <li>
+                    <label>
+                      <input #custExpRating="ngModel" value="1" type="radio" name="custExperienceRating" required ngModel>
+                      <span class="checkmark btn-unclicked-1 btn">Poor</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input #custExpRating="ngModel" value="2" type="radio" name="custExperienceRating" required ngModel>
+                      <span class="checkmark btn-unclicked-1 btn">Average</span>
+                    </label>
+  
+                  </li>
+                  <li>
+                    <label>
+                      <input #custExpRating="ngModel" value="3" type="radio" name="custExperienceRating" required ngModel>
+                      <span class="checkmark btn-unclicked-1 btn">Good</span>
+                    </label>
+  
+                  </li>
+                  <li>
+                    <label>
+                      <input #custExpRating="ngModel" value="4" type="radio" name="custExperienceRating" required ngModel>
+                      <span class="checkmark btn-unclicked-1 btn">Excellent</span>
+                    </label>
+  
+                  </li>
+                </ul>
+              </div>
+              <div class="clear10"></div>
+              <div class="question-label">Price</div>
+              <div class="clear10"></div>
+              <div class="rating-buttons-div">
+                <ul class="p-a-g-e-buttons-container">
+                    <li>
+                        <label>
+                          <input #priceRating="ngModel" value="1" type="radio" name="priceRating" required ngModel>
+                          <span class="checkmark btn-unclicked-1 btn">Poor</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <input #priceRating="ngModel" value="2" type="radio" name="priceRating" required ngModel>
+                          <span class="checkmark btn-unclicked-1 btn">Average</span>
+                        </label>
+      
+                      </li>
+                      <li>
+                        <label>
+                          <input #priceRating="ngModel" value="3" type="radio" name="priceRating" required ngModel>
+                          <span class="checkmark btn-unclicked-1 btn">Good</span>
+                        </label>
+      
+                      </li>
+                      <li>
+                        <label>
+                          <input #priceRating="ngModel" value="4" type="radio" name="priceRating" required ngModel>
+                          <span class="checkmark btn-unclicked-1 btn">Excellent</span>
+                        </label>
+      
+                      </li>
+                </ul>
+              </div>
+              <div class="clear40"></div>
+            </ol>
+  
+          </div>
+          <div class="col-md-6">
+            <ol type="1" start="4" class="fdbk-question">
+              <li>
+                {{fdbkQuestions[3].fdbkQ}}
+              </li>
+              <div class="clear40"></div>
+              <div class="rating-txtarea-div">
+                <textarea #fdbkComent="ngModel" name="fdbkComment"  placeholder="Enter text here" class="fdbk-cmnt" ngModel required></textarea>
+              </div>
+              <div class="clear40"></div>
+              
+            </ol>
+  
+          </div>
+          <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-green-1">Submit</button>
+          </div>
+          <hr />
+          <div class="col-12 text-center get-in-touch-heading">
+            Let’s get in touch
+            <div class="clear30"></div>
+          </div>
+  
+          <div class="offset-md-3 col-md-3 offset-sm-0 col-sm-6 text-center get-in-touch-phone-email get-in-touch-bg-phone">
+  
+            <div>+91-8888881111</div>
+            <div>+91-8888881111</div>
+          </div>
+          <div class="col-md-3 text-center col-sm-6 get-in-touch-phone-email get-in-touch-bg-email">
+  
+            <div>Sales@zandu.com</div>
+            <div>info@zandu.com</div>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  
+  
+  </div>
+  <app-footer></app-footer>

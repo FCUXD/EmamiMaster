@@ -1,0 +1,218 @@
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left, 
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+
+.image-center {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-hover:hover .image {
+  opacity: 0.3;
+}
+
+.image-hover:hover .centered {
+font-size:18px;
+color:red; 
+ opacity: 1;
+}
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 120px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4%;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+}
+.card-img-top {
+    max-width: 100%;
+}
+.card-title {
+    margin-bottom: 0.75rem;
+    object-fit: contain;
+    font-family: TrajanPro-Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #402909;
+    margin-left: 20px;
+}
+.custom_card {
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.13);
+    background-color: #fff9e5;
+    padding: 10px;
+    height: 104px;
+}  
+.custom_body  p{
+    margin-top: 5px;
+  
+
+float: left;
+
+margin-left: 0px;
+} 
+.custom_body2 p {
+
+  
+    float: left;
+    margin-left: 0px;
+
+}
+.padtop15{
+    padding-top: 12px;
+}
+.custom_body {
+    border-radius: 10px;
+    border: solid 1px #cfa15a; 
+    padding: 11px; 
+    padding-top: 18px;
+} 
+.custom_body span, .custom_body p {
+cursor: pointer;
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: -26px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none; 
+    display: none;
+} 
+.margingleft{
+    float: left;
+    margin: 0px 23px;
+}
+.carousel-indicators-numbers  li  {
+   
+    text-indent: 0;
+    margin: 0 2px;
+    border: none;
+    border-radius: 100%;
+    line-height: 30px;
+    color: #fff;
+    transition: all 0.25s ease;
+    width: 6px;
+    height: 7px;
+    object-fit: contain;
+    opacity: 0.5;
+    background-color: #3e2808;
+}
+
+.carousel-indicators-numbers  li.active, .carousel-indicators-numbers  li:hover {
+    margin: -9px 2px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    border: solid 2px #3e2808;
+    background-color: transparent;
+    padding: 10px;
+  }
+  .card_slider {
+    padding-top: 27px;
+} 
+
+@media screen and (min-width: 1600px) and (max-width: 2400px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 1258px) { 
+    .margingleft {
+      
+        margin: 0px 12px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 1200px) { 
+    .card-title {
+       
+        font-size: 13px;
+    }
+   
+}
+@media screen and (min-width: 1px) and (max-width: 1060px) { 
+    .margingleft {
+      
+        margin: 0px 0px;
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+    .custom_card {
+        margin-top: 15px;
+        } 
+        .margingleft {
+            margin: 0px 38px;
+        }
+        
+        
+}
+
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .card-title {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    .margingleft {
+        margin: 0px 13px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 380px) { 
+    .margingleft {
+        margin: 0px 10px;
+    } 
+    .card-title {
+       
+        font-size: 12px;
+    }
+}

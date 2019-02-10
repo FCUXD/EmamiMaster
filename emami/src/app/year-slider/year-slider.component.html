@@ -1,0 +1,28 @@
+
+  <div id="year-slider" class="year-slider carousel slide carousel-show" data-ride="carousel">
+
+    <!-- Indicators -->
+    <!-- <ul class="carousel-indicators">
+          <li *ngFor="let slides of carouselarr;let i=index" (click)="ChangeCarouselImg(i);" class="{{active[i]}}"></li>
+        </ul> -->
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-1">
+              <div class="clear5"></div>
+              <img src="././assets/images/slide-arrow-left-black-1.png" data-slide="prev" (click)="ChangePrev(0)" />
+            </div>
+            <div class="col-7 text-right"><span class="appo-year-slider-txt">{{carouselarr[carouselImg].year}}</span></div>
+            <div class="col-1">
+              <div class="clear5"></div>
+              <img src="././assets/images/slide-arrow-right-black-1.png" data-slide="next" (click)="ChangeNext(0)" />
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+
+  </div>

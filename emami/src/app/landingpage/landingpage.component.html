@@ -1,0 +1,444 @@
+<app-navigation></app-navigation>
+<section class="home-top pt-5">
+  <app-floating></app-floating>
+  <div class="container ">
+      <!-- <button (click)="getLocation()">Try It</button> -->
+    <h1 class="main_title">Power of authentic ayurveda<br/>
+      in your hands</h1> 
+      <h3 class="ComprehensiveText">Comprehensive Ayurvedic Health & Wellness solutions</h3> 
+      <div class="clear30"></div>
+    <div class="col-12 col-sm-12 col-lg-8 pl-0"> 
+       
+      <h2 class="looking_for">I am looking for.. </h2> 
+      <div class="clear"></div> 
+     
+      <app-searchbar></app-searchbar>
+      <div class="mt-3">
+         <div class="msearch">Most Searched</div>
+        <div class=" lightgreen" (click)="topSearch(1)">Hypertension</div>
+        <div class=" lightgreen"  (click)="topSearch(2)">diabetes</div>
+        <div class=" lightgreen mobhidden"  (click)="topSearch(3)">piles</div> 
+      </div>
+    </div>
+    <div class="clear10"></div>
+    <div class="card_slider">
+      <app-landing-slider></app-landing-slider>
+    </div>
+  </div>
+
+</section> 
+<!-- <section class="dosha">
+  <div class="dosham">
+    <h3>Know your Dosha,<br>
+      Know your Body Type</h3>
+    <img class="my-3" src="../../assets/images/big_border.png">
+    <p>A simple test to determine your unique
+      psychological temperament based on your
+      doshas - Kapha, Pitta & Vata and help you
+      make the right decisions for a better living.</p>
+    <h4>Find out how balanced<br>
+      your Mind and Body are</h4>
+    <h5>Take our 3 Minute Dosha Test</h5>
+    <div class="form-group">
+      <input type="email" class="form-control my_email" placeholder="email id">
+      <button class="btn btn-primary mb-2 SignBtn" type="button" data-toggle="modal" data-target="#myModal" (click)="model()">calculate
+        now</button>
+    </div>
+
+  </div>
+</section> -->  
+
+
+<div class="nature_godes mt-2 paddingPanelSection pt-0 nature_godesFoldTwo"> 
+  <div class="deal_title text-center">
+      <h5>The one stop for all your ayurvedic<br/>
+          health and wellness needs
+          </h5>
+      <img class="my-3" src="././assets/images/big_border.png">
+    </div>  
+    <div class="WellnessDiv mt-4">
+<img class="img-fluid ResDisplayNone" src="././assets/images/HealthAndWellness2.png"> 
+<div class="WebHide">
+<div class="row m-0">
+<div class="col-6 col-sm-6">
+<img src="././assets/images/Img1.png">
+<h6 class="Phonetext">Consult a doctor<br/> 
+via Phone or Video<br/> 
+Call for free
+</h6>
+</div> 
+<div class="col-6 col-sm-6">
+  <img src="././assets/images/Img2.png"> 
+  <h6 class="Phonetext">Connect with over<br/>
+      800 doctors<br/>
+      near you 
+      
+    </h6>
+</div> 
+<div class="col-6 col-sm-6">
+  <img src="././assets/images/Img3.png">
+  <h6 class="Phonetext">Get<br/>
+      E - Prescriptions
+    
+  </h6>
+    </div> 
+    <div class="col-6 col-sm-6">
+        <img src="././assets/images/Img4.png">  
+        <h6 class="Phonetext"> Store your medical<br/>
+            records securely
+        
+      </h6>
+       
+    </div>
+    <div class="col-6 col-sm-6">
+        <img src="././assets/images/Img5.png"> 
+        <h6 class="Phonetext"> Locate a store<br/>
+            near you
+            
+      
+    </h6>
+        
+          </div> 
+          <div class="col-6 col-sm-6">
+              <img src="././assets/images/Img6.png"> 
+              <h6 class="Phonetext"> Know more about<br/>
+                  your health area<br/>
+                  and what Ayurveda<br/>
+                  has to offer
+                  
+          </h6>
+          </div> 
+          <div class="col-12 col-sm-12">
+              <img src="././assets/images/Img7.png"> 
+              <h6 class="Phonetext"> Get products delivered<br/>
+                  to your doorstep<br/>
+                  for free!
+                  
+          </h6>
+          </div>
+</div> 
+</div>
+</div>
+<!-- <div class="card-deck benefits_ayurveda mr-0">
+  <div class="card transform">
+    <div class="card-body text-center align-middle pl-0">
+    </div>
+  </div>
+  <div class="card ayur_you BgImgAyur_You">
+    <div class="card-body">
+      <h2>Ayurveda & You</h2>
+      <h4>Hey! Do you know about the countless<br/>
+        benefits of Ayurveda?</h4>
+      <p>Ayurveda, the ancient Indian system of medicine based on<br/>
+        natural and holistic living, derives from two Sanskrit<br/>
+        words - Ayu or life, and Veda or knowledge. </p>
+      <button class="btn btn-primary mb-2 SignBtn" routerLink="../ayurveda" type="button">LET’S EXPLORE MORE</button>
+       <div class="card-deck CardDeckCustom mt-4 natural_div webpatch">
+        <div class="card my-2 ">
+          <div class="card-body  p-0 pl-2">
+            <img src="././assets/images/leaf.png">
+            <h4 class="bor-r">100<span class="chota">%</span></h4>
+            <p class="bor-r pb-0">Natural</p>
+          </div>
+        </div>
+        <div class="card my-2">
+          <div class="card-body  p-0 ">
+            <img src="././assets/images/side_effects.png">
+            <h4 class="bor-r notext">NO</h4>
+            <p class="bor-r pb-0">Side effects</p>
+          </div>
+        </div>
+        <div class="card my-2">
+          <div class="card-body p-0">
+            <img src="././assets/images/of_practice.png">
+            <h4 class="notext2">150<span class="chota">yrs</span></h4>
+            <p class="pb-0">of practice</p>
+          </div>
+        </div>
+      </div> 
+
+
+
+      <div class=" outscroll CardDeckCustom mt-4 natural_div responsive-patch">
+          <div class="inscroll my-2 ">
+            <div class="  p-0 pl-2">
+              <img src="././assets/images/leaf.png">
+              <h4 class="bor-r">100<span class="chota">%</span></h4>
+              <p class="bor-r pb-0">Natural</p>
+            </div>
+          </div>
+          <div class="inscroll my-2">
+            <div class="  p-0 ">
+              <img src="././assets/images/side_effects.png">
+              <h4 class="bor-r notext">NO</h4>
+              <p class="bor-r pb-0">Side effects</p>
+            </div>
+          </div>
+          <div class="inscroll my-2">
+            <div class=" p-0">
+              <img src="././assets/images/of_practice.png">
+              <h4 class="notext2">150<span class="chota">yrs</span></h4>
+              <p class="pb-0">of practice</p>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+
+  </div>
+</div> -->
+</div>
+
+
+
+<section>
+
+    <div class="nature_godes"> 
+        <div class="deal_title text-center">
+            <h5>Consult with our panel of renowned<br/>
+                ayurvedic specialists 
+                
+                </h5>
+            <img class="my-3" src="././assets/images/big_border.png">
+          </div>  
+         <app-ayurvedicspecialists-slider></app-ayurvedicspecialists-slider>
+      </div>
+</section>
+
+
+<div class="container">
+  <div class="zanduservicemain">
+    <div class="card-deck px-5 row ResZanducare">
+      <div class="card zanduservice col-12 col-sm-12 col-md-12">
+        <div class="card-body">
+          <p class="card-text">Sign up to get <br>
+            ZanduCare Services FREE!</p>
+        </div>
+      </div>
+      <div class="card zanduservice text-center col-12 col-sm-12 col-md-12">
+        <div class="card-body">
+          <button class="btn FbBtn" type="button" (click)="socialSignIn('facebook')"><img alt="facebook" class="mr-2"
+              src="././assets/images/facebook.png"> Login With Facebook</button>
+        </div>
+      </div>
+      <div class="card zanduservice text-left col-12 col-sm-12 col-md-12">
+        <div class="card-body ">
+          <button class="btn  GoogleBtn" type="button" (click)="socialSignIn('google')"><img _ngcontent-c1="" alt="google"
+              class="mr-2" src="././assets/images/google.png"> Login with Google</button>
+        </div>
+      </div>
+      <div class="card zanduservice zanduservice2 mr-4 col-12 col-sm-12 col-md-12">
+        <div class="card-body ResTextCenter">
+          <span>Call us @</span>
+          <h5>1800 572 8000</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>  
+
+
+<app-product-landing (onAddToCart)="addToCart($event)" ></app-product-landing>
+
+<div class="clear"></div>
+
+<section class="artcle text-center CardSectionDiv"> 
+  <app-landing-article-slider></app-landing-article-slider>
+  
+</section>
+<!-- <ngb-carousel *ngIf="images" class="WebHide">
+    <ng-template ngbSlide>
+        <div class="article_div">
+            <img class="mx-auto d-block img-fluid" src="././assets/images/insomnia.png">
+            <div class="infor text-center">
+              <span>insomania</span>
+              <p>Shun this 8 routine <br/>
+                  habits for a good...</p>
+            </div>
+            <button class="btn read_more">READ MORE</button>
+          </div>
+    </ng-template>
+    <ng-template ngbSlide>
+     
+        <div class="article_div">
+            <img class="mx-auto d-block img-fluid" src="././assets/images/Kokum.png">
+            <div class="infor text-center">
+              <span>Kokum</span>
+              <p>The genus Garcinia is<br/> native to African and...</p>
+            </div>
+            <button class="btn read_more">READ MORE</button>
+          </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="article_div">
+            <img class="mx-auto d-block img-fluid" src="././assets/images/Sariva.png">
+            <div class="infor text-center">
+              <span>Sariva</span>
+              <p>Hemidesmus<br/> indicus, also...</p>
+            </div>
+            <button class="btn read_more">READ MORE</button>
+          </div>
+    </ng-template>  
+   
+  </ngb-carousel> 
+
+  <div class="rightArrow ArrowDivleft">
+    <img src="././assets/images/SliderPreArrow.png">
+  </div> 
+  <div class="rightArrow ArrowDivright">
+    <img src="././assets/images/SliderNextArrow.png">
+  </div> -->
+<div class="clear40"></div>
+<section class="success">
+    <div class="col-12 col-sm-12 col-md-11 col-lg-11 mx-auto">
+      <div class="clear40"></div>
+        <div class="container">
+            <app-successslider></app-successslider>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="container">
+        <div class="topping_spac">
+            <div class="all_benefits pt-3">
+              <p>Want to get all the Benefits of <br>
+                Ayurveda? Get a Free consultation!</p>
+              <span>Book Your Appointment now in 3 Easy Steps</span>
+            </div>
+    
+            <div class="all_benefits all_benefits2 text-center">
+              <div class="clear"></div>
+              <button class="btn btn-primary mb-2 SignBtn" type="button" routerLink="../patientloginpage">Consult ayurvedic 
+                doctor</button><br/>
+              <span class="orstyle">OR </span>
+              <p>call 1800 572 8000</p>
+            </div>
+          </div>
+    </div>  
+</section>
+<section class="succes_stories">
+  
+  <div class="bottom_bg">
+    <div class="small_wrapper small_width">
+      <!-- <app-topstories-slider></app-topstories-slider> -->
+      
+      <div class="topping_spac2">
+        <div class="locatus">
+          <h5>locate us</h5>
+          <img class="img-fluid" src="././assets/images/border_style.png">
+          <h6>Find the nearest</h6>
+
+          <label class="check_container mr-2 Doctor">Ayurvedic <br>
+            Doctor
+            <input type="radio" (change)="handleChange(true)" name="radios" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          <label class="check_container Store">Ayurvedic <br>
+            Store
+            <input type="radio" (change)="handleChange(false)" name="radios">
+            <span class="checkmark"></span>
+          </label>
+          <div class="form-group">
+            <input [(ngModel)]="address_serch" (keydown)="getlatlng($event,address_serch)" type="text" class="form-control locate_input"
+              placeholder="Enter Pincode, Area" onfocus="this.placeholder=''">
+          </div>
+          <div *ngIf="!isDoctor" style="height: 200px; overflow-y: auto;">
+
+            <div class="addres" *ngFor="let item of pharmaSearch">
+              <div class="km">
+                <span class="distance">{{item.distance}}</span>
+                <span class="kmeter">KM</span>
+              </div>
+              <div class="location">
+                <h4>{{item.pharmacyName}}</h4>
+                <p> {{item.pharmacyAddress}} {{item.pharmacyTownCity}} ({{item.pharmacyPin}})</p>
+              </div>
+              <div class="timing">
+                <div class="text-center">
+                  <!-- <img (click)="printOnMap(item.Latitude,item.Longitude)"
+                    class="mt-4" src="././assets/images/directions.png"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="isDoctor" style="height: 200px; overflow-y: auto;">
+
+            <div class="addres" *ngFor="let item of doctorSearch">
+              <div class="km">
+                <span class="distance">{{item.distance}}</span>
+                <span class="kmeter">KM</span></div>
+              <div class="location">
+                <h4>{{item.drName}}</h4>
+                <p> {{item.drClinicAddress}} {{item.drTownCity}} ({{item.drPin}})</p>
+              </div>
+              <div class="timing">
+                <div class="text-center">
+                  <!-- <img (click)="printOnMap(item.Latitude,item.Longitude)" class="mt-4"
+                    src="././assets/images/directions.png"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="check" class="text-right mt-4">
+            <button class="btn read_more" data-toggle="modal" data-target="#myModal" (click)="model2()">view all</button>
+          </div>
+        </div>
+        <div class="map">
+          <!-- [latitude]="lat" [longitude]="lng" -->
+          <agm-map [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+            <agm-marker *ngFor="let loc of location" [latitude]="loc.lat" [longitude]="loc.lng">
+              <agm-info-window [latitude]="loc.lat" [longitude]="loc.lng">{{loc.name}}</agm-info-window>
+            </agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</section>
+<section class="bg">
+    <app-main-footer></app-main-footer>
+</section>
+<!-- The Modal -->
+<div class="modal {{nomodel}}">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+
+      <!-- Modal body -->
+      <div class="modal-body text-center py-5">
+        <span class="modeltitle">COMING SOON</span>
+        <img src="././assets/images/model_border.png">
+        <p class="pt-3">Your Dosha Calculator</p>
+        <div class="smlltxt pb-4">We’ll Notify You Via Mail</div>
+        <button type="button" class="btn closingbtn" data-dismiss="modal" (click)="closed()">OK</button>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal {{nomodel2}}">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal body -->
+      <div class="modal-body p-0">
+        <div class="topper">
+          <span>
+            <a><img (click)="closed2()" src="././assets/images/left.png" class="mr-3"></a> Locate Us</span>
+          <a> <img (click)="closed2()" src="././assets/images/close.png" class="float-right"></a>
+        </div>
+
+        <app-locator *ngIf="nomodel2=='model'" [address_serch]="address_serch" [location]="location" [isDoctor]="isDoctor"
+          [doctorSearch]="doctorSearch" [pharmaSearch]="pharmaSearch"></app-locator>
+      </div>
+
+
+    </div>
+  </div>
+</div>

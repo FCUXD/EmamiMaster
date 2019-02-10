@@ -1,0 +1,33 @@
+.dropdownbox, .dropdownbox:hover, .dropdownbox:active, .dropdownbox:focus{
+    border: none;
+    color: #666 !important;
+    background-color: transparent !important;
+    box-shadow: none !important; 
+    border-bottom: 1px solid #333;
+    border-radius: 0px; 
+    width: 100%;
+float: left;
+text-align: left;
+  } 
+  .d-inline-block {
+    width: 100%;
+    float: left;
+} 
+
+.dropdown-toggle::after {
+  width: 0;
+  height: 0;
+  content: url("../../../assets/images/down-arrow.png");
+  border-top: none;
+  border-right: none;
+  border-bottom: 0;
+  border-left: none; 
+  float: right;
+  margin-top: 6px;
+
+} 
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+  #dropdownBasic1 {
+      margin-bottom: 15px;
+  }
+} 

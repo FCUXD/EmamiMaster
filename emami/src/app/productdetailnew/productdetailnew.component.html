@@ -1,0 +1,858 @@
+<app-navigation></app-navigation>
+<!-- <section class="home-top pt-5"> 
+    <app-floating></app-floating>
+  <div class="container ">
+    <h1 class="main_title">Our Products</h1>
+    <div class="col-lg-8 pl-0">
+      <h2 class="looking_for">explore from our wide range of products </h2>
+      <app-searchbar></app-searchbar>
+    </div>
+    <div class="clearfix"></div>
+  <div class="card_slider">
+    <div class="card-deck">
+      <div class="card custom_card">
+        <div class="card-body text-center">
+          <p class="card-text"><img class="mr-2" src="././assets/images/priduct_calender.png"> 100 years of Experience</p>
+        </div>
+      </div>
+      <div class="card custom_card mx-0">
+        <div class="card-body text-center">
+          <p class="card-text"><img class="mr-2" src="././assets/images/natural.png"> 100% Natural</p>
+        </div>
+      </div>
+      <div class="card custom_card">
+        <div class="card-body text-center">
+          <p class="card-text"><img class="mr-2" src="././assets/images/garinded.png">Best Price guaranteed</p>
+        </div>
+      </div> 
+    </div>
+  </div>
+<div class="text-center mb-4 mt-5">  <h2 class="pruduct_title">Top Products</h2>
+  <img src="././assets/images/product_border.png"></div>
+  <app-top-product-slider></app-top-product-slider>
+    </div>
+
+  </section> -->
+
+
+
+
+<section class="deal_area mb-2 ProductSlider">
+    <div class="container mb-4"> 
+    
+    <!-- <span class="arrows pr-4 float-right">
+    <a class="control-prev mr-4" (click)="previousSlide()">
+    <img src="././assets/images/product_left.png">
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="control-next ml-4" (click)="nextSlide(cImageIndex)">
+    <img src="././assets/images/product_right.png">
+    <span class="sr-only">Next</span>
+    </a>
+    </span>  -->
+    <div class="clear20"></div>
+    <div id="recipeCarousel" class="shadoo mx-0 carousel slide" data-ride="carousel"> 
+    <div class="carousel-inner" role="listbox">
+       
+    <div class="carousel-item active">
+    
+    <!-- <div class="card-deck" *ngIf="isDesktop">
+        <div class="card tab_card mx-0 small_div">
+            <div class="card-body {{tabs[5].active}}"  (click)="openCity(5,null)" >
+            <div class="border_div border_div2">
+            <span class="card-title">All</span>
+            
+            </div>
+            </div>
+            </div>
+    <div class="card tab_card mx-0 small_div">
+    <div class="card-body  {{tabs[0].active}}"(click)="openCity(0,cImageIndex)">
+    <div class="border_div border_div2">
+    <span class="card-title">{{getProduct[cImageIndex].name}}</span>
+    </div>
+    </div>
+    </div>
+    <div class="card tab_card mx-0" >
+    <div class="card-body {{tabs[1].active}}" (click)="openCity(1,cImageIndex+1)">
+    <div class="border_div border_div2">
+    <span class="card-title">{{getProduct[cImageIndex+1].name}}</span>
+    </div>
+    </div>
+    </div>
+    <div class="card tab_card mx-0" >
+    <div class="card-body {{tabs[2].active}} " (click)="openCity(2,cImageIndex+2)">
+    <div class="border_div border_div2">
+    <span class="card-title">{{getProduct[cImageIndex+2].name}}</span>
+    </div>
+    </div>
+    </div>
+    <div class="card tab_card mx-0">
+    <div class="card-body  {{tabs[3].active}}" (click)="openCity(3,cImageIndex+3)">
+    <div class="border_div border_div2">
+    <span class="card-title">{{getProduct[cImageIndex+3].name}}</span>
+    </div>
+    </div>
+    </div> 
+    
+    
+    </div> -->
+    
+    
+    </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="displayCatParent">
+ <!-- <div class="displayCat"> {{names}}</div> -->
+</div>
+    <div class=" p-0 TabContentBox BorderRadiusDiv bordertop">
+    <div class="container"> 
+        <!-- <span class="main_title pl-2">{{names}}</span> -->
+        <!-- <span class="arrows pr-4 float-right">
+           <a class="control-prev mr-4" (click)="previousSlideTab(show)">
+               <img src="././assets/images/product_left.png">
+               <span class="sr-only">Previous</span>
+           </a>
+           <a class="control-next ml-4" (click)="nextSlideTab(show)">
+               <img src="././assets/images/product_right.png">
+               <span class="sr-only">Next</span>
+           </a>
+        </span> -->
+     <div class="clear10"></div>
+     <!-- <div *ngIf="!sectionFlag" class="text-center "> -->
+        <div *ngIf="sectionFlag" class="text-center ">
+         <div class="row mx-auto my-auto">
+         <div id="recipeCarousel" class="carousel slide w-100 mt-3" data-ride="carousel">
+         <div class="carousel-inner" role="listbox">
+         
+         <div class="carousel-item active SliderItem">
+         
+         <div class="card-deck" *ngIf="isDesktop">
+             
+         <div *ngIf="tabIndex<getProduct[show].productsCategoryBean.length " class="card custom_card mr-0 ml-4 pt-4">
+            <div (click)="forsection(getProduct[show].productsCategoryBean[tabIndex].id)" class="ProductImg">
+         
+          <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex].imageUrl}}" alt="Card image">
+            </div>
+          <div class="card-body card-body2 product_info">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex].name}}</h5> 
+             <div class="clear10"></div>
+             <div class="mt-2 mb-4 PriceQty">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex].selling}} </h5>
+                    </div>
+                    <div class="product_img float-right">
+                        <div class="order-margin-top2">
+                          <img class="Spin" src="././assets/images/minus.png" (click)="down1(getProduct[show].productsCategoryBean[tabIndex])">&nbsp;&nbsp;
+                        <input [(ngModel)] = "spinner1" class="input-spinner">&nbsp;&nbsp;
+                        <img class="Spin" src="././assets/images/plus_small.png" (click)="add1(getProduct[show].productsCategoryBean[tabIndex])">
+                        </div>
+                        </div>
+                 </div>
+                 <button (click)="addToCart(spinner1,getProduct[show].productsCategoryBean[tabIndex].id)" class="btn SignBtn w-100 mt-4 SliderAddcartBtn" type="button">add to cart</button>
+           </div>
+         </div>
+     
+         <div *ngIf="tabIndex+1<getProduct[show].productsCategoryBean.length  " class="card custom_card mr-0 pt-4">
+            <div  (click)="forsection(getProduct[show].productsCategoryBean[tabIndex+1].id)" class="ProductImg">
+          <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex+1].imageUrl}}" alt="Card image">
+            </div> 
+          <div class="card-body card-body2 product_info">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+1].name}}</h5>
+             <div class="clear10"></div>
+             <div class="mt-2 mb-4 PriceQty">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+1].selling}} </h5>
+                    </div>
+                    <div class="product_img float-right">
+                        <div class="order-margin-top2">
+                          <img class="Spin" src="././assets/images/minus.png" (click)="down2(getProduct[show].productsCategoryBean[tabIndex+1])">&nbsp;&nbsp;
+                        <input [(ngModel)] = "spinner2" class="input-spinner">&nbsp;&nbsp;
+                        <img class="Spin" src="././assets/images/plus_small.png" (click)="add2(getProduct[show].productsCategoryBean[tabIndex+1])">
+                        </div>
+                        </div>
+                 </div>
+                 <button (click)="addToCart(spinner2,getProduct[show].productsCategoryBean[tabIndex+1].id)" class="btn SignBtn w-100 mt-4 SliderAddcartBtn" type="button">add to cart</button>
+           </div>
+         </div>
+               
+         <div  *ngIf="tabIndex+2<getProduct[show].productsCategoryBean.length" class="card custom_card pt-4">
+            <div (click)="forsection(getProduct[show].productsCategoryBean[tabIndex+2].id)" class="ProductImg">
+          <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex+2].imageUrl}}" alt="Card image">
+            </div>
+          <div class="card-body card-body2 product_info">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+2].name}}</h5>
+             <div class="clear10"></div>
+             <div class="mt-2 mb-4 PriceQty">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+2].selling}} </h5>
+                    </div>
+                    <div class="product_img float-right">
+                        <div class="order-margin-top2">
+                          <img class="Spin" src="././assets/images/minus.png" (click)="down3(getProduct[show].productsCategoryBean[tabIndex+2])">&nbsp;&nbsp;
+                        <input [(ngModel)] = "spinner3" class="input-spinner">&nbsp;&nbsp;
+                        <img class="Spin" src="././assets/images/plus_small.png" (click)="add3(getProduct[show].productsCategoryBean[tabIndex+2])">
+                        </div>
+                        </div>
+                 </div>
+                 <button (click)="addToCart(spinner3,getProduct[show].productsCategoryBean[tabIndex+2].id)" class="btn SignBtn w-100 mt-4 SliderAddcartBtn" type="button">add to cart</button>
+           </div>
+         </div>
+           
+             <div  *ngIf="tabIndex+3 < getProduct[show].productsCategoryBean.length" class="card custom_card ml-0 pt-4"> 
+                <div (click)="forsection(getProduct[show].productsCategoryBean[tabIndex+3].id)" class="ProductImg">
+              <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex+3].imageUrl}}" alt="Card image">
+                </div> 
+              <div class="card-body card-body2 product_info">
+                 <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+3].name}}</h5>
+                 <div class="clear10"></div>
+                 <div class="mt-2 mb-4 PriceQty">
+                     <div class="product_info float-left">
+                        <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+3].selling}} </h5>
+                        </div>
+                        <div class="product_img float-right">
+                            <div class="order-margin-top2">
+                              <img class="Spin" src="././assets/images/minus.png" (click)="down4(getProduct[show].productsCategoryBean[tabIndex+3])">&nbsp;&nbsp;
+                            <input [(ngModel)] = "spinner4"
+                             class="input-spinner">&nbsp;&nbsp;
+                            <img class="Spin" src="././assets/images/plus_small.png" (click)="add4(getProduct[show].productsCategoryBean[tabIndex+3])">
+                            </div>
+                            </div>
+                     </div>
+                     <button (click)="addToCart(spinner4, getProduct[show].productsCategoryBean[tabIndex+3].id)" class="btn SignBtn w-100 mt-4 SliderAddcartBtn" type="button">add to cart</button>
+               </div>
+             </div> 
+             <div class="clear10"></div>
+         </div>
+         <div class="clear"></div>
+         <div class="row" *ngIf="isMobile">
+         
+           <div class="col-12">      
+           <div class="card custom_card">
+              <div class="ProductImg">
+            <img src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+              </div>
+            <div class="card-body product_info">
+               <h5 class="card-title">{{carouselarr2[cImageIndex].cardTitle}}</h5>
+               <div class="clear10"></div>
+               <div class="mt-2 mb-4 PriceQty">
+                   <div class="product_info float-left">
+                      <h5><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h5>
+                      </div>
+                   <div class="product_img float-right">
+                   <div class="order-margin-top2">
+                     <img class="Spin" src="././assets/images/minus.png" (click)="down(i)">
+                   <input [(ngModel)] = "spinner" class="input-spinner">
+                   <img class="Spin" src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+                   </div>
+                   </div>
+                   </div>
+                   <button class="btn SignBtn w-100 mt-4 SliderAddcartBtn" type="button">add to cart</button>
+             </div>
+           </div>
+           </div>
+           </div>
+          </div>
+          </div>
+                
+               </div>
+           </div>
+
+
+<!-- /////////////    ALL PRODUCTS   ///////////////////// -->
+
+
+
+         </div>
+         
+    </div> 
+    </div>
+<!--     
+    <div class="{{tabs[show].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop"> 
+    <div class="container pt-5 pb-3"> 
+    
+      <div class="container"> 
+        <span class="main_title pl-2">{{getProduct[show].name}}</span>
+        <span class="arrows pr-4">
+           <a class="control-prev mr-4" (click)="previousSlideTab()">
+               <img src="././assets/images/product_left.png">
+               <span class="sr-only">Previous</span>
+           </a>
+           <a class="control-next" (click)="nextSlideTab()">
+               <img src="././assets/images/product_right.png">
+               <span class="sr-only">Next</span>
+           </a>
+        </span>
+     
+     
+        <div class="text-center ">
+         <div class="row mx-auto my-auto">
+         <div id="recipeCarousel" class="carousel slide w-100 mt-3" data-ride="carousel">
+         <div class="carousel-inner" role="listbox">
+         
+         <div class="carousel-item active">
+         
+         <div class="card-deck" *ngIf="isDesktop">
+             
+         <div *ngIf="getProduct[show].productsCategoryBean[tabIndex]<=getProduct[show].productsCategoryBean.lenth " class="card custom_card mr-0 pt-4">
+           <img  class="imgDiv" src="{{this.getProduct[show].productsCategoryBean[tabIndex].imageUrl}}" alt="Card image">
+           <div class="card-body">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex].name}}</h5>
+             <div class="mt-2 mb-4">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex].selling}} </h5>
+                    </div>
+               
+                 </div>
+                 <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+           </div>
+         </div>
+     
+         <div class="card custom_card mr-0 pt-4">
+           <img class="imgDiv" src="{{this.getProduct[show].productsCategoryBean[tabIndex+1].imageUrl}}" alt="Card image">
+           <div class="card-body">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+1].name}}</h5>
+             <div class="mt-2 mb-4">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+1].selling}} </h5>
+                    </div>
+                
+                 </div>
+                 <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+           </div>
+         </div>
+               
+         <div class="card custom_card pt-4">
+           <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex+2].imageUrl}}" alt="Card image">
+           <div class="card-body">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+2].name}}</h5>
+             <div class="mt-2 mb-4">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+2].selling}} </h5>
+                    </div>
+                
+                 </div>
+                 <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+           </div>
+         </div>
+           
+             <div class="card custom_card ml-0 pt-4"> 
+               <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex+3].imageUrl}}" alt="Card image">
+               <div class="card-body">
+                 <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+3].name}}</h5>
+                 <div class="mt-2 mb-4">
+                     <div class="product_info float-left">
+                        <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+3].selling}} </h5>
+                        </div>
+                    
+                     </div>
+                     <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+               </div>
+             </div> 
+         </div>
+         
+         <div class="row" *ngIf="isMobile">
+         
+           <div class="col-12">      
+           <div class="card custom_card">
+             <img src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+             <div class="card-body">
+               <h5 class="card-title">{{carouselarr2[cImageIndex].cardTitle}}</h5>
+               <div class="mt-2 mb-4">
+                   <div class="product_info float-left">
+                      <h5><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h5>
+                      </div>
+                   <div class="product_img float-right pt-2">
+                   <div class="order-margin-top2">
+                     <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+                   <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+                   <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+                   </div>
+                   </div>
+                   </div>
+                   <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+             </div>
+           </div>
+           </div>
+           </div>
+          </div>
+          </div>
+                
+               </div>
+           </div>
+         </div>
+         
+   
+    </div> 
+    </div>
+    </div> -->
+     
+    <!-- <div class="{{tabs[2].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop"> 
+      <div class="container pt-5 pb-3"> 
+    
+      <div class="container"> 
+        <span class="main_title pl-2">{{getProduct[show].name}}</span>
+        <span class="arrows pr-4">
+           <a class="control-prev mr-4" (click)="previousSlideTab()">
+               <img src="././assets/images/product_left.png">
+               <span class="sr-only">Previous</span>
+           </a>
+           <a class="control-next" (click)="nextSlideTab()">
+               <img src="././assets/images/product_right.png">
+               <span class="sr-only">Next</span>
+           </a>
+        </span>
+     
+     
+        <div class="text-center ">
+         <div class="row mx-auto my-auto">
+         <div id="recipeCarousel" class="carousel slide w-100 mt-3" data-ride="carousel">
+         <div class="carousel-inner" role="listbox">
+         
+         <div class="carousel-item active">
+         
+         <div class="card-deck" *ngIf="isDesktop">
+             
+         <div class="card custom_card mr-0 pt-4">
+           <img class="imgDiv" src="{{this.getProduct[show].productsCategoryBean[tabIndex].imageUrl}}" alt="Card image">
+           <div class="card-body">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex].name}}</h5>
+             <div class="mt-2 mb-4">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex].selling}} </h5>
+                    </div>
+               
+                 </div>
+                 <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+           </div>
+         </div>
+     
+         <div class="card custom_card mr-0 pt-4">
+           <img class="imgDiv" src="{{this.getProduct[show].productsCategoryBean[tabIndex+1].imageUrl}}" alt="Card image">
+           <div class="card-body">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+1].name}}</h5>
+             <div class="mt-2 mb-4">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+1].selling}} </h5>
+                    </div>
+                
+                 </div>
+                 <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+           </div>
+         </div>
+               
+         <div class="card custom_card pt-4">
+           <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex+2].imageUrl}}" alt="Card image">
+           <div class="card-body">
+             <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+2].name}}</h5>
+             <div class="mt-2 mb-4">
+                 <div class="product_info float-left">
+                    <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+2].selling}} </h5>
+                    </div>
+                
+                 </div>
+                 <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+           </div>
+         </div>
+           
+             <div class="card custom_card ml-0 pt-4"> 
+               <img class="imgDiv" src="{{getProduct[show].productsCategoryBean[tabIndex+3].imageUrl}}" alt="Card image">
+               <div class="card-body">
+                 <h5 class="card-title">{{getProduct[show].productsCategoryBean[tabIndex+3].name}}</h5>
+                 <div class="mt-2 mb-4">
+                     <div class="product_info float-left">
+                        <h5><img src="././assets/images/rupee.png"> {{getProduct[show].productsCategoryBean[tabIndex+3].selling}} </h5>
+                        </div>
+                    
+                     </div>
+                     <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+               </div>
+             </div> 
+         </div>
+         
+         <div class="row" *ngIf="isMobile">
+         
+           <div class="col-12">      
+           <div class="card custom_card">
+             <img src="././assets/images/{{carouselarr2[cImageIndex].imageURL}}" alt="Card image">
+             <div class="card-body">
+               <h5 class="card-title">{{carouselarr2[cImageIndex].cardTitle}}</h5>
+               <div class="mt-2 mb-4">
+                   <div class="product_info float-left">
+                      <h5><img src="././assets/images/rupee.png"> {{carouselarr2[cImageIndex].offerprice}} </h5>
+                      </div>
+                   <div class="product_img float-right pt-2">
+                   <div class="order-margin-top2">
+                     <img src="././assets/images/minus.png" (click)="down(i)">&nbsp;&nbsp;
+                   <input [(ngModel)] = "spinner" class="input-spinner">&nbsp;&nbsp;
+                   <img src="././assets/images/plus_small.png" (click)="spinner=spinner+1">
+                   </div>
+                   </div>
+                   </div>
+                   <button class="btn SignBtn w-100 mt-4" type="button">add to cart</button>
+             </div>
+           </div>
+           </div>
+           </div>
+          </div>
+          </div>
+                
+               </div>
+           </div>
+         </div>
+         
+   
+    </div> 
+    </div>
+    </div> -->
+    
+    <!-- <div class="{{tabs[3].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+    <div class="container pt-5 pb-3"> 
+    <app-diabetes-slider></app-diabetes-slider>
+    
+    </div>
+    </div>
+    
+    <div class="{{tabs[4].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+    <div class="container pt-5 pb-3"> 
+    <app-pain-management-slider></app-pain-management-slider>
+    
+    </div>
+    </div>
+    
+    <div class="{{tabs[5].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+    <div class="container pt-5 pb-3"> 
+    <app-general-care-slider></app-general-care-slider>
+    
+    </div>
+    </div>
+    
+    <div class="{{tabs[6].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+    <div class="container pt-5 pb-3"> 
+    <app-other-slider></app-other-slider>
+    
+    </div>
+    </div>  -->
+    </section>
+    
+    <div class="clear"></div>
+<!-- <div  class="productDetailsDiv" *ngIf="sectionFlag"> -->
+  <div  class="productDetailsDiv" >
+<section class="deal_area mb-2 mt-4">
+      <div  class="container mb-4">
+    <div class="clear"></div>
+    <div *ngFor="let data of details " class="row mt-4">
+     
+      <div class="col-12 col-lg-6 pr-0">
+        <div class="ChvanprashImg">
+          <img class="imgDivDetails" src="{{data.imageUrl}}">
+        </div>
+      </div>
+     
+      <div class="col-12 col-lg-6 pl-0">
+          
+        <div class="ZandupancharistRight">
+            <div (click)="forsection(0)" class="close">
+                <img class="mr-3" src="././assets/images/close.png">
+            </div>
+          <h3 class="text-center">{{data.productName}}</h3>
+          <div class="clear10"></div>
+          <div class="Rupees175left text-center">
+            <h4 class="PlayfairDisplayRegular">{{data.selling}}</h4>
+            <div class="clear10"></div>
+            <div class="order-margin-top2">
+                <ng-container *ngIf="qtyP==0">
+                    <i class="fa"><img src="././assets/images/SpinnerMinus.png"></i>
+                </ng-container>
+                
+                <i *ngIf="qtyP!=0" class="fa" (click)="qtyP=qtyP-1; add(qtyP, data.productId)"><img src="././assets/images/SpinnerMinus.png"></i>&nbsp;
+                <input [(ngModel)]="qtyP" class="input-spinner">&nbsp;
+                <i class="fa" (click)="qtyP=qtyP+1; add(qtyP, data.productId)"><img src="././assets/images/SpinnerPluse.png"></i>
+               </div>
+          </div>
+          <div class="Rupees175left2">
+            <button class="btn w-100 mt-4 AddToCartBtn" (click)="addToCart(qtyP, data.productId)" type="button">add to cart</button>
+            <button class="btn SignBtn w-100 mt-2 AddToCartBtn" (click)="buyNow(qtyP, data.productId)" type="button">BUY NOW</button>
+          </div>
+          <div class="clear"></div>
+          <div class="borderbottom my-5"></div>
+          <div class="clear"></div>
+          <h4 class="DirectionAndBenifits"><img class="mr-3" src="././assets/images/DosageandDirection.png">Dosage and
+            Direction</h4>
+          <ul class="PlayfairDisplayRegular">
+            <li>2 Tablespoon twise a day</li>
+          </ul>
+          <div class="clear20"></div>
+          <h4 class="DirectionAndBenifits"><img class="mr-3" src="././assets/images/ProductBenefits.png">Benefits</h4>
+          <ul class="PlayfairDisplayRegular">
+            <li *ngIf="data.benefits!=''">{{data.benefits}}</li>
+            <span *ngIf="data.benefits==''">
+                <li>Boost Appetite</li>
+                <li>Relief from Digestive Problem</li>
+            </span>
+            
+          </ul>
+        </div>
+        
+      </div>
+     
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<section class="deal_area IngredientsTabContent p-0 mt-5">
+  <div class="container mb-4">
+    <div class="shadoo mx-0">
+      <div class="card tab_card mx-0 small_div BorderradiusLeft IngredientsTab BorderLeftTop IngredientTab1">
+        <div class=" BorderradiusLeft card-body {{tabs2[0].active}}" (click)="openTab2(0)">
+          <div class="border_div2">
+            <span> Ingredients</span>
+          </div>
+        </div>
+      </div>
+      <div class="card tab_card mx-0 IngredientsTab">
+        <div class="card-body {{tabs2[1].active}}" (click)="openTab2(1)">
+          <div class="border_div2">
+            <span> Precautions</span>
+          </div>
+        </div>
+      </div>
+      <div class="card tab_card mx-0 BorderradiusRight IngredientsTab BorderRightTop IngredientTab2">
+        <div class=" BorderradiusRight card-body  {{tabs2[2].active}} " (click)="openTab2(2)">
+          <div class="border_div2 HiddenBorder">
+            <span> Age Group</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="{{tabs2[0].tabcontent}} p-0 TabContentBox paddingTabContentDiv BorderRadiusDiv bordertop">
+      <div class="TriphalaContentBox">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="Triphala" (click)="triphala(0)">
+              <h6 class="TriphalaActive" ><img class="mr-2" src="././assets/images/Product_..png"> Triphala</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(1)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Triputa</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(2)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Lamang</h6>
+            </div>
+          </div>
+          <div class="col-12 col-lg-8 p-0">
+            <div class="{{triphalaright[0].rightdiv}} RightDiv">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[1].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[2].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="{{tabs2[1].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+      <div class="TriphalaContentBox">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="Triphala" (click)="triphala(3)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Triphala</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(4)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Triputa</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(5)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Lamang</h6>
+            </div>
+          </div>
+          <div class="col-12 col-lg-8 p-0">
+            <div class="{{triphalaright[3].rightdiv}} RightDiv">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[4].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[5].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="{{tabs2[2].tabcontent}} p-0 TabContentBox BorderRadiusDiv bordertop">
+      <div class="TriphalaContentBox">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="Triphala" (click)="triphala(6)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Triphala</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(7)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Triputa</h6>
+            </div>
+            <div class="Triphala" (click)="triphala(8)">
+              <h6><img class="mr-2" src="././assets/images/Product_..png"> Lamang</h6>
+            </div>
+          </div>
+          <div class="col-12 col-lg-8 p-0">
+            <div class="{{triphalaright[6].rightdiv}} RightDiv">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[7].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+            <div class="RightDiv {{triphalaright[8].rightdiv}}">
+              <div class="TriphalaRightContentBox">
+                <h6>Triphala is useful for traditional Ayurvedic medicine to <br />
+                  prevent disease and treat a number of symptoms, including <br />
+                  constipation and inflammation....</h6>
+              </div>
+              <div class="TriphalaRightContentBox2">
+                <img src="././assets/images/Triphala.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="frequentlyBoughttogether my-5 pt-3">
+  <div class="container">
+    <h4>frequently Bought together</h4>
+    <div class="clear10"></div>
+    <img src="././assets/images/SelectCatagoryBorder.png">
+    <div class="clear"></div>
+    <div class="row  mt-5">
+      <div class="col-12 col-lg-4">
+        <div class="FrequentBox">
+          <div class="LeftBox1">
+            <div class="FrequentBox1">
+              <img src="././assets/images/ProductImg1.png">
+            </div>
+            <div class="FrequentBox2">
+              <img src="././assets/images/ProductPluse.png">
+            </div>
+            <div class="FrequentBoxRight">
+              <img src="././assets/images/ProductImg2.png">
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="BothBuyText">
+            <h4>Both buy:<span>`300</span></h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="FrequentBox">
+          <div class="LeftBox1">
+            <div class="FrequentBox1">
+              <img src="././assets/images/ProductImg1.png">
+            </div>
+            <div class="FrequentBox2">
+              <img src="././assets/images/ProductPluse.png">
+            </div>
+            <div class="FrequentBoxRight">
+              <img src="././assets/images/ProductImg2.png">
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="BothBuyText">
+            <h4>Both buy:<span>`300</span></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="FrequentBox">
+          <div class="LeftBox1">
+            <div class="FrequentBox1">
+              <img src="././assets/images/ProductImg1.png">
+            </div>
+            <div class="FrequentBox2">
+              <img src="././assets/images/ProductPluse.png">
+            </div>
+            <div class="FrequentBoxRight">
+              <img src="././assets/images/ProductImg2.png">
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="BothBuyText">
+            <h4>Both buy:<span>`300</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+</div>
+
+    <div class="clear"></div>
+<div class="bottom_footer">
+  <app-main-footer></app-main-footer>
+</div>

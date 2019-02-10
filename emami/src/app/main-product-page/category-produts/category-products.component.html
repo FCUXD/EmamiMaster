@@ -1,0 +1,68 @@
+ 
+<div class="container">
+  <div class="clear20"></div>
+  <h3 class="ImmunityHeader mt-65">{{category.name}}</h3>
+  <div class="SliderArrow float-right">
+    <a class="mrgn-r50" (click)="previous()"> <img src="././assets/images/product_left.png" /></a>
+    <a (click)="next()"> <img src="././assets/images/product_right.png" /></a>
+  </div>
+  <div class="clear10"></div>
+  <div class="clear20"></div>
+  <div class="row m-0" *ngIf="isDesktop">
+    <div *ngFor="let item of visibleProds" class="col-12 col-lg-3"  style="height: 380px;" >
+      <div class="WhiteBox" >
+       <div (click)="getProductDetails(item.id)">
+        <!-- <img src="{{item.imageUrl}}" height="140px" width="140px" (click)="addTocart(item)"/> -->
+        <img src="{{item.imageUrl}}" height="140px" width="140px"  />
+        <div class="clear10"></div>
+        <h5 class="product-title">  {{item.name}}</h5>
+      </div>
+        <div class="clear10"></div>
+        <div class="Rupees">
+          <img src="././assets/images/rupee.png" /> <span>{{item.mrp}}</span>
+        </div>
+     
+        <div class="Spinner">
+          <img class="SpinnerImg" src="././assets/images/SpinnerMinus.png" (click)="reduce(item)" />
+          <input type="text" class="form-control SpinnerInput text-center" [(ngModel)]="item.qty" >
+          <img class="SpinnerImg2" src="././assets/images/SpinnerPluse.png" (click)="add(item)" />
+        </div>
+      
+        <div class="clear20"></div>
+        <button type="button" class="btn AddToCartBtn" (click)="addTocart(item)">add to cart</button>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="row" *ngIf="isMobile">
+    
+      <div *ngFor="let item of mobProds" class="col-12 col-lg-3"  style="height: 380px;" >
+          <div class="WhiteBox" >
+           <div (click)="getProductDetails(item.id)">
+            <!-- <img src="{{item.imageUrl}}" height="140px" width="140px" (click)="addTocart(item)"/> -->
+            <img src="{{item.imageUrl}}" height="140px" width="140px"  />
+            <div class="clear10"></div>
+            <h5 class="product-title">  {{item.name}}</h5>
+          </div>
+            <div class="clear10"></div>
+            <div class="Rupees">
+              <img src="././assets/images/rupee.png" /> <span>{{item.mrp}}</span>
+            </div>
+         
+            <div class="Spinner">
+              <img class="SpinnerImg" src="././assets/images/SpinnerMinus.png" (click)="reduce(item)" />
+              <input type="text" class="form-control SpinnerInput text-center" [(ngModel)]="item.qty" >
+              <img class="SpinnerImg2" src="././assets/images/SpinnerPluse.png" (click)="add(item)" />
+            </div>
+          
+            <div class="clear20"></div>
+            <button type="button" class="btn AddToCartBtn" (click)="addTocart(item)">add to cart</button>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+  <div class="clear10"></div>
+</div>
+<div class="clear80"></div>

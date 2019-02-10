@@ -1,0 +1,155 @@
+<nav class="navbar navbar-expand-md bg-white fixed-top shadow topNavBar">
+  <div class="container containerMain p-0 ResPositionMenu">
+    <!-- Brand -->
+
+    <a class="navbar-brand NavBarLogo" (click)="clickfun(-1)" routerLink=""><img src="././assets/images/newlogo.png"></a>
+    <!-- Toggler/collapsibe Button --> 
+<div class="resSearch_Cart">
+  <img class="S1" routerLink="../mainsearch" src="././assets/images/search.png"> 
+  <img class="S2" routerLink="../shopping_cart" src="././assets/images/shopping-cart.png">
+</div>
+
+
+    <button class="navbar-toggler toggleBtn" type="button" (click)="toggle()">
+      <!-- <span class="navbar-toggler-icon"></span> --> 
+      <span [hidden]="collapse=='open'" class="fa fa-bars fa-lg"></span>
+<span [hidden]="collapse=='closed'" class="fa fa-times fa-lg deleteimg"></span>
+    </button>
+
+    <!-- Navbar links --> 
+   
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbar }">
+      <div class="navbar-nav navspac">
+        <div class="CollapseProfile MobileBG">
+            <div class="clear"></div> 
+            <!-- <img class="MobileLogoTop" src="././assets/images/100years.png"> -->
+          <div class="clear"></div>
+          <img class="MarginTopUserImg" src="././assets/images/user-profile-pic-blank.png"> 
+          <div class="clear20"></div>
+          <h4>guest user</h4>
+        </div>
+        <div class="CollapseBtn ">
+          <!-- <div class="nav-item marginttop8 ResMenuBtn">
+              <a routerLink="../doctorloginpage" class="btn btn-info" role="button">For Doctors</a>
+            </div> -->
+          <div class="clear10"></div>
+          <div class="nav-item pr-0 marginttop8 mr-0 mt-5 ResMenuBtn ResMenuBtn3">
+            <a routerLink="../patientloginpage" class="btn btn-info my-2" role="button">Log In</a>
+          </div> 
+          <div class="clear20"></div>
+        </div> 
+        <div class="MobileScroll1"> 
+          
+              <div class="clear"></div>
+              <div class="MBShow">
+            <div class="nav-item"  (mouseenter)="mouseHovering2()">
+                <a [ngClass]=" whichNav[0] ? 'menubar' : 'navlink'" class="nav-link" (click)="clickfun(0)" routerLink="../ayurveda">
+                  Ayurveda <br/>
+                  & You</a>
+                <div class="triangle-down triangle-down2 Display_None" *ngIf="isHovering2"></div>
+              </div>
+      
+              <div (mouseenter)="mouseHovering()" class="nav-item dropdown">
+                <a [ngClass]="whichNav[1] ? 'menubar' : 'navlink'" class="nav-link dropbtn" (click)="clickfun(1)" routerLink="../healtharea">Health<br/> Conditions</a>
+                <div class="triangle-down" *ngIf="isHovering"></div>
+              </div>
+              <div class="nav-item">
+                  <a [ngClass]="whichNav[3] ? 'menubar' : 'navlink'"  (click)="clickfun(3)" class="nav-link" routerLink="../patientloginpage">Consult Ayurvedic<br />
+                    Doctor </a>
+                </div>
+      
+              <div class="nav-item" (mouseenter)="mouseHovering3()">
+                <a [ngClass]="whichNav[2] ? 'menubar' : 'navlink'" class="nav-link" (click)="clickfun(2)" routerLink="../mainproductpage">Buy
+                  Ayurvedic<br />
+                  Products</a>
+                <div class="triangle-down triangle-down3 Display_None" *ngIf="isHovering3"></div>
+              </div>
+            
+      
+              <div class="nav-item marginttop8 ResDisplayNone ml-4 ResM0 SearchML">
+                <a class="nav-link mrgnt10" routerLink="/mainsearch"><img src="././assets/images/search.png"></a>
+                  </div>
+              <div class="nav-item marginttop8 ResDisplayNone mr-5 ResM0">
+                <a class="nav-link poseRel" routerLink="../shopping_cart"><img src="././assets/images/shopping-cart.png">
+                  <span [ngClass]=" animateCart ? 'on' : 'off'" class="badge badge-light cart_count_style">{{cartCounter}}</span>
+                </a>
+              </div>
+             
+              <div class="nav-item pr-0 marginttop8 mr-0 ResMenuBtn2">
+                <a [ngClass]="whichNav[3] ? '' : ''"  (click)="clickfun(3)" routerLink="../patientloginpage" class="btn btn-info" role="button">Log In</a>
+              </div> 
+              <div class="ResCollapseFooter">
+                <app-mobile-footer></app-mobile-footer> 
+                
+      
+              </div>
+              
+        </div>  
+        
+      </div>
+        <div class="nav-item DisplayNone768"  (mouseenter)="mouseHovering2()">
+          <a [ngClass]=" whichNav[0] ? 'menubar' : 'navlink'" class="nav-link" (click)="clickfun(0)" routerLink="../ayurveda">
+            Ayurveda <br/>
+            & You</a>
+          <div class="triangle-down triangle-down2 Display_None" *ngIf="isHovering2"></div>
+        </div>
+
+        <div (mouseenter)="mouseHovering()" class="nav-item dropdown DisplayNone768">
+          <a [ngClass]="whichNav[1] ? 'menubar' : 'navlink'" class="nav-link dropbtn" (click)="clickfun(1)" routerLink="../healtharea">Health<br/> Conditions</a>
+          <div class="triangle-down" *ngIf="isHovering"></div>
+        </div>
+        <div class="nav-item DisplayNone768" (mouseenter)="mouseHovering4()">
+            <a [ngClass]="whichNav[3] ? 'menubar' : 'navlink'"  (click)="clickfun(3)" class="nav-link" routerLink="../patientloginpage">Consult Ayurvedic<br />
+              Doctor </a> 
+              <div class="triangle-down triangle-down3 Display_None" *ngIf="isHovering4"></div>
+          </div>
+
+        <div class="nav-item DisplayNone768" (mouseenter)="mouseHovering3()">
+          <a [ngClass]="whichNav[2] ? 'menubar' : 'navlink'" class="nav-link" (click)="clickfun(2)" routerLink="../mainproductpage">Buy
+            Ayurvedic<br />
+            Products</a>
+          <div class="triangle-down triangle-down3 Display_None" *ngIf="isHovering3"></div>
+        </div>
+      
+
+        <div class="nav-item marginttop8 ResDisplayNone ml-4 ResM0 SearchML DisplayNone768">
+          <a class="nav-link mrgnt10" routerLink="/mainsearch"><img src="././assets/images/search.png"></a>
+            </div>
+        <div class="nav-item marginttop8 ResDisplayNone mr-5 ResM0 DisplayNone768">
+          <a class="nav-link poseRel" routerLink="../shopping_cart"><img src="././assets/images/shopping-cart.png">
+            <span [ngClass]=" animateCart ? 'on' : 'off'" class="badge badge-light cart_count_style">{{cartCounter}}</span>
+          </a>
+        </div>
+       
+        <div class="nav-item pr-0 marginttop8 mr-0 ResMenuBtn2 DisplayNone768">
+          <a [ngClass]="whichNav[3] ? '' : ''"  (click)="clickfun(3)" routerLink="../patientloginpage" class="btn btn-info" role="button">Log In</a>
+        </div> 
+             </div>
+    </div> 
+  
+    <div class="nav-item pr-0 mr-0 ResMenuBtn2 RightLogo DisplayNone768">
+        <img src="././assets/images/ZanduRightLogo.png">
+      </div>
+
+  </div>
+  <!-- *ngIf="isHovering" -->
+</nav>
+<div class="HealthAreaDropdown" *ngIf="isHovering" (mouseleave)="mouseLeft()">
+  <app-healthareadropdown></app-healthareadropdown>
+</div>
+
+
+<!-- --------Second dropdown------------  -->
+<div class="AyurvedaYouDropdown Display_None" *ngIf="isHovering2" (mouseleave)="mouseLeft2()">
+  <app-ayurveda-you-dropdown></app-ayurveda-you-dropdown>
+</div>
+
+<!-- --------Third dropdown------------  -->
+<div class="ProductDropdown Display_None" *ngIf="isHovering3" (mouseleave)="mouseLeft3()">
+  <app-productdropdown></app-productdropdown>
+</div> 
+
+<!-- --------Four dropdown------------  -->
+<div class="ProductDropdown Display_None" *ngIf="isHovering4" (mouseleave)="mouseLeft4()">
+  <app-productdropdown></app-productdropdown>
+</div>

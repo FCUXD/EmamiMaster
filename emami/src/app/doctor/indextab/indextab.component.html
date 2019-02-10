@@ -1,0 +1,205 @@
+<div class="datepicker">
+<app-displaydate class="d-none"></app-displaydate>
+</div>
+<div class="tab BorderRadiusDiv">
+  <button class="tablinks {{tabs[0].active}}" (click)="openCity(0);today_new()">Today</button>
+  <button class="tablinks {{tabs[1].active}}" (click)="openCity(1);tomorrow_new();">Tomorrow</button>
+  <button class="tablinks {{tabs[2].active}}" (click)="openCity(2);history_new();">History</button>
+  <div class="float-right fontstyle">
+    <!-- {{selecteddate}}
+     <app-datepicker (voted)="onvoted($event)" class="date_cursor2 date_cursor"></app-datepicker> -->
+ <!-- <app-displaydate></app-displaydate> -->
+ 
+    </div>
+</div>
+
+
+<div *ngIf="check" id="London" class="{{tabs[0].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+  <div class="table-responsive PatientTable">
+    <table class="table">
+      <thead>
+        <tr *ngIf="today_data">
+          <th>Time</th>
+          <th>Name</th>
+          <th>Mode</th>
+          <th>Health Area</th>
+          <th>Mob No.</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <ng-container *ngIf="today_data">
+          <tr *ngFor="let item of today_data">
+            <td><span class="timespan">{{item.appointmentStartTime}}</span></td>
+            <td>
+              <h4 class="h4style">{{item.pname}}</h4>
+            </td>
+            <td>{{item.modeOfConsultation}}</td>
+            <td>
+              <h4 class="h4style">{{item.healthIssue}}</h4>
+            </td>
+            <td>{{item.mobile}}</td>
+            <td>
+              <a (click)="consult(item.id,item.modeOfConsultation)" class="btn btn-green-1 BtnWidthConsult">CONSULT</a>
+            </td>
+            <td>
+                <!-- <button  (click)="popup1(item1)" routerLink="/docReschedulePopup"  data-toggle="modal" data-target="#myModal" type="button"  class="btn BtnReshould btn-trasnp-1">
+                    RESCHEDULE</button> -->
+              <app-tablereshould (click)="sendData(item.id)"></app-tablereshould>
+            </td>
+
+            <td>
+              <div class="">
+                <a (click)="cancel(item)">
+                  <app-tablecansel></app-tablecansel>
+                </a>
+
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+
+        <div *ngIf="!today_data" class="p-3" style="color:green">There is no Appointment For Today</div>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div *ngIf="check" id="Paris" class="{{tabs[1].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+
+  <div class="table-responsive PatientTable">
+    <table class="table  MarginBottom10px">
+      <thead>
+        <tr *ngIf="tomorrow_data">
+          <th>Time</th>
+          <th>Name</th>
+          <th>Mode</th>
+          <th>Health Area</th>
+          <th>Mob No.</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      
+          <ng-container *ngIf="tomorrow_data" >
+            <tr *ngFor="let item1 of tomorrow_data">
+              <td><span class="timespan">{{item1.appointmentStartTime}}</span></td>
+              <td>
+                <h4 class="h4style">{{item1.pname}}</h4>
+              </td>
+              <td>{{item1.modeOfConsultation}}</td>
+              <td>
+                <h4 class="h4style">{{item1.healthIssue}}</h4>
+              </td>
+              <td>{{item1.mobile}}</td>
+              <td>
+                <a (click)="consult(item1.id,item1.modeOfConsultation)" class="btn btn-green-1 BtnWidthConsult">CONSULT</a>
+              </td>
+              <td>
+                  
+                <app-tablereshould *ngIf="item" (onReschedule)="doctor_rescheduleAppointment(item,$event)"></app-tablereshould>
+              </td>
+
+              <td>
+                <div class="popadjust">
+                  <app-tablecansel></app-tablecansel>
+                </div>
+              </td>
+            </tr>
+          </ng-container>
+      
+        <div *ngIf="!tomorrow_data" class="p-3" style="color:green">There is no Appointment For Tomorrow</div>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div *ngIf="check" id="Tokyo" class="{{tabs[2].tabcontent}} border-0 p-0 tabshadow MarginTop20 BorderRadiusDiv">
+  <div class="table-responsive PatientTable">
+    <table class="table  MarginBottom10px">
+      <thead>
+        <tr *ngIf="history_data">
+          <th>Date</th>
+          <th>Name</th>
+          <th>Mode</th>
+          <th>Health Area</th>
+          <th>Mob No.</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <ng-container *ngIf="history_data" >
+          <tr *ngFor="let item2 of history_data">
+            <td><span class="timespan">{{item2.appointmentStartTime}}</span></td>
+            <td>
+              <h4 class="h4style">{{item2.pname}}</h4>
+            </td>
+            <td>{{item2.modeOfConsultation}}</td>
+            <td>
+              <h4 class="h4style">{{item2.healthIssue}}</h4>
+            </td>
+            <td>{{item2.mobile}}</td>
+            <td colspan="3">
+              <a (click)="consult(item2.id,item2.modeOfConsultation)" class="btn btn-green-1 BtnWidthConsult">CONSULT</a>
+            </td>
+            
+          </tr>
+        </ng-container>
+
+        <div *ngIf="!history_data" class="p-3" style="color:green"> No Historical Data Available</div>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<div *ngIf="responsedata">
+  <div class="table-responsive PatientTable">
+    <table class="table  MarginBottom10px">
+      <thead>
+        <tr *ngIf="check1">
+          <th>Time</th>
+          <th>Name</th>
+          <th>Mode</th>
+          <th>Health Area</th>
+          <th>Mob No.</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item2 of responsedata">
+          <tr *ngIf="check1">
+            <td><span class="timespan">{{item2.appointmentStartTime}}</span></td>
+            <td>
+              <h4 class="h4style">{{item2.pname}}</h4>
+            </td>
+            <td>{{item2.modeOfConsultation}}</td>
+            <td>
+              <h4 class="h4style">{{item2.healthIssue}}</h4>
+            </td>
+            <td>{{item2.mobile}}</td>
+            <td>
+              <a (click)="consult(item2.id,item2.modeOfConsultation)" class="btn btn-green-1 BtnWidthConsult">CONSULT</a>
+            </td>
+          </tr>
+        </ng-container>
+
+        <div *ngIf="!responsedata" style="color:green"> No Appointment Available</div>
+      </tbody>
+    </table>
+  </div>
+</div>

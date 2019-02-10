@@ -1,0 +1,24 @@
+.logo p {
+font-size: 11px; 
+font-family: 'TrajanPro-Regular';
+} 
+.MainFooterDiv {
+    padding: 25px;
+} 
+p {
+    font-size: 11px;
+    font-family: 'TrajanPro-Regular'; 
+    cursor: pointer;
+} 
+h6{
+    font-size: 11px; 
+    font-family: 'PlayfairDisplay-Regular'; 
+    cursor: pointer;
+} 
+.Border{
+    border-bottom: 1px solid #d6ad66;
+} 
+.CopyRight{
+    font-size: 9px;
+    font-family: 'TrajanPro-Regular';
+} 

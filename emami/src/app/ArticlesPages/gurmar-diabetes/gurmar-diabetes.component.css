@@ -1,0 +1,129 @@
+.home-top {
+    background-image: url("src/assets/images/punarnava-uti.png"); 
+   background-repeat: no-repeat;
+   margin-top: 86px;
+   background-position: center -82px;
+   background-size: cover;
+   min-height: 440px;
+   }
+   .blurtxt{
+    font-family: TrajanPro-Regular;
+    font-size: 15px;
+    color: #333333;
+   }
+   .txt1{
+    font-family: TrajanPro-Bold;
+    font-size: 36px;
+    color: #402909;
+   }
+   .iwidth{
+       width: 144px;
+   }
+   .topptxt{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 30px;
+    color: #333333;
+   }
+   .byUStxt{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+   }
+   .borderright{
+       border-right: 1px solid #cc9966;
+   }
+
+   .paratxt1{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 18px;
+    color: #333333;
+   }
+   .paratxt2{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 16px;
+    color: #333333;
+   }
+   .paratxt3{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 16px;
+    color: #333333;
+   }
+   .topreads{
+       margin-top: 221px;
+   }
+   .diseasestxt{
+    font-family: TrajanPro-Regular;
+    font-size: 15px;
+    color: #333333;
+   }
+   .diseasestxt2{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 30px;
+    color: #333333;
+   }
+   .read_morenew, .read_morenew:active, .read_morenew:hover, .read_morenew:focus {
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-weight: bold;
+    border: solid 1px #c29a5d!important;
+    background-color: #cfa15a!important;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 5px #cfa15a!important;
+    width: 153px;
+    height: 33px;
+    color: #402909!important;
+}
+.rmposition{
+    position: absolute;
+    bottom: 0;
+}
+.article_div {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 435px;
+}
+.article_div1 {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 385px;
+}
+hr{
+    border: 1px solid #cc9966;
+}
+ul li{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 16px;
+    color: #333333;
+}
+.circle li{
+    list-style-type: circle;
+}
+.number li{
+    list-style-type: decimal;
+}
+@media screen and (min-width: 1px) and (max-width: 768px) {
+    .txtcenter{
+        text-align: center!important;
+    }
+    .txt1{
+        font-size: 24px;
+    }
+    .topptxt {
+        font-size: 20px;
+    }
+    .topreads{
+        margin-top: 50px;
+    }
+    .diseasestxt2 {
+        font-size: 20px;
+    }
+
+.article_div1 {
+    height: 356px;
+}
+}

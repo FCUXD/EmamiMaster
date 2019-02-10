@@ -1,0 +1,14 @@
+<div class="clear50"></div>
+<div class="container">
+<div class="card">
+    <div class="card-body formContent">   
+        <div class="form-group">
+            <label for="email">OTP:</label> 
+            <div class="clear"></div>
+            <input type="text" class="form-control InputEmail" id="OTP" placeholder="OTP" name="text" maxlength="4" #otp> 
+            <button type="button" (click)='sendOPT(otp.value)'  class="btn Btn1">Resend OTP</button>
+          </div> 
+          <button type="button" (click)="proceedToLogin(otp.value)" class="btn Btn1">Proceed to login</button>
+    </div>
+  </div> 
+</div>

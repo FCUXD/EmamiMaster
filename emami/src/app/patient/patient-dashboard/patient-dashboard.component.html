@@ -1,0 +1,416 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header>
+<div class="clear20"></div> 
+<div class="clear50 navhide"></div> 
+
+<app-innerfloating></app-innerfloating>
+<div class="container">
+  <div class="starting_div" *ngIf="starting_div">
+    <div class="row m-0">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 PaddingRight17px mrgnbottom">
+        <div class="WelcomeLeftContent">
+          <div class="clearfix">
+            <h3 class="welcometxtr">Welcome, {{name}}</h3>
+            <div class="clear"></div>
+            <h4 class="welcomefollowig">It's best to stay fit, Why dont you <br/> consult our Community Doctor?</h4>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              <button type="button" routerLink="/patient-dashboard/patient-book-appointment" class=" fullright MarginTop100  btn UpdateBtn">Consult Ayurvedic Doctor
+            </button>  
+          </div>
+              <div class="clear"></div>
+              <div class="PHno">
+              <h6>OR</h6>
+              <span>CALL 1800 572 8000</span> 
+            </div>
+          </div>
+
+
+
+          <!-- <div class="clear"></div>
+          <div class="ProgressBarContentBox">
+            <p class="m-0">Profile strength</p>
+            <h3 class="m-0"> {{profilePercentage}}%</h3>
+
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped active dash30" role="progressbar" aria-valuenow="40"
+                aria-valuemin="0" aria-valuemax="100">
+               {{profilePercentage}}
+              </div>
+            </div>
+          </div>
+          <div class="UpdateBtnRightBox">
+            <button type="button" class="btn UpdateBtn" routerLink="/User-Profile">update</button>
+          </div> -->
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4  padl0">
+        <div class="appon_card big_card TipOffTheDatDiv">
+          <h5>tip of the day</h5>
+          <p>{{tipoftheday}}
+          </p>
+          <!-- <a class="float-right mt-4">VIEW MORE <img src="././assets/images/RightArrow.png"></a> -->
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="updated_div" *ngIf="updated_div">
+    <app-dashboardlink></app-dashboardlink>
+  </div>
+  <div class="clear"></div>
+
+  <div class="margin20"></div>
+  <div class="row m-0">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 PaddingRight17px mrgnbottom">
+      <div class="yourdoshaContentBox doshaheigh">
+        <h5 class="HeadingText">your dosha</h5>
+        <div class="border BorderHeading my-4"></div>
+
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <p>You have not taken <br />
+            the Dosha Test</p>
+          <div class="clear"></div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              <img class="ur-doshares" src="././assets/images/vectorImg.png">
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              <button type="button" class="btn UpdateBtn GetStartedBtn mt-4">Coming Soon</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8 padl0">
+      <div class="yourdoshaContentBox UpcomingAppointmentsBox overDiv2">
+        <div class="row">
+          <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+              <h5 class="HeadingText UpcomingText CalenderText1">Upcoming Appointments</h5>
+          </div>
+            <!-- <div class="col-12 col-sm-4 col-md-4 col-lg-4 topdiv text-right">
+              <div class="row">
+                 
+                <div class="col-8 col-md-12 col-lg-12 padlrn">
+                  <div class="float-right">
+                      <app-displaydate></app-displaydate>
+                  </div>  
+                </div>             
+              </div>
+                
+              </div> -->
+        </div>
+      
+        <!-- <p class="">sept 2018  
+              </p>  -->
+        <!-- <div class="float-right CalenderText">{{selecteddate}} <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker>
+        </div> -->
+        <div class="clear"></div>
+
+
+
+
+        <div *ngIf="resp1" class="appoinmentCardCustome2">
+          <div class="overDiv">
+            <ng-container *ngFor="let item of upCommingAppList; let j=index">
+
+              <div class="appoinmentCardCustome pdlr-5">
+                <div class="appon_card appon_card_appointment text-center">
+                  
+                        <h2 class="CardDateDiv">{{item.appointmentDate | date}}</h2>
+                        <div _ngcontent-c1="" class="border BorderHeading my-4"></div>
+                        <!-- <a *ngIf="item.aflag == 1" class="badge badge-light text-uppercase">TODAY</a> -->
+                      
+                        <h4><b>{{item.appointmentStartTime}}</b></h4>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <h5 class="CardDateDiv2">{{item.appoincardtext}} <br/>
+                            {{item.withtext}}</h5>
+                            <h5 class="CardDateDiv2">Appointment<br/> with <br/><br/><b>Dr {{item.drName}}</b></h5>
+                          <div class="clear5"></div>
+                          <div class="doct-exp fs-14px"><b>{{item.modeOfConsultation}}</b></div> 
+                          <div class="doct-exp fs-14px">
+                            <button *ngIf="item.modeOfConsultation == 'Video' || item.modeOfConsultation == 'video'" (click)="joinVideoCall(item.id)" class="mx-auto btn UpdateBtn joincall posBottom1" type="button"> Join Call</button></div>
+                        </div>
+                      </div>
+                      <div class="clear10"></div>
+                      <div class="row m-0 posBottom">
+                        <div class="col-md-12 p-0">
+                             <reschedule-appointment *ngIf="item"  (onReschedule)="rescheduleAppointment(item,$event)"></reschedule-appointment>
+                           
+                           <!-- <app-reshoulddatepicker2></app-reshoulddatepicker2>  -->
+                          <!-- <button type="button" (click)="ReschedulesAppointment(item.id,item.patientId)" class="mx-auto btn UpdateBtn GetStartedBtn">RESCHEDULE</button> -->
+                        </div><br/><br/>
+                        <div class="col-md-12 p-0">  
+                            <cancel-appointment *ngIf="item" [appointment-item]="item" (onCancelAppointment)="cancelAppointment(item,$event)"></cancel-appointment>
+                         
+                          <!-- <cancel-appointment *ngIf="item" [appointment-item]="item" (onCancelAppointment)="cancelAppointment(item,$event)"></cancel-appointment> -->
+                          <!-- <app-canselpopup2></app-canselpopup2>  --> 
+                          <div class="clear10"></div> 
+                          <div class="clear10"></div>
+
+                          <!-- <button type="button" (click)="CancelAppointment(item.id,item.patientId)" class="btn btned btn-trasnp-1">CANCEL</button> -->
+                        </div>
+    
+                      </div>
+                   
+                  
+                </div>
+                </div>
+               
+              
+            </ng-container>
+          </div>
+        </div>
+
+
+        <div *ngIf="resp1.length==0" class="DoshaLeftBox UpcomingRightContentBox">
+          <h4>You have no upcoming appointments. <br />
+            Do you want to book a new appointment?</h4>
+          <div class="clear"></div>
+          <button type="button" routerLink="../patient-book-appointment" class="btn UpdateBtn BookAppoinment_my">book
+            appointment</button>
+          <div class="border BorderHeading my-4"></div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="margin20"></div>
+  <!-- //------------// -->
+  <div class="clear"></div>
+  <div class="row m-0">
+    <div class="col-12">
+      <div class="yourdoshaContentBox p-0">
+       
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+            <div id="" class="queriesMainContainer">
+                <div class="">
+                  <div class="card queries-card box-with-shadow">
+                    <div class="card-header">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="queries-heading text-uppercase text-left">All queries</div>
+                        </div>
+                        <!-- Post Query -->
+                        <div class="col-md-6 text-right">
+                          <button class="btn btn-green-1 text-uppercase" type="button" data-toggle="modal" (click)="openmodal();">post query</button>
+                        </div>
+                        <!-- Search Bar -->
+                        <div class="col-md-6">
+                          <div class="rounded-search">
+                            <div class="clear30"></div>
+                            <form class="d-none form-search form-inline">
+                              <input type="text" class="search-query" placeholder="Type Keywords press enter" />
+                            </form>
+                          </div>
+                        </div>
+                        <!-- Date Picker -->
+                        <div class="d-none col-md-6 text-right">
+                          <div class="clear40"></div>
+                         
+                          <p>Filter By &nbsp;&nbsp;{{selecteddate}} <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker></p>   
+                          
+                        </div>
+              
+                        <div class="float-filter-by mt-2">
+                            
+                          </div>
+                      </div>
+                    </div>
+                    <!-- Message Box -->
+                    <div class="card-body">
+                      <!-- Doctor side Message Box -->
+                      <div class="tab BorderHeading">  
+                         
+                        <div >
+                            <ng-container *ngIf="!recievedChatData">No messages</ng-container>
+                        </div>
+                        <div *ngIf="recievedChatData">
+                            <ng-container *ngIf="recievedChatData.length == 0">No messages</ng-container>
+                            <ng-container *ngFor="let single of recievedChatData;let i=index">
+                              <div class="tablinks inner_div px-5 {{single.active}}" (click)="openMsg(i,single.doctorId,single.doctorName,single.patientId,single.conversationId)">
+                                <div class="row">
+                                  <div class="col-12 text-right dateText">
+                                    {{single.conversationDate}}
+                                  </div>
+                                  <div class="col-md-4 text-center">
+                                    <img class="img-fluid rounded-circle" src="././assets/images/doctor-profile-pic-1.png" />
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="clear20"></div>
+                                    <div class="doctNameText">
+                                      {{single.doctorName}}
+                                    </div>
+                                    <div class="doctSpecialityText">
+                                      {{single.expertArea}}
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="col-12 col-lg-8">
+                                     <div class="clear20"></div>
+                                    <div class="queryQtnText">
+                                      {{single.chatText}}
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-lg-4 text-right">
+                                      <div class="clear20"></div>
+                                     <div class="repliesText">
+                                      {{single.numberOfReplies}}
+                                     </div>
+                                   </div>
+                                </div>
+                                <div class="right_arrow"><img src="././assets/images/keyboard-right-arrow-button.png"></div>
+                              </div>
+                  
+                            </ng-container>
+                  
+                        </div>
+                      
+                      </div>
+              
+                      <!-- Patient side Message Box -->
+                      <div class="text-left tabcontent {{singleMessageSelected.active}}">
+                        <div class="chat_div">
+                          <div *ngFor="let reply of singleMessageSelected.querySubBeanList" class="my-5 w-75 p-3 box-with-shadow {{reply.personType}} ">
+                            <ng-container *ngIf="reply.personType == 'P' ">
+                                <img class="img-fluid rounded-circle" src="././assets/images/patient-profile-img-1.png" /> 
+                            </ng-container>
+                             
+                            <ng-container *ngIf="reply.personType == 'D' ">
+                                <img class="img-fluid rounded-circle" src="././assets/images/doctor-profile-pic-1.png" /> 
+                            </ng-container>
+                           
+                            <div class="queryQtnText">{{reply.chatText}}</div>
+                            <div class="clear20"></div>
+                            <div class="reply-date text-right">{{reply.chatDateTime}}</div>
+                          </div>
+                        </div>
+              
+              
+                        <div class="chat_inpute">
+                          <div class="input-group">
+                            <input type="hidden">
+                            <input type="text" #binpTxt (keydown.enter)="submitDoctorQuery2(binpTxt.value);" class=" stylein  chatbox" [(ngModel)]="newMsg"
+                              placeholder="Write your reply..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class=" ">
+                              <span class="input-group-text nbg" (click)="submitDoctorQuery2(binpTxt.value);" [(ngModel)]="queriesForm.doctorDropDown" id="basic-addon2">&nbsp;&nbsp;<img src="././assets/images/sendMsgBlackIcon.png"></span>
+                            </div>
+                          </div>
+                          <!-- <span class="send-btn"></span> -->
+                        </div>
+              
+                      </div>
+                      
+                      <div class="clear20"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="margin20"></div>
+  <!-- //------------// -->
+  <div class="row m-0">
+    <div class="col-12">
+        <!-- <app-graph-component></app-graph-component> -->
+    </div>
+  </div>
+  <div class="margin20"></div>
+  <!-- //------------// -->
+  <div class="row m-0">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 PaddingRight17px mrgnbottom">
+      <div class="yourdoshaContentBox UpcomingAppointmentsBox productcontent-height">
+        <h5 class="HeadingText UpcomingText articleDiv">recommended articles</h5>
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <div class="bl_pressure text-left  cust_mr">
+            <div class="clearfix mb-4"></div>
+
+            <div class="main_div">
+              <div class="row">
+                <ng-container *ngFor="let item of recommendedArticles">
+
+                  <div class="bl_pressure_sub no_mr border-0 bg-white mb-4 col-12 col-lg-6">
+                    <div class="card-body p-0">
+                      <img class="" src="{{item.image}}" alt="Card image">
+                      <div class="p-4">
+                        <p class=" skintext">{{item.head2}}</p>
+                        <h4 class="SaffarnText">{{item.data}}</h4>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                          <button _ngcontent-c1="" class="btn UpdateBtn GetStartedBtn mt-4" type="button">READ MORE</button>  
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </ng-container>
+                <div class="divider w-100 mt-0 mb-0"></div>
+                <!-- <a class="float-right mt-4 viewall">view all <img src="././assets/images/RightArrow.png"></a> -->
+                <div class="clear"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 padl0">
+      <div class="yourdoshaContentBox UpcomingAppointmentsBox productcontent-height1">
+        <h5 class="HeadingText UpcomingText articleDiv2">recommended PRODUCTS</h5>
+        <div class="clear"></div>
+        <div class="DoshaLeftBox">
+          <div class="bl_pressure text-left">
+            <div class="clearfix mb-4"></div>
+            <div class="border-0  bg-white ">
+              <div class="card-body pb-0">
+                <ng-container *ngFor="let item of SUGGESTED_PRODUCTS">
+                  <div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="rproductimg">
+                            <img src="{{item.imageUrl}}">
+                      </div>  
+                      </div>
+                      <div class="col-md-9">
+                        <div class="clear10"></div>
+                        <h3 class="ZanduText">{{item.name}}</h3>
+                        <h3 class="RupeesText">&#8377; {{item.selling}}</h3>
+                        <!-- <p class="card-text text-right DateText">{{item.date}}</p> -->
+                      </div>
+                    </div>
+                    <div class="divider margintborder mb-0"></div>
+
+                  </div>
+
+                  <!-- <div *ngIf="data==''" class="pos"> <h6>please let us know your health concern and we will be happy to help</h6></div> -->
+                </ng-container>
+
+              </div>
+              <!-- <a class="float-right viewall pt-2">view all <img src="././assets/images/RightArrow.png"></a> -->
+              <div class="clear"></div>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  <div class="clear20"></div>
+
+  <div class="clear"></div>
+  <app-footer></app-footer>
+
+  

@@ -1,0 +1,128 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header>
+<div class="clear20"></div> 
+<app-innerfloating></app-innerfloating>
+
+<div id="" class="container patientPrescriptionMainContainer">
+  <div class="box-with-shadow patientPriscript-info-top">
+    <div class="row">
+      <div class="col-md-2 text-center">
+        <img class="img-fluid rounded-circle" src="{{prescriptionDetails[0].prescriptionData.patientImg}}" />
+      </div>
+      <div class="col-md-5">
+        <div class="clear5"></div>
+        <div class="clear10"></div>
+        <div class="patient-name">{{prescriptionDetails[0].prescriptionData.patientName}}</div>
+        <div class="patient-consult-id">Consultation ID - <span class="consIdText">{{prescriptionDetails[0].prescriptionData.consultationId}}</span></div>
+        <div class="patient-info">
+          <ul class="age-gender-care-container">
+            <li>
+              <span>{{prescriptionDetails[0].prescriptionData.age}}</span>
+            </li>
+            <li>
+              <span>{{prescriptionDetails[0].prescriptionData.gender}}</span>
+            </li>
+            <li>
+              <span>{{prescriptionDetails[0].prescriptionData.careName}}</span>
+            </li>
+          </ul>
+
+        </div>
+        <div class="patient-phone">{{prescriptionDetails[0].prescriptionData.phoneNo}}</div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="clear30"></div>
+        <button type="button" routerLink='../appointments' class="btn btn-green-1">Back to Appointments</button>
+      </div>
+    </div>
+  </div>
+  <div class="clear30"></div>
+  <div class="card patientPriscript-info-bottom">
+    <div class="card-header">
+      <span class="float-left text-uppercase fw-normal">
+        prescriptions
+      </span>
+      <span class="float-right calender">{{selecteddate}}
+        <app-datepicker (voted)="onvoted($event)" class="date_cursor"></app-datepicker></span>
+    </div>
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="text-uppercase prescription-points-dr-name">{{prescriptionDetails[0].prescriptionData.doctName}}</div>
+          </div>
+          <div class="col-md-3">
+            <div class="prescription-points-subheading">{{prescriptionDetails[0].prescriptionData.prescriDate}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 text-uppercase">
+            <div class="text-uppercase prescription-points-heading">health issue</div>
+          </div>
+          <div class="col-md-3">
+            <div class="prescription-points-subheading">{{prescriptionDetails[0].prescriptionData.healthIssue}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="text-uppercase prescription-points-heading">Symptoms</div>
+          </div>
+          <div class="col-md-3">
+            <div class="prescription-points-subheading">{{prescriptionDetails[0].prescriptionData.symptoms}}</div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-uppercase prescription-points-heading">diagnosis</div>
+            <div class="prescription-points-subheading">
+              {{prescriptionDetails[0].prescriptionData.diagnosis}}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="text-uppercase prescription-points-heading">investigations</div>
+            <div *ngFor="let item of prescriptionDetails[0].prescriptionData.investigations" class="prescription-points-subheading">{{item.investigation}}</div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-uppercase prescription-points-heading">Consultation notes</div>
+            <div class="prescription-points-subheading">
+              {{prescriptionDetails[0].prescriptionData.consultNotes}}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-uppercase prescription-points-heading">prescribed medicine</div>
+          </div>
+          <div *ngFor="let item of prescriptionDetails[0].prescriptionData.prescribedMedicines" class="col-md-5">
+            <div class="bg-gray-box">
+              <div class="prescribed-medicine-name">
+                {{item.mediName}}
+              </div>
+              <ul class="patient-medicine-guidlines">
+
+                <li>
+                  <span>{{item.countforday}} Times</span>
+                </li>
+                <li>
+                  <span>{{item.shifts}}</span>
+                </li>
+                <li>
+                  <span>{{item.intakeQty}} <span *ngIf="item.type == 'syrup'">Tablespoons</span></span>
+                </li>
+                <li>
+                  <span>{{item.afOrbfFood}}</span>
+                </li>
+                <li>
+                  <span>For {{item.duration}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

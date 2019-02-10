@@ -1,0 +1,1742 @@
+.navhide{
+    display: none;
+}
+
+.queriesMainContainer .chat_div .P {
+    position: relative;
+    margin-right: auto;
+    margin-left: 3rem !important;
+}
+.welcomefollowig{
+    float: left;
+    text-align: center;
+}
+.rproductimg{
+    height: 75px;
+    width: 75px;
+}
+.fullright{
+    float: right;
+}
+.welcometxtr{
+    float: left;
+    text-align: center;
+}
+.padl0{
+    padding-left: 0px;
+}
+.queriesMainContainer .chat_div .D {
+    margin-left: auto;
+    position: relative;
+    margin-right: 3rem !important;
+}
+.queriesMainContainer .chat_div .P  img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -44px;
+    left: -40px;
+}
+.queriesMainContainer .chat_div .D img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -44px;
+    right: -40px;
+}
+.queriesMainContainer{
+    font-family: 'TrajanPro-Regular';
+}
+
+.box-with-shadow{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+.queries-heading{
+    font-family: 'TrajanPro-Regular';
+    font-size: 18.4px;
+    letter-spacing: 1.8px;
+    color: #000000;
+}
+.stylein{
+    width: 88%;
+    border-right: 1px solid #cc9966!important;
+    height: 50px; 
+     background-position: 90%; 
+     outline: none!important;
+    background-image: url("../../../assets/images/pin.png") no-repeat;
+}
+.queriesMainContainer .btn-green-1{
+    border-radius: 5px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    color: #402909;
+    box-shadow: 0 0 0 5px #bccf60;
+    padding: 5px 25px;
+}
+.queriesMainContainer .card-header{
+    background-color: #ffffff;
+    border-bottom: 1px solid #f7f0dd;
+    padding: 4px 25px;
+}
+.queriesMainContainer .BorderHeading{
+    opacity: 1;
+}
+.queriesMainContainer .card-body{
+    padding: 0 10px;
+}
+
+.queriesMainContainer .rounded-search input.search-query {
+    padding-left:40px;
+    border-radius: 10px;
+    outline: none;
+    border: solid 1px #d6ad66;
+    width: 100%;
+    height: 45px;
+    padding-bottom: 5px;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    line-height: 2.29;
+    letter-spacing: 0.7px;
+    color: #000000;
+
+
+}
+.queriesMainContainer .rounded-search input.search-query ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bebcbc;
+}
+.queriesMainContainer .rounded-search form.form-search {
+    position: relative;
+}
+
+.queriesMainContainer .rounded-search form.form-search:before {
+    content:'';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-image: url("../../../assets/images/searchIconOrange.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top:15px;
+    left:15px;
+    z-index: 1000;
+}
+
+/* .rounded-search form.form-search:after {
+    content:'';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../../../assets/images/closeIconOrange.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top:15px;
+    right:15px;
+    z-index: 1000;
+} */
+.queriesMainContainer .queries-filter-by{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 22px;
+    letter-spacing: 1.1px;
+    color: #333333;
+}
+
+/* tabs css */
+/* Style the tab */
+.queriesMainContainer .tab {
+    float: left;
+    background-color: #f9f4e4;
+    width: 50%;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    direction: rtl; /* scroll to left side */
+}
+.queriesMainContainer .tab div{
+    direction: ltr; /* text to right side */
+}
+/* custom scroll */
+ /* width */
+ .queriesMainContainer ::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+.queriesMainContainer ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.queriesMainContainer ::-webkit-scrollbar-thumb {
+    background: #d6ad66;
+}
+
+/* Handle on hover */
+.queriesMainContainer ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.queriesMainContainer .dateText{
+    font-size: 12px;
+    line-height: 2.67;
+    letter-spacing: 0.6px;
+    color: #402909;
+}
+.queriesMainContainer .doctNameText{
+    font-family: 'TrajanPro-Bold';
+    font-size: 16.7px;
+    font-weight: bold;
+    color: #402909;
+}
+.queriesMainContainer .doctSpecialityText{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    color: #333333;
+}
+.queriesMainContainer .queryQtnText{
+ font-family: 'PlayfairDisplay-Regular';
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  color: #333333;
+}
+.queriesMainContainer .repliesText{
+    font-family: 'TrajanPro-Bold';
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        letter-spacing: 0.8px;
+        color: #84b367;
+}
+.queriesMainContainer .BorderHeading {
+   border-left: none !important;
+}
+/* Style the buttons inside the tab */
+.queriesMainContainer .tab .inner_div {
+    display: block;
+    color: black;
+    padding-top: 10px;
+    padding-bottom:10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+    position: relative;
+}
+.queriesMainContainer .tab .inner_div:nth-of-type(even){
+    background-color: #ffffff;
+}
+.queriesMainContainer .tab .inner_div:nth-of-type(odd){
+
+    background-color: #fdfbf6;
+}
+
+
+/* Create an active/current "tab button" class */
+.queriesMainContainer .tab .inner_div.active {
+    position: relative;
+    border-right: 25px solid #bccf60;
+}
+.queriesMainContainer .tab .inner_div.active .queryQtnText{
+    font-weight: bold;
+}
+
+/* Style the tab content */
+.queriesMainContainer .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border-right: none !important;
+    width: 50%;
+    border-left: none;
+    height: 500px;
+    position: relative
+}
+
+.queriesMainContainer .tabcontent{
+    display: block;
+}
+.queriesMainContainer .hide{
+    display: none;
+}
+.queriesMainContainer .bl_pressure {
+    width: 50%;
+    display: inline-block;
+}
+.queriesMainContainer .bl_img {
+    margin-right: 30px;
+}
+.queriesMainContainer .doc_info {
+    width: 50% !important;
+    display: inline-block !important;
+    vertical-align: top;
+    border-bottom: none !important;
+    padding: 5px 0px !important;
+    font-size: 14px !important;
+    font-weight: 900;
+}
+.queriesMainContainer .fent_font {
+    color: #aca9a9 !important;
+    font-weight: 600;
+}
+
+.queriesMainContainer .divider {
+    border: 1px solid #f3e7ce;
+}
+.queriesMainContainer .active.right_arrow{
+    display: block;
+
+}
+.queriesMainContainer .right_arrow {
+    position: absolute;
+    top: 45%;
+    right: -18px;
+
+}
+.queriesMainContainer .chat_inpute {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #f9f4e4;
+    padding:0px 10px;
+}
+.queriesMainContainer .chatbox,.nbg {    border: none;
+    background: #f9f4e4;
+    font-family: 'PlayfairDisplay-Regular';
+font-size: 16px;
+color: #333333;
+}
+.queriesMainContainer .nbg{
+    cursor: pointer;
+    padding-top: 13px;
+} 
+.queriesMainContainer input.form-control.chatbox:focus {
+    box-shadow: none;
+    outline: none;
+}
+.queriesMainContainer input.form-control.chatbox::placeholder {
+    color: #5c5c5c;
+    font-size: 20px;
+}
+.queriesMainContainer p.green_text.font-weight-bold.text-right {
+    color: #e1c599 !important;
+}
+
+
+.queriesMainContainer .chat_div {
+    height: 370px;
+    overflow-y: auto;
+}
+.queriesMainContainer .chat_div .patient {
+    position: relative;
+    margin-right: auto;
+    margin-left: 3rem !important;
+}
+.queriesMainContainer .chat_div .doctor {
+    margin-left: auto;
+    position: relative;
+    margin-right: 3rem !important;
+}
+.queriesMainContainer .chat_div .patient  img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -44px;
+    left: -40px;
+}
+.queriesMainContainer .chat_div .doctor  img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: -44px;
+    right: -40px;
+}
+
+.queriesMainContainer .reply-date{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    color: #656464;
+}
+@media only screen and (max-width: 768px) {
+    .queriesMainContainer .text-right{
+        text-align:center !important;
+    }
+    .queriesMainContainer .card-header{
+        text-align: center !important;
+    }
+    .queriesMainContainer .BorderHeading, .queriesMainContainer .tabcontent{
+        width: 100%;
+    }
+}
+
+.queriesMainContainer .custom_modal {
+
+    position: fixed !important ;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    background: rgba(0,0,0,0.5);
+    z-index: 1 !important;
+
+  }
+
+  .queriesMainContainer .modal-dialog {
+    top: 20% !important;
+    /* width: 500px; */
+    }
+
+    .queriesMainContainer .modal-content{
+    margin-left: 10px;
+    padding-bottom: 14px;
+}
+
+.queriesMainContainer .modal-title {
+    margin-bottom: 0;
+    padding-left: 20px;
+    line-height: 1.5;
+    font-family: TrajanPro;
+    font-size: 13.5px;
+    font-weight: bold;
+    color: #402909;
+}
+
+.queriesMainContainer .queryHeight{
+    margin-top: 18px;
+}
+
+.queriesMainContainer .textareaMargin {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+.queriesMainContainer .tacolor{
+    opacity: 0.62;
+  border-radius: 5px;
+ border-color: #d6ad66;
+}
+.queriesMainContainer .selectDrop{
+    opacity: 0.62;
+  border-radius: 5px;
+  border-color: #d6ad66;
+  margin-left: 20px;
+    width: 92%;
+}
+.queriesMainContainer .dragHeight{
+    margin-top: 25px;
+    margin-left: 20px;
+    text-align: center;
+}
+.queriesMainContainer .dragFiles{
+    background-image:url("../../../assets/images/move.png"); 
+    background-repeat: no-repeat;
+    /* width: 86px;
+    height: 86px;
+    border: 0px;
+    color: white; */
+    /* opacity: 0;
+    position: absolute;
+    z-index: -1; */
+}
+.queriesMainContainer label {
+    cursor: pointer;
+    
+    /* Style as you please, it will become the visible UI component. */
+ }
+ 
+ .queriesMainContainer #upload-photo {
+    
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+ }
+ .queriesMainContainer button.close {
+    margin-right: 15px;
+    padding: 0;
+    margin-top: -8px;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.queriesMainContainer .btned{
+    width: 132px;
+}
+.queriesMainContainer .btn-trasnp-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    background: transparent;
+    border-radius: 5px;
+    border: solid 1px #cfa15a;
+    font-family: 'TrajanPro-Bold';
+    padding: 7px 25px;
+    margin-right: 22px;
+   }
+   .queriesMainContainer .UpdateBtn,  .queriesMainContainer .UpdateBtn:active,  .queriesMainContainer .UpdateBtn:focus{
+    font-family: 'TrajanPro-Bold';
+    background: #bccf60;
+    border-radius: 15px;
+    box-shadow: 0 0 0 7px #bccf60;
+    padding: 18px 58px;
+} 
+.queriesMainContainer .GetStartedBtn{
+    padding: 8px 20px;
+    outline-offset: -6px;
+    -moz-outline-radius: 5px;
+    font-size: 12px;
+    border-radius: 5px; 
+    box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.13);
+    }
+    .queriesMainContainer .submitbtn{
+        width: 133px;
+     }   
+     .queriesMainContainer .date_cursor{
+        cursor: pointer;
+    }        
+
+/* ----------------------- */
+
+
+.appointment-card-wrap{
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fbf8ee;
+   }
+   .padlrn{
+       padding: 0px;
+   }
+   .xyaxisparameter{
+    font-family: PlayfairDisplay-Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #333333;
+   }
+   .yaxispara{
+       position: absolute;
+       display:block;
+       left: -8px;
+    top: 175px;
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg); 
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+   }
+   .xaxispara{
+    position: absolute;
+    left: 47%;
+    bottom: 10px;
+   }
+   .add-adjust{
+       margin-top: -6px;
+   }
+   .padl7{
+    padding-left: 7px;
+   }
+   .padr7{
+       padding-right: 7px;
+       position: relative;
+   }
+   .appointment-card{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    color: #402909;
+   }
+   .appointment-card .card-header{
+    color: #402909;
+    font-size: 14px;
+    background-color: #ffffff;
+    margin: 0 10px;
+    border-bottom: 1px solid  #d9b0656e;
+    font-family: 'PlayfairDisplay-Regular';
+   } 
+   .PHno{ 
+    font-size: 22px;
+    width: 42%;
+    float: right;
+    text-align: center;
+    margin-top: -50px;
+    font-family: 'TrajanPro-Bold';
+   }  
+   .productcontent-height {
+    min-height: 1022px;
+}
+.productcontent-height1 {
+    min-height: 1022px;
+    overflow-y: auto;
+}
+   .PHno h6 { 
+    color: #a58658;
+   } 
+   .MarginTop100{
+    margin-top: -47px;
+   }
+   .appointment-card .card-header .badge{
+    font-family: 'TrajanPro-Bold';
+    font-size: 12px;
+    border-radius: 5px;
+    color: #faf7ed;
+    background-color: #d6ad66;
+    padding: 5px 25px;
+   }
+   .appointment-card .doct-exp{
+    font-family: 'PlayfairDisplay-Regular';
+   }
+   .appointment-card .doct-info{
+    font-family: 'TrajanPro-Bold';
+   }
+   .btn-trasnp-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    background: transparent;
+    border-radius: 5px;
+    border: solid 1px #cfa15a;
+    font-family: 'TrajanPro-Bold';
+    padding: 7px 25px;
+   }
+   .btn-green-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 2px #bccf60;
+    padding: 3px 25px;
+   }
+.m-t-min-80{
+    margin-top: -80px !important;
+}
+.WelcomeLeftContent h3{
+    font-family: 'TrajanPro-Bold';
+    font-size: 22px;
+}
+.WelcomeLeftContent h4{
+    font-family: 'PlayfairDisplay-Bold'; 
+    font-size: 22px; 
+    margin-top: 20px!important;
+} 
+.WelcomeLeftContent{
+    background: #f9f4e4;
+    padding: 5% 4% 4% 4%;
+    border-radius: 10px; 
+    min-height: 247px;
+} 
+.joincall{
+    width: 77%;
+    margin-top: 10px;
+    margin-left: -11px; 
+    
+    padding: 3px 30px !important;
+    /* outline-offset: -6px;
+    -moz-outline-radius: 5px; */
+    font-size: 12px;
+    border-radius: 5px !important;
+        box-shadow: 0 0 0 3px #bccf60 !important;
+}
+.ProgressBarContentBox{
+    background-color: #f7f0dd;
+    padding: 4%;
+    border-radius: 5px;
+    width: 70%;
+float: left;
+} 
+.ProgressBarContentBox p {
+    font-family: 'TrajanPro-Regular';
+    font-size: 14px;
+    width: 41%;
+
+float: left;
+}
+.ProgressBarContentBox h3 {
+    font-family: 'TrajanPro-Bold';
+    font-size: 24px;
+    width: 16%;
+
+float: left;
+}
+.UpdateBtnRightBox{
+    width: 30%;
+    float: left;
+    text-align: right;
+}
+.UpdateBtn, .UpdateBtn:active, .UpdateBtn:focus {
+    font-family: 'TrajanPro-Bold';
+    background: #bccf60;
+    border-radius: 15px;
+    font-size: 15.5px;
+    padding: 11px 25px;
+    /* float: right; */
+    box-shadow: 0 0 0 7px #bccf60;
+}
+
+.appon_card  h5{
+    
+    font-family: 'TrajanPro-Regular';
+}
+.appon_card  p{
+    font-size: 14px;
+    font-family: 'PlayfairDisplay-Regular';
+}
+.appon_card_appointment{
+    height: 415px;
+    padding: 23px;
+    border-radius: 10px;
+    border: 1px solid #d6ad66;
+} 
+.appon_card a{
+    font-size: 12px;
+    font-family: 'TrajanPro-Bold';
+}
+.Upcomingleftdiv{
+    width: 30%;
+    float: left;
+    margin: 0px 10px;
+} 
+.CardDateDiv{
+    color: #402909;
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+} 
+.CardDateDiv1{
+    font-size: 24px !important;
+    color: #333333;
+    font-family: 'TrajanPro-Bold' !important;
+
+margin-bottom: 18%;
+} 
+.CardDateDiv2{
+    font-family: 'TrajanPro-Regular';
+    color: #402909;
+    font-size: 14px;
+}
+.yourdoshaContentBox{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    padding: 6% 4% 13% 4%;
+    border-radius: 5px;
+} 
+.bl_pressure  h4{
+    font-family: 'TrajanPro-Bold';
+    font-size: 18px;
+    font-weight: normal;
+    color: #333333;
+}
+.HeadingText{
+    font-size: 20px;
+    font-family: 'TrajanPro-Regular';
+    margin-bottom: 11%;
+    margin-left: 28px;
+}
+.BorderHeading{
+    border: 1px solid #d9b065 !important; 
+    opacity: 0.23;
+    }
+.yourdoshaContentBox p { 
+font-size: 14px; 
+font-family: 'TrajanPro-Regular';
+}
+.DoshaLeftBox{
+    text-align: center;
+}
+.GetStartedBtn, .GetStartedBtn:active, .GetStartedBtn:focus {
+    padding: 3px 30px;
+/* outline-offset: -6px;
+-moz-outline-radius: 5px; */
+font-size: 12px;
+border-radius: 5px;
+    box-shadow: 0 0 0 7px #bccf60 !important;
+}
+
+.btned{
+    width: 148px;
+    margin-left: -6px!important;
+}
+.margin20{
+    margin: 17px;
+    width: 100%;
+}
+.PaddingRight17px{
+    padding-right: 17px;
+}
+.UpcomingAppointmentsBox{
+    padding: 3% 4% 4% 4%;
+    /* min-height: 560px; */
+  
+} 
+.UpcomingText{
+    margin-bottom: 5%;
+} 
+.UpcomingRightContentBox{
+    border: 1px solid #d6ad66;
+    border-radius: 5px;
+    padding: 10% 2% 2% 2%;
+}
+.UpcomingRightContentBox h4{
+    font-family: 'PlayfairDisplay-Bold';
+} 
+.BookAppoinment_my{
+    margin: 6% 0%;
+}
+
+.yourqueriesLeftDiv{
+    width: 50%;
+    float: left;
+}
+.YourQuriesHeadingDiv{
+    padding: 2% 2% 5% 3%;
+}
+.SaffarnText{
+    font-family: 'PlayfairDisplay-Regular'; 
+    font-size: 18px;
+} 
+.skintext{
+    font-size: 15px !important; 
+    font-family: 'TrajanPro-Regular' !important;
+    color: #333333;
+} 
+.ZanduText{
+    font-size: 18px;
+    font-family: 'TrajanPro-Bold';
+    font-weight: bold;
+    color: #402909;
+} 
+.RupeesText{
+    font-size: 24px; 
+    font-family: 'PlayfairDisplay-Bold';
+} 
+.DateText{
+    color: #666666;
+    font-size: 14px;
+    font-family: 'PlayfairDisplay-Regular'; 
+}
+/* -----------------------OLD CSS------------- */
+
+.upcoming{
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.upcoming img {
+    margin-right: 5px;
+}
+
+
+.appon_card  h3{
+    font-weight: normal;
+} 
+.recent_order h3{
+    text-transform: capitalize;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #26cd85;
+    border-color: #26cd85;
+    width: 200px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    height: 55px;
+    font-size: 18px;
+}
+.btn-primary:hover {
+    background-color: #26cd85;
+    border-color: #26cd85;
+}
+a.btn.social-btn.explor:hover{
+    color: #ffffff;
+}
+.btn-outline-primary {
+    color: #26cd85;
+    background-color: transparent;
+    background-image: none;
+    border-color: #26cd85;
+    width: 100%;
+    font-weight: 700;
+}
+.btn-outline-primary:hover {
+    color: #ffffff;
+    background-color: #26cd85;
+    border-color: #26cd85;
+}
+
+.appon_card.big_card h5 {
+    line-height: 1.5;
+}
+.graph_img {
+    background: #26cd85;
+    padding: 5px;
+    border-radius: 5px;
+}
+.vital_card {
+    width: 100%;
+    min-height: 365px;
+}
+
+.date_cursor{
+    cursor: pointer;
+}
+.bl_img {
+    margin-right: 30px;
+}
+.appon_card.vertcale_tab {
+    width: 100%;
+}
+.green_text a {
+    color: #26cd85 !important;
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.main_div .no_mr:nth-child(even) {
+    margin-right: 0px !important;
+}
+.cust_mr {
+    margin-right: 2%;
+}
+.card-body img{width: 100%}
+.divider {
+    border-bottom: 1px solid #d9b065;
+}
+.consult h5 {
+    text-transform: capitalize;
+} 
+.CalenderText{
+    font-size: 18px !important;
+    font-family: 'TrajanPro-Bold' !important;
+    width: 30%;
+    float: right;
+    text-align: right;
+} 
+.CalenderText1{
+    width: 60%;
+    float: left;
+} 
+.viewall{
+    font-family: 'TrajanPro-Bold'; 
+    font-size: 12px;
+    text-align: right;
+
+width: 100%;
+}  
+.margintborder{
+    margin: 3% 0% !important;
+} 
+.articleDiv{
+    margin-bottom: 13%; 
+    margin-top: 2%;
+} 
+.articleDiv2{
+    margin-bottom: 10%; 
+    margin-top: 2%;
+}
+.progress-bar {
+      background-color: #bccf60;
+      
+} 
+.TipOffTheDatDiv{
+    background: #ebf1cf;
+    border: none !important; 
+    min-height: 247px;
+    padding: 23px;
+    border-radius: 10px;
+    border: 1px solid #d6ad66;
+}
+
+
+.progress {
+    background-color: #d6ad6633;
+    width: 35%;
+
+float: right;
+
+text-align: right;
+}
+/*-------------------- range slider start------------------- */ 
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+   
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 80px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 55px;
+    height: 55px;
+    border-radius: 80px;
+    background: transparent;
+    cursor: pointer;
+} 
+
+#rangevalue {
+    text-align: left;
+    font-family: "Quantico", sans-serif;
+    font-size: 18px;
+    display: block;
+    float: left;
+    padding: 10px 0px;
+    width: 100%;
+    color: #579E81;
+  }
+  .ProfileColContentBox{
+    width: 34%;
+    float: left;
+  } 
+  .RangerSliderRightContentBox{
+    width: 34%;
+    float: left
+  } 
+ 
+  /*-------------------- range slider end------------------- */  
+  
+/*----------------tab ---------------------------------------*/
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+    
+   }
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'TrajanPro-Bold';
+    font-size: 14px; 
+   
+}
+
+/* Change background color of buttons on hover */
+
+
+/* Create an active/current tablink class */
+.tab button.active {
+   
+    color: #bccf60;
+
+    border-bottom: 2px solid #bccf60;
+    
+    border-radius: 0px;
+    
+    margin: 0px 20px;
+  
+   
+}
+.tab1{
+ 
+    float: left; 
+    border-radius: 5px;
+    margin: 0px 20px;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+   
+    border-top: none;
+}
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+} 
+.BtnMargin15px{
+    margin: 0px 22px;
+} 
+.PatientProfileHeader{
+    padding: 2% 3%; 
+    border-bottom: 1px solid #333;
+}  
+.PatientHistoryBtnDiv{
+    text-align: center;
+}
+.PatientHistory{
+    padding: 2% 3%;
+    box-shadow: 0px 0px 4px #ccc;
+    margin: 3%;
+    border: 1px solid #ccc;
+}  
+#comment{
+   height: 90px; 
+   overflow-y: scroll;
+   border-radius: 0px;
+}
+
+  .PatientHistoryBtn{
+    padding: 2% 16%;
+  } 
+.SymptomsContentBox{
+    width: 46%;
+    float: left; 
+    min-height: 210px; 
+    margin-top: 0px;
+} 
+.SymptomsContentBoxmargin{
+    margin-right: 11px;
+} 
+.SymptomsContentBoxmargin1{
+    margin-right: 0px; 
+    margin-left: 10px;
+} 
+.SymptomsBtn{
+    margin-top: 7%;
+} 
+.DiagnosisInput{
+    border-bottom: 1px solid #333 !important;
+    border-radius: 0px; 
+    border: none;
+    
+}  
+.DiagnosisInput1{
+   
+    background: url("../../../assets/images/add.png") no-repeat right center;
+}  
+.OrderSummeryAddressContent{
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 0px; 
+    margin: 4% 0%; 
+    margin-left: 16px;
+}
+.ContentDiv{
+    margin: 8px;
+    padding: 14px 14px;
+    border: 1px solid #ccc;
+} 
+.RemoveBtn{
+    background-color: #ffffff;
+    border-bottom: 1px solid #333;
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 14px;
+} 
+.MarginLeftDiv{
+    margin-left: -25px;
+} 
+.AddAdressDiv h3{
+    margin-top: 22%;
+} 
+.ConfirmPaymentLeftCard {
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 6% 3%;
+    border-radius: 10px;
+} 
+.ConfirmPaymentLeftCard1{
+    margin: 0% 4%;
+} 
+.RoundImgDiv{
+    width: 88px;
+    height: 88px;
+    float: left; 
+    border: 1px solid #333;
+border-radius: 50px;
+padding: 13px; 
+margin-top: -18px;
+} 
+.RoundImgDiv img{
+    width: 100%;
+    height: 100%;
+  
+} 
+.card{
+    padding: 35px 15px 15px 15px;
+    box-shadow: 0px 0px 8px #ccc;
+}  
+.TabContentBox{
+    margin-top: 0% !important;
+    float: right;
+} 
+.BoxMinHeight{
+    min-height: 300px;
+} 
+.SubmitBtnDiv{
+    text-align: center;
+    padding: 1% 2% 4% 2%;
+} 
+.btn-primary{
+
+    background-color: #35a961;
+} 
+.table tbody tr td{
+    font-size: 12px;
+} 
+.subtotalPaddingLeft{
+    padding-left: 11px;
+} 
+  /*-----------*/
+  .cardbodydiv{
+    box-shadow: 0px 0px 10px #f1f1f1;
+    border: none;
+    padding: 2%; 
+    background-color: #f4f4f4;
+} 
+.Righttext{
+    font-size: 18px; 
+    color: #666;
+}
+
+/* / You can add global styles to this file, and also import other style files / */
+.bg-color{
+    background-color:#F7F9F9;
+}
+.MarginTB{
+    margin: 20px 0px 20px 0px;
+}
+.MarginTop20{
+margin-top: 20px;
+} 
+.MarginBottom10px{
+    margin-bottom: 10px;
+} 
+.MarginBottom20px{
+    margin-bottom: 20px;
+}   
+.MarginLeft{
+margin-left: 18px;
+}
+.borderdiv{
+    border: 1px solid #cccccc;
+}
+
+
+
+.add-report-float{
+    text-align:right;
+}
+
+.report-font{
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+.filter-by{
+    font-size: 18px;
+    font-weight: 800;
+    }
+
+.float-filter-by{
+    text-align: right;
+}
+
+.bg-cyan{
+    background: #85929E;
+}   
+
+.fa-size{
+  font-size:24px
+}
+
+.fa-calendar2{
+    font-size:24px;color:green;
+    cursor: pointer;
+}
+
+.img-size{
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+    .add-report-float{
+        text-align:center;
+    }
+    .report-font{
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+    }
+    .float-filter-by{
+        text-align: center;
+    }
+    .Righttext{
+        font-size: 16px; 
+        color: #666;
+    }
+    
+    .MarginLeft{
+        margin-left: 10px;
+        }
+        
+    .img-size{
+        width:24%;
+        cursor: pointer;
+    }            
+} 
+@media screen and (min-width: 1px) and (max-width: 1300px) { 
+   
+    .tab1 {
+        width: 30%;
+          } 
+     }  
+     @media screen and (min-width: 1px) and (max-width: 992px) { 
+        .MarginLeftDiv, .OrderSummeryAddressContent {
+            margin-left: 0px;
+        }  
+        .AddAdressDiv h3{
+            margin: 12%;
+        }
+    }
+@media screen and (min-width: 1px) and (max-width: 768px) {  
+    .navhide{
+        display: block;
+    }
+    
+    .SymptomsContentBox {
+        width: 94%;
+            } 
+            .SymptomsContentBoxmargin1 {
+                margin-right: 3%;
+                margin-left: 3%;
+            } 
+            .ResMarginTop{
+             margin-top: 0px !important;
+            } 
+            .SymptomsBtn {
+                margin: 0 auto;
+            } 
+            .ConfirmPaymentLeftCard1 {
+                margin: 0% 0%;
+            } 
+            .ConfirmPaymentLeftCard {
+                margin: 0 auto; 
+                margin-bottom: 15px;
+            } 
+            .ZanduPaddingleft{
+                padding-left: 2%; 
+                text-align: center;
+                margin: 4% 0%;
+            } 
+            .RoundImgDiv{
+                margin: 0 auto;
+                float: none;
+            } 
+            .ZanduPaddingleft1{
+                text-align: center;
+            } 
+            .SpinerRes{
+                text-align: center;
+            } 
+            .ResText{
+                float: none !important;
+                text-align: center !important;
+                margin: 4% 0% !important;
+            } 
+            .ResTextLink{
+                text-align: center;
+                padding: 4%;
+            } 
+            .ResTextLink1{
+                padding-left: 4% !important;
+            }
+ }
+@media screen and (min-width: 1px) and (max-width: 480px) { 
+    .tab1 {
+        width: 100%;
+        margin-bottom: 20px;
+          } 
+          .BtnMargin15px {
+            margin-right: 0px;
+            margin-left: 0px;       
+        } 
+        .ResTextLink ,ResTextLink1{
+            padding-left: 12% !important;
+        } 
+      }
+
+
+/*----------------tab -end--------------------------------------*/
+
+
+.DotedBox{
+    width: 80%;
+  float: none;
+    margin: 0 auto;  
+    background: #ffffff; 
+    padding: 1% 3%;
+    border: 1px dashed #ccc;
+}
+.ViewAppointmentHistoryBtn{
+    background: transparent;
+    color: #000000;
+    font-weight: normal;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0px; 
+    font-size: 20px;
+}
+.DotedBox2{
+    min-height: 350px;
+    width: 100%;
+    padding: 4%;
+} 
+.appon_card2{
+    padding: 5% 5%;
+
+}  
+.DigestiveHealthCard{
+    background: #f5f5f5; 
+    box-shadow: 0px 0px 15px #ccc;
+    border: none;
+}
+.RecentOrderContentBox{
+    background: #ffffff;
+    padding: 4%; 
+    max-height: 490px;
+    overflow-y: scroll;
+    margin-top: 32px;
+} 
+.CreateQueryBtn{
+    border-radius: 8px;
+    font-weight: bold; 
+    font-size: 18px;
+}
+
+
+
+@media screen and (max-width: 930px) {
+    .gryish{
+        width: 100%;
+        padding: 20px;
+    }
+    .consult,.wrapper,.appon_card.big_card,.bl_pressure,.bl_pressure_sub,.tabcontent,.tab {
+        width: 100% !important;
+    }
+    .upcoming {
+        font-size: 18px;
+    }
+    .appon_card {
+        width: 100%;
+        margin: 0% 0% 2% 0%;
+    }
+} 
+@media screen and (min-width: 1px) and (max-width: 992px) { 
+    .consult,   .btn-book {
+        width: 100%;
+      
+    } 
+ 
+
+}  
+@media screen and (min-width: 1px) and (max-width: 768px) {  
+    .ProfileColContentBox,  .RangerSliderRightContentBox {
+        width: 100%;
+       
+    } 
+       .UpdateBtn {
+         float: none;
+    } 
+    .btn-book {
+        padding: 1% 4%;
+    }
+}
+.appoinmentCardCustome{
+    width: 216px;
+    margin: 0px 10px;
+    display: inline-block;
+    float: none; 
+    position: relative;
+}  
+.posBottom{
+    position: absolute; 
+    bottom: 7px;
+    left: 0px;
+} 
+.posBottom1 {
+    font-size: 12px;
+    margin-top: 3px;
+}
+.appoinmentCardCustome2{
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow-y: hidden; 
+}
+.overDiv{
+    max-height: 452px;
+    margin-bottom: 15px;
+}
+.overDiv2 {
+    min-height: 540px;
+}
+.doshaheigh{
+    min-height: 539px;
+}
+
+.dash1{width: 1%}
+.dash2{width: 2%}
+.dash3{width: 3%}    
+.dash4{width: 4%}    
+.dash5{width: 5%}    
+.dash6{width: 6%}    
+.dash7{width: 7%}    
+.dash8{width: 8%}    
+.dash9{width: 9%}    
+.dash10{width: 10%}    
+.dash11{width: 11%}    
+.dash12{width: 12%}    
+.dash13{width: 13%}    
+.dash14{width: 14%}    
+.dash15{width: 15%}    
+.dash16{width: 16%}    
+.dash17{width: 17%}    
+.dash18{width: 18%}    
+.dash19{width: 19%}    
+.dash20{width: 20%}    
+.dash21{width: 21%}    
+.dash22{width: 22%}    
+.dash23{width: 23%}    
+.dash24{width: 24%}    
+.dash25{width: 25%}    
+.dash26{width: 26%}    
+.dash27{width: 27%}    
+.dash28{width: 28%}    
+.dash29{width: 29%}    
+.dash30{width: 30%}    
+.dash31{width: 31%}    
+.dash32{width: 32%}    
+.dash33{width: 33%}    
+.dash34{width: 34%}    
+.dash35{width: 35%}    
+.dash36{width: 36%}    
+.dash37{width: 37%}    
+.dash38{width: 38%}    
+.dash39{width: 39%}    
+.dash40{width: 40%}    
+.dash41{width: 41%}    
+.dash42{width: 42%}    
+.dash43{width: 43%}    
+.dash44{width: 44%}    
+.dash45{width: 45%}    
+.dash46{width: 46%}    
+.dash47{width: 47%}    
+.dash48{width: 48%}    
+.dash49{width: 49%}    
+.dash50{width: 50%}    
+.dash51{width: 51%}    
+.dash52{width: 52%}    
+.dash53{width: 53%}    
+.dash54{width: 54%}    
+.dash55{width: 55%}    
+.dash56{width: 56%}    
+.dash57{width: 57%}    
+.dash58{width: 58%}    
+.dash59{width: 59%}    
+.dash60{width: 60%}    
+.dash61{width: 61%}    
+.dash62{width: 62%}    
+.dash63{width: 63%}    
+.dash64{width: 64%}    
+.dash65{width: 65%}    
+.dash66{width: 66%}    
+.dash67{width: 67%}    
+.dash68{width: 68%}    
+.dash69{width: 69%}    
+.dash70{width: 70%}    
+.dash71{width: 71%}    
+.dash72{width: 72%}    
+.dash73{width: 73%}    
+.dash74{width: 74%}    
+.dash75{width: 75%}    
+.dash76{width: 76%}    
+.dash77{width: 77%}    
+.dash78{width: 78%}    
+.dash79{width: 79%}    
+.dash80{width: 80%}    
+.dash81{width: 81%}    
+.dash82{width: 82%}    
+.dash83{width: 83%}    
+.dash84{width: 84%}    
+.dash85{width: 85%}    
+.dash86{width: 86%}    
+.dash87{width: 87%}    
+.dash88{width: 88%}    
+.dash89{width: 89%}    
+.dash90{width: 90%}    
+.dash91{width: 91%}    
+.dash92{width: 92%}    
+.dash93{width: 93%}    
+.dash94{width: 94%}    
+.dash95{width: 95%}    
+.dash96{width: 96%}    
+.dash97{width: 97%}    
+.dash98{width: 98%}    
+.dash99{width: 99%}    
+.dash100{width: 100%}    
+
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /*/ IE10 + CSS styles go here /*/
+
+   
+}
+
+@media screen and (min-width: 1600px) and (max-width: 2400px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 1200px) {
+    .MarginTop100 {
+        margin-top: 22px; 
+   }
+   .PHno {
+    font-size: 22px;
+    width: 100%; 
+    text-align: center;
+    margin-top: 22px;
+    font-family: 'TrajanPro-Bold';
+}
+.welcometxtr{
+    float: none;
+}
+.welcomefollowig{
+    float: none;
+}
+.fullright{
+    float: none;
+}
+}
+
+@media screen and (min-width: 1px) and (max-width: 1060px) {
+   
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .TipOffTheDatDiv {
+        min-height: 324px;
+    }
+    .WelcomeLeftContent {
+        min-height: 324px;
+    }
+   
+}
+@media screen and (min-width: 1px) and (max-width: 992px) {
+    .padl0{
+        padding-left: 15px;
+    }
+    .mrgnbottom{
+        margin-bottom: 10px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .WelcomeLeftContent {
+        min-height: 395px;
+    }
+    .TipOffTheDatDiv {
+        min-height: 395px;
+    }
+    .ur-doshares{
+        height: 190px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 768px) {
+    .PHno {
+        font-size: 22px;
+        width: 100%;
+        float: none; 
+        margin-top: 22px; 
+    }
+    .appon_card p {
+        text-align: center;
+    }
+    .appon_card h5 {
+        text-align: center;
+    }
+    .MarginTop100 {
+         margin-top: 22px; 
+    }
+    .padlrr{
+        padding: 0px 15px!important;
+    }
+    .padl0{
+        padding-left: 15px;
+    }
+    .UpdateBtn {
+        font-size: 12px;
+        padding: 11px 25px;
+    }
+    .mrgnbottom{
+        margin-bottom: 10px;
+    }
+    .stylein{
+        width: 74%;
+    }
+    .stylein img {
+        height: 16px;
+        width: 16px;
+    }
+    .bl_pressure h4 {
+        font-size: 16px;
+        text-align: center;
+    }
+    .skintext {
+        text-align: center;
+    }
+    /* .ZanduText {
+        font-size: 18px;
+        text-align: center;
+    }
+    .RupeesText {
+        font-size: 24px;
+        text-align: center;
+    } */
+    .card-body img{width: auto} 
+.bl_pressure_sub .card-body {
+    text-align: center;
+}
+.rproductimg img{
+    width: 100%;
+} 
+.bl_pressure .card-body{
+    text-align: center;
+} 
+.CalenderText1 {
+    width: 100%;
+    float: left;
+} 
+.rproductimg {
+    margin: 0 auto;
+}
+}
+
+@media screen and (min-width: 1px) and (max-width: 480px) {
+    .UpdateBtn {
+        font-size: 10px;
+        padding: 7px 5px;
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width: 420px) {
+}
+
+@media screen and (min-width: 1px) and (max-width: 380px) {
+}

@@ -1,0 +1,57 @@
+.margin-10{
+    margin-top: 10%;
+}
+.card{
+    box-shadow: 0px 0px 5px #666; 
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+    }  
+    .bgcolor{
+        width: 100%;
+        float: left; 
+        height: 100%;
+    } 
+    .card-body{
+        padding: 6% 10%;
+    }
+    .EmailID{
+        border-radius: 0px; 
+        float: left;
+        width: 100%;
+    } 
+    .SignBtn, .SignBtn:active, .SignBtn:hover, .SignBtn:focus{
+    width: 85%;
+    height: 55px;
+    background-color: #02c672 !important;
+    border: 0px !important;
+    box-shadow: 0px 0px 15px #ccc;
+    margin: 0 auto;
+    } 
+    .FbBtn{
+    width: 47%;
+    float: left; 
+    height: 55px; 
+    background-color: #385c9a; 
+    border: 0px !important;
+    box-shadow: 0px 0px 15px #ccc;
+    } 
+    .GoogleBtn{
+        width: 47%;
+        float: right;  
+        height: 55px;  
+        color: #333;
+        background-color: #ffffff; 
+        border: 0px !important;
+        box-shadow: 0px 0px 15px #ccc;
+    }
+
+    a{color:inherit;
+    cursor: pointer;}
+
+    .bot-a-font{
+        font-size: 20px;
+        font-weight: 400;
+        text-decoration: none;
+      }
+    

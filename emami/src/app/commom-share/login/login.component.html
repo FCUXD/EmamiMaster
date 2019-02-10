@@ -1,0 +1,283 @@
+<div class="header">
+  <p class="m-0 logopointer" routerLink=""><img src="././assets/images/newlogo.png"></p>
+</div>
+
+<div class="clear"></div>
+
+<div class="row m-0 rowboxshow">
+  <div class="col-12 col-lg-6 col-md-6 p-0">
+    <div class="DoctorLoginLeftBox">
+      <img class="Thetescopeimg" src="././assets/images/Doctor_login.png">
+      <div class="content">
+        <h4 class="">Welcome to <br /> Zandu Health Care !</h4>
+        <div class="clear20"></div>
+        <h5 class="mt-4">Your Partner in helping live healthy & active lifestyle.</h5>
+        <h6>We appreciate your support & thank you for being part of growing<br /> ecosystem to
+          help people manage their lifestyle problems.
+        </h6>
+        <div class="clear20"></div>
+        <div class="row m-0 mt-4">
+          <!-- <div class="col-12 col-lg-4 col-sm-4">
+            <div class="AudioImg">
+              <img src="assets/images/LogiImg1.png">
+              <h5 class="mt-4">Clinical Consultation</h5>
+            </div>
+          </div> -->
+          <div class="offset-md-2 col-12 col-lg-4 col-sm-4">
+            <div class="AudioImg">
+              <img src="././assets/images/LoginImg2.png">
+              <h5 class="mt-4">Audio<br /> Consultation</h5>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 col-sm-4">
+            <div class="AudioImg">
+              <img src="././assets/images/LoginImg3.png">
+              <h5 class="mt-4">Video<br /> Consultation</h5>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 col-md-6 p-0">
+    <div class="bgcolor">
+      <div class="mt-4  text-center">
+        <h4 class="text-center mt-4 ForgotPasswordheading">Login</h4>
+        <img _ngcontent-c1="" src="././assets/images/borderImg.png">
+        <div class="card border-0 mt-2">
+          <div class="card-body">
+            <form class="form-horizontal" [formGroup]="doctoLoginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="text" id="email" class="FormText form-control2 form-control form-control11 mb-2 mr-sm-2 border-0"
+                    formControlName="email" required placeholder="USER NAME">
+                </div>
+              </div>
+              <div class="clear20"></div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input [ngClass]="{ 'is-invalid': submitted && f.password.errors }" type="password" #p id="password" class="FormText form-control3 form-control form-control11 mb-2 mr-sm-2 border-0"
+                  (keydown.space)="$event.preventDefault();"  (keyup.enter)="loginDoctor(doctoLoginForm.value)" formControlName="password" required placeholder="PASSWORD">
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+                </div>
+              </div>
+              <a (click)="forgetPassword()" class="forgettext">Forgot Password ? </a>
+              <div class="clear10"></div>
+              <button _ngcontent-c1="" [disabled]="loading" (click)="loginDoctor(doctoLoginForm.value);" class="btn updatebtn mt-4"
+                type="button" data-toggle="modal" data-target="#myModal">Login</button>
+              <div class="clear20"></div>
+              <p class="termstesxt mt-4">By clicking on login you agree to <span class="termspointer" data-toggle="modal"
+                  (click)="openmodal()"> Terms & Condition </span> </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<app-footer></app-footer>
+
+<!-- Terms & Condition -->
+<div class="{{modal}} custom_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Terms and conditions</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="closemodal()">&times;</button>
+      </div>
+
+      <div class="container scroll">
+        <p>(a) Emami is the owner/ proprietor of the Website. </p>
+        <p>(b) The information on the Website (including but not limited to video consult, live chat, e-mails, phone
+          support) is provided for general informational purposes only and should not be relied upon as a substitute
+          for sound professional medical advice, evaluation or care from your physician or other qualified healthcare
+          provider. Nothing on the Website should be used for treating or diagnosing a medical or health condition or
+          for replacing any relationship with your physician or other qualified healthcare provider. The health
+          information furnished on the Website and the interactive responses (if any) furnished by or through the
+          Website are not intended to or implied to be professional medical advice. User shall consult other sources
+          and confirm the information contained within the Website. Further, User shall never disregard medical advice
+          or delay in seeking it because of the information available on the Website (including but not limited to
+          video consult, live chat, e-mails, phone support). </p>
+        <p>(c) No medications, diet supplements or treatments as may be described on the Website shall be taken or
+          begun without first consulting a physician or other healthcare provider. </p>
+        <p>(d) Information or advice provided on the Website by professionals should be used merely as a guide rather
+          than a definitive recommendation to adopt any specific action or treatment. Nothing transmitted to or from
+          the Website constitutes the establishment of a doctor-patient relationship between You and any professional
+          providing information or advice through the Website. </p>
+        <p>(e) Website is not intended to be used to: </p>
+        <p>(i) treat or give diagnosis of a medical emergency or medical condition; or </p>
+        <p>(ii) advise or resolve medical issues which are outside the scope of what has been specifically agreed. </p>
+        <p>(f) User absolves professionals, engaged and / or contracted by Emami who offer services through the
+          Website, from any responsibility or liability whatsoever, for any medical, legal or financial events or
+          outcomes related to services attained using online video consultation or any form of communication. </p>
+        <p>(g) Emami does not regularly review the posts on the Website and the views expressed therein are those of
+          the posters and do not necessarily reflect those of Emami, its officers, managers, directors, employees,
+          agents, partners, advertisers, consultants or affiliates. Emami assumes no responsibility for the posts or
+          the information contained therein, nor does it make any claims, promises or guarantees about the accuracy,
+          suitability or completeness of any of the information on the said posts. </p>
+        <p>(h) Emami is solely entitled to the trade marks, names, logos and service marks, copyrights and all other
+          intellectual property rights including but not limited to the software, application, graphics, text and other
+          materials used therein (collectively, the “Content”). Nothing contained on the Website should be construed as
+          granting any license or right to use Content without the prior written permission of Emami. Any other
+          material displayed on the Website that is capable of being protected as intellectual property shall be the
+          property of Emami and nothing contained on the Website should be construed as granting any license or right
+          to use any such material without the prior written permission of Emami. </p>
+        <p>(i) Emami makes no claim that the Content is appropriate or may be downloaded in a particular jurisdiction.
+          The access to Website and Content may not be legal by certain persons or in certain states or countries. If
+          You access the Website from outside India, You do so at your own risk and are responsible for compliance with
+          the laws of your jurisdiction. </p>
+        <p>(j) The Content is for informational purposes only. The Content is not intended to be a substitute for
+          face-to-face professional advice, diagnosis, or treatment. </p>
+        <p>(k) The information on the Website may become outdated and efforts will be made to correct the errors and
+          keep the Content updated. The information and materials on the Website are provided on an “as is” basis. </p>
+        <p>(l) User shall provide full and complete information pertaining to the ailment (including but not limited to
+          the User’s medical history). </p>
+        <p>(m) No warranty or representation of any kind, express or implied, is given by or on behalf of Emami that
+          the responses to the queries, shall be appropriate, secure, reliable and free from error. </p>
+        <p>(n) Emami shall not be liable for any negligence (including gross negligence), loss, injury or damage
+          (including without limitation direct, indirect, consequential, special,
+          exemplary or punitive loss) suffered by You on account of the use/performance of the information, response,
+          advice furnished to You, any action or lack of action by User and/ or medicines prescribed/ sold to the User.
+        </p>
+        <p>(o) User agrees to defend, indemnify, compensate and hold Emami, its officers, directors, employees, agents,
+          licensors, and suppliers, harmless from and against all claims, actions or demands, liabilities and
+          settlements including without limitation, reasonable legal and accounting fees, resulting from, or alleged to
+          result from, User’s violation of these terms and conditions or any claims based upon the User’s
+          posts/submissions on the Website. </p>
+        <p>(p) Emami shall not be liable to indemnify the User under any event. </p>
+        <p>(q) For damages (including without limitation liability arising out of tort, strict liability, negligence,
+          contract or patent or copyright infringement), if any, the liability of Emami shall not exceed the lesser of:
+          (i) the fees paid, if any, to Emami for the information or service provided on this Website; or (ii) INR 200
+          (Indian Rupees Two Hundred). </p>
+        <p>(r) These terms and conditions and the privacy policy constitute the entire understanding and agreement
+          between the User and Emami. There are no understandings, representations or warranties (whether written or
+          oral) except as expressly referred to herein. </p>
+        <p>(s) If any dispute, difference, claim or question, shall at any time, arises between Emami and You, in
+          relation to the use of the Website (in any manner whatsoever) such dispute, difference, claim or question
+          shall be referred to arbitration. Emami and You shall mutually appoint a sole arbitrator. Such arbitration
+          shall be held in accordance with the provisions of the Arbitration and Conciliation Act, 1996. The venue and
+          seat of arbitration shall be [Kolkata, West Bengal] and the proceedings shall be in the English language. </p>
+        <p>(t) User warrants that he/ she has completed eighteen (18) years of age as on date of this agreement and has
+          fully read and understood these terms and conditions without any impairment in judgment resulting,
+          inter-alia, from mental illness, mental handicap, intoxication, medication, or any other health problem. </p>
+
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="closemodal()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal fade  {{custom}}" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title w-100 text-center ModalTitleText">Reset Password</h4>
+        <button type="button" class="close" (click)="close()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form class="form-horizontal" [formGroup]="doctoLoginForm">
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input #pass  (keydown.space)="$event.preventDefault();" type="password" id="password" class="FormText form-control3 form-control form-control11 mb-2 mr-sm-2 border-0"
+                 formControlName="password" required placeholder="PASSWORD">
+
+            </div>
+          </div>
+          <div class="clear20"></div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input #resetpass  (keydown.space)="$event.preventDefault();" type="password" id="password" class="FormText form-control3 form-control form-control11 mb-2 mr-sm-2 border-0"
+                 formControlName="password" required placeholder="CONFIRM PASSWORD">
+            </div>
+          </div>
+          <div class="clear"></div>
+        
+      
+
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" >Close</button> -->
+        <button   class=" btn updatebtn my-2 ResetBTN" (click)="sendResetPassSysData(pass.value,resetpass.value)" data-toggle="modal" data-target="#myModal2"  type="button">Reset</button>
+        <div class="clear20"></div>
+      </div>
+
+    </div>
+  </div>
+</div>  
+
+
+<!-- The Modal -->
+<div class="modal fade  {{custom2}}" id="myModal2">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title w-100 text-center ModalTitleText">Reset Password</h4>
+        <button type="button" class="close" (click)="close2()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body ModalText">
+       <h5> Please try again</h5>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" >Close</button> -->
+        <button   class=" btn updatebtn my-2 ResetBTN" (click)="popup3()" data-toggle="modal" data-target="#myModal3">ok</button>
+        <div class="clear20"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal fade  {{custom3}}" id="myModal3">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title w-100 text-center ModalTitleText">Successful</h4>
+        <button type="button" class="close" (click)="close3()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body ModalText">
+      <h5> Password Reset Successfully</h5>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" >Close</button> -->
+        <button   class=" btn updatebtn my-2 ResetBTN" (click)="close3()"  data-dismiss="modal" type="button">ok</button>
+        <div class="clear20"></div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+.floatingImg{
+    background: #fff9e5;
+    box-shadow: 0px 7px 57px 0 rgba(0, 0, 0, 0.19);
+width: 59px;
+/* position: relative; */
+z-index: 2;
+float: left;
+text-align: center;
+
+padding-top: 13px;
+
+border-radius: 8px 0px 0px 8px;
+height: 60px;
+} 
+.FlotingSection{
+    right: 0px;
+    /* position: fixed; */
+    z-index: 1;
+    top: 231px;
+    position: fixed;
+}
+.floatingbox1{
+   background: #fff9e5;
+    /* border-radius: 8px 0px 0px 8px; */
+    width: 385px;
+    /* position: relative; */
+    right: -9px;
+    z-index: 1;
+    float: left;
+    height: 60px;
+    padding-top: 10px; 
+}  
+.floatingbox2{
+    border-right: 1px solid #d6ad66;
+    width: 50%;
+cursor: pointer;
+    float: left;
+} 
+.floatingbox3{
+    border: none;
+}
+.floating{
+   float: right;
+
+} 
+
+h6{
+    font-size: 17px;
+    text-align: center;
+color: #402909;
+margin-bottom: 0px;
+font-family: 'TrajanPro-Regular';
+}
+h6 span{
+    
+        font-size: 17px;
+    
+    color: #402909;
+    
+    font-family: 'TrajanPro-Bold';
+    
+}
+
+.floatingbox1exp{
+    width: 223px;
+}
+.floatingbox2exp{
+    width: 100%;
+
+    border: none;
+    
+    padding-top: 9px;
+} 
+
+@media screen and (min-width: 1px) and (max-width: 768px) { 
+    .FlotingSection{
+        display: none;
+    }
+}

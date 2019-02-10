@@ -1,0 +1,216 @@
+
+/* spacing */
+.clear5 {
+    height: 5px;
+    clear: both;
+}
+
+.clear10 {
+    clear: both;
+    height: 10px;
+}
+
+.clear20 {
+    clear: both;
+    height: 20px;
+}
+
+.clear30 {
+    clear: both;
+    height: 30px;
+}
+
+ul.age-gender-care-container{
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0px;
+}
+ul.age-gender-care-container li{
+    display: inline-block;
+    margin-right: 10px; 
+}
+ul.age-gender-care-container li:after{
+    content: ' ';
+    height: 20px;
+    width: 1px;
+    margin-left: 9px;
+    margin-bottom: -4px;
+    background: #333333;
+    display: inline-block;
+}
+ul.age-gender-care-container li:last-of-type:after{
+    display: none;
+
+}
+.patientPrescriptionMainContainer .patientPriscript-info-top .patient-name{
+    font-family: 'TrajanPro-Bold';
+  
+    font-weight: bold;
+     color: #402909;
+}
+.patientPrescriptionMainContainer .patientPriscript-info-top .patient-consult-id{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 18px;
+    
+    letter-spacing: 0.9px;
+    color: #333333;
+}
+.patientPrescriptionMainContainer .patientPriscript-info-top .patient-consult-id .consIdText{
+    font-family: 'TrajanPro-Regular';
+}
+.patientPrescriptionMainContainer .patientPriscript-info-top .age-gender-care-container{
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 16px;
+   
+    letter-spacing: 0.8px;
+    color: #333333;
+}
+.patientPrescriptionMainContainer .patientPriscript-info-top .patient-phone{
+    font-family: 'PlayfairDisplay-Bold';
+    font-size: 18px;
+    font-weight: 600;
+   
+    letter-spacing: 0.9px;
+    color: #333333;
+}
+.patientPrescriptionMainContainer  .patientPriscript-info-top .btn-green-1{
+    font-size: 15.5px;
+    letter-spacing: 1.2px;
+    border-radius: 10px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 5px #bccf60;
+    padding: 12px 10px;
+    letter-spacing: 1.5px;
+}
+.patientPrescriptionMainContainer  .patientPriscript-info-top .btn-green-1:before{
+    content: ' \1F878';
+}
+.bg-gray-box{
+  border-radius: 10px;
+  background-color:#fbf8ee;
+  padding: 10px;
+}
+.box-with-shadow{
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+.card.patientPriscript-info-bottom{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #000000;
+}
+.card.patientPriscript-info-bottom .card-header{
+    background-color: #ffffff;
+    border-bottom: 2px solid #f7f0dd;
+    padding: 30px 50px;
+    font-family: 'TrajanPro-Regular';
+    font-size: 18.4px;
+    letter-spacing: 1.8px;
+}
+ul.patient-medicine-guidlines{
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0px;
+}
+ul.patient-medicine-guidlines li{
+    display: inline-block;
+    margin-right: 10px;
+
+    font-family: 'PlayfairDisplay-Regular';
+    font-size: 14px;
+    line-height: 2.29;
+    letter-spacing: 0.7px;
+    color: #333333;
+}
+ul.patient-medicine-guidlines li:after{
+    content: ' ';
+    height: 20px;
+    width: 1px;
+    margin-left: 9px;
+    margin-bottom: -4px;
+    background: #333333;
+    display: inline-block;
+}
+ul.patient-medicine-guidlines li:last-of-type:after{
+    display: none;
+
+}
+.prescribed-medicine-name{
+    font-family: 'TrajanPro-Bold';
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2.29;
+    letter-spacing: 0.7px;
+    color: #333333;
+}
+.prescription-points-heading{
+    font-family: 'TrajanPro-Bold';
+    font-size: 18.4px;
+    font-weight: bold;
+    letter-spacing: 1.8px;
+    color: #000000;
+}
+.patientPriscript-info-bottom .card-body .row{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: solid 1px #f7f0dd;
+}
+.prescription-points-dr-name{
+    font-family: 'TrajanPro-Bold';
+    font-size: 16.4px;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+    color: #000000;
+}
+.prescription-points-subheading{
+    font-family: 'PlayfairDisplay-Regular';
+        font-size: 16px;
+        line-height: 2;
+        letter-spacing: 0.8px;
+        color: #333333;
+}
+.patientPriscript-info-bottom .card-header .calender{
+  font-family: 'TrajanPro-Regular';
+  font-size: 14px;
+  line-height: 2.29;
+  letter-spacing: 0.7px;
+  color: #402909;
+}
+@media only screen and (max-width: 768px) {
+    .patientPrescriptionMainContainer  .patientPriscript-info-top .btn-green-1{
+        padding: 12px 5px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .patientPriscript-info-top{
+        text-align: center;
+    }
+    .bg-gray-box{
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .patientPrescriptionMainContainer  .patientPriscript-info-top .btn-green-1{
+        padding: 12px 2px;
+    }
+    .patientPriscript-info-top{
+        text-align: center;
+    }
+    
+    .container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .box-with-shadow{
+        padding: 20px;
+    }
+}
+
+

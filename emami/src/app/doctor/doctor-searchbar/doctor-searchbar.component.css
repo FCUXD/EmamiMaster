@@ -1,0 +1,27 @@
+.searchbg  {
+    background-image: url("../../../assets/images/search-bg1.png");
+    background-position: 95%;
+    background-repeat: no-repeat;
+    height: 70px;
+    padding-right: 86px;
+    margin: 20px 0px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    box-shadow: none;
+    font-family: TrajanPro-Bold;
+    font-size: 18px!important;
+    font-weight: bold;
+    color: rgba(62, 40, 8, 0.7);
+}
+.innersearch p{
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 16px;
+    margin-bottom: 0px;
+    padding-top: 16px;
+}
+.srchresult.shadow-sm {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}

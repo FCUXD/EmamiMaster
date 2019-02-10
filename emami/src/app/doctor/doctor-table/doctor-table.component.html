@@ -1,0 +1,40 @@
+<div  class="table-responsive PatientTable">
+  <table class="table  MarginBottom10px">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Name</th>
+        <th>Mode</th>
+        <th>Health Area</th>
+        <th>Mob No.</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of doctor_data">
+      <tr>
+        <td><span class="timespan">{{item.appointmentStartTime}}</span></td>
+          <td><h4 class="h4style">{{item.pname}}</h4></td>
+          <td>{{item.modeOfConsultation}}</td>
+          <td><h4 class="h4style">{{item.healthIssue}}</h4></td>
+          <td>{{item.mobile}}</td>
+        <td>
+            <a  routerLink="../consultPatientProfile" class="btn btn-green-1 BtnWidthConsult">CONSULT</a>
+        </td>
+        <td>
+            <app-tablereshould></app-tablereshould>
+        </td>
+     
+        <td>
+          <div class="popadjust">
+              <app-tablecansel></app-tablecansel>
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table> 
+
+</div>

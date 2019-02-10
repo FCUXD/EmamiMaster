@@ -1,0 +1,172 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header> 
+<app-innerfloating></app-innerfloating>
+<div class="clear20"></div>
+<div id="" class="appointmentsMainContainer container">
+  
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-12">
+        <ul class="timeline">
+          <!-- <app-year-slider></app-year-slider> -->
+          <div class="clear30"></div>
+          <!-- <app-months-multislider></app-months-multislider> -->
+          <li>
+            <app-year-slider (yearChanged)="yearChanged($event)" selected-year="selectedYear"></app-year-slider>
+          </li>
+          <li>
+            <div id="" class="months-slider-Container text-center my-4">
+              <ul class="months-slider-list">
+                  <li>
+                      <img src="././assets/images/slide-arrow-left-black-1.png" data-slide="prev" (click)="previousSlide()" />
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(0,monthsSlideArr[0].id)" class="mx-auto active-month-cirlce">{{monthsSlideArr[0].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(1,monthsSlideArr[1].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[1].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(2,monthsSlideArr[2].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[2].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(3,monthsSlideArr[3].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[3].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(4,monthsSlideArr[4].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[4].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(5,monthsSlideArr[5].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[5].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(6,monthsSlideArr[6].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[6].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(7,monthsSlideArr[7].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[7].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(8,monthsSlideArr[8].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[8].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(9,monthsSlideArr[9].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[9].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(10,monthsSlideArr[10].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[10].monthName}}</div>
+                  </li>
+                  <li>
+                      <div (click)="singleMonthSelect(11,monthsSlideArr[11].id)" class="mx-auto mt-3 inactive-month-circle">{{monthsSlideArr[11].monthName}}</div>
+                  </li>
+                  <li>
+                      <img src="././assets/images/slide-arrow-right-black-1.png" (click)="nextSlide()" />
+                  </li>
+                
+              </ul>
+          </div>
+          </li>
+          <li>
+            <label class="appo-timeline-heading text-uppercase">Upcoming Appointments</label>
+            <div class="clear30"></div>
+            <div class="row">
+              <ng-container *ngIf="upCommingAppList">
+              <div  class="col-md-6 pdlr-5" *ngFor ="let item of upCommingAppList">
+                <div class="appointment-card-wrap upcommingAppointments">
+                  <div class="card appointment-card">
+                    <div class="card-header">
+                      <span class="float-left text-lowercase">{{item.appointmentDate}}
+                        &nbsp; <a *ngIf ="item.aflag == 1" class="badge badge-light text-uppercase">TODAY</a>
+                      </span>
+                      <span class="float-right">{{item.appointmentStartTime}}</span>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4 pdlr-5 text-center">
+                          <img class="img-fluid rounded-circle" src="././assets/images/user-profile-pic-blank.png" />
+                        </div>
+                        <div class="col-md-8 pdlr-5">
+                            <div class="clear10"></div>
+                          <div class="doct-info fs-16px fw-bold">{{item.drName}}</div>
+                          <div class="doct-exp fs-14px">{{item.exp}} Yrs of Experience</div>
+                          <div class="clear5"></div>
+                          <div class="doct-info fs-12px fw-bold">{{item.areaOfExpert}}</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="clear30"></div>
+                <div class="row mx-auto">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 textcenter">
+                  <!-- <button type="button" class="btn btn-trasnp-1" (click)="cancelAppointment(item)">CANCEL</button>
+                  <button type="button" class="mx-auto btn btn-trasnp-1">RESCHEDULE</button> -->
+                  <!-- <app-canselpopup></app-canselpopup> -->
+                  <cancel-appointment *ngIf="item" [appointment-item]="item" (onCancelAppointment)="cancelAppointment(item,$event)"></cancel-appointment>
+                  <reschedule-appointment *ngIf="item"  (onReschedule)="rescheduleAppointment(item,$event)"></reschedule-appointment>
+                  <!-- <app-reshoulddatepicker></app-reshoulddatepicker> -->
+                  <!-- <button (click)="joinVideoCall(item.id)" class="mx-auto btn UpdateBtn2 GetStartedBtn" type="button"> Join Call</button> -->
+                      
+                  <!-- <button *ngIf = "item.modeOfConsultation == 'video'" type="button" class="btn btn-green-1">START</button> -->
+                  <button *ngIf = "item.modeOfConsultation == 'Video' || item.modeOfConsultation == 'video'" (click)="joinVideoCall(item.id)" class="mx-auto btn UpdateBtn2 GetStartedBtn" type="button"> Join Call</button>
+                </div>
+                </div>
+                </div>
+                <div class="clear10"></div>
+               </div>
+              </ng-container>
+              <ng-container *ngIf="!upCommingAppList?.length">
+                  <div class="ml-3">No Appointments For this Month</div>
+              </ng-container>
+              </div>
+          </li>
+          <li>
+            <label class="appo-timeline-heading text-uppercase">Past Appointments</label>
+            <div class="clear30"></div>
+            <div class="row">
+                <ng-container *ngIf="historyAppList">
+                <div class="col-md-6 pdlr-5" *ngFor ="let item of historyAppList">
+                  <div class="appointment-card-wrap pastAppointments">
+                    <div class="card appointment-card">
+                      <div class="card-header">
+                        <span class="float-left text-lowercase">{{item.appointmentDate}}
+                          <!-- &nbsp; <a class="badge badge-light text-uppercase">TODAY</a> -->
+                        </span>
+                        <span class="float-right">{{item.appointmentStartTime}}</span>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-4 pdlr-5 text-center">
+                            <img class="img-fluid rounded-circle" src="././assets/images/user-profile-pic-blank.png" />
+                          </div>
+                          <div class="col-md-8 pdlr-5">
+                              <div class="clear10"></div>
+                            <div class="doct-info fs-16px fw-bold">{{item.drName}}</div>
+                            <div class="doct-exp fs-14px">{{item.exp}} Yrs of Experience</div>
+                            <div class="clear5"></div>
+                            <div class="doct-info fs-12px fw-bold">Diabetic care</div>
+                          </div>
+                        </div>
+  
+                      </div>
+                    </div>
+                    <div class="clear30"></div>
+                  <div class="row mx-auto">
+                    <button type="button" (click)="setAppointmentId(item.id)"  class="btn btn-trasnp-1">view prescription</button>
+                    <button type="button" (click)="setAppointmentIdFeed(item.id)" routerLink="/patientFeedback" class="mx-auto btn btn-trasnp-1">Give Feedback</button>
+                    <button type="button" routerLink="/patient-dashboard/patient-book-appointment" class="btn btn-green-1">re-book</button>
+                  </div>
+                  </div>
+                  <div class="clear10"></div>
+                 </div>
+                </ng-container>
+                 <ng-container *ngIf="!historyAppList?.length">
+                    <div class="ml-3">No Appointments History For this Month</div>
+                </ng-container>
+                </div>
+              <div class="clear10"></div>
+              
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>

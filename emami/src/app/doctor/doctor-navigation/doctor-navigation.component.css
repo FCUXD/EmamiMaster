@@ -1,0 +1,45 @@
+.NavbarHeader li a{
+    color: #402909 !important;
+padding-bottom: 10px;
+text-decoration: none;
+font-size: 14px;
+font-family: 'TrajanPro-Regular';
+    padding: 7px 20px 6px 20px;
+} 
+.NavBarLogo{
+    color: #402909;
+    font-size: 14px;
+    font-family: 'TrajanPro-Bold';
+    padding-top: 0px;
+} 
+.headerbox{
+    box-shadow: 0 3px 5px #e5e5e5; 
+    padding: 11px 0px;
+} 
+.NavbarHeader li{
+    margin-top: 9px;
+} 
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+    color: #35a961;
+} 
+.bg-white {
+    box-shadow: 0px 11px 40.8px 10.2px rgba(0, 0, 0, 0.05);
+} 
+.dropdownbox, .dropdownbox:hover, .dropdownbox:active, .dropdownbox:focus{
+    border: none;
+    color: #402909 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    width: 206px;
+    font-size: 14px;
+    font-family: 'TrajanPro-Regular';
+    } 
+    .dropdown-toggle::after {
+      display: none;
+    } 
+    /* .DropDownIcon{
+      margin-left: -27px;
+    }  */
+    /* .imgMarginTop{
+      margin-top: 4px;
+    } */

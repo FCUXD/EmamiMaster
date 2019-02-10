@@ -1,0 +1,59 @@
+<app-patient-navigation></app-patient-navigation>
+<app-patient-header></app-patient-header>
+<div class="clear"></div> 
+<app-innerfloating></app-innerfloating>
+<div class="">
+    <div class="container pt-5 mt-5">
+      <div class="ReportMainDiv">
+    <div class="row">
+    <div class="col-md-6">
+      <h2>Total {{totalReportCount}} Reports</h2> 
+    </div>
+    <div class="col-md-6 add-report-float">
+      <app-add-report-popup (reloadReportList)="getReportList()"></app-add-report-popup>
+    </div>
+  </div>
+  <div class="clear20"></div>
+        
+  <ng-container *ngFor="let item of reportData;let i = index">
+      <div class="card cardbodydiv shadow-sm mb-3">
+      <div class="card-body px-0 py-2">
+          <div class="row PaddingTextX">
+            <div class="col-lg-6 col-sm-12 col-7">
+              <h3 class="m-0 xrayheading">{{item.name}}</h3>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-5">
+              
+              <div class="CardRightContent Righttext pull-right m-0">
+                <img width="15" height="20" style="cursor: pointer;" (click)="deleteReport(item.id)" src="././assets/images/delete-1.png" />
+                &nbsp;&nbsp;
+                {{item.createTime}}
+              </div>
+            </div>
+          </div> 
+          <div class="borderdiv MarginTB"></div>
+          <div class="row PaddingTextX" *ngFor="let fileData of item.reportFileUrl;let indexValue = index">
+            <div class="col-lg-6 col-sm-12 col-7">
+              <h6 class="m-0 pdfname">{{item.name}}_{{indexValue+1}}</h6>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-5 text-right">
+              <div class="CardRightContent pull-right m-0">
+                <a href="{{fileData}}" download="{{fileData}}">
+                  <img class="MarginLeft img-size" width="15" height="20" src="././assets/images/noun-download.png" /> 
+                </a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </ng-container> 
+   
+    <div class="mb-5"></div>
+    
+    </div> 
+  </div>
+    </div>
+
+<div class="clear20"></div>
+
+<app-footer></app-footer>

@@ -1,0 +1,873 @@
+.profimg{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+.padlrn{
+    padding: 0px;
+}
+.clear5{
+    clear: both;
+    height: 5px;
+}
+.text2{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: TrajanPro-Bold;
+    color: #402909;
+}
+.text3{
+  font-family: PlayfairDisplay-Regular;
+  font-size: 18px;
+  font-weight: normal;
+  color: #333333;
+}
+.text4{
+    font-family: PlayfairDisplay;
+  font-size: 16px;
+  font-weight: normal;
+  color: #333333;
+}
+.text41{
+    font-family: PlayfairDisplay;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+}
+.text5{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+.fh{
+    font-family: TrajanPro;
+    font-size: 16px;
+    font-weight: normal;
+    color: #402909;
+}
+.fh1{
+    font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+}
+.ddbstyle{
+    border-bottom: solid 1px #f7f0dd;
+    border-radius: 0px;
+    background-color: #ffffff;
+    font-family: PlayfairDisplay;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    }
+.title{
+    font-family: TrajanPro;
+    font-size: 18.5px;
+    font-weight: bold;
+    color: #000000;
+}
+hr{
+    border: solid 1px #f7f0dd!important;
+    
+}
+.content-box{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #d6ad66;
+    padding: 35px;
+}
+.content-box1{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #d6ad66;
+    padding: 35px;
+    min-height: 359px;
+}
+.card.patientPriscript-info-bottom{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #000000;
+}
+.card.patientPriscript-info-bottom1{
+    border-radius: 5px;
+    border:1px solid #d9b065;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    color: #000000;
+}
+.card.patientPriscript-info-bottom1 .card-header{
+    border-bottom: 1px solid #d9b065;
+    background-color: #ffffff;
+}
+.card.patientPriscript-info-bottom .card-header{
+    background-color: #ffffff;
+    border-bottom: 2px solid #f7f0dd;
+    padding: 21px 25px;
+    font-family: 'TrajanPro-Regular';
+    font-size: 18.4px;
+    letter-spacing: 1.8px;
+}
+.areabg{
+    background-color: #fbf8ee;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333333;
+}
+.w-h{
+width: 100%;
+text-align: left;
+}
+.w-h1{
+    width: 100%;
+    }
+.fh-div1{
+    padding-left: 4%;
+}
+.fh-div{
+    padding-left: 4%;
+    border-right: solid 1px #d6ad66;
+}
+.fh-button{
+    border-radius: 5px;
+    background-color: #fbf8ee;
+    font-family: TrajanPro;
+    font-size: 15.5px;
+    font-weight: bold;
+    color: #3e2808;
+}
+.fh-text{
+    font-family: TrajanPro;
+    font-size: 13.5px;
+    font-weight: bold;
+    color: #402909;
+}
+.fh-text2{
+    font-family: PlayfairDisplay;
+  font-size: 14px;
+  font-weight: normal;
+  color: #402909;
+}
+.rs{
+    font-family: RupeeForadian;
+    font-size: 16px;
+    font-weight: normal;
+}
+.fh-text3{
+    font-size: 12px;
+  font-weight: normal;
+  color: #402909;
+}
+.os-text2{
+    font-family: TrajanPro-Bold;
+  font-size: 16.4px;
+  font-weight: bold;
+  color: #000000;
+}
+.os-text1{
+    font-family: TrajanPro-Bold;
+    font-size: 18.4px;
+    font-weight: bold;
+    color: #000000;
+}
+.os-remove-edit{
+    font-family: PlayfairDisplay;
+  font-size: 10px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.os-text3{
+    font-family: PlayfairDisplay-Bold;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333333;
+}
+.os-text4{
+  font-family: TrajanPro;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+}
+.addbtnpad{
+    padding: 43px;
+    border: solid 1px #d6ad66!important;
+    background-color: #ffffff!important;
+}
+.addressbg{
+    border-radius: 10px;
+    background-color: #f7eedb;
+}
+.addressbg hr{
+    border: solid 1px #cfa15a!important;
+}
+.full-droppad{
+    padding-right: 29px!important;
+}
+.card-bg{
+    
+    background-color: #f9f4e4!important;
+}
+.btn-green-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 2px #bccf60;
+    padding: 15px 61px;
+ }
+ .btn-green-2{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    border-radius: 5px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 2px #bccf60;
+    padding: 2px 20px;
+ }
+ .btn-green-3{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+    border: solid 1px #84b367;
+    background-color: #bccf60;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 2px #bccf60;
+    padding: 5px 20px;
+ }
+ .btn-gray-1{
+    letter-spacing: 1.2px;
+    border-radius: 3px;
+    border: solid 1px #959595;
+    background-color: #b7b7b7;
+    font-family: 'TrajanPro-Bold';
+    box-shadow: 0 0 0 5px #b7b7b7;
+    border-radius: 15px;
+    padding: 15px 40px;
+    font-size: 15.5px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+ }
+ .prof-box{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+ }
+ .tab-hbright{
+    border-right: 2px solid #d9b065;
+    padding: 15px 0px;
+    margin: 0px;
+    font-size: 24px; 
+    }
+ .tab-hbright12{
+    padding: 15px 0px;
+    margin: 0px;
+    font-size: 24px; 
+}
+.allerp{
+    padding-right: 23px;
+}
+.sincepad{
+    
+    padding-left: 7px;
+    padding-right: 30px;
+}
+.pluspad{
+    padding-left: 0px;
+}
+.minuspad{
+    padding: 6px 15px; 
+    width: 37px;
+}
+.plusminusbtn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #f7f0dd!important;
+    background-color: #ffffff!important;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem; 
+    width: 37px;
+   }
+.option{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+.formfield {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    border: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    /* border: 1px solid #ced4da; */
+    border-bottom: 1px solid #f7f0dd;
+    border-radius: 0rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; 
+    -webkit-appearance: none !important;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: none;
+    background-color: #ffffff; 
+    box-shadow: 0px 0px 15px #e5e5e5; 
+    padding: 0px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none; 
+   
+    cursor: pointer;
+    width: 100%;
+    padding: 12px 16px 12px 16px;
+    font-family: TrajanPro;
+    font-weight: normal;
+    color: #402909;
+    font-size: 24.5px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ffffff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    font-family: TrajanPro;
+    font-size: 24.5px;
+    font-weight: bold;
+    box-shadow: 0px 3px 14.2px 1.8px rgba(0, 0, 0, 0.14);
+  background-color: #f9f4e4;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.date_cursor{
+    cursor: pointer;
+}
+
+.tabcontent{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.fontstyle{
+    font-family: TrajanPro;
+    font-size: 14.5px;
+    font-weight: normal;
+    color: #000000;
+}
+.tabshadow{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06)!important;
+}
+
+/* modal css */
+.modal.fade.show {
+    display: block;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    outline: 0;
+  }
+  
+  .modal.fade.show {
+    display: block;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    outline: 0;
+  }
+  .select-style{
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+  }
+  .Addaddressbtn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    background-color: #d6ad66!important;
+    color: #ffffff!important;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.popclose {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #d6ad66;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    background-color: #ffffff!important;
+    color: #000000!important;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.os-price{
+    font-family: TrajanPro;
+    font-size: 12px;
+    font-weight: bold;
+    color: #402909;
+}
+.hrnone:last-of-type hr{
+display: none;
+}
+.pad-r-50{
+    padding-right: 50px;
+}
+.f-text{
+    font-family: TrajanPro-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    color: #6c593f;
+}
+ 
+
+.btn-unclicked-1 {
+    background-color: #f7f0dd;
+}
+
+/* Hide the browser's default checkbox/radio */
+
+.buttonmain input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* When the checkbox is checked, change background */
+
+.buttonmain input:checked~.checkmark {
+    background-color: #d6ad66 !important;
+}
+
+
+.buttonmedicine input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* When the checkbox is checked, change background */
+
+.buttonmedicine input:checked~.checkmark {
+    background-color: #bccf60 !important;
+}
+
+.cod input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* When the checkbox is checked, change background */
+
+.cod input:checked~.checkmark {
+    background-color: #fbf4da !important;
+}
+
+
+
+.btnfont{
+    font-family: TrajanPro;
+  font-size: 15.5px;
+  font-weight: bold;
+  color: #3e2808;
+}
+.cp-mbuttonpad{
+    padding-left: 17px;
+}
+.cp-input{
+    border-bottom: 1px solid #f7f0dd!important;
+    border: none;
+    border-radius: 0px;
+    font-family: PlayfairDisplay;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+}
+.cp-chk-text{
+    font-family: PlayfairDisplay;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/*---Chk box---*/
+
+
+
+.chkbx-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.chkbx-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.chkbx-container .checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ffffff;
+    border: solid 2px #000000;
+}
+
+
+.chkbx-container:hover input ~ .checkmark {
+    background-color: #ffffff;
+}
+
+
+.chkbx-container input:checked ~ .checkmark {
+    background-color: #ffffff;
+}
+
+
+.chkbx-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.chkbx-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.chkbx-container .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: 1px solid #000000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*---Chk box---*/
+.cp-select-mtext{
+    font-family: PlayfairDisplay;
+  font-size: 16px;
+  font-weight: normal;
+  color: #333333;
+}
+.pm-button{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    font-family: PlayfairDisplay;
+  font-size: 14px;
+  font-weight: bold;
+  color: #402909;
+}
+.medicineContainer1{
+    border-radius: 5px;
+    background-color: #fbf8ee;
+}
+.bgcolor{
+    background-color: #fbf8ee;
+}
+.prescription{
+  font-family: PlayfairDisplay;
+  font-size: 14px;
+  font-weight: normal;
+  color: #333333;
+}
+.addproducttext{
+    font-family: PlayfairDisplay;
+  font-size: 11.8px;
+  font-weight: normal;
+  color: #402909;
+}
+.input-spinner{
+    width:40px;
+    text-align: center
+}
+.offer{
+    font-family: PlayfairDisplay;
+  font-size: 16px;
+  font-weight: bold;
+  color: #402909;
+}
+.m-left{
+    margin-left: 25%;
+}
+.zandupoptext{
+    font-family: TrajanPro;
+    font-size: 40px;
+    font-weight: bold;
+    color: #402909;
+}
+.pop-con-id{
+    font-family: TrajanPro;
+    font-size: 20px;
+    font-weight: bold;
+    color: #402909;
+}
+.pop-con-id1{
+    font-family: TrajanPro;
+    font-size: 20px;
+    font-weight: bold;
+    color: #666666;
+}
+.pop-head-bgcolor{
+    background-color: #f9f4e4;
+}
+.pop-text1{
+    font-family: TrajanPro;
+  font-size: 24px;
+  font-weight: bold;
+  color: #402909;
+}
+.pop-text2{
+    font-family: PlayfairDisplay;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+.pop-text2-1{
+    font-family: PlayfairDisplay;
+    font-size: 20px;
+    font-weight: normal;
+    color: #333333;
+}
+.pop-input{
+    border: 0px;
+    border-bottom:1px solid #d9b065!important;
+    border-radius: 0px;
+    font-family: PlayfairDisplay;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333333;
+}
+.pop-overflow{
+    overflow: scroll;
+}
+.pop-divheight{
+    height: 250px;
+}
+/* --- pop chk box*/
+
+
+.chkbx-container1 {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.chkbx-container1 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.chkbx-container1 .checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ffffff;
+    border: solid 2px #d9b065;
+}
+
+
+.chkbx-container1:hover input ~ .checkmark {
+    background-color: #ffffff;
+}
+
+
+.chkbx-container1 input:checked ~ .checkmark {
+    background-color: #ffffff;
+}
+
+
+.chkbx-container1 .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.chkbx-container1 input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.chkbx-container1 .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: 1px solid #d9b065;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*---pop chk box-end */
+#popup table thead tr th{
+    font-family: PlayfairDisplay!important;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    border-bottom: solid 1px #d6ad66;   
+}
+
+#popup table tbody tr td{
+    font-family: PlayfairDisplay;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333333;
+}
+#popup table tbody tr{
+    border-top: solid 1px #d6ad66;   
+    }
+    #popup table tbody tr:first-of-type{
+    border-top: none;   
+    }
+.pop-f-bgcolor{
+    background-color: #f9f4e4;
+}
+.fot-text{
+    font-family: PlayfairDisplay;
+  font-size: 18px;
+  font-weight: normal;
+  color: #666666;
+}
+.fot-text1{
+  color: #402909!important;
+  font-family: PlayfairDisplay;
+  font-size: 18px;
+  font-weight: normal;
+}
+.web-text{
+    font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  color: #666666;
+}
+.web-text1{
+    font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  color: #402909;
+}
+.btn-trasnp-1{
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    background: transparent;
+    border-radius: 5px;
+    border: solid 1px #cfa15a;
+    font-family: 'TrajanPro-Bold';
+    padding: 7px 25px;
+}
+.scgh{
+    word-break: break-all;
+}
+
+ @media only screen and (min-width:576px) and (max-width:768px) {
+    .center{
+        text-align: center;
+    }
+ }
+ @media screen and (max-width:576px) {
+    .center{
+        text-align: center;
+    }
+}

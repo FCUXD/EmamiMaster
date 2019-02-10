@@ -1,0 +1,15 @@
+
+      <!-- <input [(ngModel)]="querystring" (keyup.enter)="updateFilter2($event)" type="text" class="form-control searchbg" placeholder="Products, Doctors, Health Condition & More" /> -->
+      <input [(ngModel)]="querystring" (click)=" searched()" (keydown)="updateFilter2($event);" (keyup.enter)=" searched()" type="text" class="form-control searchbg mobhidden" placeholder="Products, Doctors, Health Condition & More" onfocus="this.placeholder=''"/>
+      <input [(ngModel)]="querystring" (keydown)="updateFilter2($event);" (keyup.enter)=" searched()" type="text" class="form-control searchbg webhidden" placeholder="Search.." onfocus="this.placeholder=''"/>
+      <div class="srchresult SearchIn"> 
+<div class="InnerDiv" *ngIf="trial"> 
+
+        <div class="d-block innersearch py-0 swidth bg-white rounded" *ngFor="let item of temp ">
+          <p (click)="querystring=item; searched()">
+                {{item}}
+          </p> 
+        </div>
+      </div>
+        </div>
+      <!-- (click)="searched()" -->
